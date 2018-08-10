@@ -1,0 +1,65 @@
+#!/bin/bash
+#
+# #############################################################################
+# Upload SSH key
+# I use this script whenever I need to add my SSH key to a remote machine.
+#
+# Forked from https://github.com/Exygy/createnewuser
+# With thanks to https://gist.github.com/raw/4223476
+#
+# Usage:
+# sh upload-key.sh
+# #############################################################################
+#
+
+# Get ssh login credentials, and ssh key locations
+echo "First, please give me some information on the remote server."
+read -p "Server URI (e.g  server.com): " ssh_credentials
+
+user_default=$(whoami)
+read -p "User name [$user_default]: " user_name
+user_name="${user_name:-$user_default}"
+
+ssh_pub_default="$HOME/.ssh/id_rsa.pub"
+read -p "Enter the path to the ssh public key [$ssh_pub_default]: " ssh_pub_path
+
+ssh_priv_default="no"
+echo "Please note: You don't need to upload your private key.  In fact, you probably shouldn't."
+echo "For more information: https://www.gnupg.org/gph/en/manual/c481.html#AEN506"
+echo "Enter 'no' to ignore the private key."
+read -p "Enter the path to the ssh *private* key [$ssh_priv_default]: " ssh_priv_path
+ssh_priv_path="${ssh_priv_path:-$ssh_priv_default}"
+
+#Read in public key
+ssh_pub_path="${ssh_pub_path:-$ssh_pub_default}"
+ssh_pub_file=$(<$ssh_pub_path)
+
+#If provided, read in private key
+if [ "$ssh_priv_path" != "no" ];
+then
+  ssh_priv_path="${ssh_priv_path:-$ssh_priv_default}"
+  ssh_priv_file=$(<$ssh_priv_path)
+fi
+
+#Begin SSH session
+echo "Please authenticate for $user_name@$ssh_credentials: "
+ssh -t $user_name@$ssh_credentials /bin/bash << EOF
+  #Create user
+  #Create SSH directory
+  mkdir /home/${user_name}/.ssh
+  cd /home/${user_name}/.ssh
+  #Copy over private key
+  if [ "$ssh_priv_path" != "no" ];
+  then
+    touch id_rsa
+    echo "${ssh_priv_file}" > id_rsa
+  fi
+  #Copy over public key
+  touch authorized_keys
+  echo "${ssh_pub_file}" > authorized_keys
+  #Set SSH key permissions
+  chmod 700 /home/${user_name}/.ssh
+  exit
+EOF
+
+exit
