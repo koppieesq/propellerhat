@@ -1,7 +1,7 @@
 # propellerhat
 For your inner child - the nerdy one who has a little cap with a propeller on the top.
 
-Contents:
+**Contents:**
 - **.bash_profile:** Custom settings for your command line interface
 - **.vimrc:** Custom settings for the VI text editor
 - **db down:** Downloads a database from a [Pantheon](https://pantheon.io) site and loads it into your local environment
