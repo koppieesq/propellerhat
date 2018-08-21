@@ -13,6 +13,7 @@ new_branch=$(git symbolic-ref --short HEAD)
 repo_path=$(pwd)
 set +x
 
+# Load variables from the included config file.  This makes it easier for users to change key variables.
 . config
 
 echo "Hi!  I'm going to help you refresh your local dev environment to start a new ticket."
