@@ -1,0 +1,21 @@
+# This is a config file that can be shared by all the Propeller Hat scripts.
+# Feel free to customize these variables to your own needs.
+
+#############################
+# Variables for new-ticket: #
+#############################
+
+upstream_repo="origin"              # Name of the upstream repository in git
+fork_repo="fork"                    # Name of your forked version of the repository
+base_branch="master"                # The master branch.  Usually `master` (but not always)
+guest_path="/var/www/bwd"           # The path to your codebase inside the VM
+runner="composer install"           # Use this to run task runners like composer or npm.  Runs outside the VM.
+vm_start="vagrant up --provision"   # Command to start & reprovision the VM
+vm_ssh="vagrant ssh -c"             # How to send commands from the host to the VM
+
+# List of commands to be run inside the VM:
+commands=(
+    "blt setup -n"                  # Uses the Acquia blt utility to set up local env
+    "drush cim -y"                  # Import Drupal config
+    "drush uli --uri local.bwd.com" # Log in and provide a link that's viewable from the host OS
+    )
