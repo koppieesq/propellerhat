@@ -6,6 +6,7 @@ For your inner child - the nerdy one who has a little cap with a propeller on th
 - **.vimrc:** Custom settings for the VI text editor
 - **db down:** Downloads a database from a [Pantheon](https://pantheon.io) site and loads it into your local environment
 - **upload key:** Upload your SSH key to a server in a single command!
+- **new-ticket:** Refresh your local dev environment when you start a new task
 
 # Credits
 

@@ -5,14 +5,16 @@
 # - are currently in the target directory
 # - already have a feature branch checked out
 
+# With gratitude to Ben Thornton
+# @see https://git.businesswire.com/projects/HQ/repos/hq-tools/browse/dev/reset-dev
+
 set -x
 
 project="bwd"
 upstream_repo="origin"
 fork_repo="fork"
-master_branch="master"
-which_branch=$(git branch)
-new_branch=${which_branch##** }
+base_branch="master"
+new_branch=$(git symbolic-ref --short HEAD)
 repo_path=$(pwd)
 guest_path="/var/www/$project"
 
@@ -22,8 +24,8 @@ git checkout "$base_branch" || {
     exit 3
 }
 
-git pull $upstream_repo $master_branch
-git push $fork_repo $master_branch
+git pull $upstream_repo base_branch
+git push $fork_repo base_branch
 git checkout $new_branch
 
 See if there's anything new to install from Composer.
