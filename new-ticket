@@ -10,7 +10,6 @@
 
 # These settings should never change:
 new_branch=$(git symbolic-ref --short HEAD)
-repo_path=$(pwd)
 set +x
 
 # Load variables from the included config file.  This makes it easier for users to change key variables.

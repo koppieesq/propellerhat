@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1a099c3b-f3b4-4635-8b4e-dd664aca8a7c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/new-ticket" beforeDir="false" afterPath="$PROJECT_DIR$/new-ticket" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,39 +38,39 @@
         <counts>
           <entry key="config" value="811" />
           <entry key="md" value="915" />
-          <entry key="new-ticket" value="1332" />
+          <entry key="new-ticket" value="1438" />
           <entry key="sh" value="535" />
-          <entry key="txt" value="380" />
+          <entry key="txt" value="442" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Bash" value="1867" />
+          <entry key="Bash" value="1973" />
           <entry key="Markdown" value="915" />
-          <entry key="PLAIN_TEXT" value="1191" />
+          <entry key="PLAIN_TEXT" value="1253" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="318">
-                <caret line="23" column="54" selection-start-line="23" selection-start-column="54" selection-end-line="23" selection-end-column="54" />
+              <first_editor relative-caret-position="174">
+                <caret line="14" column="51" selection-start-line="14" selection-start-column="51" selection-end-line="14" selection-end-column="51" />
               </first_editor>
               <second_editor />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/new-ticket">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="56" column="4" lean-forward="true" selection-start-line="56" selection-start-column="4" selection-end-line="56" selection-end-column="4" />
+            <state relative-caret-position="73">
+              <caret line="12" column="6" lean-forward="true" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -90,6 +90,7 @@
     <findStrings>
       <find>sudo</find>
       <find>project</find>
+      <find>repo_path</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -102,8 +103,8 @@
         <option value="$PROJECT_DIR$/upload-key.sh" />
         <option value="$PROJECT_DIR$/new-ticket.sh" />
         <option value="$PROJECT_DIR$/config" />
-        <option value="$PROJECT_DIR$/new-ticket" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/new-ticket" />
       </list>
     </option>
   </component>
@@ -168,7 +169,7 @@
       <option name="presentableId" value="Default" />
       <updated>1533930703711</updated>
       <workItem from="1533930705076" duration="4988000" />
-      <workItem from="1534889342693" duration="6323000" />
+      <workItem from="1534889342693" duration="6462000" />
     </task>
     <task id="LOCAL-00001" summary="add .idea folder for IDE, migrate dbdown to this project">
       <created>1533932102439</created>
@@ -219,44 +220,35 @@
       <option name="project" value="LOCAL" />
       <updated>1534895483364</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Added documentation for `config` to readme">
+      <created>1534895700936</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1534895700936</updated>
+    </task>
+    <task id="LOCAL-00009" summary="inline documentation">
+      <created>1534895781871</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1534895781871</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11311000" />
+    <option name="totallyTimeSpent" value="11450000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="2880" y="612" width="960" height="588" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.25490198" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25490198" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Inspection Results" weight="0.32862905" />
-      <window_info anchor="bottom" id="Messages" weight="0.32862905" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32862905" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.5685484" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" />
-    </layout>
-    <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25490198" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Inspection Results" order="0" weight="0.32862905" />
-      <window_info anchor="bottom" id="Messages" order="1" weight="0.32862905" />
+      <window_info anchor="bottom" id="Messages" order="0" weight="0.32862905" />
+      <window_info anchor="bottom" id="Inspection Results" order="1" weight="0.32862905" />
       <window_info anchor="bottom" id="Message" order="2" />
       <window_info anchor="bottom" id="Find" order="3" weight="0.32862905" />
       <window_info anchor="bottom" id="Run" order="4" />
@@ -273,7 +265,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" />
-    </layout-to-restore>
+    </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -291,7 +283,9 @@
     <MESSAGE value="Significant rewrite of new-ticket to make it more VM-agnostic" />
     <MESSAGE value="renamed scripts to remove .sh" />
     <MESSAGE value="Moved new-ticket variables to separate config file, and improved output" />
-    <option name="LAST_COMMIT_MESSAGE" value="Moved new-ticket variables to separate config file, and improved output" />
+    <MESSAGE value="Added documentation for `config` to readme" />
+    <MESSAGE value="inline documentation" />
+    <option name="LAST_COMMIT_MESSAGE" value="inline documentation" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/dbdown">
@@ -308,6 +302,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="174">
+            <caret line="14" column="51" selection-start-line="14" selection-start-column="51" selection-end-line="14" selection-end-column="51" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/config">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
@@ -317,18 +321,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/new-ticket">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="56" column="4" lean-forward="true" selection-start-line="56" selection-start-column="4" selection-end-line="56" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="318">
-            <caret line="23" column="54" selection-start-line="23" selection-start-column="54" selection-end-line="23" selection-end-column="54" />
-          </first_editor>
-          <second_editor />
+        <state relative-caret-position="73">
+          <caret line="12" column="6" lean-forward="true" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
         </state>
       </provider>
     </entry>
