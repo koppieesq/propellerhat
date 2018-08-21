@@ -1,0 +1,63 @@
+#!/bin/bash
+
+# Prepare for a fresh Drupal 8 branch.
+# Assumes that you:
+# - are currently in the target directory
+# - already have a feature branch checked out
+
+# With gratitude to Ben Thornton
+# @see https://git.businesswire.com/projects/HQ/repos/hq-tools/browse/dev/reset-dev
+
+# Feel free to customize these variables to your own needs:
+project="bwd"
+upstream_repo="origin"
+fork_repo="fork"
+base_branch="master"
+guest_path="/var/www/$project"
+runner="composer install"
+vm_start="vagrant up --provision"
+vm_ssh="vagrant ssh -c"
+uri="local.bwd.com"
+declare -a commands=( "blt setup -n" "drush cim -y" "drush uli" )
+
+# These settings should never change:
+new_branch=$(git symbolic-ref --short HEAD)
+repo_path=$(pwd)
+set +x
+
+echo "Hi!  I'm going to help you refresh your local dev environment to start a new ticket."
+echo "In order for this to work, please make sure:"
+echo "- You're in the base directory for your project"
+echo "- You've already created a feature branch for the new ticket"
+echo ""
+
+echo "First I'm going to update the upstream master branch."
+# Even though we've already created a feature branch, we want to refresh master, and also 
+git checkout "$base_branch" || {
+    >&2 echo "fatal: cannot checkout $base_branch"
+    exit 3
+}
+
+git pull $upstream_repo $base_branch
+
+echo "Now I'm going to push the latest upstream master to your fork master."
+git push $fork_repo $base_branch
+
+echo "OK - now we can switch back to your feature branch."
+git checkout $new_branch
+
+# See if there's anything new to install from Composer.
+$runner
+
+# Turn on the VM and reprovision it if necessary
+$vm_start
+
+# Automated steps inside the VM.  Default steps:
+# - Rebuild the site and run the automated tests.
+# - Generate a valid URL for a one-time login.
+# - Import stored config.
+for current in "${commands[@]}"
+do
+    current_command="cd $guest_path; $current"
+    $vm_ssh "$current_command"
+done
