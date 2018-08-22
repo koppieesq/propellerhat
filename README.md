@@ -20,16 +20,9 @@ The following variables can be easily changed in the config file:
 - runner
 - vm_start
 - vm_ssh
+- commands
 
 See the config file for explanations of each variable.
-
-# List of commands to be run inside the VM:
-commands=(
-    "blt setup -n"                  # Uses the Acquia blt utility to set up local env
-    "drush cim -y"                  # Import Drupal config
-    "drush uli --uri local.bwd.com" # Log in and provide a link that's viewable from the host OS
-    )
-
 
 # Credits
 
