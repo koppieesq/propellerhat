@@ -11,16 +11,28 @@
 # These settings should never change:
 new_branch=$(git symbolic-ref --short HEAD)
 set +x
-
 # Load variables from the included config file.  This makes it easier for users to change key variables.
 . config
 
-echo "Hi!  I'm going to help you refresh your local dev environment to start a new ticket."
-echo "In order for this to work, please make sure:"
-echo "- You're in the base directory for your project"
-echo "- You have forked the 'upstream' repository and created your own"
-echo "- You've already created a feature branch for the new ticket"
-echo ""
+# Description of tasks to be performed, repeats at both the beginning and end of the script.
+tasks="- Pull a fresh copy of $upstream_repo/$base_branch
+- Push to $fork_repo/$base_branch
+- Task runner: $runner
+- Turn on the virtual machine: $vm_start
+- Run commands inside the VM"
+
+read -p "Hi!
+I'm going to help you refresh your local dev environment to start a new ticket.  Here's what I can do:
+$tasks
+
+In order for this to work, please make sure:
+- You're in the base directory for your project
+- You have forked the 'upstream' repository and created your own
+- You've already created a feature branch for the new ticket
+- You've updated the enclosed 'config' file with the correct repositories and branches
+
+Press Enter to continue, or ctrl-c to cancel."
+
 
 echo "First I'm going to update the upstream master branch."
 # Even though we've already created a feature branch, we want to refresh master, and also 
@@ -56,4 +68,7 @@ do
     $vm_ssh "$current_command"
 done
 
-echo "Good job, you did it!"
+echo "Congratulations, we're done!  Here's what we did:
+$tasks
+
+Now go forth and be awesome."
