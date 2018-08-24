@@ -17,6 +17,7 @@ set +x
 # Description of tasks to be performed, repeats at both the beginning and end of the script.
 tasks="- Pull a fresh copy of $upstream_repo/$base_branch
 - Push to $fork_repo/$base_branch
+- Push to $fork_repo/$new_branch and set upstream
 - Task runner: $runner
 - Turn on the virtual machine: $vm_start
 - Run commands inside the VM"
@@ -34,7 +35,8 @@ In order for this to work, please make sure:
 Press Enter to continue, or ctrl-c to cancel."
 
 
-echo "First I'm going to update the upstream master branch."
+echo "
+First I'm going to update the upstream master branch."
 # Even though we've already created a feature branch, we want to refresh master, and also 
 git checkout "$base_branch" || {
     >&2 echo "fatal: cannot checkout $base_branch"
@@ -43,21 +45,27 @@ git checkout "$base_branch" || {
 
 git pull $upstream_repo $base_branch
 
-echo "Now I'm going to push the latest upstream master to your fork master."
+echo "
+Now I'm going to push the latest upstream master to your fork master."
 git push $fork_repo $base_branch
 
-echo "OK - now we can switch back to your feature branch."
+echo "
+OK - now we can switch back to your feature branch.  I'm also going to set $new_branch to track $fork_repo."
 git checkout $new_branch
+git push $fork_repo $new_branch --set-upstream
 
-echo "I'm going to see if there's anything to install."
+echo "
+I'm going to see if there's anything to install."
 # See if there's anything new to install from Composer.
 $runner
 
-echo "Let's turn this thing on."
+echo "
+Let's turn this thing on."
 # Turn on the VM and reprovision it if necessary
 $vm_start
 
-echo "I'm going to run some commands inside the VM now."
+echo "
+I'm going to run some commands inside the VM now."
 # Automated steps inside the VM.  Default steps:
 # - Rebuild the site and run the automated tests.
 # - Generate a valid URL for a one-time login.
@@ -68,7 +76,8 @@ do
     $vm_ssh "$current_command"
 done
 
-echo "Congratulations, we're done!  Here's what we did:
+echo "
+Congratulations, we're done!  Here's what we did:
 $tasks
 
 Now go forth and be awesome."
