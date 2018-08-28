@@ -80,4 +80,6 @@ echo "
 Congratulations, we're done!  Here's what we did:
 $tasks
 
+Script completed in only $SECONDS seconds.
+
 Now go forth and be awesome."
