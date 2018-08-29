@@ -9,9 +9,12 @@
 # @see https://git.businesswire.com/projects/HQ/repos/hq-tools/browse/dev/reset-dev
 
 # These settings should never change:
+# @TODO add an option to start from master and create the feature branch
 new_branch=$(git symbolic-ref --short HEAD)
 set +x
+
 # Load variables from the included config file.  This makes it easier for users to change key variables.
+# @TODO add a wizard to provide config if it doesn't already exist
 . config
 
 # Description of tasks to be performed, repeats at both the beginning and end of the script.
@@ -76,6 +79,7 @@ do
     $vm_ssh "$current_command"
 done
 
+# @TODO reformat into minutes
 echo "
 Congratulations, we're done!  Here's what we did:
 $tasks

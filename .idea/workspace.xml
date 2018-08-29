@@ -42,16 +42,16 @@
         <counts>
           <entry key="config" value="811" />
           <entry key="md" value="915" />
-          <entry key="new-ticket" value="2206" />
+          <entry key="new-ticket" value="2442" />
           <entry key="sh" value="535" />
-          <entry key="txt" value="632" />
+          <entry key="txt" value="688" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Bash" value="2741" />
+          <entry key="Bash" value="2977" />
           <entry key="Markdown" value="915" />
-          <entry key="PLAIN_TEXT" value="1443" />
+          <entry key="PLAIN_TEXT" value="1499" />
         </counts>
       </usages-collector>
     </session>
@@ -73,8 +73,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/new-ticket">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="372">
-              <caret line="82" column="42" selection-start-line="82" selection-start-column="42" selection-end-line="82" selection-end-column="42" />
+            <state relative-caret-position="192">
+              <caret line="12" column="43" lean-forward="true" selection-start-line="12" selection-start-column="43" selection-end-line="12" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -82,8 +82,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="21" selection-start-line="21" selection-end-line="21" />
+            <state relative-caret-position="288">
+              <caret line="18" column="20" lean-forward="true" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -119,10 +119,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="2880" />
+    <option name="x" value="66" />
     <option name="y" value="23" />
-    <option name="width" value="960" />
-    <option name="height" value="588" />
+    <option name="width" value="927" />
+    <option name="height" value="1177" />
   </component>
   <component name="ProjectLevelVcsManager">
     <OptionsSetting value="false" id="Update" />
@@ -169,7 +169,7 @@
       <workItem from="1535136447915" duration="333000" />
       <workItem from="1535140436174" duration="597000" />
       <workItem from="1535392040873" duration="598000" />
-      <workItem from="1535400151404" duration="981000" />
+      <workItem from="1535400151404" duration="2436000" />
     </task>
     <task id="LOCAL-00001" summary="add .idea folder for IDE, migrate dbdown to this project">
       <created>1533932102439</created>
@@ -255,14 +255,21 @@
       <option name="project" value="LOCAL" />
       <updated>1535136652377</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Script reports how long it took to run when it finishes.">
+      <created>1535477792584</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1535477792584</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16039000" />
+    <option name="totallyTimeSpent" value="17494000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="2880" y="23" width="960" height="588" extended-state="0" />
+    <frame x="66" y="23" width="927" height="1177" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.2657952" />
@@ -332,7 +339,8 @@
     <MESSAGE value="removed unneeded repo_path variable" />
     <MESSAGE value="Script explains what it's going to do both before &amp; after running." />
     <MESSAGE value="Added step: push new branch to fork repo and set upstream" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added step: push new branch to fork repo and set upstream" />
+    <MESSAGE value="Script reports how long it took to run when it finishes." />
+    <option name="LAST_COMMIT_MESSAGE" value="Script reports how long it took to run when it finishes." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/dbdown">
@@ -361,15 +369,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        <state relative-caret-position="288">
+          <caret line="18" column="20" lean-forward="true" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/new-ticket">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="82" column="42" selection-start-line="82" selection-start-column="42" selection-end-line="82" selection-end-column="42" />
+        <state relative-caret-position="192">
+          <caret line="12" column="43" lean-forward="true" selection-start-line="12" selection-start-column="43" selection-end-line="12" selection-end-column="43" />
         </state>
       </provider>
     </entry>
