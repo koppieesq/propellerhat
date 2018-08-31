@@ -5,13 +5,16 @@
 # Variables for new-ticket: #
 #############################
 
-upstream_repo="origin"              # Name of the upstream repository in git
-fork_repo="fork"                    # Name of your forked version of the repository
-base_branch="master"                # The master branch.  Usually `master` (but not always)
-guest_path="/var/www/bwd"           # The path to your codebase inside the VM
-runner="composer install"           # Use this to run task runners like composer or npm.  Runs outside the VM.
-vm_start="vagrant up --provision"   # Command to start & reprovision the VM
-vm_ssh="vagrant ssh -c"             # How to send commands from the host to the VM
+# Create an associative array to handle all the required variables.
+# Defaults are useful for Jordan.  If you don't like them, create your own config file.
+declare -A new_ticket_vars
+$new_ticket_vars[upstream_repo]="origin" "Name of the upstream repository in git"
+$new_ticket_vars[fork_repo]="fork" "Name of your forked version of the repository"
+$new_ticket_vars[base_branch]="master" "The master branch.  Usually `master` (but not always)"
+$new_ticket_vars[base_branch]="/var/www/bwd" "The path to your codebase inside the VM"
+$new_ticket_vars[runner]="composer install" "Use this to run task runners like composer or npm.  Runs outside the VM."
+$new_ticket_vars[vm_start]="vagrant up --provision" "Command to start & reprovision the VM"
+$new_ticket_vars[vm_ssh]="vagrant ssh -c" "How to send commands from the host to the VM"
 
 # List of commands to be run inside the VM:
 commands=(

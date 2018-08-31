@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Prepare for a fresh Drupal 8 branch.
 # Assumes that you:
@@ -8,14 +8,60 @@
 # With gratitude to Ben Thornton
 # @see https://git.businesswire.com/projects/HQ/repos/hq-tools/browse/dev/reset-dev
 
+echo "Hi!
+I'm going to help you refresh your local dev environment to start a new ticket."
+
 # These settings should never change:
 # @TODO add an option to start from master and create the feature branch
 new_branch=$(git symbolic-ref --short HEAD)
 set +x
+pwd=$(pwd)
 
 # Load variables from the included config file.  This makes it easier for users to change key variables.
 # @TODO add a wizard to provide config if it doesn't already exist
-. config
+local_config=$pwd/.new-ticket-config
+if [ -f $local_config ]; then
+    echo "I'm going to use the local configuration file you already set up for this project ($local_config)."
+    . $local_config
+elif [ -f config ]; then
+    echo "I didn't find local config for this project, so I'll use your global config from your home directory."
+    . config
+else
+    echo "I need to ask you some questions in order to set up your environment correctly.
+    If you prefer, you can provide a manual config file in one of two locations:
+    - Global config: put a `config` file in the same directory as the new-ticket script
+    - Local config: add `.new-ticket-config` to your local directory."
+
+    # Create an associative array to handle all the required variables.
+    # Defaults are useful for Jordan.  If you don't like them, create your own config file.
+#    declare -a new_ticket_vars
+    upstream_repo=([default]="origin" [prompt]="Name of the upstream repository in git")
+    fork_repo=([default]="fork" [prompt]="Name of your forked version of the repository")
+    base_branch=([default]="master" [prompt]="The master branch.  Usually `master` (but not always)")
+    base_branch=([default]="/var/www/bwd" [prompt]="The path to your codebase inside the VM")
+    runner=([default]="composer install" [prompt]="Use this to run task runners like composer or npm.  Runs outside the VM.")
+    vm_start=([default]="vagrant up --provision" [prompt]="Command to start & reprovision the VM")
+    vm_ssh=([default]="vagrant ssh -c" [prompt]="How to send commands from the host to the VM")
+
+    for i in "${!new_ticket_vars[@]}"; do
+        var_name=$i
+        default=${new_ticket_vars[$i][0]}
+        prompt=${new_ticket_vars[$i][1]}
+        read -p "$prompt [$default]: " $var_name
+#        read -p "$new_ticket_vars[$i][1] [$new_ticket_vars[$i][0]]: " $new_ticket_vars[$i]
+    done
+fi
+
+echo "OK cool.  Values set:"
+    for i in "${!new_ticket_vars[@]}"; do
+        var_name=$i
+        new_var=${new_ticket_vars[$i][0]}
+        prompt=${new_ticket_vars[$i][1]}
+        $i=$new_var
+#        read -p "$prompt [$new_var]: " $var_name
+#        read -p "$new_ticket_vars[$i][1] [$new_ticket_vars[$i][0]]: " $new_ticket_vars[$i]
+        echo "$i = $new_var"
+    done
 
 # Description of tasks to be performed, repeats at both the beginning and end of the script.
 tasks="- Pull a fresh copy of $upstream_repo/$base_branch
@@ -25,8 +71,7 @@ tasks="- Pull a fresh copy of $upstream_repo/$base_branch
 - Turn on the virtual machine: $vm_start
 - Run commands inside the VM"
 
-read -p "Hi!
-I'm going to help you refresh your local dev environment to start a new ticket.  Here's what I can do:
+read -p " Here's what I can do:
 $tasks
 
 In order for this to work, please make sure:
