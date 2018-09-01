@@ -32,36 +32,42 @@ else
     - Global config: put a `config` file in the same directory as the new-ticket script
     - Local config: add `.new-ticket-config` to your local directory."
 
-    # Create an associative array to handle all the required variables.
-    # Defaults are useful for Jordan.  If you don't like them, create your own config file.
-#    declare -a new_ticket_vars
-    upstream_repo=([default]="origin" [prompt]="Name of the upstream repository in git")
-    fork_repo=([default]="fork" [prompt]="Name of your forked version of the repository")
-    base_branch=([default]="master" [prompt]="The master branch.  Usually `master` (but not always)")
-    base_branch=([default]="/var/www/bwd" [prompt]="The path to your codebase inside the VM")
-    runner=([default]="composer install" [prompt]="Use this to run task runners like composer or npm.  Runs outside the VM.")
-    vm_start=([default]="vagrant up --provision" [prompt]="Command to start & reprovision the VM")
-    vm_ssh=([default]="vagrant ssh -c" [prompt]="How to send commands from the host to the VM")
+    # @TODO: take variable objects and pass through a loop to create three separate arrays: variable names, defaults, help text
+    upstream_repo_default="origin"              # Name of the upstream repository in git
+    fork_repo_default="fork"                    # Name of your forked version of the repository
+    base_branch_default="master"                # The master branch.  Usually master (but not always)
+    guest_path_default="/var/www/bwd"           # The path to your codebase inside the VM
+    runner_default="composer install"           # Use this to run task runners like composer or npm.  Runs outside the VM.
+    vm_start_default="vagrant up --provision"   # Command to start & reprovision the VM
+    vm_ssh_default="vagrant ssh -c"             # How to send commands from the host to the VM
 
-    for i in "${!new_ticket_vars[@]}"; do
-        var_name=$i
-        default=${new_ticket_vars[$i][0]}
-        prompt=${new_ticket_vars[$i][1]}
-        read -p "$prompt [$default]: " $var_name
-#        read -p "$new_ticket_vars[$i][1] [$new_ticket_vars[$i][0]]: " $new_ticket_vars[$i]
-    done
+    read -p "Name of the upstream repository in git [$upstream_repo_default]: " upstream_repo
+    upstream_repo="${upstream_repo:-$upstream_repo_default}"
+    read -p "Name of your forked version of the repository [$fork_repo_default]: " fork_repo
+    fork_repo="${fork_repo:-$fork_repo_default}"
+    read -p "The master branch.  Usually master (but not always) [$base_branch_default]: " base_branch
+    base_branch="${base_branch:-$base_branch_default}"
+    read -p "The path to your codebase inside the VM [$guest_path_default]: " guest_path
+    guest_path="${guest_path:-$guest_path_default}"
+    read -p "Task runner [$runner_default]: " runner
+    runner="${runner:-$runner_default}"
+    read -p "Command to start & reprovision the VM [$vm_start_default]: " vm_start
+    vm_start="${vm_start:-$vm_start}"
+    read -p "How to send commands from the host to the VM [$vm_ssh_default]: " vm_ssh
+    vm_ssh="${vm_ssh:-$vm_ssh_default}"
+    # @TODO: store config in project file or home directory
+
 fi
 
-echo "OK cool.  Values set:"
-    for i in "${!new_ticket_vars[@]}"; do
-        var_name=$i
-        new_var=${new_ticket_vars[$i][0]}
-        prompt=${new_ticket_vars[$i][1]}
-        $i=$new_var
-#        read -p "$prompt [$new_var]: " $var_name
-#        read -p "$new_ticket_vars[$i][1] [$new_ticket_vars[$i][0]]: " $new_ticket_vars[$i]
-        echo "$i = $new_var"
-    done
+echo "OK cool.  Values set:
+- Name of the upstream repository in git:           $upstream_repo
+- Name of your forked version of the repository:    $fork_repo
+- The master branch:                                $base_branch
+- The path to your codebase inside the VM:          $guest_path
+- Task runner:                                      $runner
+- Command to start & reprovision the VM:            $vm_start
+- How to send commands from the host to the VM:     $vm_ssh
+"
 
 # Description of tasks to be performed, repeats at both the beginning and end of the script.
 tasks="- Pull a fresh copy of $upstream_repo/$base_branch
@@ -71,7 +77,7 @@ tasks="- Pull a fresh copy of $upstream_repo/$base_branch
 - Turn on the virtual machine: $vm_start
 - Run commands inside the VM"
 
-read -p " Here's what I can do:
+read -p "Here's what I can do:
 $tasks
 
 In order for this to work, please make sure:
