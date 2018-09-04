@@ -20,17 +20,18 @@ pwd=$(pwd)
 # Load variables from the included config file.  This makes it easier for users to change key variables.
 # @TODO add a wizard to provide config if it doesn't already exist
 local_config=$pwd/.new-ticket-config
+global_config=. config
 if [ -f $local_config ]; then
     echo "I'm going to use the local configuration file you already set up for this project ($local_config)."
     . $local_config
-elif [ -f config ]; then
+elif [ global_config ]; then
     echo "I didn't find local config for this project, so I'll use your global config from your home directory."
     . config
 else
     echo "I need to ask you some questions in order to set up your environment correctly.
     If you prefer, you can provide a manual config file in one of two locations:
-    - Global config: put a `config` file in the same directory as the new-ticket script
-    - Local config: add `.new-ticket-config` to your local directory."
+    - Global config: put a 'config' file in the same directory as the new-ticket script
+    - Local config: add '.new-ticket-config' to your local directory."
 
     # @TODO: take variable objects and pass through a loop to create three separate arrays: variable names, defaults, help text
     upstream_repo_default="origin"              # Name of the upstream repository in git
