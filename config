@@ -17,5 +17,7 @@ vm_ssh="vagrant ssh -c"             # How to send commands from the host to the 
 commands=(
     "blt setup -n"                  # Uses the Acquia blt utility to set up local env
     "drush cim -y"                  # Import Drupal config
+    "drush updb -y"                 # Run database updates
+    "drush cr"                      # Reset cache
     "drush uli --uri local.bwd.com" # Log in and provide a link that's viewable from the host OS
     )
