@@ -131,11 +131,13 @@ do
     $vm_ssh "$current_command"
 done
 
-# @TODO reformat into minutes
+minutes=`expr $SECONDS / 60`
+remaining=`expr $SECONDS - $minutes \* 60`
+
 echo "
 Congratulations, we're done!  Here's what we did:
 $tasks
 
-Script completed in only $SECONDS seconds.
+Script completed in only $minutes:$remaining.
 
 Now go forth and be awesome."

@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1a099c3b-f3b4-4635-8b4e-dd664aca8a7c" name="Default Changelist" comment="Fixed check for global config.">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/propellerhat.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/propellerhat.iml" afterDir="false" />
+    <list default="true" id="1a099c3b-f3b4-4635-8b4e-dd664aca8a7c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config" beforeDir="false" afterPath="$PROJECT_DIR$/config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/new-ticket" beforeDir="false" afterPath="$PROJECT_DIR$/new-ticket" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,7 +11,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <executablePath>composer</executablePath>
   </component>
@@ -23,14 +19,15 @@
     <session id="1155893981">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="8" />
+          <entry key="project.closed" value="9" />
           <entry key="project.open.time.0" value="3" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.19" value="1" />
           <entry key="project.open.time.2" value="2" />
-          <entry key="project.opened" value="10" />
+          <entry key="project.open.time.6" value="1" />
+          <entry key="project.opened" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -59,16 +56,16 @@
           <entry key="config" value="874" />
           <entry key="gitignore" value="13" />
           <entry key="md" value="915" />
-          <entry key="new-ticket" value="4402" />
+          <entry key="new-ticket" value="4497" />
           <entry key="sh" value="535" />
-          <entry key="txt" value="819" />
+          <entry key="txt" value="870" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Bash" value="4937" />
+          <entry key="Bash" value="5032" />
           <entry key="Markdown" value="915" />
-          <entry key="PLAIN_TEXT" value="1706" />
+          <entry key="PLAIN_TEXT" value="1757" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.php.composer.actions">
@@ -99,11 +96,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/new-ticket">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
-              <caret line="26" column="28" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
+            <state relative-caret-position="865">
+              <caret line="134" column="41" selection-start-line="134" selection-start-column="41" selection-end-line="134" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -126,7 +123,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state>
@@ -164,10 +161,10 @@
         <option value="$PROJECT_DIR$/upload-key.sh" />
         <option value="$PROJECT_DIR$/new-ticket.sh" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/new-ticket" />
         <option value="$PROJECT_DIR$/config" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/new-ticket" />
       </list>
     </option>
   </component>
@@ -204,10 +201,10 @@
       <path value="$PROJECT_DIR$/vendor/consolidation/robo" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="2880" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="993" />
     <option name="y" value="23" />
-    <option name="width" value="960" />
+    <option name="width" value="927" />
     <option name="height" value="1177" />
   </component>
   <component name="ProjectLevelVcsManager">
@@ -218,6 +215,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -229,7 +227,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -270,7 +267,8 @@
       <workItem from="1535392040873" duration="598000" />
       <workItem from="1535400151404" duration="10975000" />
       <workItem from="1536084418750" duration="2076000" />
-      <workItem from="1536277416613" duration="817000" />
+      <workItem from="1536277416613" duration="946000" />
+      <workItem from="1536340311471" duration="1905000" />
     </task>
     <task id="LOCAL-00001" summary="add .idea folder for IDE, migrate dbdown to this project">
       <created>1533932102439</created>
@@ -384,17 +382,24 @@
       <option name="project" value="LOCAL" />
       <updated>1536084656499</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Added Composer &amp; Robo scaffolding.">
+      <created>1536278420226</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1536278420226</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30977000" />
+    <option name="totallyTimeSpent" value="33011000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1920" y="23" width="1920" height="1177" extended-state="6" />
+    <frame x="993" y="23" width="927" height="1177" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19914803" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.42711863" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="0" weight="0.32862905" />
@@ -478,7 +483,8 @@
     <MESSAGE value="Add @TODO flags for future functionality" />
     <MESSAGE value="Added wizard to ask for values if config file is not present." />
     <MESSAGE value="Fixed check for global config." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed check for global config." />
+    <MESSAGE value="Added Composer &amp; Robo scaffolding." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Composer &amp; Robo scaffolding." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/dbdown">
@@ -488,6 +494,7 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/completed" />
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
@@ -495,20 +502,6 @@
             <caret line="14" column="51" selection-start-line="14" selection-start-column="51" selection-end-line="14" selection-end-column="51" />
           </first_editor>
           <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/new-ticket">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="26" column="28" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/upload-key">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="30" column="51" selection-start-line="28" selection-start-column="44" selection-end-line="30" selection-end-column="51" />
         </state>
       </provider>
     </entry>
@@ -526,10 +519,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/completed">
+    <entry file="file://$PROJECT_DIR$/upload-key">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        <state relative-caret-position="480">
+          <caret line="30" column="51" selection-start-line="28" selection-start-column="44" selection-end-line="30" selection-end-column="51" />
         </state>
       </provider>
     </entry>
@@ -537,6 +530,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="6" lean-forward="true" selection-start-column="6" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/new-ticket">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="865">
+          <caret line="134" column="41" selection-start-line="134" selection-start-column="41" selection-end-line="134" selection-end-column="41" />
         </state>
       </provider>
     </entry>
