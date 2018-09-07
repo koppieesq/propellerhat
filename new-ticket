@@ -60,15 +60,16 @@ else
 
 fi
 
-echo "OK cool.  Values set:
-- Name of the upstream repository in git:           $upstream_repo
-- Name of your forked version of the repository:    $fork_repo
-- The master branch:                                $base_branch
-- The path to your codebase inside the VM:          $guest_path
-- Task runner:                                      $runner
-- Command to start & reprovision the VM:            $vm_start
-- How to send commands from the host to the VM:     $vm_ssh
-"
+# Commenting this out for now because I think it's redundant.
+# echo "OK cool.  Values set:
+# - Name of the upstream repository in git:           $upstream_repo
+# - Name of your forked version of the repository:    $fork_repo
+# - The master branch:                                $base_branch
+# - The path to your codebase inside the VM:          $guest_path
+# - Task runner:                                      $runner
+# - Command to start & reprovision the VM:            $vm_start
+# - How to send commands from the host to the VM:     $vm_ssh
+# "
 
 # Description of tasks to be performed, repeats at both the beginning and end of the script.
 tasks="- Pull a fresh copy of $upstream_repo/$base_branch
