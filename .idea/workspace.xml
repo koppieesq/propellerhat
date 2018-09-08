@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1a099c3b-f3b4-4635-8b4e-dd664aca8a7c" name="Default Changelist" comment="First draft of new-ticket as a Robo script.">
+    <list default="true" id="1a099c3b-f3b4-4635-8b4e-dd664aca8a7c" name="Default Changelist" comment="Added nt as an alias for new_ticket()">
+      <change afterPath="$PROJECT_DIR$/robo.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RoboFile.php" beforeDir="false" afterPath="$PROJECT_DIR$/RoboFile.php" afterDir="false" />
     </list>
@@ -110,8 +111,17 @@
       <file leaf-file-name="RoboFile.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/RoboFile.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
-              <caret line="112" column="26" lean-forward="true" selection-start-line="112" selection-start-column="26" selection-end-line="112" selection-end-column="26" />
+            <state relative-caret-position="264">
+              <caret line="45" column="65" selection-start-line="45" selection-start-column="65" selection-end-line="45" selection-end-column="65" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="robo.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/robo.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -154,6 +164,13 @@
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Yaml file" />
+      </list>
+    </option>
+  </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>sudo</find>
@@ -182,6 +199,7 @@
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/new-ticket" />
+        <option value="$PROJECT_DIR$/robo.yml" />
         <option value="$PROJECT_DIR$/RoboFile.php" />
       </list>
     </option>
@@ -249,6 +267,12 @@
               <item name="propellerhat" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="RoboFile.php" type="88303cf5:PhpFileNode" />
             </path>
+            <path>
+              <item name="propellerhat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="propellerhat" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="RoboFile.php" type="88303cf5:PhpFileNode" />
+              <item name="RoboFile" type="e2efd96b:PhpElementNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -297,7 +321,7 @@
       <workItem from="1536277416613" duration="946000" />
       <workItem from="1536340311471" duration="2604000" />
       <workItem from="1536361174306" duration="631000" />
-      <workItem from="1536418889611" duration="6862000" />
+      <workItem from="1536418889611" duration="9114000" />
     </task>
     <task id="LOCAL-00001" summary="add .idea folder for IDE, migrate dbdown to this project">
       <created>1533932102439</created>
@@ -432,11 +456,18 @@
       <option name="project" value="LOCAL" />
       <updated>1536424951974</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Added nt as an alias for new_ticket()">
+      <created>1536425799993</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1536425799993</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41203000" />
+    <option name="totallyTimeSpent" value="43455000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="753" y="23" width="927" height="1027" extended-state="0" />
@@ -529,7 +560,8 @@
     <MESSAGE value="Added Composer &amp; Robo scaffolding." />
     <MESSAGE value="Reports time to complete script in minutes:seconds." />
     <MESSAGE value="First draft of new-ticket as a Robo script." />
-    <option name="LAST_COMMIT_MESSAGE" value="First draft of new-ticket as a Robo script." />
+    <MESSAGE value="Added nt as an alias for new_ticket()" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added nt as an alias for new_ticket()" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/README.md">
@@ -630,10 +662,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/robo.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/RoboFile.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="112" column="26" lean-forward="true" selection-start-line="112" selection-start-column="26" selection-end-line="112" selection-end-column="26" />
+        <state relative-caret-position="264">
+          <caret line="45" column="65" selection-start-line="45" selection-start-column="65" selection-end-line="45" selection-end-column="65" />
         </state>
       </provider>
     </entry>

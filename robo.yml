@@ -1,0 +1,17 @@
+command:
+  new_ticket:
+    options:
+      upstream_repo: origin
+      fork_repo: fork
+      base_branch: master
+      guest_path: /var/www
+      runner: composer install
+      vm_start: vagrant up --provision
+      vm_domain: localhost
+      vm_user: vagrant
+      vm_commands:
+      - "blt setup -n"
+      - "drush cim -y"
+      - "drush updb -y"
+      - "drush cr"
+      - "drush uli"

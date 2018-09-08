@@ -1,5 +1,7 @@
 <?php
 
+use Robo\Robo;
+
 /**
  * This is project's console commands configuration for Robo task runner.
  *
@@ -40,25 +42,11 @@ I'm going to help you refresh your local dev environment to start a new ticket."
     $new_branch = "T-1000-sarah-connor";
     $pwd = "/Library/WebServer/Documents/propellerhat";
     
-    // @TODO: put config in yaml files!
-    $upstream_repo = "origin";
-    $fork_repo = "fork";
-    $base_branch = "master";
-    $guest_path = "/var/www";
-    $runner = "composer install";
-    $vm_start = "vagrant up --provision";
-    $vm_ssh = "vagrant ssh -c";
-    $vm_domain = "localhost";
-    $vm_user = "vagrant";
-    
-    // List of commands to be run inside the VM:
-    $commands = [
-      "blt setup -n",
-      "drush cim -y",
-      "drush updb -y",
-      "drush cr",
-      "drush uli",
-    ];
+    // Load config
+    $allopts = Robo::config()->get("command.new_ticket.options");
+    foreach ($allopts as $key => $value) {
+      $$key = $value;
+    }
     
     // Description of tasks to be performed, repeats at both the beginning and end of the script.
     $tasks = [
