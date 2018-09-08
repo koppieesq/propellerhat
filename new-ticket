@@ -57,7 +57,6 @@ else
     read -p "How to send commands from the host to the VM [$vm_ssh_default]: " vm_ssh
     vm_ssh="${vm_ssh:-$vm_ssh_default}"
     # @TODO: store config in project file or home directory
-
 fi
 
 # Commenting this out for now because I think it's redundant.
