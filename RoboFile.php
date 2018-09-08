@@ -15,6 +15,15 @@ class RoboFile extends \Robo\Tasks {
   }
   
   /**
+   * Alias function for new_ticket()
+   *
+   * @inheritdoc new_ticket()
+   */
+  function nt() {
+    $this->taskExec($this->new_ticket());
+  }
+  
+  /**
    * Resets your local dev environment to start a new task.
    *
    * Credits:
