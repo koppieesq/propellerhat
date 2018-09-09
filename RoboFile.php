@@ -37,9 +37,9 @@ class RoboFile extends \Robo\Tasks {
    */
   function new_ticket() {
     $this->say("Hi!  I'm going to help you refresh your local dev environment to start a new ticket.");
-    $new_branch = exec("git symbolic-ref --short HEAD");
     
-      // Load config
+    // Load config & set environment variables
+    $new_branch = exec("git symbolic-ref --short HEAD");
     $allopts = Robo::config()->get("command.new_ticket.options");
     foreach ($allopts as $key => $value) {
       $$key = $value;
@@ -134,6 +134,6 @@ class RoboFile extends \Robo\Tasks {
       }
     }
     
-    $this->io()->info("All done!  Pat yourself on the back for a job well done.");
+    $this->io()->success("All done!  Pat yourself on the back for a job well done.");
   }
 }
