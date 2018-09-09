@@ -36,13 +36,10 @@ class RoboFile extends \Robo\Tasks {
    *      And hat tip to G1A
    */
   function new_ticket() {
-    $this->say("Hi!
-I'm going to help you refresh your local dev environment to start a new ticket.");
-    // @TODO: actual environment detection
-    $new_branch = "T-1000-sarah-connor";
-    $pwd = "/Library/WebServer/Documents/propellerhat";
+    $this->say("Hi!  I'm going to help you refresh your local dev environment to start a new ticket.");
+    $new_branch = exec("git symbolic-ref --short HEAD");
     
-    // Load config
+      // Load config
     $allopts = Robo::config()->get("command.new_ticket.options");
     foreach ($allopts as $key => $value) {
       $$key = $value;
@@ -66,9 +63,9 @@ I'm going to help you refresh your local dev environment to start a new ticket."
     ];
     
     // @TODO: make more steps optional
-    $this->io()->section("Here's what I can do:");
+    $this->io()->text("Here's what I can do:");
     $this->io()->listing($tasks);
-    $this->io()->section("In order for this to work, please make sure:");
+    $this->io()->text("In order for this to work, please make sure:");
     $this->io()->listing($requirements);
     $this->ask("Press Enter to continue, or ctrl-c to cancel.");
     
@@ -109,7 +106,10 @@ I'm going to help you refresh your local dev environment to start a new ticket."
   /**
    * Update contrib code on all your Drupal sites at once.
    *
-   * @param $path Specify a path to upgrade a single site only.
+   * Loops through all sites defined in robo.yml.  Executes all commands found
+   * in the yaml file.
+   *
+   * @param $path Specify the base path for your webroot.
    */
   function updateme ($path = "/var/www/d7/sites") {
     $this->io()->title("UPDATE ALL THE THINGS!!!");
@@ -118,15 +118,19 @@ I'm going to help you refresh your local dev environment to start a new ticket."
     $opts = Robo::config()->get("command.updateme.options");
     $sites = $opts["sites"];
     $commands = $opts["commands"];
-    
+    $this->io()->text("I'm going to update these sites:");
+    $this->io()->listing($sites);
+    $this->io()->text("And this is what I'll do:");
+    $this->io()->listing($commands);
+    $this->ask("Press Enter to continue, or ctrl-c to cancel.");
+  
     foreach ($sites as $site) {
       $this->io()->section($site);
       
       // Run commands in sequence.
       foreach ($commands as $key => $value) {
         $this->say($key);
-        $command = "cd $path/$site; $value";
-        $this->taskExec($command)->run();
+        $this->taskExec("cd $path/$site; $value")->run();
       }
     }
     
