@@ -15,3 +15,15 @@ command:
       - "drush updb -y"
       - "drush cr"
       - "drush uli"
+  updateme:
+    options:
+      sites:
+      - all
+      - koplowicz.com
+      - koplowiczandsons.com
+      - anneisaacs.com
+      - sambelkin.com
+      commands:
+        update all contrib modules: drush up
+        run database updates: drush updb -y
+        clear caches: drush cc all

@@ -105,4 +105,31 @@ I'm going to help you refresh your local dev environment to start a new ticket."
     $this->io()->listing($tasks);
     $this->io()->note("Now go forth and be awesome.");
   }
+  
+  /**
+   * Update contrib code on all your Drupal sites at once.
+   *
+   * @param $path Specify a path to upgrade a single site only.
+   */
+  function updateme ($path = "/var/www/d7/sites") {
+    $this->io()->title("UPDATE ALL THE THINGS!!!");
+    
+    // Load sites, commands, and path to webroot
+    $opts = Robo::config()->get("command.updateme.options");
+    $sites = $opts["sites"];
+    $commands = $opts["commands"];
+    
+    foreach ($sites as $site) {
+      $this->io()->section($site);
+      
+      // Run commands in sequence.
+      foreach ($commands as $key => $value) {
+        $this->say($key);
+        $command = "cd $path/$site; $value";
+        $this->taskExec($command)->run();
+      }
+    }
+    
+    $this->io()->info("All done!  Pat yourself on the back for a job well done.");
+  }
 }
