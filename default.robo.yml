@@ -1,0 +1,24 @@
+command:
+  new_ticket:
+    options:
+      upstream_repo: upstream
+      fork_repo: master
+      base_branch: master
+      guest_path: /var/www
+      runner: composer install
+      vm_start: vagrant up --provision
+      vm_domain: localhost
+      vm_user: vagrant
+      vm_commands:
+      - "drush cim -y"
+      - "drush updb -y"
+      - "drush cr"
+      - "drush uli"
+  updateme:
+    options:
+      sites:
+      - all
+      commands:
+        update all contrib modules: drush up
+        run database updates: drush updb -y
+        clear caches: drush cc all

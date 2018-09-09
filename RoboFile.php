@@ -28,12 +28,25 @@ class RoboFile extends \Robo\Tasks {
   /**
    * Resets your local dev environment to start a new task.
    *
+   * You can control the following variables in robo.yml:
+   *
+   * @var string $upstream_repo Name of the upstream repository
+   * @var string $fork_repo     Name of your forked repository
+   * @var string $base_branch   Name of the master branch.  Usually "master".
+   * @var string $new_branch    Name of your feature branch.
+   * @var string $runner        Task runner / package manager, eg. Composer.
+   * @var string $vm_start      Command to start the virtual machine
+   *
    * Credits:
    *
-   * @see https://git.businesswire.com/projects/HQ/repos/hq-tools/browse/dev/reset-dev
-   *      With gratitude to Ben Thornton
-   * @see https://github.com/g1a/starter
+   * @see  https://git.businesswire.com/projects/HQ/repos/hq-tools/browse/dev/reset-dev
+   *       With gratitude to Ben Thornton
+   * @see  https://github.com/g1a/starter
    *      And hat tip to G1A
+   *
+   * @TODO add an option to start from master and create the feature branch
+   * @TODO add a wizard to provide config if it doesn't already exist
+   * @TODO use vm_commands from yaml file
    */
   function new_ticket() {
     $this->say("Hi!  I'm going to help you refresh your local dev environment to start a new ticket.");
@@ -111,7 +124,7 @@ class RoboFile extends \Robo\Tasks {
    *
    * @param $path Specify the base path for your webroot.
    */
-  function updateme ($path = "/var/www/d7/sites") {
+  function updateme($path = "/var/www/d7/sites") {
     $this->io()->title("UPDATE ALL THE THINGS!!!");
     
     // Load sites, commands, and path to webroot
@@ -123,7 +136,7 @@ class RoboFile extends \Robo\Tasks {
     $this->io()->text("And this is what I'll do:");
     $this->io()->listing($commands);
     $this->ask("Press Enter to continue, or ctrl-c to cancel.");
-  
+    
     foreach ($sites as $site) {
       $this->io()->section($site);
       
@@ -134,6 +147,7 @@ class RoboFile extends \Robo\Tasks {
       }
     }
     
-    $this->io()->success("All done!  Pat yourself on the back for a job well done.");
+    $this->io()
+      ->success("All done!  Pat yourself on the back for a job well done.");
   }
 }
