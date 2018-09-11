@@ -5,6 +5,7 @@ Some of these are bash scripts, but most use [Robo](https://robo.il).
 
 **Contents:**
 - **.bash_profile:** Custom settings for your command line interface
+- **.bash_logout:** Cute script that runs when you end a terminal session.
 - **.vimrc:** Custom settings for the VI text editor
 - **db down:** Downloads a database from a [Pantheon](https://pantheon.io) site and loads it into your local environment
   - *usage:* `sh dbdown $SITE`

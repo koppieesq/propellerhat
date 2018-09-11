@@ -122,7 +122,7 @@ class RoboFile extends \Robo\Tasks {
    * Loops through all sites defined in robo.yml.  Executes all commands found
    * in the yaml file.
    *
-   * @param $path Specify the base path for your webroot.
+   * @param string $path Specify the base path for your webroot.
    */
   function updateme($path = "/var/www/d7/sites") {
     $this->io()->title("UPDATE ALL THE THINGS!!!");
