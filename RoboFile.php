@@ -72,7 +72,7 @@ class RoboFile extends \Robo\Tasks {
       "You're in the base directory for your project",
       "You have forked the 'upstream' repository and created your own",
       "You've already created a feature branch for the new ticket",
-      "You've updated the enclosed 'config' file with the correct repositories and branches",
+      "You've updated the enclosed config file with the correct repositories and branches",
     ];
     
     // @TODO: make more steps optional
@@ -126,7 +126,7 @@ class RoboFile extends \Robo\Tasks {
    */
   function updateme($path = "/var/www/d7/sites") {
     $this->io()->title("UPDATE ALL THE THINGS!!!");
-    
+
     // Load sites, commands, and path to webroot
     $opts = Robo::config()->get("command.updateme.options");
     $sites = $opts["sites"];
@@ -136,7 +136,7 @@ class RoboFile extends \Robo\Tasks {
     $this->io()->text("And this is what I'll do:");
     $this->io()->listing($commands);
     $this->ask("Press Enter to continue, or ctrl-c to cancel.");
-    
+
     foreach ($sites as $site) {
       $this->io()->section($site);
       
