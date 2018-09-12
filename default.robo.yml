@@ -4,11 +4,14 @@ command:
       upstream_repo: upstream
       fork_repo: master
       base_branch: master
+      host_path: /var/www
       guest_path: /var/www
       runner: composer install
       vm_start: vagrant up --provision
       vm_domain: localhost
       vm_user: vagrant
+      vm_port: 2222
+      vm_key: id_rsa
       vm_commands:
       - "drush cim -y"
       - "drush updb -y"
