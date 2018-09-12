@@ -35,6 +35,20 @@ The following variables can be easily changed in the config file:
   - `drush updb -y`: Run database updates
   - `drush cr`: Reset cache
   - `drush uli`: Log in and provide a link that's viewable from the host OS
+  
+# Roadmap
+The following new features are contemplated for the future:
+- More flexible workflow:
+  - Fork the repo
+  - Create the feature branch
+- Wizard to create new config file
+  - Store config file in project or global (user directory)
+  - Create multidimensional array for config values, including key, default, & description
+- Support installation via Composer
+- Integrate with PhpStorm
+- Add tool to install items to local environment:
+  - Additional config files: .bash_profile, .bash_logout, .vimrc, alias for Robo commands
+  - CLI utilities: bar, pv, fortune, cowsay, figlet, lolcat, [allthethings](https://github.com/btford/allthethings)
 
 # Credits
 

@@ -107,6 +107,7 @@ class RoboFile extends \Robo\Tasks {
         ->run();
 
     // Run tasks inside the VM
+    // @TODO: use commands from yaml file
     $this->say("I'm going to run some commands inside the VM now.");
     $this->taskSshExec($vm_domain, $vm_user)
       ->stopOnFail()
