@@ -10,12 +10,12 @@ use Robo\Robo;
  * @warning This script is not yet ready for public consumption!  See @todos.
  */
 class RoboFile extends \Robo\Tasks {
-  
+
   // define public methods as commands
   function hello($world) {
     $this->say("Hello $world");
   }
-  
+
   /**
    * Alias function for new_ticket()
    *
@@ -24,7 +24,7 @@ class RoboFile extends \Robo\Tasks {
   function nt() {
     $this->taskExec($this->new_ticket());
   }
-  
+
   /**
    * Resets your local dev environment to start a new task.
    *
@@ -50,16 +50,18 @@ class RoboFile extends \Robo\Tasks {
    */
   function new_ticket() {
     $this->say("Hi!  I'm going to help you refresh your local dev environment to start a new ticket.");
-    
+
     // Load config & set environment variables
-    $new_branch = exec("git symbolic-ref --short HEAD");
+    $start_time = time();
     $allopts = Robo::config()->get("command.new_ticket.options");
     foreach ($allopts as $key => $value) {
       $$key = $value;
     }
-    
+    $new_branch = exec("cd $host_path; git symbolic-ref --short HEAD");
+
     // Description of tasks to be performed, repeats at both the beginning and end of the script.
     $tasks = [
+      "Start in $host_path",
       "Pull a fresh copy of $upstream_repo/$base_branch",
       "Push to $fork_repo/$base_branch",
       "Push to $fork_repo/$new_branch and set upstream",
@@ -67,55 +69,69 @@ class RoboFile extends \Robo\Tasks {
       "Turn on the virtual machine: $vm_start",
       "Run commands inside the VM",
     ];
-    
+
     $requirements = [
-      "You're in the base directory for your project",
       "You have forked the 'upstream' repository and created your own",
       "You've already created a feature branch for the new ticket",
       "You've updated the enclosed config file with the correct repositories and branches",
     ];
-    
+
     // @TODO: make more steps optional
     $this->io()->text("Here's what I can do:");
     $this->io()->listing($tasks);
     $this->io()->text("In order for this to work, please make sure:");
     $this->io()->listing($requirements);
     $this->ask("Press Enter to continue, or ctrl-c to cancel.");
-    
+
     // actual steps go here
     $this->taskGitStack()
       ->stopOnFail()
+      ->dir($host_path)
       ->checkout($base_branch)
       ->pull($upstream_repo, $base_branch)
       ->push($fork_repo, $base_branch)
       ->checkout($new_branch)
       ->exec("git push $fork_repo $new_branch --set-upstream")
       ->run();
-    
+
     // See if there's anything new to install from Composer.
     $this->say("I'm going to see if there's anything to install.");
     $this->taskComposerInstall()->run();
-    
+
     // Turn on the VM and reprovision it if necessary
     $this->say("Let's turn this thing on.");
-    $this->taskExec($vm_start)->run();
-    
+    $this->taskExecStack()
+        ->stopOnFail()
+        ->dir($host_path)
+        ->exec($vm_start)
+        ->run();˚
+
     // Run tasks inside the VM
     $this->say("I'm going to run some commands inside the VM now.");
     $this->taskSshExec($vm_domain, $vm_user)
+      ->stopOnFail()
+      ->port($vm_port)
+      ->identityFile($vm_key)
       ->remoteDir($guest_path)
+      ->dir($host_path)
       ->exec("blt setup -n")
       ->exec("drush cim -y")
       ->exec("drush updb -y")
       ->exec("drush cr")
-      ->exec("drush uli");
-    
+      ->exec("drush uli")
+      ->run();
+
     // Outro
     $this->say("Congratulations, we're done!  Here's what we did:");
     $this->io()->listing($tasks);
+      $stop_time = time();
+      $elapsed_time = $stop_time - $start_time;
+      $elapsed_minutes = floor($elapsed_time / 60);
+      $elapsed_seconds = $elapsed_time - $elapsed_minutes * 60;
+    $this->say("This took $elapsed_minutes minutes and $elapsed_seconds seconds.");
     $this->io()->note("Now go forth and be awesome.");
   }
-  
+
   /**
    * Update contrib code on all your Drupal sites at once.
    *
@@ -139,14 +155,14 @@ class RoboFile extends \Robo\Tasks {
 
     foreach ($sites as $site) {
       $this->io()->section($site);
-      
+
       // Run commands in sequence.
       foreach ($commands as $key => $value) {
         $this->say($key);
         $this->taskExec("cd $path/$site; $value")->run();
       }
     }
-    
+
     $this->io()
       ->success("All done!  Pat yourself on the back for a job well done.");
   }
