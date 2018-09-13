@@ -44,7 +44,6 @@ fi
 #Begin SSH session
 echo "Please authenticate for $user_name@$ssh_credentials: "
 ssh -t $user_name@$ssh_credentials /bin/bash << EOF
-  #Create user
   #Create SSH directory
   mkdir /home/${user_name}/.ssh
   cd /home/${user_name}/.ssh

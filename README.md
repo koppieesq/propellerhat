@@ -9,8 +9,7 @@ Some of these are bash scripts, but most use [Robo](https://robo.il).
 - **.vimrc:** Custom settings for the VI text editor
 - **db down:** Downloads a database from a [Pantheon](https://pantheon.io) site and loads it into your local environment
   - *usage:* `sh dbdown $SITE`
-- **upload key:** Upload your SSH key to a server in a single command!
-  - *usage:* `sh upload-key`
+- **upload key:** Uploads your SSH key.  But you should probably use `ssh-copy-id` instead.
 - **new_ticket:** Refresh your local dev environment when you start a new task
   - *usage:* `robo new_ticket`
   - *shortcut:* `robo nt`
@@ -48,7 +47,7 @@ The following new features are contemplated for the future:
 - Integrate with PhpStorm
 - Add tool to install items to local environment:
   - Additional config files: .bash_profile, .bash_logout, .vimrc, alias for Robo commands
-  - CLI utilities: bar, pv, fortune, cowsay, figlet, lolcat, [allthethings](https://github.com/btford/allthethings)
+  - CLI utilities: bar, pv, fortune, cowsay, figlet, lolcat, [allthethings](https://github.com/btford/allthethings), ssh-copy-id
 
 # Credits
 

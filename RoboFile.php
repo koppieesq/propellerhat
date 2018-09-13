@@ -25,29 +25,31 @@ class RoboFile extends \Robo\Tasks {
     $this->taskExec($this->new_ticket());
   }
 
-  /**
-   * Resets your local dev environment to start a new task.
-   *
-   * You can control the following variables in robo.yml:
-   *
-   * @var string $upstream_repo Name of the upstream repository
-   * @var string $fork_repo     Name of your forked repository
-   * @var string $base_branch   Name of the master branch.  Usually "master".
-   * @var string $new_branch    Name of your feature branch.
-   * @var string $runner        Task runner / package manager, eg. Composer.
-   * @var string $vm_start      Command to start the virtual machine
-   *
-   * Credits:
-   *
-   * @see  https://git.businesswire.com/projects/HQ/repos/hq-tools/browse/dev/reset-dev
-   *       With gratitude to Ben Thornton
-   * @see  https://github.com/g1a/starter
-   *      And hat tip to G1A
-   *
-   * @TODO add an option to start from master and create the feature branch
-   * @TODO add a wizard to provide config if it doesn't already exist
-   * @TODO use vm_commands from yaml file
-   */
+    /**
+     * Resets your local dev environment to start a new task.
+     *
+     * You can control the following variables in robo.yml:
+     *
+     * @var string $upstream_repo Name of the upstream repository
+     * @var string $fork_repo Name of your forked repository
+     * @var string $base_branch Name of the master branch.  Usually "master".
+     * @var string $new_branch Name of your feature branch.
+     * @var string $runner Task runner / package manager, eg. Composer.
+     * @var string $vm_start Command to start the virtual machine
+     *
+     * Credits:
+     *
+     * @see  https://git.businesswire.com/projects/HQ/repos/hq-tools/browse/dev/reset-dev
+     *       With gratitude to Ben Thornton
+     * @see  https://github.com/g1a/starter
+     *      And hat tip to G1A
+     *
+     * @TODO add an option to start from master and create the feature branch
+     * @TODO add a wizard to provide config if it doesn't already exist
+     * @TODO use vm_commands from yaml file
+     *
+     * @throws \Robo\Exception\TaskException
+     */
   function new_ticket() {
     $this->say("Hi!  I'm going to help you refresh your local dev environment to start a new ticket.");
 
@@ -67,8 +69,16 @@ class RoboFile extends \Robo\Tasks {
       "Push to $fork_repo/$new_branch and set upstream",
       "Task runner: $runner",
       "Turn on the virtual machine: $vm_start",
-      "Run commands inside the VM",
+      "SSH to VM using private key: $vm_key",
     ];
+
+    // Add descriptions of tasks to be performed *inside* the VM
+    $command_tasks = "Run commands inside the VM:\n";
+    $indent = "   - ";
+    foreach ($vm_commands as $key => $value) {
+        $command_tasks .= $indent . $key . "\n";
+    }
+    $tasks[] = $command_tasks;
 
     $requirements = [
       "You have forked the 'upstream' repository and created your own",
@@ -81,7 +91,12 @@ class RoboFile extends \Robo\Tasks {
     $this->io()->listing($tasks);
     $this->io()->text("In order for this to work, please make sure:");
     $this->io()->listing($requirements);
-    $this->ask("Press Enter to continue, or ctrl-c to cancel.");
+    $continue = $this->confirm("CONTINUE?");
+
+    if (!$continue) {
+        $this->say("Operation has been canceled.");
+        return;
+    }
 
     // actual steps go here
     $this->taskGitStack()
