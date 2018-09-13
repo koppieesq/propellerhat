@@ -3,18 +3,21 @@ For your inner child - the nerdy one who has a little cap with a propeller on th
 
 Some of these are bash scripts, but most use [Robo](https://robo.il).
 
-**Contents:**
+## Contents:
 - **.bash_profile:** Custom settings for your command line interface
 - **.bash_logout:** Cute script that runs when you end a terminal session.
 - **.vimrc:** Custom settings for the VI text editor
-- **db down:** Downloads a database from a [Pantheon](https://pantheon.io) site and loads it into your local environment
-  - *usage:* `sh dbdown $SITE`
-- **upload key:** Uploads your SSH key.  But you should probably use `ssh-copy-id` instead.
 - **new_ticket:** Refresh your local dev environment when you start a new task
   - *usage:* `robo new_ticket`
   - *shortcut:* `robo nt`
 - **updateme:** Update contrib code on all your Drupal sites at once.
   - *usage:* `robo updateme`
+  
+- **Obsolete tools:** These are some nifty tools that I wrote, but they've been supplanted by much better, open source tools written by other people.
+    - **db down:** Sync database from a [Pantheon](https://pantheon.io) site.
+      - *You should probably use [Terminus](https://github.com/pantheon-systems/terminus) instead.*
+    - **upload key:** Uploads your SSH key.
+      - *You should probably use `ssh-copy-id` instead.*
 
 ## Configuration
 You can control how certain scripts behave.  Copy `default.robo.yml` and save it as `robo.yml` in the same directory.  You can also store `robo.yml` in your home directory (`~`).
