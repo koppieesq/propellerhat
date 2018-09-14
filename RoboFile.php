@@ -60,6 +60,7 @@ class RoboFile extends \Robo\Tasks {
       $$key = $value;
     }
     $new_branch = exec("cd $host_path; git symbolic-ref --short HEAD");
+    $ssh_commands = $this->taskExecStack();
 
     // Description of tasks to be performed, repeats at both the beginning and end of the script.
     $tasks = [
@@ -73,10 +74,12 @@ class RoboFile extends \Robo\Tasks {
     ];
 
     // Add descriptions of tasks to be performed *inside* the VM
+    // Also set up commands to be run
     $command_tasks = "Run commands inside the VM:\n";
     $indent = "   - ";
     foreach ($vm_commands as $key => $value) {
         $command_tasks .= $indent . $key . "\n";
+        $ssh_commands->exec($value);
     }
     $tasks[] = $command_tasks;
 
@@ -130,11 +133,7 @@ class RoboFile extends \Robo\Tasks {
       ->identityFile($vm_key)
       ->remoteDir($guest_path)
       ->dir($host_path)
-      ->exec("blt setup -n")
-      ->exec("drush cim -y")
-      ->exec("drush updb -y")
-      ->exec("drush cr")
-      ->exec("drush uli")
+      ->exec($ssh_commands)
       ->run();
 
     // Outro
