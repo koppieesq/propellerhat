@@ -137,15 +137,20 @@ class RoboFile extends \Robo\Tasks {
       ->dir($host_path)
       ->exec($ssh_commands)
       ->run();
-      $this->taskExec($this->check_success($result, "Commands inside the VM"));
+    $this->taskExec($this->check_success($result, "Commands inside the VM"));
+
+    if (!$result->wasSuccessful()) {
+        $this->io()->error("Sorry, I was not able to finish setup.");
+        return 1;
+    }
 
     // Outro
     $this->say("Congratulations, we're done!  Here's what we did:");
     $this->io()->listing($tasks);
-      $stop_time = time();
-      $elapsed_time = $stop_time - $start_time;
-      $elapsed_minutes = floor($elapsed_time / 60);
-      $elapsed_seconds = $elapsed_time - $elapsed_minutes * 60;
+    $stop_time = time();
+    $elapsed_time = $stop_time - $start_time;
+    $elapsed_minutes = floor($elapsed_time / 60);
+    $elapsed_seconds = $elapsed_time - $elapsed_minutes * 60;
     $this->say("This took $elapsed_minutes minutes and $elapsed_seconds seconds.");
     $this->io()->success("Now go forth and be awesome.");
   }
