@@ -102,7 +102,7 @@ class RoboFile extends \Robo\Tasks {
     }
 
     // actual steps go here
-    $this->taskGitStack()
+    $result = $this->taskGitStack()
       ->stopOnFail()
       ->dir($host_path)
       ->checkout($base_branch)
@@ -111,23 +111,25 @@ class RoboFile extends \Robo\Tasks {
       ->checkout($new_branch)
       ->exec("git push $fork_repo $new_branch --set-upstream")
       ->run();
+    $this->taskExec($this->check_success($result, "Initial setup"));
 
     // See if there's anything new to install from Composer.
     $this->say("I'm going to see if there's anything to install.");
-    $this->taskComposerInstall()->run();
+    $result = $this->taskComposerInstall()->run();
+    $this->taskExec($this->check_success($result, "Composer install"));
 
     // Turn on the VM and reprovision it if necessary
     $this->say("Let's turn this thing on.");
-    $this->taskExecStack()
+    $result = $this->taskExecStack()
         ->stopOnFail()
         ->dir($host_path)
         ->exec($vm_start)
         ->run();
+    $this->taskExec($this->check_success($result, $vm_start));
 
     // Run tasks inside the VM
-    // @TODO: use commands from yaml file
     $this->say("I'm going to run some commands inside the VM now.");
-    $this->taskSshExec($vm_domain, $vm_user)
+    $result = $this->taskSshExec($vm_domain, $vm_user)
       ->stopOnFail()
       ->port($vm_port)
       ->identityFile($vm_key)
@@ -135,6 +137,7 @@ class RoboFile extends \Robo\Tasks {
       ->dir($host_path)
       ->exec($ssh_commands)
       ->run();
+      $this->taskExec($this->check_success($result, "Commands inside the VM"));
 
     // Outro
     $this->say("Congratulations, we're done!  Here's what we did:");
@@ -144,7 +147,7 @@ class RoboFile extends \Robo\Tasks {
       $elapsed_minutes = floor($elapsed_time / 60);
       $elapsed_seconds = $elapsed_time - $elapsed_minutes * 60;
     $this->say("This took $elapsed_minutes minutes and $elapsed_seconds seconds.");
-    $this->io()->note("Now go forth and be awesome.");
+    $this->io()->success("Now go forth and be awesome.");
   }
 
   /**
@@ -180,5 +183,28 @@ class RoboFile extends \Robo\Tasks {
 
     $this->io()
       ->success("All done!  Pat yourself on the back for a job well done.");
+  }
+
+  /**
+   * Reusable function to report whether the previous step succeeded.
+   *
+   * @param object $result
+   *   Pass the result object to this function.
+   * @param string $task
+   *   Plain text description of the currently running task.
+   * @return int
+   *   Should correctly report whether task was successful or not.
+   */
+  function check_success($result = null, $task = "Current task") {
+  if (!$result) {
+        $this->io()->error("Sorry, something went wrong with $task");
+        return 1;
+  } elseif ($result->wasSuccessful()) {
+        $this->io()->success("$task was successful!");
+        return 0;
+  } else {
+      $this->io()->error("Sorry, something went wrong with $task");
+      return 1;
+  }
   }
 }

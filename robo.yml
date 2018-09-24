@@ -4,17 +4,20 @@ command:
       upstream_repo: origin
       fork_repo: fork
       base_branch: master
-      guest_path: /var/www
+      host_path: /Users/jkoplowicz/PhpstormProjects/bwd
+      guest_path: /var/www/bwd
       runner: composer install
       vm_start: vagrant up --provision
       vm_domain: localhost
       vm_user: vagrant
+      vm_port: 2222
+      vm_key: /Users/jkoplowicz/.vagrant.d/insecure_private_key
       vm_commands:
-      - "blt setup -n"
-      - "drush cim -y"
-      - "drush updb -y"
-      - "drush cr"
-      - "drush uli"
+        BLT setup: blt setup -n
+        Import config: drush cim -y
+        Module update hooks: drush updb -y
+        Clear caches: drush cr
+        Log in as admin: drush uli --uri=local.bwd.com
   updateme:
     options:
       sites:
