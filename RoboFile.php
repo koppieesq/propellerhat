@@ -212,4 +212,22 @@ class RoboFile extends \Robo\Tasks {
       return 1;
   }
   }
+
+    /**
+     * Install all your favorite things on a new environment.
+     * @TODO automatically detect environment
+     *
+     * @param string $os
+     *   If you specify an operating system, I'll install extra goodies.
+     */
+    function new_environment($os = null) {
+        if ($os == 'mac') {
+            // install Homebrew
+            // install apps using Homebrew
+        } else {
+            $this->io()->note("If you specify an operating system, I can install a lot more stuff.");
+        }
+
+        // Install .bash_profile and other items consistent with all Linux & Unix environments
+    }
 }
