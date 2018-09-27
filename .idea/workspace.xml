@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1a099c3b-f3b4-4635-8b4e-dd664aca8a7c" name="Default Changelist" comment="Adding checks to make sure new_ticket() actually completes successfully.">
+    <list default="true" id="1a099c3b-f3b4-4635-8b4e-dd664aca8a7c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RoboFile.php" beforeDir="false" afterPath="$PROJECT_DIR$/RoboFile.php" afterDir="false" />
     </list>
@@ -36,8 +36,8 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="LICENSE" value="1" />
-          <entry key="bash_logout" value="1" />
-          <entry key="bash_profile" value="1" />
+          <entry key="bash_logout" value="2" />
+          <entry key="bash_profile" value="2" />
           <entry key="completed" value="2" />
           <entry key="config" value="1" />
           <entry key="dbdown" value="4" />
@@ -58,22 +58,22 @@
           <entry key="JSON" value="2" />
           <entry key="Markdown" value="2" />
           <entry key="PHP" value="3" />
-          <entry key="PLAIN_TEXT" value="7" />
+          <entry key="PLAIN_TEXT" value="9" />
           <entry key="YAML" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="bash_logout" value="3" />
+          <entry key="bash_logout" value="6" />
           <entry key="bash_profile" value="13" />
           <entry key="config" value="874" />
           <entry key="gitignore" value="13" />
           <entry key="md" value="1997" />
           <entry key="new-ticket" value="4578" />
           <entry key="ph" value="315" />
-          <entry key="php" value="4677" />
+          <entry key="php" value="5674" />
           <entry key="sh" value="535" />
-          <entry key="txt" value="1234" />
+          <entry key="txt" value="1274" />
           <entry key="upload-key" value="1" />
           <entry key="yml" value="210" />
         </counts>
@@ -82,8 +82,8 @@
         <counts>
           <entry key="Bash" value="5429" />
           <entry key="Markdown" value="1997" />
-          <entry key="PHP" value="4677" />
-          <entry key="PLAIN_TEXT" value="2137" />
+          <entry key="PHP" value="5674" />
+          <entry key="PLAIN_TEXT" value="2180" />
           <entry key="YAML" value="210" />
         </counts>
       </usages-collector>
@@ -103,15 +103,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/.bash_logout">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="32">
-              <caret line="2" selection-start-line="2" selection-end-line="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/default.robo.yml">
           <provider selected="true" editor-type-id="text-editor">
@@ -133,8 +124,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/RoboFile.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="559">
-              <caret line="227" column="32" selection-start-line="227" selection-start-column="32" selection-end-line="227" selection-end-column="32" />
+            <state relative-caret-position="186">
+              <caret line="253" column="30" selection-start-line="253" selection-start-column="30" selection-end-line="253" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -178,6 +169,7 @@
       <find>pwd</find>
       <find>check_success</find>
       <find>hirak/prestissimo</find>
+      <find>chrome</find>
     </findStrings>
     <replaceStrings>
       <replace>=</replace>
@@ -201,7 +193,6 @@
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/new-ticket" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$USER_HOME$/.bash_logout" />
         <option value="$PROJECT_DIR$/ph" />
         <option value="$USER_HOME$/.bash_profile" />
         <option value="$PROJECT_DIR$/default.robo.yml" />
@@ -209,6 +200,7 @@
         <option value="$PROJECT_DIR$/upload-key" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/auth.json" />
+        <option value="$USER_HOME$/.bash_logout" />
         <option value="$PROJECT_DIR$/RoboFile.php" />
       </list>
     </option>
@@ -250,7 +242,7 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="3840" />
+    <option name="x" value="3873" />
     <option name="y" value="323" />
     <option name="width" value="960" />
     <option name="height" value="877" />
@@ -349,7 +341,7 @@
       <workItem from="1537815435092" duration="4020000" />
       <workItem from="1537823279100" duration="1644000" />
       <workItem from="1537980273255" duration="599000" />
-      <workItem from="1537984032590" duration="327000" />
+      <workItem from="1537984032590" duration="8699000" />
     </task>
     <task id="LOCAL-00001" summary="add .idea folder for IDE, migrate dbdown to this project">
       <created>1533932102439</created>
@@ -589,11 +581,18 @@
       <option name="project" value="LOCAL" />
       <updated>1537818026372</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Begain writing new_environment function.">
+      <created>1537984387099</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1537984387099</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="99759000" />
+    <option name="totallyTimeSpent" value="108131000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -605,10 +604,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="3840" y="323" width="960" height="877" extended-state="0" />
+    <frame x="3873" y="323" width="960" height="877" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4989011" weight="0.27995643" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4989011" visible="true" weight="0.26143792" />
       <window_info id="Structure" order="1" sideWeight="0.50109893" side_tool="true" weight="0.16872038" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="0" weight="0.32862905" />
@@ -623,7 +622,7 @@
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.3299363" />
-      <window_info anchor="bottom" id="Terminal" order="12" weight="0.4254777" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="12" visible="true" weight="1.0" />
       <window_info anchor="bottom" id="Event Log" order="13" side_tool="true" />
       <window_info anchor="right" id="Remote Host" order="0" weight="0.19052133" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
@@ -631,30 +630,6 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
       <window_info anchor="right" id="Database" order="4" />
     </layout>
-    <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4989011" visible="true" weight="0.27995643" />
-      <window_info id="Structure" order="1" sideWeight="0.50109893" side_tool="true" weight="0.16872038" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="0" weight="0.32862905" />
-      <window_info anchor="bottom" id="Inspection Results" order="1" weight="0.32862905" />
-      <window_info anchor="bottom" id="Message" order="2" />
-      <window_info anchor="bottom" id="Find" order="3" weight="0.3281106" />
-      <window_info anchor="bottom" id="Run" order="4" />
-      <window_info anchor="bottom" id="Debug" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="8" weight="0.32903227" />
-      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="11" weight="0.3299363" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="12" visible="true" weight="0.4254777" />
-      <window_info anchor="bottom" id="Event Log" order="13" side_tool="true" />
-      <window_info anchor="right" id="Remote Host" order="0" weight="0.19052133" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
-      <window_info anchor="right" id="Database" order="4" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -700,7 +675,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <MESSAGE value="Added documentation for `config` to readme" />
     <MESSAGE value="inline documentation" />
     <MESSAGE value="removed unneeded repo_path variable" />
     <MESSAGE value="Script explains what it's going to do both before &amp; after running." />
@@ -725,7 +699,8 @@
     <MESSAGE value="Updated readme." />
     <MESSAGE value="Use VM internal commands from yaml file." />
     <MESSAGE value="Adding checks to make sure new_ticket() actually completes successfully." />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding checks to make sure new_ticket() actually completes successfully." />
+    <MESSAGE value="Begain writing new_environment function." />
+    <option name="LAST_COMMIT_MESSAGE" value="Begain writing new_environment function." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/completed" />
@@ -771,13 +746,6 @@
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/PhpstormProjects/bwd/auth.json" />
-    <entry file="file://$USER_HOME$/.bash_logout">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/default.robo.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="224">
@@ -802,10 +770,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.bash_profile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.bash_logout">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.bash_logout">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/RoboFile.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="559">
-          <caret line="227" column="32" selection-start-line="227" selection-start-column="32" selection-end-line="227" selection-end-column="32" />
+        <state relative-caret-position="186">
+          <caret line="253" column="30" selection-start-line="253" selection-start-column="30" selection-end-line="253" selection-end-column="30" />
         </state>
       </provider>
     </entry>

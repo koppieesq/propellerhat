@@ -223,11 +223,81 @@ class RoboFile extends \Robo\Tasks {
     function new_environment($os = null) {
         if ($os == 'mac') {
             // install Homebrew
+            $result = $this->taskExecStack()
+                ->exec('/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"')
+                ->run();
+            $this->check_success($result, 'Installing Homebrew');
+
             // install apps using Homebrew
+            $brews = [
+                'ansible',
+                'composer',
+                'cowsay',
+                'curl',
+                'docker',
+                'figlet',
+                'fortune',
+                'git',
+                'glib',
+                'hub',
+                'lolcat',
+                'node',
+                'nvm',
+                'php@7.1',
+                'ssh-copy-id',
+                'wget',
+            ];
+            $casks = [
+                '1clipboard',
+                'beardedspice',
+                'chromedriver',
+                'google-chrome',
+                'firefox',
+                'font-source-code-pro',
+                'java',
+                'lando',
+                'livereload',
+                'phpstorm',
+                'slack',
+                'spectacle',
+                'spotify',
+                'vagrant',
+                'virtualbox',
+                'virtualbox-extension-pack',
+            ];
+            $repos = [
+                'brew install' => $brews,
+                'brew cask install' => $casks,
+            ];
+
+            // Loop through both arrays
+            foreach ($repos as $command => $desires) {
+                foreach ($desires as $desire) {
+                    $this->taskExecStack()
+                        ->exec($command . " " . $desire)
+                        ->run();
+                }
+            }
         } else {
             $this->io()->note("If you specify an operating system, I can install a lot more stuff.");
         }
 
         // Install .bash_profile and other items consistent with all Linux & Unix environments
+        $files = [
+            '.bash_profile' => 'bash profile: better command line prompt & command aliases',
+            '.bash_logout' => 'cute farewell greeting when you log out',
+            '.vimrc' => 'better VI settings',
+        ];
+        foreach ($files as $file => $description) {
+            $this->say("Installing " . $description);
+            $this->taskFilesystemStack()
+                ->copy($file, "~/$file")
+                ->run();
+        }
+
+        // Outro
+        $this->taskExecStack()
+            ->exec("figlet All Done! | lolcat")
+            ->run();
     }
 }
