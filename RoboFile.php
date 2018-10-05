@@ -117,6 +117,7 @@ class RoboFile extends \Robo\Tasks {
     $this->say("I'm going to see if there's anything to install.");
     $result = $this->taskComposerInstall()
         ->dir($host_path)
+        ->dev()
         ->run();
     $this->taskExec($this->check_success($result, "Composer install"));
 
