@@ -115,7 +115,9 @@ class RoboFile extends \Robo\Tasks {
 
     // See if there's anything new to install from Composer.
     $this->say("I'm going to see if there's anything to install.");
-    $result = $this->taskComposerInstall()->run();
+    $result = $this->taskComposerInstall()
+        ->dir($host_path)
+        ->run();
     $this->taskExec($this->check_success($result, "Composer install"));
 
     // Turn on the VM and reprovision it if necessary
@@ -202,14 +204,14 @@ class RoboFile extends \Robo\Tasks {
    */
   function check_success($result = null, $task = "Current task") {
   if (!$result) {
-        $this->io()->error("Sorry, something went wrong with $task");
-        return 1;
+        $message = $this->io()->error("Sorry, something went wrong with $task");
+        exit($message);
   } elseif ($result->wasSuccessful()) {
         $this->io()->success("$task was successful!");
         return 0;
   } else {
-      $this->io()->error("Sorry, something went wrong with $task");
-      return 1;
+      $message = $this->io()->error("Sorry, something went wrong with $task");
+      exit($message);
   }
   }
 
@@ -219,6 +221,7 @@ class RoboFile extends \Robo\Tasks {
      *
      * @param string $os
      *   If you specify an operating system, I'll install extra goodies.
+     * @throws \Robo\Exception\TaskException
      */
     function new_environment($os = null) {
         if ($os == 'mac') {
