@@ -67,6 +67,7 @@ class RoboFile extends \Robo\Tasks {
       "Start in $host_path",
       "Pull a fresh copy of $upstream_repo/$base_branch",
       "Push to $fork_repo/$base_branch",
+      "Reset $new_branch to match the latest $upstream_repo/$base_branch",
       "Push to $fork_repo/$new_branch and set upstream",
       "Task runner: $runner",
       "Turn on the virtual machine: $vm_start",
@@ -102,16 +103,19 @@ class RoboFile extends \Robo\Tasks {
     }
 
     // actual steps go here
+    // @TODO: make sure you start with a clean copy of master every time
+    // @SEE: https://stackoverflow.com/questions/5288172/git-replace-local-version-with-remote-version
     $result = $this->taskGitStack()
       ->stopOnFail()
       ->dir($host_path)
-      ->checkout($base_branch)
+      ->checkout("-B $base_branch $upstream_repo/$base_branch")
       ->pull($upstream_repo, $base_branch)
       ->push($fork_repo, $base_branch)
+      ->exec("git branch -D $new_branch")
       ->checkout($new_branch)
       ->exec("git push $fork_repo $new_branch --set-upstream")
       ->run();
-    $this->taskExec($this->check_success($result, "Initial setup"));
+    $this->taskExec($this->check_success($result, "Set up git"));
 
     // See if there's anything new to install from Composer.
     $this->say("I'm going to see if there's anything to install.");
