@@ -72,9 +72,9 @@
           <entry key="md" value="1997" />
           <entry key="new-ticket" value="4578" />
           <entry key="ph" value="315" />
-          <entry key="php" value="5877" />
+          <entry key="php" value="5887" />
           <entry key="sh" value="535" />
-          <entry key="txt" value="1400" />
+          <entry key="txt" value="1601" />
           <entry key="upload-key" value="1" />
           <entry key="yml" value="210" />
         </counts>
@@ -83,8 +83,8 @@
         <counts>
           <entry key="Bash" value="5429" />
           <entry key="Markdown" value="1997" />
-          <entry key="PHP" value="5877" />
-          <entry key="PLAIN_TEXT" value="2306" />
+          <entry key="PHP" value="5887" />
+          <entry key="PLAIN_TEXT" value="2507" />
           <entry key="YAML" value="210" />
         </counts>
       </usages-collector>
@@ -125,8 +125,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/RoboFile.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="444">
-              <caret line="111" column="42" lean-forward="true" selection-start-line="111" selection-start-column="42" selection-end-line="111" selection-end-column="42" />
+            <state relative-caret-position="492">
+              <caret line="114" column="32" selection-start-line="114" selection-start-column="32" selection-end-line="114" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -347,7 +347,7 @@
       <workItem from="1538780047935" duration="1494000" />
       <workItem from="1539018938034" duration="598000" />
       <workItem from="1539042057516" duration="598000" />
-      <workItem from="1539106038883" duration="624000" />
+      <workItem from="1539106038883" duration="1550000" />
     </task>
     <task id="LOCAL-00001" summary="add .idea folder for IDE, migrate dbdown to this project">
       <created>1533932102439</created>
@@ -615,11 +615,18 @@
       <option name="project" value="LOCAL" />
       <updated>1538780115880</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="&quot;New Ticket&quot; script does a better job of resetting the master branch based on the latest from origin, and then recreates the feature branch based on the latest origin/master.">
+      <created>1539108197301</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1539108197301</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="112385000" />
+    <option name="totallyTimeSpent" value="113311000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -702,7 +709,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <MESSAGE value="Added step: push new branch to fork repo and set upstream" />
     <MESSAGE value="Script reports how long it took to run when it finishes." />
     <MESSAGE value="Add @TODO flags for future functionality" />
     <MESSAGE value="Added wizard to ask for values if config file is not present." />
@@ -727,7 +733,8 @@
     <MESSAGE value="Fleshing out new_environment function." />
     <MESSAGE value="Corrects working directory for Composer, and adds better error handling." />
     <MESSAGE value="Adds --dev option to composer install." />
-    <option name="LAST_COMMIT_MESSAGE" value="Adds --dev option to composer install." />
+    <MESSAGE value="&quot;New Ticket&quot; script does a better job of resetting the master branch based on the latest from origin, and then recreates the feature branch based on the latest origin/master." />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;New Ticket&quot; script does a better job of resetting the master branch based on the latest from origin, and then recreates the feature branch based on the latest origin/master." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/completed" />
@@ -814,8 +821,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/RoboFile.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="111" column="42" lean-forward="true" selection-start-line="111" selection-start-column="42" selection-end-line="111" selection-end-column="42" />
+        <state relative-caret-position="492">
+          <caret line="114" column="32" selection-start-line="114" selection-start-column="32" selection-end-line="114" selection-end-column="32" />
         </state>
       </provider>
     </entry>

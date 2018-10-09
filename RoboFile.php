@@ -112,7 +112,7 @@ class RoboFile extends \Robo\Tasks {
       ->pull($upstream_repo, $base_branch)
       ->push($fork_repo, $base_branch)
       ->exec("git branch -D $new_branch")
-      ->checkout($new_branch)
+      ->checkout("-B $new_branch $upstream_repo/$base_branch")
       ->exec("git push $fork_repo $new_branch --set-upstream")
       ->run();
     $this->taskExec($this->check_success($result, "Set up git"));
