@@ -254,6 +254,7 @@ class RoboFile extends \Robo\Tasks {
                 'php@7.1',
                 'ssh-copy-id',
                 'wget',
+                'bar',
             ];
             $casks = [
                 '1clipboard',
