@@ -21,7 +21,7 @@ class RoboFile extends \Robo\Tasks {
    *
    * @inheritdoc new_ticket()
    */
-  function nt($opts = ['no-reset' => false]) {
+  function nt($opts = ['no-reset' => false, 'no-provision' => false]) {
     $this->taskExec($this->new_ticket($opts));
   }
 
@@ -54,7 +54,7 @@ class RoboFile extends \Robo\Tasks {
    * @return int
    * @throws \Robo\Exception\TaskException
    */
-  function new_ticket($opts = ['no-reset' => false]) {
+  function new_ticket($opts = ['no-reset' => false, 'no-provision' => false]) {
     $this->say("Hi!  I'm going to help you refresh your local dev environment to start a new ticket.");
 
     // Load config & set environment variables
@@ -67,33 +67,37 @@ class RoboFile extends \Robo\Tasks {
     $ssh_commands = $this->taskExecStack();
 
     // Description of tasks to be performed, repeats at both the beginning and end of the script.
-    $start_task = ["Start in $host_path"];
-    $git_tasks = [
-      "Pull a fresh copy of $upstream_repo/$base_branch",
-      "Push to $fork_repo/$base_branch",
-      "Reset $new_branch to match the latest $upstream_repo/$base_branch",
-      "Push to $fork_repo/$new_branch and set upstream",
-    ];
-    $other_tasks = [
-      "Task runner: $runner",
-      "Turn on the virtual machine: $vm_start",
-      "SSH to VM using private key: $vm_key",
-    ];
+    // Assemble the tasks array.  Check for command line arguments before adding git reset or vagrant provision.
+    $tasks = ["Start in $host_path"];
+
+    if (!$opts['no-reset']) {
+      $tasks += [
+        "Pull a fresh copy of $upstream_repo/$base_branch",
+        "Push to $fork_repo/$base_branch",
+        "Reset $new_branch to match the latest $upstream_repo/$base_branch",
+        "Push to $fork_repo/$new_branch and set upstream",
+      ];
+    }
+
+    $tasks[] = "Task runner: $runner";
+
+    if (!$opts['no-provision']) {
+      $tasks[] = "Turn on the virtual machine: $vm_start";
+    }
+
+    $tasks[] = "SSH to VM using private key: $vm_key";
+
     // Add descriptions of tasks to be performed *inside* the VM
     // Also set up commands to be run
     $command_tasks = "Run commands inside the VM:\n";
     $indent = "   - ";
+
     foreach ($vm_commands as $key => $value) {
       $command_tasks .= $indent . $key . "\n";
       $ssh_commands->exec($value);
     }
 
-    // Assemble the tasks array.  Only perform git tasks if the "no-reset" flag is *not* present.
-    if ($opts['no-reset']) {
-      $tasks = array_merge($start_task, $other_tasks, [$command_tasks]);
-    } else {
-      $tasks = array_merge($start_task, $git_tasks, $other_tasks, [$command_tasks]);
-    }
+    $tasks[] = $command_tasks;
 
     $requirements = [
       "You have forked the 'upstream' repository and created your own",
@@ -127,14 +131,16 @@ class RoboFile extends \Robo\Tasks {
         ->run();
     $this->taskExec($this->check_success($result, "Composer install"));
 
-    // Turn on the VM and reprovision it if necessary
-    $this->say("Let's turn this thing on.");
-    $result = $this->taskExecStack()
+    // Turn on the VM and reprovision it if necessary.
+    if (!$opts['no-provision']) {
+      $this->say("Let's turn this thing on.");
+      $result = $this->taskExecStack()
         ->stopOnFail()
         ->dir($host_path)
         ->exec($vm_start)
         ->run();
-    $this->taskExec($this->check_success($result, $vm_start));
+      $this->taskExec($this->check_success($result, $vm_start));
+    }
 
     // Run tasks inside the VM
     $this->say("I'm going to run some commands inside the VM now.");

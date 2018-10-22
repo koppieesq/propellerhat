@@ -72,9 +72,9 @@
           <entry key="md" value="1997" />
           <entry key="new-ticket" value="4578" />
           <entry key="ph" value="315" />
-          <entry key="php" value="6724" />
+          <entry key="php" value="7157" />
           <entry key="sh" value="535" />
-          <entry key="txt" value="1671" />
+          <entry key="txt" value="1720" />
           <entry key="upload-key" value="1" />
           <entry key="yml" value="210" />
         </counts>
@@ -83,8 +83,8 @@
         <counts>
           <entry key="Bash" value="5429" />
           <entry key="Markdown" value="1997" />
-          <entry key="PHP" value="6724" />
-          <entry key="PLAIN_TEXT" value="2577" />
+          <entry key="PHP" value="7157" />
+          <entry key="PLAIN_TEXT" value="2626" />
           <entry key="YAML" value="210" />
         </counts>
       </usages-collector>
@@ -125,8 +125,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/RoboFile.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-557">
-              <caret line="94" column="41" selection-start-line="94" selection-start-column="41" selection-end-line="94" selection-end-column="41" />
+            <state relative-caret-position="261">
+              <caret line="98" column="4" selection-start-line="98" selection-start-column="4" selection-end-line="98" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -160,6 +160,7 @@
       <find>hirak/prestissimo</find>
       <find>chrome</find>
       <find>reset_</find>
+      <find>noreset</find>
     </findStrings>
     <replaceStrings>
       <replace>=</replace>
@@ -167,6 +168,7 @@
       <replace>$pur</replace>
       <replace>$path</replace>
       <replace>$ssh_server</replace>
+      <replace>no-reset</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -328,7 +330,7 @@
       <workItem from="1539106038883" duration="2589000" />
       <workItem from="1539727575256" duration="177000" />
       <workItem from="1539727952738" duration="570000" />
-      <workItem from="1540228701645" duration="3589000" />
+      <workItem from="1540228701645" duration="5845000" />
     </task>
     <task id="LOCAL-00001" summary="add .idea folder for IDE, migrate dbdown to this project">
       <created>1533932102439</created>
@@ -617,11 +619,18 @@
       <option name="project" value="LOCAL" />
       <updated>1539727718504</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="Adds optional command line argument to skip git reset.">
+      <created>1540232534033</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1540232534033</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="118686000" />
+    <option name="totallyTimeSpent" value="120942000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -728,7 +737,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <MESSAGE value="Added wizard to ask for values if config file is not present." />
     <MESSAGE value="Fixed check for global config." />
     <MESSAGE value="Added Composer &amp; Robo scaffolding." />
     <MESSAGE value="Reports time to complete script in minutes:seconds." />
@@ -753,7 +761,8 @@
     <MESSAGE value="&quot;New Ticket&quot; script does a better job of resetting the master branch based on the latest from origin, and then recreates the feature branch based on the latest origin/master." />
     <MESSAGE value="Fixed code to properly recreate the feature branch based on the latest origin/master, not the forked repo." />
     <MESSAGE value="Adds Bar utility." />
-    <option name="LAST_COMMIT_MESSAGE" value="Adds Bar utility." />
+    <MESSAGE value="Adds optional command line argument to skip git reset." />
+    <option name="LAST_COMMIT_MESSAGE" value="Adds optional command line argument to skip git reset." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/completed" />
@@ -840,8 +849,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/RoboFile.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-557">
-          <caret line="94" column="41" selection-start-line="94" selection-start-column="41" selection-end-line="94" selection-end-column="41" />
+        <state relative-caret-position="261">
+          <caret line="98" column="4" selection-start-line="98" selection-start-column="4" selection-end-line="98" selection-end-column="4" />
         </state>
       </provider>
     </entry>
