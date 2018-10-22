@@ -21,36 +21,40 @@ class RoboFile extends \Robo\Tasks {
    *
    * @inheritdoc new_ticket()
    */
-  function nt() {
-    $this->taskExec($this->new_ticket());
+  function nt($opts = ['no-reset' => false]) {
+    $this->taskExec($this->new_ticket($opts));
   }
 
-    /**
-     * Resets your local dev environment to start a new task.
-     *
-     * You can control the following variables in robo.yml:
-     *
-     * @var string $upstream_repo Name of the upstream repository
-     * @var string $fork_repo Name of your forked repository
-     * @var string $base_branch Name of the master branch.  Usually "master".
-     * @var string $new_branch Name of your feature branch.
-     * @var string $runner Task runner / package manager, eg. Composer.
-     * @var string $vm_start Command to start the virtual machine
-     *
-     * Credits:
-     *
-     * @see  https://git.businesswire.com/projects/HQ/repos/hq-tools/browse/dev/reset-dev
-     *       With gratitude to Ben Thornton
-     * @see  https://github.com/g1a/starter
-     *      And hat tip to G1A
-     *
-     * @TODO add an option to start from master and create the feature branch
-     * @TODO add a wizard to provide config if it doesn't already exist
-     * @TODO use vm_commands from yaml file
-     *
-     * @throws \Robo\Exception\TaskException
-     */
-  function new_ticket() {
+  /**
+   * Resets your local dev environment to start a new task.
+   *
+   * You can control the following variables in robo.yml:
+   *
+   * @var string $upstream_repo Name of the upstream repository
+   * @var string $fork_repo Name of your forked repository
+   * @var string $base_branch Name of the master branch.  Usually "master".
+   * @var string $new_branch Name of your feature branch.
+   * @var string $runner Task runner / package manager, eg. Composer.
+   * @var string $vm_start Command to start the virtual machine
+   *
+   * Pass this value as an argument on the command line:
+   * @var bool $no-reset
+   *
+   * Credits:
+   *
+   * @see  https://git.businesswire.com/projects/HQ/repos/hq-tools/browse/dev/reset-dev
+   *       With gratitude to Ben Thornton
+   * @see  https://github.com/g1a/starter
+   *      And hat tip to G1A
+   *
+   * @TODO add an option to start from master and create the feature branch
+   * @TODO add a wizard to provide config if it doesn't already exist
+   * @TODO use vm_commands from yaml file
+   *
+   * @return int
+   * @throws \Robo\Exception\TaskException
+   */
+  function new_ticket($opts = ['no-reset' => false]) {
     $this->say("Hi!  I'm going to help you refresh your local dev environment to start a new ticket.");
 
     // Load config & set environment variables
@@ -63,26 +67,33 @@ class RoboFile extends \Robo\Tasks {
     $ssh_commands = $this->taskExecStack();
 
     // Description of tasks to be performed, repeats at both the beginning and end of the script.
-    $tasks = [
-      "Start in $host_path",
+    $start_task = ["Start in $host_path"];
+    $git_tasks = [
       "Pull a fresh copy of $upstream_repo/$base_branch",
       "Push to $fork_repo/$base_branch",
       "Reset $new_branch to match the latest $upstream_repo/$base_branch",
       "Push to $fork_repo/$new_branch and set upstream",
+    ];
+    $other_tasks = [
       "Task runner: $runner",
       "Turn on the virtual machine: $vm_start",
       "SSH to VM using private key: $vm_key",
     ];
-
     // Add descriptions of tasks to be performed *inside* the VM
     // Also set up commands to be run
     $command_tasks = "Run commands inside the VM:\n";
     $indent = "   - ";
     foreach ($vm_commands as $key => $value) {
-        $command_tasks .= $indent . $key . "\n";
-        $ssh_commands->exec($value);
+      $command_tasks .= $indent . $key . "\n";
+      $ssh_commands->exec($value);
     }
-    $tasks[] = $command_tasks;
+
+    // Assemble the tasks array.  Only perform git tasks if the "no-reset" flag is *not* present.
+    if ($opts['no-reset']) {
+      $tasks = array_merge($start_task, $other_tasks, [$command_tasks]);
+    } else {
+      $tasks = array_merge($start_task, $git_tasks, $other_tasks, [$command_tasks]);
+    }
 
     $requirements = [
       "You have forked the 'upstream' repository and created your own",
@@ -102,20 +113,11 @@ class RoboFile extends \Robo\Tasks {
         return;
     }
 
-    // actual steps go here
-    // @TODO: make sure you start with a clean copy of master every time
-    // @SEE: https://stackoverflow.com/questions/5288172/git-replace-local-version-with-remote-version
-    $result = $this->taskGitStack()
-      ->stopOnFail()
-      ->dir($host_path)
-      ->checkout("-B $base_branch $upstream_repo/$base_branch")
-      ->pull($upstream_repo, $base_branch)
-      ->push($fork_repo, $base_branch)
-      ->exec("git branch -D $new_branch")
-      ->checkout("-B $new_branch $upstream_repo/$base_branch")
-      ->exec("git push $fork_repo $new_branch --set-upstream")
-      ->run();
-    $this->taskExec($this->check_success($result, "Set up git"));
+    // Don't reset the feature branch if I pass a tag on the command line.
+    if (!$opts['no-reset']) {
+      $result = $this->taskExec($this->reset_branch());
+      $this->taskExec($this->check_success($result, "Set up git"));
+    }
 
     // See if there's anything new to install from Composer.
     $this->say("I'm going to see if there's anything to install.");
@@ -160,6 +162,33 @@ class RoboFile extends \Robo\Tasks {
     $elapsed_seconds = $elapsed_time - $elapsed_minutes * 60;
     $this->say("This took $elapsed_minutes minutes and $elapsed_seconds seconds.");
     $this->io()->success("Now go forth and be awesome.");
+  }
+
+  /**
+   * Reset the local git branch to a fresh copy of master, upload to your fork repository, and set upstream.
+   *
+   * @SEE: https://stackoverflow.com/questions/5288172/git-replace-local-version-with-remote-version
+   *
+   * @param $host_path
+   * @param $base_branch
+   * @param $upstream_repo
+   * @param $fork_repo
+   * @param $new_branch
+   * @return null|\Robo\Result
+   */
+  function reset_branch() {
+    $result = $this->taskGitStack()
+      ->stopOnFail()
+      ->dir($host_path)
+      ->checkout("-B $base_branch $upstream_repo/$base_branch")
+      ->pull($upstream_repo, $base_branch)
+      ->push($fork_repo, $base_branch)
+      ->exec("git branch -D $new_branch")
+      ->checkout("-B $new_branch $upstream_repo/$base_branch")
+      ->exec("git push $fork_repo $new_branch --set-upstream")
+      ->run();
+
+    return $result;
   }
 
   /**
