@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1a099c3b-f3b4-4635-8b4e-dd664aca8a7c" name="Default Changelist" comment="Can now skip git reset &amp; vagrant provision using command line arguments.">
+    <list default="true" id="1a099c3b-f3b4-4635-8b4e-dd664aca8a7c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/symfony2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RoboFile.php" beforeDir="false" afterPath="$PROJECT_DIR$/RoboFile.php" afterDir="false" />
     </list>
@@ -20,8 +21,8 @@
     <session id="1155893981">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="26" />
-          <entry key="project.open.time.0" value="7" />
+          <entry key="project.closed" value="27" />
+          <entry key="project.open.time.0" value="8" />
           <entry key="project.open.time.1" value="8" />
           <entry key="project.open.time.10" value="4" />
           <entry key="project.open.time.15" value="2" />
@@ -31,7 +32,7 @@
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.7" value="2" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="31" />
+          <entry key="project.opened" value="32" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -72,9 +73,9 @@
           <entry key="md" value="1997" />
           <entry key="new-ticket" value="4578" />
           <entry key="ph" value="315" />
-          <entry key="php" value="7503" />
+          <entry key="php" value="7511" />
           <entry key="sh" value="535" />
-          <entry key="txt" value="1792" />
+          <entry key="txt" value="1811" />
           <entry key="upload-key" value="1" />
           <entry key="yml" value="210" />
         </counts>
@@ -83,8 +84,8 @@
         <counts>
           <entry key="Bash" value="5429" />
           <entry key="Markdown" value="1997" />
-          <entry key="PHP" value="7503" />
-          <entry key="PLAIN_TEXT" value="2698" />
+          <entry key="PHP" value="7511" />
+          <entry key="PLAIN_TEXT" value="2717" />
           <entry key="YAML" value="210" />
         </counts>
       </usages-collector>
@@ -125,8 +126,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/RoboFile.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="415">
-              <caret line="134" column="46" lean-forward="true" selection-start-line="134" selection-start-column="46" selection-end-line="134" selection-end-column="46" />
+            <state relative-caret-position="191">
+              <caret line="120" column="6" selection-start-line="120" selection-start-column="6" selection-end-line="120" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -247,20 +248,7 @@
       <autoscrollFromSource ProjectPane="true" />
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="propellerhat" type="b2602c69:ProjectViewProjectNode" />
-              <item name="propellerhat" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="true" />
@@ -333,7 +321,8 @@
       <workItem from="1540228701645" duration="6363000" />
       <workItem from="1540237943347" duration="160000" />
       <workItem from="1540238600106" duration="774000" />
-      <workItem from="1540833308247" duration="3409000" />
+      <workItem from="1540833308247" duration="3562000" />
+      <workItem from="1540837288578" duration="430000" />
     </task>
     <task id="LOCAL-00001" summary="add .idea folder for IDE, migrate dbdown to this project">
       <created>1533932102439</created>
@@ -636,11 +625,18 @@
       <option name="project" value="LOCAL" />
       <updated>1540234904344</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="Minor code cleanup.">
+      <created>1540836764272</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1540836764272</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="125803000" />
+    <option name="totallyTimeSpent" value="126386000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -653,7 +649,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="23" width="960" height="1177" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4814815" weight="0.30827886" />
       <window_info id="Structure" order="1" sideWeight="0.5185185" side_tool="true" weight="0.30827886" />
@@ -747,7 +742,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <MESSAGE value="Added Composer &amp; Robo scaffolding." />
     <MESSAGE value="Reports time to complete script in minutes:seconds." />
     <MESSAGE value="First draft of new-ticket as a Robo script." />
     <MESSAGE value="Added nt as an alias for new_ticket()" />
@@ -772,7 +766,8 @@
     <MESSAGE value="Adds Bar utility." />
     <MESSAGE value="Adds optional command line argument to skip git reset." />
     <MESSAGE value="Can now skip git reset &amp; vagrant provision using command line arguments." />
-    <option name="LAST_COMMIT_MESSAGE" value="Can now skip git reset &amp; vagrant provision using command line arguments." />
+    <MESSAGE value="Minor code cleanup." />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor code cleanup." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/completed" />
@@ -859,8 +854,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/RoboFile.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="134" column="46" lean-forward="true" selection-start-line="134" selection-start-column="46" selection-end-line="134" selection-end-column="46" />
+        <state relative-caret-position="191">
+          <caret line="120" column="6" selection-start-line="120" selection-start-column="6" selection-end-line="120" selection-end-column="6" />
         </state>
       </provider>
     </entry>

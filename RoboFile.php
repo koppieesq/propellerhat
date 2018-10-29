@@ -118,8 +118,8 @@ class RoboFile extends \Robo\Tasks {
 
     // Don't reset the feature branch if I pass a tag on the command line.
     if (!$opts['no-reset']) {
-      $result = $this->taskExec($this->reset_branch());
-      $this->taskExec($this->check_success($result, "Set up git"));
+      $this->taskExec($this->reset_branch($host_path, $base_branch, $upstream_repo, $fork_repo, $new_branch));
+//      $this->taskExec($this->check_success($result, "Set up git"));
     }
 
     // See if there's anything new to install from Composer.
@@ -181,8 +181,9 @@ class RoboFile extends \Robo\Tasks {
    * @param $new_branch
    * @return null|\Robo\Result
    */
-  function reset_branch() {
-    $result = $this->taskGitStack()
+  function reset_branch($host_path, $base_branch, $upstream_repo, $fork_repo,
+                        $new_branch) {
+    $this->taskGitStack()
       ->stopOnFail()
       ->dir($host_path)
       ->checkout("-B $base_branch $upstream_repo/$base_branch")
@@ -193,7 +194,7 @@ class RoboFile extends \Robo\Tasks {
       ->exec("git push $fork_repo $new_branch --set-upstream")
       ->run();
 
-    return $result;
+    return;
   }
 
   /**
