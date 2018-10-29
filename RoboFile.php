@@ -105,7 +105,6 @@ class RoboFile extends \Robo\Tasks {
       "You've updated the enclosed config file with the correct repositories and branches",
     ];
 
-    // @TODO: make more steps optional
     $this->io()->text("Here's what I can do:");
     $this->io()->listing($tasks);
     $this->io()->text("In order for this to work, please make sure:");
@@ -243,16 +242,16 @@ class RoboFile extends \Robo\Tasks {
    *   Should correctly report whether task was successful or not.
    */
   function check_success($result = null, $task = "Current task") {
-  if (!$result) {
+    if (!$result) {
+          $message = $this->io()->error("Sorry, something went wrong with $task");
+          exit($message);
+    } elseif ($result->wasSuccessful()) {
+          $this->io()->success("$task was successful!");
+          return 0;
+    } else {
         $message = $this->io()->error("Sorry, something went wrong with $task");
         exit($message);
-  } elseif ($result->wasSuccessful()) {
-        $this->io()->success("$task was successful!");
-        return 0;
-  } else {
-      $message = $this->io()->error("Sorry, something went wrong with $task");
-      exit($message);
-  }
+    }
   }
 
     /**
