@@ -18,6 +18,7 @@ command:
         Module update hooks: drush updb -y
         Clear caches: drush cr
         Log in as admin: drush uli --uri=local.bwd.com
+        Turn on coffee: drush en coffee
   updateme:
     options:
       sites:

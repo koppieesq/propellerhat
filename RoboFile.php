@@ -21,7 +21,7 @@ class RoboFile extends \Robo\Tasks {
    *
    * @inheritdoc new_ticket()
    */
-  function nt($opts = ['no-reset' => false, 'no-provision' => false]) {
+  function nt($opts = ['no-reset' => FALSE, 'no-provision' => FALSE]) {
     $this->taskExec($this->new_ticket($opts));
   }
 
@@ -38,12 +38,12 @@ class RoboFile extends \Robo\Tasks {
    * @var string $vm_start Command to start the virtual machine
    *
    * Pass this value as an argument on the command line:
-   * @var bool $no-reset
+   * @var bool $no -reset
    *
    * Credits:
    *
    * @see  https://git.businesswire.com/projects/HQ/repos/hq-tools/browse/dev/reset-dev
-   *       With gratitude to Ben Thornton
+   * With gratitude to Ben Thornton
    * @see  https://github.com/g1a/starter
    *      And hat tip to G1A
    *
@@ -54,7 +54,7 @@ class RoboFile extends \Robo\Tasks {
    * @return int
    * @throws \Robo\Exception\TaskException
    */
-  function new_ticket($opts = ['no-reset' => false, 'no-provision' => false]) {
+  function new_ticket($opts = ['no-reset' => FALSE, 'no-provision' => FALSE]) {
     $this->say("Hi!  I'm going to help you refresh your local dev environment to start a new ticket.");
 
     // Load config & set environment variables
@@ -72,10 +72,10 @@ class RoboFile extends \Robo\Tasks {
 
     if (!$opts['no-reset']) {
       $tasks += [
-        "Pull a fresh copy of $upstream_repo/$base_branch",
-        "Push to $fork_repo/$base_branch",
-        "Reset $new_branch to match the latest $upstream_repo/$base_branch",
-        "Push to $fork_repo/$new_branch and set upstream",
+      "Pull a fresh copy of $upstream_repo/$base_branch",
+      "Push to $fork_repo/$base_branch",
+      "Reset $new_branch to match the latest $upstream_repo/$base_branch",
+      "Push to $fork_repo/$new_branch and set upstream",
       ];
     }
 
@@ -100,9 +100,9 @@ class RoboFile extends \Robo\Tasks {
     $tasks[] = $command_tasks;
 
     $requirements = [
-      "You have forked the 'upstream' repository and created your own",
-      "You've already created a feature branch for the new ticket",
-      "You've updated the enclosed config file with the correct repositories and branches",
+    "You have forked the 'upstream' repository and created your own",
+    "You've already created a feature branch for the new ticket",
+    "You've updated the enclosed config file with the correct repositories and branches",
     ];
 
     $this->io()->text("Here's what I can do:");
@@ -112,50 +112,50 @@ class RoboFile extends \Robo\Tasks {
     $continue = $this->confirm("CONTINUE?");
 
     if (!$continue) {
-        $this->say("Operation has been canceled.");
-        return;
+      $this->say("Operation has been canceled.");
+      return;
     }
 
     // Don't reset the feature branch if I pass a tag on the command line.
     if (!$opts['no-reset']) {
       $this->taskExec($this->reset_branch($host_path, $base_branch, $upstream_repo, $fork_repo, $new_branch));
-//      $this->taskExec($this->check_success($result, "Set up git"));
+      //      $this->taskExec($this->check_success($result, "Set up git"));
     }
 
     // See if there's anything new to install from Composer.
     $this->say("I'm going to see if there's anything to install.");
     $result = $this->taskComposerInstall()
-        ->dir($host_path)
-        ->dev()
-        ->run();
+    ->dir($host_path)
+    ->dev()
+    ->run();
     $this->taskExec($this->check_success($result, "Composer install"));
 
     // Turn on the VM and reprovision it if necessary.
     if (!$opts['no-provision']) {
       $this->say("Let's turn this thing on.");
       $result = $this->taskExecStack()
-        ->stopOnFail()
-        ->dir($host_path)
-        ->exec($vm_start)
-        ->run();
+      ->stopOnFail()
+      ->dir($host_path)
+      ->exec($vm_start)
+      ->run();
       $this->taskExec($this->check_success($result, $vm_start));
     }
 
     // Run tasks inside the VM
     $this->say("I'm going to run some commands inside the VM now.");
     $result = $this->taskSshExec($vm_domain, $vm_user)
-      ->stopOnFail()
-      ->port($vm_port)
-      ->identityFile($vm_key)
-      ->remoteDir($guest_path)
-      ->dir($host_path)
-      ->exec($ssh_commands)
-      ->run();
+    ->stopOnFail()
+    ->port($vm_port)
+    ->identityFile($vm_key)
+    ->remoteDir($guest_path)
+    ->dir($host_path)
+    ->exec($ssh_commands)
+    ->run();
     $this->taskExec($this->check_success($result, "Commands inside the VM"));
 
     if (!$result->wasSuccessful()) {
-        $this->io()->error("Sorry, I was not able to finish setup.");
-        return 1;
+      $this->io()->error("Sorry, I was not able to finish setup.");
+      return 1;
     }
 
     // Outro
@@ -170,7 +170,8 @@ class RoboFile extends \Robo\Tasks {
   }
 
   /**
-   * Reset the local git branch to a fresh copy of master, upload to your fork repository, and set upstream.
+   * Reset the local git branch to a fresh copy of master, upload to your fork
+   * repository, and set upstream.
    *
    * @SEE: https://stackoverflow.com/questions/5288172/git-replace-local-version-with-remote-version
    *
@@ -179,20 +180,21 @@ class RoboFile extends \Robo\Tasks {
    * @param $upstream_repo
    * @param $fork_repo
    * @param $new_branch
+   *
    * @return null|\Robo\Result
    */
   function reset_branch($host_path, $base_branch, $upstream_repo, $fork_repo,
                         $new_branch) {
     $this->taskGitStack()
-      ->stopOnFail()
-      ->dir($host_path)
-      ->checkout("-B $base_branch $upstream_repo/$base_branch")
-      ->pull($upstream_repo, $base_branch)
-      ->push($fork_repo, $base_branch)
-      ->exec("git branch -D $new_branch")
-      ->checkout("-B $new_branch $upstream_repo/$base_branch")
-      ->exec("git push $fork_repo $new_branch --set-upstream")
-      ->run();
+    ->stopOnFail()
+    ->dir($host_path)
+    ->checkout("-B $base_branch $upstream_repo/$base_branch")
+    ->pull($upstream_repo, $base_branch)
+    ->push($fork_repo, $base_branch)
+    ->exec("git branch -D $new_branch")
+    ->checkout("-B $new_branch $upstream_repo/$base_branch")
+    ->exec("git push $fork_repo $new_branch --set-upstream")
+    ->run();
 
     return;
   }
@@ -229,7 +231,7 @@ class RoboFile extends \Robo\Tasks {
     }
 
     $this->io()
-      ->success("All done!  Pat yourself on the back for a job well done.");
+    ->success("All done!  Pat yourself on the back for a job well done.");
   }
 
   /**
@@ -239,109 +241,150 @@ class RoboFile extends \Robo\Tasks {
    *   Pass the result object to this function.
    * @param string $task
    *   Plain text description of the currently running task.
+   *
    * @return int
    *   Should correctly report whether task was successful or not.
    */
-  function check_success($result = null, $task = "Current task") {
+  function check_success($result = NULL, $task = "Current task") {
     if (!$result) {
-          $message = $this->io()->error("Sorry, something went wrong with $task");
-          exit($message);
-    } elseif ($result->wasSuccessful()) {
-          $this->io()->success("$task was successful!");
-          return 0;
-    } else {
-        $message = $this->io()->error("Sorry, something went wrong with $task");
-        exit($message);
+      $message = $this->io()->error("Sorry, something went wrong with $task");
+      exit($message);
+    }
+    elseif ($result->wasSuccessful()) {
+      $this->io()->success("$task was successful!");
+      return 0;
+    }
+    else {
+      $message = $this->io()->error("Sorry, something went wrong with $task");
+      exit($message);
     }
   }
 
-    /**
-     * Install all your favorite things on a new environment.
-     * @TODO automatically detect environment
-     *
-     * @param string $os
-     *   If you specify an operating system, I'll install extra goodies.
-     * @throws \Robo\Exception\TaskException
-     */
-    function new_environment($os = null) {
-        if ($os == 'mac') {
-            // install Homebrew
-            $result = $this->taskExecStack()
-                ->exec('/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"')
-                ->run();
-            $this->check_success($result, 'Installing Homebrew');
-
-            // install apps using Homebrew
-            $brews = [
-                'ansible',
-                'composer',
-                'cowsay',
-                'curl',
-                'docker',
-                'figlet',
-                'fortune',
-                'git',
-                'glib',
-                'hub',
-                'lolcat',
-                'node',
-                'nvm',
-                'php@7.1',
-                'ssh-copy-id',
-                'wget',
-                'bar',
-            ];
-            $casks = [
-                '1clipboard',
-                'beardedspice',
-                'chromedriver',
-                'google-chrome',
-                'firefox',
-                'font-source-code-pro',
-                'java',
-                'lando',
-                'livereload',
-                'phpstorm',
-                'slack',
-                'spectacle',
-                'spotify',
-                'vagrant',
-                'virtualbox',
-                'virtualbox-extension-pack',
-            ];
-            $repos = [
-                'brew install' => $brews,
-                'brew cask install' => $casks,
-            ];
-
-            // Loop through both arrays
-            foreach ($repos as $command => $desires) {
-                foreach ($desires as $desire) {
-                    $this->taskExecStack()
-                        ->exec($command . " " . $desire)
-                        ->run();
-                }
-            }
-        } else {
-            $this->io()->note("If you specify an operating system, I can install a lot more stuff.");
-        }
-
-        // Install .bash_profile and other items consistent with all Linux & Unix environments
-        $files = [
-            '.bash_profile' => 'bash profile: better command line prompt & command aliases',
-            '.bash_logout' => 'cute farewell greeting when you log out',
-            '.vimrc' => 'better VI settings',
-        ];
-        foreach ($files as $file => $description) {
-            $this->say("Installing " . $description);
-            $this->taskFilesystemStack()
-                ->copy($file, "~/$file")
-                ->run();
-        }
-
-        // Outro
-        $this->taskExecStack()
-            ->exec("figlet All Done! | lolcat")
-            ->run();
+  /**
+   * Refresh local environment for existing ticket.
+   *
+   * This is a lighter lift than new_ticket().  Here, we don't rebuild the
+   * environment; we simply reload stored config for Drupal _inside_ the VM.
+   */
+  function refresh_ticket() {
+    // Retrieve stored preferences
+    $allopts = Robo::config()->get("command.new_ticket.options");
+    foreach ($allopts as $key => $value) {
+      $$key = $value;
     }
+
+    $this->io()->text("Hi!  I'm going to run some basic commands to reset your Drupal config.");
+
+    // Run tasks inside the VM
+    $this->say("I'm going to run some commands inside the VM now.");
+    $result = $this->taskSshExec($vm_domain, $vm_user)
+    ->stopOnFail()
+    ->port($vm_port)
+    ->identityFile($vm_key)
+    ->remoteDir($guest_path)
+    ->dir($host_path)
+    ->exec("drush cim -y")
+    ->exec("drush updb -y")
+    ->exec("drush cr")
+    ->exec("drush uli --uri=local.bwd.com")
+    ->exec("drush en coffee")
+    ->run();
+    $this->taskExec($this->check_success($result, "Drupal config reset"));
+
+    $this->_exec('echo "ALL DONE" | figlet | lolcat');
+  }
+
+  /**
+   * Install all your favorite things on a new environment.
+   *
+   * @TODO automatically detect environment
+   *
+   * @param string $os
+   *   If you specify an operating system, I'll install extra goodies.
+   *
+   * @throws \Robo\Exception\TaskException
+   */
+  function new_environment($os = NULL) {
+    if ($os == 'mac') {
+      // install Homebrew
+      $result = $this->taskExecStack()
+      ->exec('/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"')
+      ->run();
+      $this->check_success($result, 'Installing Homebrew');
+
+      // install apps using Homebrew
+      $brews = [
+      'ansible',
+      'composer',
+      'cowsay',
+      'curl',
+      'docker',
+      'figlet',
+      'fortune',
+      'git',
+      'glib',
+      'hub',
+      'lolcat',
+      'node',
+      'nvm',
+      'php@7.1',
+      'ssh-copy-id',
+      'wget',
+      'bar',
+      ];
+      $casks = [
+      '1clipboard',
+      'beardedspice',
+      'chromedriver',
+      'google-chrome',
+      'firefox',
+      'font-source-code-pro',
+      'java',
+      'lando',
+      'livereload',
+      'phpstorm',
+      'slack',
+      'spectacle',
+      'spotify',
+      'vagrant',
+      'virtualbox',
+      'virtualbox-extension-pack',
+      ];
+      $repos = [
+      'brew install' => $brews,
+      'brew cask install' => $casks,
+      ];
+
+      // Loop through both arrays
+      foreach ($repos as $command => $desires) {
+        foreach ($desires as $desire) {
+          $this->taskExecStack()
+          ->exec($command . " " . $desire)
+          ->run();
+        }
+      }
+    }
+    else {
+      $this->io()
+      ->note("If you specify an operating system, I can install a lot more stuff.");
+    }
+
+    // Install .bash_profile and other items consistent with all Linux & Unix environments
+    $files = [
+    '.bash_profile' => 'bash profile: better command line prompt & command aliases',
+    '.bash_logout' => 'cute farewell greeting when you log out',
+    '.vimrc' => 'better VI settings',
+    ];
+    foreach ($files as $file => $description) {
+      $this->say("Installing " . $description);
+      $this->taskFilesystemStack()
+      ->copy($file, "~/$file")
+      ->run();
+    }
+
+    // Outro
+    $this->taskExecStack()
+    ->exec("figlet All Done! | lolcat")
+    ->run();
+  }
 }
