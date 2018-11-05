@@ -94,7 +94,7 @@ class RoboFile extends \Robo\Tasks {
     $indent = "   - ";
 
     foreach ($vm_commands as $key => $value) {
-      if ($key != 'BLT setup' && !$opts['no-install']) {
+      if ($key != 'BLT setup' or !$opts['no-install']) {
         $command_tasks .= $indent . $key . "\n";
         $ssh_commands->exec($value);
       }
