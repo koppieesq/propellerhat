@@ -7,14 +7,9 @@ use Robo\Robo;
  *
  * @see     http://robo.li/
  *
- * @warning This script is not yet ready for public consumption!  See @todos.
+ * @warning This tool is still in beta!  See @todos.
  */
 class RoboFile extends \Robo\Tasks {
-
-  // define public methods as commands
-  function hello($world) {
-    $this->say("Hello $world");
-  }
 
   /**
    * Alias function for new_ticket()
