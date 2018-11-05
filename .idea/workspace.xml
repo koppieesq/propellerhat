@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1a099c3b-f3b4-4635-8b4e-dd664aca8a7c" name="Default Changelist" comment="">
+    <list default="true" id="1a099c3b-f3b4-4635-8b4e-dd664aca8a7c" name="Default Changelist" comment="Adds first draft of the refresh_ticket() function.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RoboFile.php" beforeDir="false" afterPath="$PROJECT_DIR$/RoboFile.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/robo.yml" beforeDir="false" afterPath="$PROJECT_DIR$/robo.yml" afterDir="false" />
@@ -21,9 +21,9 @@
     <session id="1155893981">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="28" />
-          <entry key="project.open.time.0" value="8" />
-          <entry key="project.open.time.1" value="9" />
+          <entry key="project.closed" value="32" />
+          <entry key="project.open.time.0" value="9" />
+          <entry key="project.open.time.1" value="11" />
           <entry key="project.open.time.10" value="4" />
           <entry key="project.open.time.15" value="2" />
           <entry key="project.open.time.19" value="1" />
@@ -32,7 +32,7 @@
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.7" value="2" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="33" />
+          <entry key="project.opened" value="37" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -73,20 +73,20 @@
           <entry key="md" value="1997" />
           <entry key="new-ticket" value="4578" />
           <entry key="ph" value="315" />
-          <entry key="php" value="7932" />
+          <entry key="php" value="8312" />
           <entry key="sh" value="535" />
-          <entry key="txt" value="1898" />
+          <entry key="txt" value="1960" />
           <entry key="upload-key" value="1" />
-          <entry key="yml" value="243" />
+          <entry key="yml" value="245" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Bash" value="5429" />
           <entry key="Markdown" value="1997" />
-          <entry key="PHP" value="7932" />
-          <entry key="PLAIN_TEXT" value="2804" />
-          <entry key="YAML" value="243" />
+          <entry key="PHP" value="8312" />
+          <entry key="PLAIN_TEXT" value="2866" />
+          <entry key="YAML" value="245" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.php.composer.actions">
@@ -117,8 +117,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/robo.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142">
-              <caret line="20" column="39" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="39" />
+            <state relative-caret-position="320">
+              <caret line="20" column="54" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="54" />
             </state>
           </provider>
         </entry>
@@ -126,8 +126,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/RoboFile.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="275" column="96" selection-start-line="275" selection-start-column="96" selection-end-line="275" selection-end-column="96" />
+            <state relative-caret-position="362">
+              <caret line="311" column="7" selection-start-line="311" selection-start-column="7" selection-end-line="311" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -163,6 +163,7 @@
       <find>reset_</find>
       <find>noreset</find>
       <find>$ssh_commands</find>
+      <find>'pv</find>
     </findStrings>
     <replaceStrings>
       <replace>=</replace>
@@ -239,7 +240,7 @@
     <option name="x" value="1920" />
     <option name="y" value="23" />
     <option name="width" value="960" />
-    <option name="height" value="588" />
+    <option name="height" value="1177" />
   </component>
   <component name="ProjectLevelVcsManager">
     <OptionsSetting value="false" id="Update" />
@@ -324,7 +325,10 @@
       <workItem from="1540238600106" duration="774000" />
       <workItem from="1540833308247" duration="3562000" />
       <workItem from="1540837288578" duration="587000" />
-      <workItem from="1540852324308" duration="1812000" />
+      <workItem from="1540852324308" duration="2442000" />
+      <workItem from="1540938678403" duration="2131000" />
+      <workItem from="1541115785780" duration="442000" />
+      <workItem from="1541450513281" duration="170000" />
     </task>
     <task id="LOCAL-00001" summary="add .idea folder for IDE, migrate dbdown to this project">
       <created>1533932102439</created>
@@ -641,11 +645,18 @@
       <option name="project" value="LOCAL" />
       <updated>1540838635381</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="Adds first draft of the refresh_ticket() function.">
+      <created>1540854458430</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1540854458430</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="128355000" />
+    <option name="totallyTimeSpent" value="131728000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -657,11 +668,11 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1920" y="23" width="960" height="588" extended-state="0" />
+    <frame x="1920" y="23" width="960" height="1177" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4814815" weight="0.30827886" />
-      <window_info active="true" id="Structure" order="1" sideWeight="0.5185185" side_tool="true" visible="true" weight="0.30827886" />
+      <window_info active="true" id="Structure" order="1" sideWeight="0.5185185" side_tool="true" visible="true" weight="0.29302832" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="0" weight="0.32862905" />
       <window_info anchor="bottom" id="Inspection Results" order="1" weight="0.32862905" />
@@ -677,6 +688,7 @@
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.3299363" />
       <window_info anchor="bottom" id="Terminal" order="12" weight="0.4233871" />
       <window_info anchor="bottom" id="Event Log" order="13" side_tool="true" weight="0.3299539" />
+      <window_info anchor="right" id="Key Promoter X" />
       <window_info anchor="right" id="Remote Host" order="0" weight="0.19052133" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
@@ -728,7 +740,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <MESSAGE value="First draft of new-ticket as a Robo script." />
     <MESSAGE value="Added nt as an alias for new_ticket()" />
     <MESSAGE value="Loads config from robo.yml" />
     <MESSAGE value="Adds Drupal update script." />
@@ -753,7 +764,8 @@
     <MESSAGE value="Can now skip git reset &amp; vagrant provision using command line arguments." />
     <MESSAGE value="Minor code cleanup." />
     <MESSAGE value="Fixing git tasks subroutine.  Need to fix error catching at some point." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixing git tasks subroutine.  Need to fix error catching at some point." />
+    <MESSAGE value="Adds first draft of the refresh_ticket() function." />
+    <option name="LAST_COMMIT_MESSAGE" value="Adds first draft of the refresh_ticket() function." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/completed" />
@@ -833,15 +845,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/robo.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="20" column="39" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="39" />
+        <state relative-caret-position="320">
+          <caret line="20" column="54" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="54" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/RoboFile.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="275" column="96" selection-start-line="275" selection-start-column="96" selection-end-line="275" selection-end-column="96" />
+        <state relative-caret-position="362">
+          <caret line="311" column="7" selection-start-line="311" selection-start-column="7" selection-end-line="311" selection-end-column="7" />
         </state>
       </provider>
     </entry>

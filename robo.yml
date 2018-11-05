@@ -16,9 +16,9 @@ command:
         BLT setup: blt setup -n
         Import config: drush cim -y
         Module update hooks: drush updb -y
+        Turn on coffee: drush en coffee
         Clear caches: drush cr
         Log in as admin: drush uli --uri=local.bwd.com
-        Turn on coffee: drush en coffee
   updateme:
     options:
       sites:

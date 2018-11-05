@@ -181,7 +181,7 @@ class RoboFile extends \Robo\Tasks {
    * @param $fork_repo
    * @param $new_branch
    *
-   * @return null|\Robo\Result
+   * @return void
    */
   function reset_branch($host_path, $base_branch, $upstream_repo, $fork_repo,
                         $new_branch) {
@@ -273,7 +273,8 @@ class RoboFile extends \Robo\Tasks {
       $$key = $value;
     }
 
-    $this->io()->text("Hi!  I'm going to run some basic commands to reset your Drupal config.");
+    $this->io()
+    ->text("Hi!  I'm going to run some basic commands to reset your Drupal config.");
 
     // Run tasks inside the VM
     $this->say("I'm going to run some commands inside the VM now.");
@@ -297,10 +298,18 @@ class RoboFile extends \Robo\Tasks {
   /**
    * Install all your favorite things on a new environment.
    *
+   * Uses Homebrew to automatically install a bunch of software on your Mac.
+   * If you don't have Homebrew, it installs it for you first.
+   *
+   * Note: Homebrew comes with two repositories: regular "brews" and also
+   * "casks."  This script pulls software from both, but the command to
+   * install is different (`brew install` vs. `brew cask install`).
+   *
    * @TODO automatically detect environment
    *
    * @param string $os
    *   If you specify an operating system, I'll install extra goodies.
+   *   Currently only supports Mac.
    *
    * @throws \Robo\Exception\TaskException
    */
