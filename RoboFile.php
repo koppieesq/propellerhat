@@ -14,9 +14,11 @@ class RoboFile extends \Robo\Tasks {
   /**
    * Alias function for new_ticket()
    *
+   * Arguments should match new_ticket().
+   *
    * @inheritdoc new_ticket()
    */
-  function nt($opts = ['no-reset' => FALSE, 'no-provision' => FALSE]) {
+  function nt($opts = ['no-reset' => FALSE, 'no-provision' => FALSE, 'no-install' => FALSE]) {
     $this->taskExec($this->new_ticket($opts));
   }
 
@@ -49,7 +51,7 @@ class RoboFile extends \Robo\Tasks {
    * @return int
    * @throws \Robo\Exception\TaskException
    */
-  function new_ticket($opts = ['no-reset' => FALSE, 'no-provision' => FALSE]) {
+  function new_ticket($opts = ['no-reset' => FALSE, 'no-provision' => FALSE, 'no-install' => FALSE]) {
     $this->say("Hi!  I'm going to help you refresh your local dev environment to start a new ticket.");
 
     // Load config & set environment variables
@@ -84,12 +86,15 @@ class RoboFile extends \Robo\Tasks {
 
     // Add descriptions of tasks to be performed *inside* the VM
     // Also set up commands to be run
+    // Also checks for --no-reset flag, and skips BLT setup.
     $command_tasks = "Run commands inside the VM:\n";
     $indent = "   - ";
 
     foreach ($vm_commands as $key => $value) {
-      $command_tasks .= $indent . $key . "\n";
-      $ssh_commands->exec($value);
+      if ($key != 'BLT setup' && !$opts['no-install']) {
+        $command_tasks .= $indent . $key . "\n";
+        $ssh_commands->exec($value);
+      }
     }
 
     $tasks[] = $command_tasks;

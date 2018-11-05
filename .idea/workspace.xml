@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1a099c3b-f3b4-4635-8b4e-dd664aca8a7c" name="Default Changelist" comment="">
+    <list default="true" id="1a099c3b-f3b4-4635-8b4e-dd664aca8a7c" name="Default Changelist" comment="Adds --no-install">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RoboFile.php" beforeDir="false" afterPath="$PROJECT_DIR$/RoboFile.php" afterDir="false" />
     </list>
@@ -72,9 +72,9 @@
           <entry key="md" value="1997" />
           <entry key="new-ticket" value="4578" />
           <entry key="ph" value="315" />
-          <entry key="php" value="8535" />
+          <entry key="php" value="8705" />
           <entry key="sh" value="535" />
-          <entry key="txt" value="2000" />
+          <entry key="txt" value="2099" />
           <entry key="upload-key" value="1" />
           <entry key="yml" value="245" />
         </counts>
@@ -83,8 +83,8 @@
         <counts>
           <entry key="Bash" value="5429" />
           <entry key="Markdown" value="1997" />
-          <entry key="PHP" value="8535" />
-          <entry key="PLAIN_TEXT" value="2906" />
+          <entry key="PHP" value="8705" />
+          <entry key="PLAIN_TEXT" value="3005" />
           <entry key="YAML" value="245" />
         </counts>
       </usages-collector>
@@ -125,8 +125,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/RoboFile.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="872">
-              <caret line="148" column="67" lean-forward="true" selection-start-line="148" selection-start-column="67" selection-end-line="148" selection-end-column="67" />
+            <state relative-caret-position="740">
+              <caret line="93" column="51" selection-start-line="93" selection-start-column="51" selection-end-line="93" selection-end-column="51" />
             </state>
           </provider>
         </entry>
@@ -327,7 +327,7 @@
       <workItem from="1540852324308" duration="2442000" />
       <workItem from="1540938678403" duration="2131000" />
       <workItem from="1541115785780" duration="442000" />
-      <workItem from="1541450513281" duration="699000" />
+      <workItem from="1541450513281" duration="2387000" />
     </task>
     <task id="LOCAL-00001" summary="add .idea folder for IDE, migrate dbdown to this project">
       <created>1533932102439</created>
@@ -658,11 +658,25 @@
       <option name="project" value="LOCAL" />
       <updated>1541450711306</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="'no-provision' flag still runs 'vagrant up.'">
+      <created>1541451280475</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1541451280475</updated>
+    </task>
+    <task id="LOCAL-00049" summary="Removed &quot;hello world&quot; function.">
+      <created>1541457071711</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1541457071711</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="132257000" />
+    <option name="totallyTimeSpent" value="133945000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -675,6 +689,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="23" width="960" height="1177" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4814815" weight="0.30827886" />
       <window_info active="true" id="Structure" order="1" sideWeight="0.5185185" side_tool="true" visible="true" weight="0.29302832" />
@@ -745,8 +760,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <MESSAGE value="Loads config from robo.yml" />
-    <MESSAGE value="Adds Drupal update script." />
     <MESSAGE value="Better local environment detection." />
     <MESSAGE value="Improve output." />
     <MESSAGE value="Fix bash environment detection" />
@@ -770,7 +783,9 @@
     <MESSAGE value="Fixing git tasks subroutine.  Need to fix error catching at some point." />
     <MESSAGE value="Adds first draft of the refresh_ticket() function." />
     <MESSAGE value="Minor code improvements + documentation." />
-    <option name="LAST_COMMIT_MESSAGE" value="Minor code improvements + documentation." />
+    <MESSAGE value="'no-provision' flag still runs 'vagrant up.'" />
+    <MESSAGE value="Removed &quot;hello world&quot; function." />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed &quot;hello world&quot; function." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/completed" />
@@ -857,8 +872,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/RoboFile.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="872">
-          <caret line="148" column="67" lean-forward="true" selection-start-line="148" selection-start-column="67" selection-end-line="148" selection-end-column="67" />
+        <state relative-caret-position="740">
+          <caret line="93" column="51" selection-start-line="93" selection-start-column="51" selection-end-line="93" selection-end-column="51" />
         </state>
       </provider>
     </entry>
