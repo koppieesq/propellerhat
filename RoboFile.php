@@ -14,7 +14,14 @@ class RoboFile extends \Robo\Tasks {
   /**
    * Alias function for new_ticket()
    *
-   * Arguments should match new_ticket().
+   * Shortcut for new_ticket().
+   *
+   * @option $no-reset Don't load the latest version of master into your
+   * feature branch
+   * @option $no-provision Don't rebuild the virtual machine, just run
+   * `vagrant up`
+   * @option $no-install Don't run `blt setup` inside the VM, but still
+   * import config, update database, and log in as admin
    *
    * @inheritdoc new_ticket()
    */
@@ -25,28 +32,24 @@ class RoboFile extends \Robo\Tasks {
   /**
    * Resets your local dev environment to start a new task.
    *
-   * You can control the following variables in robo.yml:
+   * You can set your own variables in robo.yml.
    *
-   * @var string $upstream_repo Name of the upstream repository
-   * @var string $fork_repo Name of your forked repository
-   * @var string $base_branch Name of the master branch.  Usually "master".
-   * @var string $new_branch Name of your feature branch.
-   * @var string $runner Task runner / package manager, eg. Composer.
-   * @var string $vm_start Command to start the virtual machine
-   *
-   * Pass this value as an argument on the command line:
-   * @var bool $no -reset
-   *
-   * Credits:
+   * @option $no-reset Don't load the latest version of master into your
+   * feature branch
+   * @option $no-provision Don't rebuild the virtual machine, just run
+   * `vagrant up`
+   * @option $no-install Don't run `blt setup` inside the VM, but still
+   * import config, update database, and log in as admin
    *
    * @see  https://git.businesswire.com/projects/HQ/repos/hq-tools/browse/dev/reset-dev
-   * With gratitude to Ben Thornton
+   *   With gratitude to Ben Thornton
    * @see  https://github.com/g1a/starter
-   *      And hat tip to G1A
+   *   And hat tip to G1A
    *
    * @TODO add an option to start from master and create the feature branch
    * @TODO add a wizard to provide config if it doesn't already exist
-   * @TODO use vm_commands from yaml file
+   *
+   * @param array $opts
    *
    * @return int
    * @throws \Robo\Exception\TaskException
