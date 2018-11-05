@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1a099c3b-f3b4-4635-8b4e-dd664aca8a7c" name="Default Changelist" comment="Adds first draft of the refresh_ticket() function.">
+    <list default="true" id="1a099c3b-f3b4-4635-8b4e-dd664aca8a7c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RoboFile.php" beforeDir="false" afterPath="$PROJECT_DIR$/RoboFile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo.yml" beforeDir="false" afterPath="$PROJECT_DIR$/robo.yml" afterDir="false" />
     </list>
     <ignored path=".idea/webServers.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -73,9 +72,9 @@
           <entry key="md" value="1997" />
           <entry key="new-ticket" value="4578" />
           <entry key="ph" value="315" />
-          <entry key="php" value="8312" />
+          <entry key="php" value="8535" />
           <entry key="sh" value="535" />
-          <entry key="txt" value="1960" />
+          <entry key="txt" value="2000" />
           <entry key="upload-key" value="1" />
           <entry key="yml" value="245" />
         </counts>
@@ -84,8 +83,8 @@
         <counts>
           <entry key="Bash" value="5429" />
           <entry key="Markdown" value="1997" />
-          <entry key="PHP" value="8312" />
-          <entry key="PLAIN_TEXT" value="2866" />
+          <entry key="PHP" value="8535" />
+          <entry key="PLAIN_TEXT" value="2906" />
           <entry key="YAML" value="245" />
         </counts>
       </usages-collector>
@@ -117,8 +116,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/robo.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="20" column="54" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="54" />
+            <state relative-caret-position="272">
+              <caret line="17" column="42" lean-forward="true" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -126,8 +125,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/RoboFile.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
-              <caret line="311" column="7" selection-start-line="311" selection-start-column="7" selection-end-line="311" selection-end-column="7" />
+            <state relative-caret-position="872">
+              <caret line="148" column="67" lean-forward="true" selection-start-line="148" selection-start-column="67" selection-end-line="148" selection-end-column="67" />
             </state>
           </provider>
         </entry>
@@ -328,7 +327,7 @@
       <workItem from="1540852324308" duration="2442000" />
       <workItem from="1540938678403" duration="2131000" />
       <workItem from="1541115785780" duration="442000" />
-      <workItem from="1541450513281" duration="170000" />
+      <workItem from="1541450513281" duration="699000" />
     </task>
     <task id="LOCAL-00001" summary="add .idea folder for IDE, migrate dbdown to this project">
       <created>1533932102439</created>
@@ -652,11 +651,18 @@
       <option name="project" value="LOCAL" />
       <updated>1540854458430</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="Minor code improvements + documentation.">
+      <created>1541450711306</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1541450711306</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="131728000" />
+    <option name="totallyTimeSpent" value="132257000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -669,7 +675,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="23" width="960" height="1177" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4814815" weight="0.30827886" />
       <window_info active="true" id="Structure" order="1" sideWeight="0.5185185" side_tool="true" visible="true" weight="0.29302832" />
@@ -740,7 +745,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <MESSAGE value="Added nt as an alias for new_ticket()" />
     <MESSAGE value="Loads config from robo.yml" />
     <MESSAGE value="Adds Drupal update script." />
     <MESSAGE value="Better local environment detection." />
@@ -765,7 +769,8 @@
     <MESSAGE value="Minor code cleanup." />
     <MESSAGE value="Fixing git tasks subroutine.  Need to fix error catching at some point." />
     <MESSAGE value="Adds first draft of the refresh_ticket() function." />
-    <option name="LAST_COMMIT_MESSAGE" value="Adds first draft of the refresh_ticket() function." />
+    <MESSAGE value="Minor code improvements + documentation." />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor code improvements + documentation." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/completed" />
@@ -845,15 +850,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/robo.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="20" column="54" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="54" />
+        <state relative-caret-position="272">
+          <caret line="17" column="42" lean-forward="true" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/RoboFile.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="311" column="7" selection-start-line="311" selection-start-column="7" selection-end-line="311" selection-end-column="7" />
+        <state relative-caret-position="872">
+          <caret line="148" column="67" lean-forward="true" selection-start-line="148" selection-start-column="67" selection-end-line="148" selection-end-column="67" />
         </state>
       </provider>
     </entry>

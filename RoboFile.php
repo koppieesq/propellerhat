@@ -139,6 +139,14 @@ class RoboFile extends \Robo\Tasks {
       ->exec($vm_start)
       ->run();
       $this->taskExec($this->check_success($result, $vm_start));
+    } elseif ($vm_start = 'vagrant up --provision') {
+      $this->say("I will turn on the existing VM but won't reprovision.");
+      $result = $this->taskExecStack()
+      ->stopOnFail()
+      ->dir($host_path)
+      ->exec('vagrant up')
+      ->run();
+      $this->taskExec($this->check_success($result, 'vagrant up'));
     }
 
     // Run tasks inside the VM
