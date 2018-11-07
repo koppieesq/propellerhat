@@ -72,9 +72,9 @@
           <entry key="md" value="1997" />
           <entry key="new-ticket" value="4578" />
           <entry key="ph" value="315" />
-          <entry key="php" value="9152" />
+          <entry key="php" value="9154" />
           <entry key="sh" value="535" />
-          <entry key="txt" value="2215" />
+          <entry key="txt" value="2249" />
           <entry key="upload-key" value="1" />
           <entry key="yml" value="245" />
         </counts>
@@ -83,8 +83,8 @@
         <counts>
           <entry key="Bash" value="5429" />
           <entry key="Markdown" value="1997" />
-          <entry key="PHP" value="9152" />
-          <entry key="PLAIN_TEXT" value="3121" />
+          <entry key="PHP" value="9154" />
+          <entry key="PLAIN_TEXT" value="3155" />
           <entry key="YAML" value="245" />
         </counts>
       </usages-collector>
@@ -117,7 +117,7 @@
         <entry file="file://$PROJECT_DIR$/robo.yml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="272">
-              <caret line="17" column="42" lean-forward="true" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
+              <caret line="17" column="42" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -125,8 +125,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/RoboFile.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="489">
-              <caret line="99" column="7" selection-start-line="99" selection-start-column="7" selection-end-line="99" selection-end-column="7" />
+            <state relative-caret-position="437">
+              <caret line="291" column="4" selection-start-line="291" selection-start-column="4" selection-end-line="291" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -236,10 +236,10 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1920" />
+    <option name="x" value="1953" />
     <option name="y" value="23" />
     <option name="width" value="960" />
-    <option name="height" value="1177" />
+    <option name="height" value="877" />
   </component>
   <component name="ProjectLevelVcsManager">
     <OptionsSetting value="false" id="Update" />
@@ -327,14 +327,7 @@
       <workItem from="1540852324308" duration="2442000" />
       <workItem from="1540938678403" duration="2131000" />
       <workItem from="1541115785780" duration="442000" />
-      <workItem from="1541450513281" duration="3795000" />
-    </task>
-    <task id="LOCAL-00003" summary="minor correction">
-      <created>1533937348507</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1533937348507</updated>
+      <workItem from="1541450513281" duration="5155000" />
     </task>
     <task id="LOCAL-00004" summary="Add credits, add new-ticket to readme, and fix some variables in new-ticket">
       <created>1534891569712</created>
@@ -672,11 +665,18 @@
       <option name="project" value="LOCAL" />
       <updated>1541459049186</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="Fixed logic for --no-install flag.">
+      <created>1541459872053</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1541459872053</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="135353000" />
+    <option name="totallyTimeSpent" value="136713000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -688,7 +688,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1920" y="23" width="960" height="1177" extended-state="1" />
+    <frame x="1953" y="23" width="960" height="877" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4814815" weight="0.30827886" />
       <window_info active="true" id="Structure" order="1" sideWeight="0.5185185" side_tool="true" visible="true" weight="0.29302832" />
@@ -759,7 +760,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <MESSAGE value="Fix bash environment detection" />
     <MESSAGE value="Add .bash_logout" />
     <MESSAGE value="Remove old config file; use robo.yml instead." />
     <MESSAGE value="Added @TODO's in code and a roadmap to README.md" />
@@ -784,7 +784,8 @@
     <MESSAGE value="Removed &quot;hello world&quot; function." />
     <MESSAGE value="Adds --no-install flag to new_ticket()." />
     <MESSAGE value="Update documentation for new_ticket() and nt(), with better help text for optional flags." />
-    <option name="LAST_COMMIT_MESSAGE" value="Update documentation for new_ticket() and nt(), with better help text for optional flags." />
+    <MESSAGE value="Fixed logic for --no-install flag." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed logic for --no-install flag." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/completed" />
@@ -865,14 +866,14 @@
     <entry file="file://$PROJECT_DIR$/robo.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
-          <caret line="17" column="42" lean-forward="true" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
+          <caret line="17" column="42" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/RoboFile.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="489">
-          <caret line="99" column="7" selection-start-line="99" selection-start-column="7" selection-end-line="99" selection-end-column="7" />
+        <state relative-caret-position="437">
+          <caret line="291" column="4" selection-start-line="291" selection-start-column="4" selection-end-line="291" selection-end-column="4" />
         </state>
       </provider>
     </entry>

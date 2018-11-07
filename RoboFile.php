@@ -289,8 +289,7 @@ class RoboFile extends \Robo\Tasks {
 
     // Run tasks inside the VM
     $this->say("I'm going to run some commands inside the VM now.");
-    $result = $this->taskSshExec($vm_domain, $vm_user)
-    ->stopOnFail()
+    $this->taskSshExec($vm_domain, $vm_user)
     ->port($vm_port)
     ->identityFile($vm_key)
     ->remoteDir($guest_path)
@@ -301,7 +300,6 @@ class RoboFile extends \Robo\Tasks {
     ->exec("drush uli --uri=local.bwd.com")
     ->exec("drush en coffee")
     ->run();
-    $this->taskExec($this->check_success($result, "Drupal config reset"));
 
     $this->_exec('echo "ALL DONE" | figlet | lolcat');
   }
