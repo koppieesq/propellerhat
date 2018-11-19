@@ -4,8 +4,18 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "90f00bc655cdc412af1e025069325d81",
+    "content-hash": "ccaae1125bd42042161e9409bdc4bc8f",
     "packages": [
+        {
+            "name": "btford/allthethings",
+            "version": "1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/btford/allthethings.git",
+                "reference": "master"
+            },
+            "type": "library"
+        },
         {
             "name": "consolidation/annotated-command",
             "version": "2.8.5",
