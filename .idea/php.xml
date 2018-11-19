@@ -25,6 +25,7 @@
       <path value="$PROJECT_DIR$/vendor/consolidation/annotated-command" />
       <path value="$PROJECT_DIR$/vendor/container-interop/container-interop" />
       <path value="$PROJECT_DIR$/vendor/consolidation/robo" />
+      <path value="$PROJECT_DIR$/vendor/btford/allthethings" />
     </include_path>
   </component>
 </project>

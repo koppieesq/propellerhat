@@ -2,5 +2,25 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor/btford/allthethings" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor/consolidation/annotated-command" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor/consolidation/config" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor/consolidation/log" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor/consolidation/output-formatters" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor/consolidation/self-update" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor/g1a/composer-test-scenarios" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor/grasmash/expander" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor/grasmash/yaml-expander" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor/league/container" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor/psr/container" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor/psr/log" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor/symfony/console" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor/symfony/contracts" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor/symfony/debug" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor/symfony/event-dispatcher" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor/symfony/filesystem" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor/symfony/finder" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor/symfony/process" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor/symfony/yaml" vcs="Git" />
   </component>
 </project>
