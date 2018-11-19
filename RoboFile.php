@@ -219,7 +219,7 @@ class RoboFile extends \Robo\Tasks {
    * @param string $path Specify the base path for your webroot.
    */
   function updateme($path = "/var/www/d7/sites") {
-    $this->io()->title("UPDATE ALL THE THINGS!!!");
+    $this->taskExec('sh vendor/btford/allthethings/allthethings.sh')->run();
 
     // Load sites, commands, and path to webroot
     $opts = Robo::config()->get("command.updateme.options");
