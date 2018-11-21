@@ -3,10 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="1a099c3b-f3b4-4635-8b4e-dd664aca8a7c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/propellerhat.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/propellerhat.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RoboFile.php" beforeDir="false" afterPath="$PROJECT_DIR$/RoboFile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robo.yml" beforeDir="false" afterPath="$PROJECT_DIR$/robo.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/g1a/composer-test-scenarios/scripts/dependency-licenses" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/g1a/composer-test-scenarios/scripts/dependency-licenses" afterDir="false" />
     </list>
     <ignored path=".idea/webServers.xml" />
@@ -24,18 +24,18 @@
     <session id="1155893981">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="33" />
+          <entry key="project.closed" value="36" />
           <entry key="project.open.time.0" value="9" />
-          <entry key="project.open.time.1" value="12" />
-          <entry key="project.open.time.10" value="4" />
+          <entry key="project.open.time.1" value="13" />
+          <entry key="project.open.time.10" value="5" />
           <entry key="project.open.time.15" value="2" />
           <entry key="project.open.time.19" value="1" />
           <entry key="project.open.time.2" value="4" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.6" value="1" />
-          <entry key="project.open.time.7" value="2" />
+          <entry key="project.open.time.7" value="3" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="38" />
+          <entry key="project.opened" value="41" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -52,14 +52,14 @@
           <entry key="new-ticket" value="2" />
           <entry key="ph" value="2" />
           <entry key="php" value="3" />
-          <entry key="sh" value="5" />
+          <entry key="sh" value="6" />
           <entry key="upload-key" value="2" />
           <entry key="yml" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Bash" value="16" />
+          <entry key="Bash" value="17" />
           <entry key="JSON" value="3" />
           <entry key="Markdown" value="2" />
           <entry key="PHP" value="3" />
@@ -77,11 +77,11 @@
           <entry key="md" value="1997" />
           <entry key="new-ticket" value="4578" />
           <entry key="ph" value="315" />
-          <entry key="php" value="9154" />
+          <entry key="php" value="9478" />
           <entry key="sh" value="535" />
-          <entry key="txt" value="2321" />
+          <entry key="txt" value="2453" />
           <entry key="upload-key" value="1" />
-          <entry key="yml" value="245" />
+          <entry key="yml" value="289" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -89,9 +89,9 @@
           <entry key="Bash" value="5429" />
           <entry key="JSON" value="95" />
           <entry key="Markdown" value="1997" />
-          <entry key="PHP" value="9154" />
-          <entry key="PLAIN_TEXT" value="3227" />
-          <entry key="YAML" value="245" />
+          <entry key="PHP" value="9478" />
+          <entry key="PLAIN_TEXT" value="3359" />
+          <entry key="YAML" value="289" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.php.composer.actions">
@@ -123,28 +123,33 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/robo.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="17" column="42" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/RoboFile.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="291" column="4" selection-start-line="291" selection-start-column="4" selection-end-line="291" selection-end-column="4" />
+            <state relative-caret-position="242">
+              <caret line="26" column="21" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/RoboFile.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="448">
+              <caret line="188" column="20" selection-start-line="188" selection-start-column="20" selection-end-line="188" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/composer.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="304">
               <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vendor/btford/allthethings/allthethings.sh">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -209,9 +214,9 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/auth.json" />
         <option value="$USER_HOME$/.bash_logout" />
+        <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/robo.yml" />
         <option value="$PROJECT_DIR$/RoboFile.php" />
-        <option value="$PROJECT_DIR$/composer.json" />
       </list>
     </option>
   </component>
@@ -275,6 +280,24 @@
               <item name="propellerhat" type="b2602c69:ProjectViewProjectNode" />
               <item name="propellerhat" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="propellerhat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="propellerhat" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="propellerhat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="propellerhat" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="btford" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="propellerhat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="propellerhat" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="btford" type="462c0819:PsiDirectoryNode" />
+              <item name="allthethings" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -292,7 +315,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="Symfony2.SettingsForm" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -358,28 +381,10 @@
       <workItem from="1540938678403" duration="2131000" />
       <workItem from="1541115785780" duration="442000" />
       <workItem from="1541450513281" duration="5207000" />
-      <workItem from="1542659997267" duration="2161000" />
-    </task>
-    <task id="LOCAL-00005" summary="Significant rewrite of new-ticket to make it more VM-agnostic">
-      <created>1534894303328</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1534894303328</updated>
-    </task>
-    <task id="LOCAL-00006" summary="renamed scripts to remove .sh">
-      <created>1534894430240</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1534894430240</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Moved new-ticket variables to separate config file, and improved output">
-      <created>1534895483364</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1534895483364</updated>
+      <workItem from="1542659997267" duration="4845000" />
+      <workItem from="1542756023942" duration="1171000" />
+      <workItem from="1542758357288" duration="1405000" />
+      <workItem from="1542830556765" duration="584000" />
     </task>
     <task id="LOCAL-00008" summary="Added documentation for `config` to readme">
       <created>1534895700936</created>
@@ -703,11 +708,32 @@
       <option name="project" value="LOCAL" />
       <updated>1541554651538</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="Add .idea folder for local IDE support.">
+      <created>1542662410057</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1542662410058</updated>
+    </task>
+    <task id="LOCAL-00055" summary="Update composer.json and add allthethings!">
+      <created>1542662445071</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1542662445071</updated>
+    </task>
+    <task id="LOCAL-00056" summary="Change updateme() introduction to use allthethings!">
+      <created>1542662654051</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1542662654051</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="138926000" />
+    <option name="totallyTimeSpent" value="144770000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -722,8 +748,8 @@
     <frame x="1920" y="23" width="960" height="1177" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.5798722" visible="true" weight="0.30827886" />
-      <window_info id="Structure" order="1" sideWeight="0.4201278" side_tool="true" visible="true" weight="0.30827886" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.5714286" visible="true" weight="0.3278867" />
+      <window_info active="true" id="Structure" order="1" sideWeight="0.42857143" side_tool="true" visible="true" weight="0.3278867" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="0" weight="0.32862905" />
       <window_info anchor="bottom" id="Inspection Results" order="1" weight="0.32862905" />
@@ -737,9 +763,9 @@
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.3299363" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="12" visible="true" weight="0.42304146" />
+      <window_info anchor="bottom" id="Terminal" order="12" visible="true" weight="0.41935483" />
       <window_info anchor="bottom" id="Event Log" order="13" side_tool="true" weight="0.3299539" />
-      <window_info anchor="right" id="Remote Host" order="0" weight="0.19052133" />
+      <window_info anchor="right" id="Remote Host" order="0" weight="0.18954249" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
@@ -791,9 +817,10 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <MESSAGE value="Remove old config file; use robo.yml instead." />
-    <MESSAGE value="Added @TODO's in code and a roadmap to README.md" />
-    <MESSAGE value="new_ticket: better handling for commands inside the VM." />
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/vendor/symfony/contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/debug" />
+    </ignored-roots>
     <MESSAGE value="Updated readme." />
     <MESSAGE value="Use VM internal commands from yaml file." />
     <MESSAGE value="Adding checks to make sure new_ticket() actually completes successfully." />
@@ -816,7 +843,10 @@
     <MESSAGE value="Update documentation for new_ticket() and nt(), with better help text for optional flags." />
     <MESSAGE value="Fixed logic for --no-install flag." />
     <MESSAGE value="ticket_refresh(): don't stop if one step in the stack fails." />
-    <option name="LAST_COMMIT_MESSAGE" value="ticket_refresh(): don't stop if one step in the stack fails." />
+    <MESSAGE value="Add .idea folder for local IDE support." />
+    <MESSAGE value="Update composer.json and add allthethings!" />
+    <MESSAGE value="Change updateme() introduction to use allthethings!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change updateme() introduction to use allthethings!" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/completed" />
@@ -887,24 +917,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/btford/allthethings/allthethings.sh">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/robo.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="17" column="42" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
+        <state relative-caret-position="242">
+          <caret line="26" column="21" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/RoboFile.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="291" column="4" selection-start-line="291" selection-start-column="4" selection-end-line="291" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+        <state relative-caret-position="448">
+          <caret line="188" column="20" selection-start-line="188" selection-start-column="20" selection-end-line="188" selection-end-column="20" />
         </state>
       </provider>
     </entry>

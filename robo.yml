@@ -16,9 +16,10 @@ command:
         BLT setup: blt setup -n
         Import config: drush cim -y
         Module update hooks: drush updb -y
-        Turn on coffee: drush en coffee
+        Turn modules on & off: 'drush en coffee; drush pmu acquia_connector
+        acquia_purge acquia_search'
         Clear caches: drush cr
-        Log in as admin: drush uli --uri=local.bwd.com
+        Log in as admin: drush uli --uri=https://local.bwd.com
   updateme:
     options:
       sites:

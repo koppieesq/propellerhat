@@ -25,7 +25,11 @@ class RoboFile extends \Robo\Tasks {
    *
    * @inheritdoc new_ticket()
    */
-  function nt($opts = ['no-reset' => FALSE, 'no-provision' => FALSE, 'no-install' => FALSE]) {
+  function nt($opts = [
+    'no-reset' => FALSE,
+    'no-provision' => FALSE,
+    'no-install' => FALSE,
+  ]) {
     $this->taskExec($this->new_ticket($opts));
   }
 
@@ -54,7 +58,11 @@ class RoboFile extends \Robo\Tasks {
    * @return int
    * @throws \Robo\Exception\TaskException
    */
-  function new_ticket($opts = ['no-reset' => FALSE, 'no-provision' => FALSE, 'no-install' => FALSE]) {
+  function new_ticket($opts = [
+    'no-reset' => FALSE,
+    'no-provision' => FALSE,
+    'no-install' => FALSE,
+  ]) {
     $this->say("Hi!  I'm going to help you refresh your local dev environment to start a new ticket.");
 
     // Load config & set environment variables
@@ -72,10 +80,10 @@ class RoboFile extends \Robo\Tasks {
 
     if (!$opts['no-reset']) {
       $tasks += [
-      "Pull a fresh copy of $upstream_repo/$base_branch",
-      "Push to $fork_repo/$base_branch",
-      "Reset $new_branch to match the latest $upstream_repo/$base_branch",
-      "Push to $fork_repo/$new_branch and set upstream",
+        "Pull a fresh copy of $upstream_repo/$base_branch",
+        "Push to $fork_repo/$base_branch",
+        "Reset $new_branch to match the latest $upstream_repo/$base_branch",
+        "Push to $fork_repo/$new_branch and set upstream",
       ];
     }
 
@@ -103,9 +111,9 @@ class RoboFile extends \Robo\Tasks {
     $tasks[] = $command_tasks;
 
     $requirements = [
-    "You have forked the 'upstream' repository and created your own",
-    "You've already created a feature branch for the new ticket",
-    "You've updated the enclosed config file with the correct repositories and branches",
+      "You have forked the 'upstream' repository and created your own",
+      "You've already created a feature branch for the new ticket",
+      "You've updated the enclosed config file with the correct repositories and branches",
     ];
 
     $this->io()->text("Here's what I can do:");
@@ -128,40 +136,41 @@ class RoboFile extends \Robo\Tasks {
     // See if there's anything new to install from Composer.
     $this->say("I'm going to see if there's anything to install.");
     $result = $this->taskComposerInstall()
-    ->dir($host_path)
-    ->dev()
-    ->run();
+      ->dir($host_path)
+      ->dev()
+      ->run();
     $this->taskExec($this->check_success($result, "Composer install"));
 
     // Turn on the VM and reprovision it if necessary.
     if (!$opts['no-provision']) {
       $this->say("Let's turn this thing on.");
       $result = $this->taskExecStack()
-      ->stopOnFail()
-      ->dir($host_path)
-      ->exec($vm_start)
-      ->run();
+        ->stopOnFail()
+        ->dir($host_path)
+        ->exec($vm_start)
+        ->run();
       $this->taskExec($this->check_success($result, $vm_start));
-    } elseif ($vm_start = 'vagrant up --provision') {
+    }
+    elseif ($vm_start = 'vagrant up --provision') {
       $this->say("I will turn on the existing VM but won't reprovision.");
       $result = $this->taskExecStack()
-      ->stopOnFail()
-      ->dir($host_path)
-      ->exec('vagrant up')
-      ->run();
+        ->stopOnFail()
+        ->dir($host_path)
+        ->exec('vagrant up')
+        ->run();
       $this->taskExec($this->check_success($result, 'vagrant up'));
     }
 
     // Run tasks inside the VM
     $this->say("I'm going to run some commands inside the VM now.");
     $result = $this->taskSshExec($vm_domain, $vm_user)
-    ->stopOnFail()
-    ->port($vm_port)
-    ->identityFile($vm_key)
-    ->remoteDir($guest_path)
-    ->dir($host_path)
-    ->exec($ssh_commands)
-    ->run();
+      ->stopOnFail()
+      ->port($vm_port)
+      ->identityFile($vm_key)
+      ->remoteDir($guest_path)
+      ->dir($host_path)
+      ->exec($ssh_commands)
+      ->run();
     $this->taskExec($this->check_success($result, "Commands inside the VM"));
 
     if (!$result->wasSuccessful()) {
@@ -177,7 +186,7 @@ class RoboFile extends \Robo\Tasks {
     $elapsed_minutes = floor($elapsed_time / 60);
     $elapsed_seconds = $elapsed_time - $elapsed_minutes * 60;
     $this->say("This took $elapsed_minutes minutes and $elapsed_seconds seconds.");
-    $this->io()->success("Now go forth and be awesome.");
+    $this->catlet("Go forth and be awesome.");
   }
 
   /**
@@ -197,15 +206,15 @@ class RoboFile extends \Robo\Tasks {
   function reset_branch($host_path, $base_branch, $upstream_repo, $fork_repo,
                         $new_branch) {
     $this->taskGitStack()
-    ->stopOnFail()
-    ->dir($host_path)
-    ->checkout("-B $base_branch $upstream_repo/$base_branch")
-    ->pull($upstream_repo, $base_branch)
-    ->push($fork_repo, $base_branch)
-    ->exec("git branch -D $new_branch")
-    ->checkout("-B $new_branch $upstream_repo/$base_branch")
-    ->exec("git push $fork_repo $new_branch --set-upstream")
-    ->run();
+      ->stopOnFail()
+      ->dir($host_path)
+      ->checkout("-B $base_branch $upstream_repo/$base_branch")
+      ->pull($upstream_repo, $base_branch)
+      ->push($fork_repo, $base_branch)
+      ->exec("git branch -D $new_branch")
+      ->checkout("-B $new_branch $upstream_repo/$base_branch")
+      ->exec("git push $fork_repo $new_branch --set-upstream")
+      ->run();
 
     return;
   }
@@ -219,7 +228,7 @@ class RoboFile extends \Robo\Tasks {
    * @param string $path Specify the base path for your webroot.
    */
   function updateme($path = "/var/www/d7/sites") {
-    $this->taskExec('sh vendor/btford/allthethings/allthethings.sh')->run();
+    $this->taskExec('s1h vendor/btford/allthethings/allthethings.sh')->run();
 
     // Load sites, commands, and path to webroot
     $opts = Robo::config()->get("command.updateme.options");
@@ -242,7 +251,7 @@ class RoboFile extends \Robo\Tasks {
     }
 
     $this->io()
-    ->success("All done!  Pat yourself on the back for a job well done.");
+      ->success("All done!  Pat yourself on the back for a job well done.");
   }
 
   /**
@@ -285,21 +294,21 @@ class RoboFile extends \Robo\Tasks {
     }
 
     $this->io()
-    ->text("Hi!  I'm going to run some basic commands to reset your Drupal config.");
+      ->text("Hi!  I'm going to run some basic commands to reset your Drupal config.");
 
     // Run tasks inside the VM
     $this->say("I'm going to run some commands inside the VM now.");
     $this->taskSshExec($vm_domain, $vm_user)
-    ->port($vm_port)
-    ->identityFile($vm_key)
-    ->remoteDir($guest_path)
-    ->dir($host_path)
-    ->exec("drush cim -y")
-    ->exec("drush updb -y")
-    ->exec("drush cr")
-    ->exec("drush uli --uri=local.bwd.com")
-    ->exec("drush en coffee")
-    ->run();
+      ->port($vm_port)
+      ->identityFile($vm_key)
+      ->remoteDir($guest_path)
+      ->dir($host_path)
+      ->exec("drush cim -y")
+      ->exec("drush updb -y")
+      ->exec("drush cr")
+      ->exec("drush uli --uri=local.bwd.com")
+      ->exec("drush en coffee")
+      ->run();
 
     $this->_exec('echo "ALL DONE" | figlet | lolcat');
   }
@@ -326,83 +335,103 @@ class RoboFile extends \Robo\Tasks {
     if ($os == 'mac') {
       // install Homebrew
       $result = $this->taskExecStack()
-      ->exec('/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"')
-      ->run();
+        ->exec('/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"')
+        ->run();
       $this->check_success($result, 'Installing Homebrew');
 
       // install apps using Homebrew
       $brews = [
-      'ansible',
-      'composer',
-      'cowsay',
-      'curl',
-      'docker',
-      'figlet',
-      'fortune',
-      'git',
-      'glib',
-      'hub',
-      'lolcat',
-      'node',
-      'nvm',
-      'php@7.1',
-      'ssh-copy-id',
-      'wget',
-      'bar',
+        'ansible',
+        'composer',
+        'cowsay',
+        'curl',
+        'docker',
+        'figlet',
+        'fortune',
+        'git',
+        'glib',
+        'hub',
+        'lolcat',
+        'node',
+        'nvm',
+        'php@7.1',
+        'ssh-copy-id',
+        'wget',
+        'bar',
       ];
       $casks = [
-      '1clipboard',
-      'beardedspice',
-      'chromedriver',
-      'google-chrome',
-      'firefox',
-      'font-source-code-pro',
-      'java',
-      'lando',
-      'livereload',
-      'phpstorm',
-      'slack',
-      'spectacle',
-      'spotify',
-      'vagrant',
-      'virtualbox',
-      'virtualbox-extension-pack',
+        '1clipboard',
+        'beardedspice',
+        'chromedriver',
+        'google-chrome',
+        'firefox',
+        'font-source-code-pro',
+        'java',
+        'lando',
+        'livereload',
+        'phpstorm',
+        'slack',
+        'spectacle',
+        'spotify',
+        'vagrant',
+        'virtualbox',
+        'virtualbox-extension-pack',
       ];
       $repos = [
-      'brew install' => $brews,
-      'brew cask install' => $casks,
+        'brew install' => $brews,
+        'brew cask install' => $casks,
       ];
 
       // Loop through both arrays
       foreach ($repos as $command => $desires) {
         foreach ($desires as $desire) {
           $this->taskExecStack()
-          ->exec($command . " " . $desire)
-          ->run();
+            ->exec($command . " " . $desire)
+            ->run();
         }
       }
     }
     else {
       $this->io()
-      ->note("If you specify an operating system, I can install a lot more stuff.");
+        ->note("If you specify an operating system, I can install a lot more stuff.");
     }
 
     // Install .bash_profile and other items consistent with all Linux & Unix environments
     $files = [
-    '.bash_profile' => 'bash profile: better command line prompt & command aliases',
-    '.bash_logout' => 'cute farewell greeting when you log out',
-    '.vimrc' => 'better VI settings',
+      '.bash_profile' => 'bash profile: better command line prompt & command aliases',
+      '.bash_logout' => 'cute farewell greeting when you log out',
+      '.vimrc' => 'better VI settings',
     ];
     foreach ($files as $file => $description) {
       $this->say("Installing " . $description);
       $this->taskFilesystemStack()
-      ->copy($file, "~/$file")
-      ->run();
+        ->copy($file, "~/$file")
+        ->run();
     }
 
     // Outro
-    $this->taskExecStack()
-    ->exec("figlet All Done! | lolcat")
-    ->run();
+    $this->catlet("All Done!");
+  }
+
+  /**
+   * Say something using figlet and lolcat.
+   *
+   * Figlet outputs a string using bubble letters, and lolcat outputs the
+   * string with rainbow letters.  Example:
+   *   _   _      _ _        __        __         _     _
+   *  | | | | ___| | | ___   \ \      / /__  _ __| | __| |
+   *  | |_| |/ _ \ | |/ _ \   \ \ /\ / / _ \| '__| |/ _` |
+   *  |  _  |  __/ | | (_) |   \ V  V / (_) | |  | | (_| |
+   *  |_| |_|\___|_|_|\___/     \_/\_/ \___/|_|  |_|\__,_|
+   *
+   * @param string $say
+   *   String to be rendered
+   */
+  function catlet(string $say = 'Hello World') {
+    $result = $this->taskExecStack()
+      ->exec("figlet $say | lolcat")
+      ->run();
+
+    return $result;
   }
 }
