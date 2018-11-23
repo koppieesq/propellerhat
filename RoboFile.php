@@ -63,7 +63,7 @@ class RoboFile extends \Robo\Tasks {
     'no-provision' => FALSE,
     'no-install' => FALSE,
   ]) {
-    $this->catlet("HI!!");
+    $this->catlet("H I ! !");
     $this->say("I'm going to help you refresh your local dev environment to start a new ticket.");
 
     // Load config & set environment variables
@@ -144,7 +144,7 @@ class RoboFile extends \Robo\Tasks {
 
     // Turn on the VM and reprovision it if necessary.
     if (!$opts['no-provision']) {
-      $this->catlet("Let's turn this thing on.");
+      $this->catlet('Let\'s turn this thing on.');
       $result = $this->taskExecStack()
         ->stopOnFail()
         ->dir($host_path)
@@ -433,7 +433,7 @@ class RoboFile extends \Robo\Tasks {
    *   String to be rendered
    */
   function catlet(string $say = 'Hello World') {
-    $this->taskExec("figlet $say | lolcat")
+    $this->taskExec("figlet " . $say . " | lolcat")
       ->silent(TRUE)
       ->printOutput(TRUE)
       ->run();
