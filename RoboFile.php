@@ -63,7 +63,8 @@ class RoboFile extends \Robo\Tasks {
     'no-provision' => FALSE,
     'no-install' => FALSE,
   ]) {
-    $this->say("Hi!  I'm going to help you refresh your local dev environment to start a new ticket.");
+    $this->catlet("HI!!");
+    $this->say("I'm going to help you refresh your local dev environment to start a new ticket.");
 
     // Load config & set environment variables
     $start_time = time();
@@ -143,7 +144,7 @@ class RoboFile extends \Robo\Tasks {
 
     // Turn on the VM and reprovision it if necessary.
     if (!$opts['no-provision']) {
-      $this->say("Let's turn this thing on.");
+      $this->catlet("Let's turn this thing on.");
       $result = $this->taskExecStack()
         ->stopOnFail()
         ->dir($host_path)
@@ -193,7 +194,8 @@ class RoboFile extends \Robo\Tasks {
    * Reset the local git branch to a fresh copy of master, upload to your fork
    * repository, and set upstream.
    *
-   * @SEE: https://stackoverflow.com/questions/5288172/git-replace-local-version-with-remote-version
+   * @see: https://stackoverflow
+   * .com/questions/5288172/git-replace-local-version-with-remote-version
    *
    * @param $host_path
    * @param $base_branch
@@ -228,7 +230,10 @@ class RoboFile extends \Robo\Tasks {
    * @param string $path Specify the base path for your webroot.
    */
   function updateme($path = "/var/www/d7/sites") {
-    $this->taskExec('s1h vendor/btford/allthethings/allthethings.sh')->run();
+    $this->taskExec('s1h vendor/btford/allthethings/allthethings.sh')
+      ->silent(TRUE)
+      ->printOutput(TRUE)
+      ->run();
 
     // Load sites, commands, and path to webroot
     $opts = Robo::config()->get("command.updateme.options");
@@ -250,8 +255,8 @@ class RoboFile extends \Robo\Tasks {
       }
     }
 
-    $this->io()
-      ->success("All done!  Pat yourself on the back for a job well done.");
+    $this->catlet("All done!");
+    $this->io()->success("Pat yourself on the back for a job well done.");
   }
 
   /**
@@ -428,10 +433,11 @@ class RoboFile extends \Robo\Tasks {
    *   String to be rendered
    */
   function catlet(string $say = 'Hello World') {
-    $result = $this->taskExecStack()
-      ->exec("figlet $say | lolcat")
+    $this->taskExec("figlet $say | lolcat")
+      ->silent(TRUE)
+      ->printOutput(TRUE)
       ->run();
 
-    return $result;
+    return;
   }
 }
