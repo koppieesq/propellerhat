@@ -230,7 +230,7 @@ class RoboFile extends \Robo\Tasks {
    * @param string $path Specify the base path for your webroot.
    */
   function updateme($path = "/var/www/d7/sites") {
-    $this->taskExec('s1h vendor/btford/allthethings/allthethings.sh')
+    $this->taskExec('sh vendor/btford/allthethings/allthethings.sh')
       ->silent(TRUE)
       ->printOutput(TRUE)
       ->run();
