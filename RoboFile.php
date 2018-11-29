@@ -64,7 +64,8 @@ class RoboFile extends \Robo\Tasks {
     'no-install' => FALSE,
   ]) {
     $this->catlet("NEW TICKET");
-    $this->io()->text("I'm going to help you refresh your local dev environment to start a new ticket.\n");
+    $this->io()
+      ->text("I'm going to help you refresh your local dev environment to start a new ticket.\n");
 
     // Load config & set environment variables
     $start_time = time();
@@ -300,9 +301,7 @@ class RoboFile extends \Robo\Tasks {
     if (!$ssh_commands) {
       $ssh_commands = $this->taskExecStack();
       foreach ($vm_commands as $key => $value) {
-        if ($key != 'BLT setup' or !$opts['no-install']) {
-          $ssh_commands->exec($value);
-        }
+        $ssh_commands->exec($value);
       }
     }
 
