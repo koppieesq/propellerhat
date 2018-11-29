@@ -63,8 +63,8 @@ class RoboFile extends \Robo\Tasks {
     'no-provision' => FALSE,
     'no-install' => FALSE,
   ]) {
-    $this->catlet("NEW TICKET!");
-    $this->say("I'm going to help you refresh your local dev environment to start a new ticket.");
+    $this->catlet("NEW TICKET");
+    $this->io()->text("I'm going to help you refresh your local dev environment to start a new ticket.\n");
 
     // Load config & set environment variables
     $start_time = time();
@@ -77,7 +77,8 @@ class RoboFile extends \Robo\Tasks {
 
     // Description of tasks to be performed, repeats at both the beginning and end of the script.
     // Assemble the tasks array.  Check for command line arguments before adding git reset or vagrant provision.
-    $tasks = ["Start in $host_path"];
+    $tasks = [];
+    $tasks += ["Start in $host_path",];
 
     if (!$opts['no-reset']) {
       $tasks += [
@@ -117,9 +118,9 @@ class RoboFile extends \Robo\Tasks {
       "You've updated the enclosed config file with the correct repositories and branches",
     ];
 
-    $this->io()->text("Here's what I can do:");
+    $this->say("Here's what I can do:");
     $this->io()->listing($tasks);
-    $this->io()->text("In order for this to work, please make sure:");
+    $this->say("In order for this to work, please make sure:");
     $this->io()->listing($requirements);
     $continue = $this->confirm("CONTINUE?");
 

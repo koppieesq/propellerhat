@@ -62,8 +62,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/RoboFile.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="389">
-                  <caret line="65" column="29" selection-start-line="65" selection-start-column="29" selection-end-line="65" selection-end-column="29" />
+                <state relative-caret-position="111">
+                  <caret line="66" column="104" selection-start-line="66" selection-start-column="104" selection-end-line="66" selection-end-column="104" />
                 </state>
               </provider>
             </entry>
@@ -108,7 +108,7 @@
             <entry file="file://$PROJECT_DIR$/RoboFile.php">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="61">
-                  <caret line="284" column="26" selection-start-line="284" selection-start-column="26" selection-end-line="284" selection-end-column="26" />
+                  <caret line="285" column="26" selection-start-line="285" selection-start-column="26" selection-end-line="285" selection-end-column="26" />
                 </state>
               </provider>
             </entry>
@@ -414,14 +414,7 @@
       <workItem from="1543375412909" duration="10000" />
       <workItem from="1543375728163" duration="1348000" />
       <workItem from="1543451967026" duration="1514000" />
-      <workItem from="1543520872300" duration="419000" />
-    </task>
-    <task id="LOCAL-00016" summary="Fixed check for global config.">
-      <created>1536084656499</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1536084656499</updated>
+      <workItem from="1543520872300" duration="746000" />
     </task>
     <task id="LOCAL-00017" summary="Added Composer &amp; Robo scaffolding.">
       <created>1536278420226</created>
@@ -759,11 +752,18 @@
       <option name="project" value="LOCAL" />
       <updated>1543453548942</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="new_ticket() now calls refresh_ticket().">
+      <created>1543521342325</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1543521342325</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="154348000" />
+    <option name="totallyTimeSpent" value="154675000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -861,7 +861,6 @@
       <path value="$PROJECT_DIR$/vendor/symfony/contracts" />
       <path value="$PROJECT_DIR$/vendor/symfony/debug" />
     </ignored-roots>
-    <MESSAGE value="&quot;New Ticket&quot; script does a better job of resetting the master branch based on the latest from origin, and then recreates the feature branch based on the latest origin/master." />
     <MESSAGE value="Fixed code to properly recreate the feature branch based on the latest origin/master, not the forked repo." />
     <MESSAGE value="Adds Bar utility." />
     <MESSAGE value="Adds optional command line argument to skip git reset." />
@@ -886,7 +885,8 @@
     <MESSAGE value="Remove Acquia-specific commands from robo.yml." />
     <MESSAGE value="Add catlet() to refresh_ticket()." />
     <MESSAGE value="Improve human introduction to refresh_ticket()." />
-    <option name="LAST_COMMIT_MESSAGE" value="Improve human introduction to refresh_ticket()." />
+    <MESSAGE value="new_ticket() now calls refresh_ticket()." />
+    <option name="LAST_COMMIT_MESSAGE" value="new_ticket() now calls refresh_ticket()." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/completed" />
@@ -1004,8 +1004,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/RoboFile.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="389">
-          <caret line="65" column="29" selection-start-line="65" selection-start-column="29" selection-end-line="65" selection-end-column="29" />
+        <state relative-caret-position="111">
+          <caret line="66" column="104" selection-start-line="66" selection-start-column="104" selection-end-line="66" selection-end-column="104" />
         </state>
       </provider>
     </entry>
