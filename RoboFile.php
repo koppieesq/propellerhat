@@ -302,7 +302,6 @@ class RoboFile extends \Robo\Tasks {
     $this->io()->text("I'm going to run some basic commands to reset your Drupal config.");
 
     // Run tasks inside the VM
-    $this->say("I'm going to run some commands inside the VM now.");
     $this->taskSshExec($vm_domain, $vm_user)
       ->port($vm_port)
       ->identityFile($vm_key)
