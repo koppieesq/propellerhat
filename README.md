@@ -50,8 +50,9 @@ The following new features are contemplated for the future:
 - Integrate with PhpStorm
 - Add tool to install items to local environment:
   - Additional config files: .bash_profile, .bash_logout, .vimrc, alias for Robo commands
-  - CLI utilities: bar, pv, fortune, cowsay, figlet, lolcat, [allthethings](https://github.com/btford/allthethings), ssh-copy-id
-
+  - CLI utilities: bat, glances, diff-so-fancy (and replace git diff), 
+  edex-ui (mac only?)
+  
 # Credits
 
 Brought to you by [Jordan Koplowicz](http://koplowiczandsons.com).  This software is free to use, modify, and distribute under the GPL 3 license.
