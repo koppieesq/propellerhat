@@ -73,7 +73,6 @@ class RoboFile extends \Robo\Tasks {
       $$key = $value;
     }
     $new_branch = exec("cd $host_path; git symbolic-ref --short HEAD");
-    $ssh_commands = $this->taskExecStack();
 
     // Description of tasks to be performed, repeats at both the beginning and end of the script.
     // Assemble the tasks array.  Check for command line arguments before adding git reset or vagrant provision.
@@ -100,6 +99,7 @@ class RoboFile extends \Robo\Tasks {
     // Add descriptions of tasks to be performed *inside* the VM
     // Also set up commands to be run
     // Also checks for --no-reset flag, and skips BLT setup.
+    $ssh_commands = $this->taskExecStack();
     $command_tasks = "Run commands inside the VM:\n";
     $indent = "   - ";
 
@@ -164,7 +164,7 @@ class RoboFile extends \Robo\Tasks {
     }
 
     // Run tasks inside the VM
-    $result = $this->refresh_ticket();
+    $result = $this->refresh_ticket($ssh_commands);
 
     if (!$result->wasSuccessful()) {
       $this->io()->error("Sorry, I was not able to finish setup.");
@@ -283,15 +283,28 @@ class RoboFile extends \Robo\Tasks {
    * This is a lighter lift than new_ticket().  Here, we don't rebuild the
    * environment; we simply reload stored config for Drupal _inside_ the VM.
    */
-  function refresh_ticket() {
-    // Retrieve stored preferences
+  function refresh_ticket($ssh_commands = NULL) {
+    // Introduction.
+    $this->catlet("Refresh Drupal Config!");
+
+    // Initial setup: retrieve stored preferences.
     $allopts = Robo::config()->get("command.new_ticket.options");
     foreach ($allopts as $key => $value) {
       $$key = $value;
     }
 
-    $this->catlet("Refresh Drupal Config!");
-    $this->io()->text("I'm going to run some basic commands to reset your Drupal config.");
+    // If you call this function from inside another function, you can pass
+    // the ssh commands as an argument.  Otherwise, if you call this function
+    // by itself (eg. `ph refresh_ticket`), it will grab the VM commands from
+    // the yaml file and run them.
+    if (!$ssh_commands) {
+      $ssh_commands = $this->taskExecStack();
+      foreach ($vm_commands as $key => $value) {
+        if ($key != 'BLT setup' or !$opts['no-install']) {
+          $ssh_commands->exec($value);
+        }
+      }
+    }
 
     // Run tasks inside the VM
     $this->say("I'm going to run some commands inside the VM now.");
@@ -306,6 +319,8 @@ class RoboFile extends \Robo\Tasks {
     $this->taskExec($this->check_success($result, "Commands inside the VM"));
 
     $this->catlet("All done!");
+
+    return $result;
   }
 
   /**
