@@ -298,8 +298,8 @@ class RoboFile extends \Robo\Tasks {
       $$key = $value;
     }
 
-    $this->io()
-      ->text("Hi!  I'm going to run some basic commands to reset your Drupal config.");
+    $this->catlet("HI!");
+    $this->io()->text("I'm going to run some basic commands to reset your Drupal config.");
 
     // Run tasks inside the VM
     $this->say("I'm going to run some commands inside the VM now.");
@@ -315,7 +315,7 @@ class RoboFile extends \Robo\Tasks {
       ->exec("drush en coffee")
       ->run();
 
-    $this->_exec('echo "ALL DONE" | figlet | lolcat');
+    $this->catlet("ALL DONE");
   }
 
   /**
