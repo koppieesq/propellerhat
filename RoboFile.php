@@ -63,7 +63,7 @@ class RoboFile extends \Robo\Tasks {
     'no-provision' => FALSE,
     'no-install' => FALSE,
   ]) {
-    $this->catlet("H I ! !");
+    $this->catlet("NEW TICKET!");
     $this->say("I'm going to help you refresh your local dev environment to start a new ticket.");
 
     // Load config & set environment variables
@@ -163,16 +163,7 @@ class RoboFile extends \Robo\Tasks {
     }
 
     // Run tasks inside the VM
-    $this->say("I'm going to run some commands inside the VM now.");
-    $result = $this->taskSshExec($vm_domain, $vm_user)
-      ->stopOnFail()
-      ->port($vm_port)
-      ->identityFile($vm_key)
-      ->remoteDir($guest_path)
-      ->dir($host_path)
-      ->exec($ssh_commands)
-      ->run();
-    $this->taskExec($this->check_success($result, "Commands inside the VM"));
+    $result = $this->refresh_ticket();
 
     if (!$result->wasSuccessful()) {
       $this->io()->error("Sorry, I was not able to finish setup.");
@@ -298,23 +289,22 @@ class RoboFile extends \Robo\Tasks {
       $$key = $value;
     }
 
-    $this->catlet("HI!");
+    $this->catlet("Refresh Drupal Config!");
     $this->io()->text("I'm going to run some basic commands to reset your Drupal config.");
 
     // Run tasks inside the VM
-    $this->taskSshExec($vm_domain, $vm_user)
+    $this->say("I'm going to run some commands inside the VM now.");
+    $result = $this->taskSshExec($vm_domain, $vm_user)
+      ->stopOnFail()
       ->port($vm_port)
       ->identityFile($vm_key)
       ->remoteDir($guest_path)
       ->dir($host_path)
-      ->exec("drush cim -y")
-      ->exec("drush updb -y")
-      ->exec("drush cr")
-      ->exec("drush uli --uri=local.bwd.com")
-      ->exec("drush en coffee")
+      ->exec($ssh_commands)
       ->run();
+    $this->taskExec($this->check_success($result, "Commands inside the VM"));
 
-    $this->catlet("ALL DONE");
+    $this->catlet("All done!");
   }
 
   /**
