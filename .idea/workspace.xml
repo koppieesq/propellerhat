@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a099c3b-f3b4-4635-8b4e-dd664aca8a7c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RoboFile.php" beforeDir="false" afterPath="$PROJECT_DIR$/RoboFile.php" afterDir="false" />
     </list>
     <ignored path=".idea/webServers.xml" />
@@ -53,8 +51,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/RoboFile.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="131">
-              <caret line="353" column="36" selection-start-line="353" selection-start-column="36" selection-end-line="353" selection-end-column="36" />
+            <state relative-caret-position="92">
+              <caret line="403" column="63" selection-start-line="403" selection-start-column="63" selection-end-line="403" selection-end-column="63" />
             </state>
           </provider>
         </entry>
@@ -223,7 +221,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.PHP" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.smartKeys" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -306,21 +304,7 @@
       <workItem from="1543729688338" duration="29000" />
       <workItem from="1543730653542" duration="1331000" />
       <workItem from="1543732066288" duration="504000" />
-      <workItem from="1543732749794" duration="161000" />
-    </task>
-    <task id="LOCAL-00020" summary="Added nt as an alias for new_ticket()">
-      <created>1536425799993</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1536425799993</updated>
-    </task>
-    <task id="LOCAL-00021" summary="Loads config from robo.yml">
-      <created>1536428113521</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1536428113521</updated>
+      <workItem from="1543732749794" duration="684000" />
     </task>
     <task id="LOCAL-00022" summary="Adds Drupal update script.">
       <created>1536476321095</created>
@@ -651,11 +635,25 @@
       <option name="project" value="LOCAL" />
       <updated>1543731917911</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="Update roadmap.">
+      <created>1543732954400</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1543732954401</updated>
+    </task>
+    <task id="LOCAL-00070" summary="Add composer install command to new_environment().">
+      <created>1543732976787</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1543732976787</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="158949000" />
+    <option name="totallyTimeSpent" value="159472000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -771,7 +769,6 @@
       <path value="$PROJECT_DIR$/vendor/symfony/process" />
       <path value="$PROJECT_DIR$/vendor/symfony/yaml" />
     </ignored-roots>
-    <MESSAGE value="Can now skip git reset &amp; vagrant provision using command line arguments." />
     <MESSAGE value="Minor code cleanup." />
     <MESSAGE value="Fixing git tasks subroutine.  Need to fix error catching at some point." />
     <MESSAGE value="Adds first draft of the refresh_ticket() function." />
@@ -796,7 +793,8 @@
     <MESSAGE value="Minor output improvements." />
     <MESSAGE value="Improved refresh_ticket() to work better with new_ticket()." />
     <MESSAGE value="Update roadmap." />
-    <option name="LAST_COMMIT_MESSAGE" value="Update roadmap." />
+    <MESSAGE value="Add composer install command to new_environment()." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add composer install command to new_environment()." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/completed" />
@@ -882,8 +880,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/RoboFile.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="353" column="36" selection-start-line="353" selection-start-column="36" selection-end-line="353" selection-end-column="36" />
+        <state relative-caret-position="92">
+          <caret line="403" column="63" selection-start-line="403" selection-start-column="63" selection-end-line="403" selection-end-column="63" />
         </state>
       </provider>
     </entry>

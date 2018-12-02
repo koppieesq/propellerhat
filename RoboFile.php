@@ -11,6 +11,13 @@ use Robo\Robo;
  */
 class RoboFile extends \Robo\Tasks {
 
+  protected $steps = 10;
+
+  public function progressIndicatorSteps()
+  {
+    return $this->steps;
+  }
+
   /**
    * Alias function for new_ticket()
    *
@@ -394,13 +401,16 @@ class RoboFile extends \Robo\Tasks {
         'brew cask install' => $casks,
       ];
 
-      // Loop through both arrays
+      // Loop through both arrays.  Run the progress indicator.
       foreach ($repos as $command => $desires) {
+        $this->startProgressIndicator();
         foreach ($desires as $desire) {
           $this->taskExecStack()
             ->exec($command . " " . $desire)
             ->run();
+          $this->advanceProgressIndicator();
         }
+        $this->stopProgressIndicator();
       }
     }
     else {
