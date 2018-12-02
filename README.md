@@ -46,12 +46,19 @@ The following new features are contemplated for the future:
 - Wizard to create new config file
   - Store config file in project or global (user directory)
   - Create multidimensional array for config values, including key, default, & description
+  - Remove robo.yml, keep default.robo.yml
 - Support installation via Composer
 - Integrate with PhpStorm
-- Add tool to install items to local environment:
+- Use collectionBuilder
+- Add additional items to new_environment():
+  - start with `composer install`
   - Additional config files: .bash_profile, .bash_logout, .vimrc, alias for Robo commands
-  - CLI utilities: bat, glances, diff-so-fancy (and replace git diff), 
-  edex-ui (mac only?)
+  - Additional utilities: bat, glances, diff-so-fancy (and replace git diff), middleclick, signal, multimonitor wallpaper, vlc, monit, synergy, filezilla
+  - Add optional toys: steam, bitlord, wesnoth, minecraft
+  - Add executable: edex-ui
+  - Remove Homebrew version of git
+    @see https://github.com/Homebrew/homebrew-core/issues/31980#issuecomment-425894125
+  
   
 # Credits
 
