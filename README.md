@@ -12,12 +12,29 @@ Some of these are bash scripts, but most use [Robo](https://robo.il).
   - *shortcut:* `robo nt`
 - **updateme:** Update contrib code on all your Drupal sites at once.
   - *usage:* `robo updateme`
+- **new_environment:** Install all your favorite tools.  See below for instructions.
   
 - **Obsolete tools:** These are some nifty tools that I wrote, but they've been supplanted by much better, open source tools written by other people.
     - **db down:** Sync database from a [Pantheon](https://pantheon.io) site.
       - *You should probably use [Terminus](https://github.com/pantheon-systems/terminus) instead.*
     - **upload key:** Uploads your SSH key.
       - *You should probably use `ssh-copy-id` instead.*
+      
+## New Environment
+### *Installation Instructions*
+The new_environment() function installs all your favorite tools when you have a new local environment (for example, when you get a new workstation).  However, it presents the classic 'chicken & egg' problem: how are you supposed to install anything without your dev tools?
+
+Fortunately it's easy:
+1. Install xcode command line tools.  This gets you git.  ;-)
+```bash
+xcode-select --install
+```
+1. Use git to clone propellerhat to your local environment
+1. Install [Robo](https://robo.li/)
+1. Run the new_environment installer and specify environment.  Currently only supports Mac:
+```bash
+robo new_environment mac
+```
 
 ## Configuration
 You can control how certain scripts behave.  Copy `default.robo.yml` and save it as `robo.yml` in the same directory.  You can also store `robo.yml` in your home directory (`~`).
