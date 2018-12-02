@@ -349,9 +349,6 @@ class RoboFile extends \Robo\Tasks {
    */
   function new_environment($os = NULL) {
     if ($os == 'mac') {
-      // Run `composer install`.
-      $this->taskComposerInstall()->run();
-
       // Install Homebrew.
       $result = $this->taskExecStack()
         ->exec('/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"')
@@ -401,22 +398,23 @@ class RoboFile extends \Robo\Tasks {
         'brew cask install' => $casks,
       ];
 
-      // Loop through both arrays.  Run the progress indicator.
+      // Loop through both arrays.  Create a collection.
+      $collection = $this->collectionBuilder();
       foreach ($repos as $command => $desires) {
-        $this->startProgressIndicator();
         foreach ($desires as $desire) {
-          $this->taskExecStack()
-            ->exec($command . " " . $desire)
-            ->run();
-          $this->advanceProgressIndicator();
+          $collection->taskExecStack()
+            ->exec($command . " " . $desire);
         }
-        $this->stopProgressIndicator();
       }
+      $collection->run();
     }
     else {
       $this->io()
         ->note("If you specify an operating system, I can install a lot more stuff.");
     }
+
+    // Run `composer install`.
+    $this->taskComposerInstall()->run();
 
     // Install .bash_profile and other items consistent with all Linux & Unix environments
     $files = [
@@ -424,12 +422,13 @@ class RoboFile extends \Robo\Tasks {
       '.bash_logout' => 'cute farewell greeting when you log out',
       '.vimrc' => 'better VI settings',
     ];
+    $file_collection = $this->collectionBuilder();
     foreach ($files as $file => $description) {
-      $this->say("Installing " . $description);
-      $this->taskFilesystemStack()
+      $file_collection->say("Installing " . $description);
+      $file_collection->taskFilesystemStack()
         ->copy($file, "~/$file")
-        ->run();
     }
+    $file_collection->run();
 
     // Outro
     $this->catlet("All Done!");

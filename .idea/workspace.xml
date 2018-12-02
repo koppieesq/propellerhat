@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1a099c3b-f3b4-4635-8b4e-dd664aca8a7c" name="Default Changelist" comment="">
+    <list default="true" id="1a099c3b-f3b4-4635-8b4e-dd664aca8a7c" name="Default Changelist" comment="Add installation instructions for new_environment().">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RoboFile.php" beforeDir="false" afterPath="$PROJECT_DIR$/RoboFile.php" afterDir="false" />
     </list>
     <ignored path=".idea/webServers.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,23 +36,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="183">
-                <caret line="35" column="24" selection-start-line="35" selection-start-column="24" selection-end-line="35" selection-end-column="24" />
+              <first_editor relative-caret-position="540">
+                <caret line="36" column="3" selection-start-line="36" selection-start-column="3" selection-end-line="36" selection-end-column="3" />
               </first_editor>
               <second_editor />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/RoboFile.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1897">
-              <caret line="414" column="5" lean-forward="true" selection-start-line="414" selection-start-column="5" selection-end-line="414" selection-end-column="5" />
+            <state relative-caret-position="302">
+              <caret line="430" column="28" selection-start-line="430" selection-start-column="28" selection-end-line="430" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -145,8 +145,8 @@
         <option value="$PROJECT_DIR$/../.bash_logout" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/robo.yml" />
-        <option value="$PROJECT_DIR$/RoboFile.php" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/RoboFile.php" />
       </list>
     </option>
   </component>
@@ -196,7 +196,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -208,6 +207,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -304,14 +304,9 @@
       <workItem from="1543729688338" duration="29000" />
       <workItem from="1543730653542" duration="1331000" />
       <workItem from="1543732066288" duration="504000" />
-      <workItem from="1543732749794" duration="1317000" />
-    </task>
-    <task id="LOCAL-00023" summary="Better local environment detection.">
-      <created>1536481933752</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1536481933752</updated>
+      <workItem from="1543732749794" duration="1379000" />
+      <workItem from="1543734482832" duration="939000" />
+      <workItem from="1543739264290" duration="228000" />
     </task>
     <task id="LOCAL-00024" summary="Improve output.">
       <created>1536510458690</created>
@@ -649,11 +644,18 @@
       <option name="project" value="LOCAL" />
       <updated>1543733546094</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="Add installation instructions for new_environment().">
+      <created>1543734158427</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1543734158428</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="160105000" />
+    <option name="totallyTimeSpent" value="161334000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -668,8 +670,8 @@
     <frame x="462" y="23" width="960" height="877" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.5416667" visible="true" weight="0.31699347" />
-      <window_info id="Structure" order="1" sideWeight="0.45833334" side_tool="true" visible="true" weight="0.31699347" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.53747714" visible="true" weight="0.26797387" />
+      <window_info id="Structure" order="1" sideWeight="0.46252286" side_tool="true" visible="true" weight="0.26797387" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="0" weight="0.32862905" />
       <window_info anchor="bottom" id="Inspection Results" order="1" weight="0.32862905" />
@@ -683,7 +685,7 @@
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.2878981" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="12" visible="true" weight="0.41910827" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="12" visible="true" weight="0.30318472" />
       <window_info anchor="bottom" id="Event Log" order="13" side_tool="true" weight="0.3299539" />
       <window_info anchor="right" id="Remote Host" order="0" weight="0.18954249" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
@@ -769,7 +771,6 @@
       <path value="$PROJECT_DIR$/vendor/symfony/process" />
       <path value="$PROJECT_DIR$/vendor/symfony/yaml" />
     </ignored-roots>
-    <MESSAGE value="Fixing git tasks subroutine.  Need to fix error catching at some point." />
     <MESSAGE value="Adds first draft of the refresh_ticket() function." />
     <MESSAGE value="Minor code improvements + documentation." />
     <MESSAGE value="'no-provision' flag still runs 'vagrant up.'" />
@@ -794,7 +795,8 @@
     <MESSAGE value="Update roadmap." />
     <MESSAGE value="Add composer install command to new_environment()." />
     <MESSAGE value="Add progress bar to new_environment()." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add progress bar to new_environment()." />
+    <MESSAGE value="Add installation instructions for new_environment()." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add installation instructions for new_environment()." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/completed" />
@@ -854,6 +856,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="540">
+            <caret line="36" column="3" selection-start-line="36" selection-start-column="3" selection-end-line="36" selection-end-column="3" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -870,18 +882,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/RoboFile.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1897">
-          <caret line="414" column="5" lean-forward="true" selection-start-line="414" selection-start-column="5" selection-end-line="414" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="183">
-            <caret line="35" column="24" selection-start-line="35" selection-start-column="24" selection-end-line="35" selection-end-column="24" />
-          </first_editor>
-          <second_editor />
+        <state relative-caret-position="302">
+          <caret line="430" column="28" selection-start-line="430" selection-start-column="28" selection-end-line="430" selection-end-column="28" />
         </state>
       </provider>
     </entry>
