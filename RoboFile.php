@@ -342,7 +342,10 @@ class RoboFile extends \Robo\Tasks {
    */
   function new_environment($os = NULL) {
     if ($os == 'mac') {
-      // install Homebrew
+      // Run `composer install`.
+      $this->taskComposerInstall()->run();
+
+      // Install Homebrew.
       $result = $this->taskExecStack()
         ->exec('/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"')
         ->run();
