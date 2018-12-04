@@ -63,13 +63,13 @@ The following new features are contemplated for the future:
 - Wizard to create new config file
   - Store config file in project or global (user directory)
   - Create multidimensional array for config values, including key, default, & description
-  - Remove robo.yml, keep default.robo.yml
+  - Remove robo.yml from git; keep default.robo.yml
 - Support installation via Composer
 - Integrate with PhpStorm
 - Use collectionBuilder
 - Add additional items to new_environment():
   - start with `composer install`
-  - Additional config files: .bash_profile, .bash_logout, .vimrc, alias for Robo commands
+  - Alias for Robo commands
   - Additional utilities: bat, glances, diff-so-fancy (and replace git diff), middleclick, signal, multimonitor wallpaper, vlc, monit, synergy, filezilla
   - Add optional toys: steam, bitlord, wesnoth, minecraft
   - Add executable: edex-ui
