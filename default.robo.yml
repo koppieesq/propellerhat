@@ -13,15 +13,50 @@ command:
       vm_port: 2222
       vm_key: id_rsa
       vm_commands:
-      - "drush cim -y"
-      - "drush updb -y"
-      - "drush cr"
-      - "drush uli"
+        - "drush cim -y"
+        - "drush updb -y"
+        - "drush cr"
+        - "drush uli"
   updateme:
     options:
       sites:
-      - all
+        - all
       commands:
         update all contrib modules: drush up
         run database updates: drush updb -y
         clear caches: drush cc all
+  new_environment:
+    brews:
+      - ansible
+      - composer
+      - cowsay
+      - curl
+      - docker
+      - figlet
+      - fortune
+      - git
+      - glib
+      - hub
+      - lolcat
+      - node
+      - nvm
+      - php@7.1
+      - ssh-copy-id
+      - wget
+      - bar
+    casks:
+      - 1clipboard
+      - beardedspice
+      - chromedriver
+      - google-chrome
+      - firefox
+      - java
+      - lando
+      - livereload
+      - phpstorm
+      - slack
+      - spectacle
+      - spotify
+      - vagrant
+      - virtualbox
+      - virtualbox-extension-pack
