@@ -424,9 +424,8 @@ class RoboFile extends \Robo\Tasks {
     ];
     $file_collection = $this->collectionBuilder();
     foreach ($files as $file => $description) {
-      $file_collection->say("Installing " . $description);
       $file_collection->taskFilesystemStack()
-        ->copy($file, "~/$file")
+        ->copy($file, "~/$file");
     }
     $file_collection->run();
 
