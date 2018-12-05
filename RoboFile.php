@@ -13,8 +13,7 @@ class RoboFile extends \Robo\Tasks {
 
   protected $steps = 10;
 
-  public function progressIndicatorSteps()
-  {
+  public function progressIndicatorSteps() {
     return $this->steps;
   }
 
@@ -182,12 +181,24 @@ class RoboFile extends \Robo\Tasks {
     // Outro
     $this->say("Congratulations, we're done!  Here's what we did:");
     $this->io()->listing($tasks);
+    $this->stopwatch($start_time);
+    $this->catlet("Go forth and be awesome.");
+  }
+
+  /**
+   * Calculate & report elapsed time for this task.
+   *
+   * @param $start_time
+   *   The time you began.
+   */
+  function stopwatch($start_time) {
     $stop_time = time();
     $elapsed_time = $stop_time - $start_time;
     $elapsed_minutes = floor($elapsed_time / 60);
     $elapsed_seconds = $elapsed_time - $elapsed_minutes * 60;
     $this->say("This took $elapsed_minutes minutes and $elapsed_seconds seconds.");
-    $this->catlet("Go forth and be awesome.");
+
+    return;
   }
 
   /**
@@ -350,49 +361,19 @@ class RoboFile extends \Robo\Tasks {
   function new_environment($os = NULL) {
     if ($os == 'mac') {
       // Install Homebrew.
-      $result = $this->taskExecStack()
-        ->exec('/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"')
-        ->run();
-      $this->check_success($result, 'Installing Homebrew');
+      //     $result = $this->taskExecStack()
+      //       ->exec('/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"')
+      //       ->run();
+      //     $this->check_success($result, 'Installing Homebrew');
+
+      // Load config & set environment variables
+      $start_time = time();
+      $brews = Robo::config()->get("command.new_environment.brews");
+      $casks = Robo::config()->get("command.new_environment.casks");
+      $new_branch = exec("cd $host_path; git symbolic-ref --short HEAD");
 
       // install apps using Homebrew
-      $brews = [
-        'ansible',
-        'composer',
-        'cowsay',
-        'curl',
-        'docker',
-        'figlet',
-        'fortune',
-        'git',
-        'glib',
-        'hub',
-        'lolcat',
-        'node',
-        'nvm',
-        'php@7.1',
-        'ssh-copy-id',
-        'wget',
-        'bar',
-      ];
-      $casks = [
-        '1clipboard',
-        'beardedspice',
-        'chromedriver',
-        'google-chrome',
-        'firefox',
-        'font-source-code-pro',
-        'java',
-        'lando',
-        'livereload',
-        'phpstorm',
-        'slack',
-        'spectacle',
-        'spotify',
-        'vagrant',
-        'virtualbox',
-        'virtualbox-extension-pack',
-      ];
+
       $repos = [
         'brew install' => $brews,
         'brew cask install' => $casks,
@@ -430,6 +411,7 @@ class RoboFile extends \Robo\Tasks {
     $file_collection->run();
 
     // Outro
+    $this->stopwatch($start_time);
     $this->catlet("All Done!");
   }
 
