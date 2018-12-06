@@ -233,6 +233,85 @@ class RoboFile extends \Robo\Tasks {
   }
 
   /**
+   * Install all your favorite things on a new environment.
+   *
+   * Uses Homebrew to automatically install a bunch of software on your Mac.
+   * If you don't have Homebrew, it installs it for you first.
+   *
+   * Note: Homebrew comes with two repositories: regular "brews" and also
+   * "casks."  This script pulls software from both, but the command to
+   * install is different (`brew install` vs. `brew cask install`).
+   *
+   * @TODO automatically detect environment
+   *
+   * @option $mac Install Mac-related packages
+   * @option $y Install Homebrew
+   *
+   * @throws \Robo\Exception\TaskException
+   */
+  function new_environment($opts = ['y' => FALSE, 'mac' => TRUE]) {
+    // Load config & set environment variables
+    $start_time = time();
+    $brews = Robo::config()->get("command.new_environment.brews");
+    $casks = Robo::config()->get("command.new_environment.casks");
+    //    $pwd = exec('cd ~; pwd');
+    $home = exec('echo $HOME');
+    $pwd = exec('pwd');
+
+    if ($opts['mac']) {
+      if ($opts['y']) {
+        // Install Homebrew.
+        $result = $this->taskExecStack()
+          ->exec('/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"')
+          ->run();
+        $this->check_success($result, 'Installing Homebrew');
+      } else {
+        $this->io()->note("If you add -y, I'll install Homebrew.");
+      }
+
+      // install apps using Homebrew
+      $repos = [
+        'brew install' => $brews,
+        'brew cask install' => $casks,
+      ];
+
+      // Loop through both arrays.  Create a collection.
+      $collection = $this->collectionBuilder();
+      foreach ($repos as $command => $desires) {
+        foreach ($desires as $desire) {
+          $collection->taskExecStack()
+            ->exec($command . " " . $desire);
+        }
+      }
+      $collection->run();
+    }
+    else {
+      $this->io()
+        ->note("If you specify an operating system, I can install a lot more stuff.");
+    }
+
+    // Run `composer install`.
+    $this->taskComposerInstall()->run();
+
+    // Install .bash_profile and other items consistent with all Linux & Unix environments
+    $files = [
+      '.bash_profile' => 'bash profile: better command line prompt & command aliases',
+      '.bash_logout' => 'cute farewell greeting when you log out',
+      '.vimrc' => 'better VI settings',
+    ];
+    $file_collection = $this->collectionBuilder();
+    foreach ($files as $file => $description) {
+      $file_collection->taskFilesystemStack()
+        ->copy("$pwd/$file", "$home/$file");
+    }
+    $file_collection->run();
+
+    // Outro
+    $this->stopwatch($start_time);
+    $this->catlet("All Done!");
+  }
+
+  /**
    * Update contrib code on all your Drupal sites at once.
    *
    * Loops through all sites defined in robo.yml.  Executes all commands found
@@ -341,81 +420,6 @@ class RoboFile extends \Robo\Tasks {
   }
 
   /**
-   * Install all your favorite things on a new environment.
-   *
-   * Uses Homebrew to automatically install a bunch of software on your Mac.
-   * If you don't have Homebrew, it installs it for you first.
-   *
-   * Note: Homebrew comes with two repositories: regular "brews" and also
-   * "casks."  This script pulls software from both, but the command to
-   * install is different (`brew install` vs. `brew cask install`).
-   *
-   * @TODO automatically detect environment
-   *
-   * @param string $os
-   *   If you specify an operating system, I'll install extra goodies.
-   *   Currently only supports Mac.
-   *
-   * @throws \Robo\Exception\TaskException
-   */
-  function new_environment($os = NULL) {
-    if ($os == 'mac') {
-      // Install Homebrew.
-      //     $result = $this->taskExecStack()
-      //       ->exec('/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"')
-      //       ->run();
-      //     $this->check_success($result, 'Installing Homebrew');
-
-      // Load config & set environment variables
-      $start_time = time();
-      $brews = Robo::config()->get("command.new_environment.brews");
-      $casks = Robo::config()->get("command.new_environment.casks");
-      $new_branch = exec("cd $host_path; git symbolic-ref --short HEAD");
-
-      // install apps using Homebrew
-
-      $repos = [
-        'brew install' => $brews,
-        'brew cask install' => $casks,
-      ];
-
-      // Loop through both arrays.  Create a collection.
-      $collection = $this->collectionBuilder();
-      foreach ($repos as $command => $desires) {
-        foreach ($desires as $desire) {
-          $collection->taskExecStack()
-            ->exec($command . " " . $desire);
-        }
-      }
-      $collection->run();
-    }
-    else {
-      $this->io()
-        ->note("If you specify an operating system, I can install a lot more stuff.");
-    }
-
-    // Run `composer install`.
-    $this->taskComposerInstall()->run();
-
-    // Install .bash_profile and other items consistent with all Linux & Unix environments
-    $files = [
-      '.bash_profile' => 'bash profile: better command line prompt & command aliases',
-      '.bash_logout' => 'cute farewell greeting when you log out',
-      '.vimrc' => 'better VI settings',
-    ];
-    $file_collection = $this->collectionBuilder();
-    foreach ($files as $file => $description) {
-      $file_collection->taskFilesystemStack()
-        ->copy($file, "~/$file");
-    }
-    $file_collection->run();
-
-    // Outro
-    $this->stopwatch($start_time);
-    $this->catlet("All Done!");
-  }
-
-  /**
    * Say something using figlet and lolcat.
    *
    * Figlet outputs a string using bubble letters, and lolcat outputs the
@@ -436,5 +440,42 @@ class RoboFile extends \Robo\Tasks {
       ->run();
 
     return;
+  }
+
+  /**
+   * Reusable introduction.
+   *
+   * This function takes 3 arguments: your header, your intro, and a list of
+   * things.  The headline gets displayed in figlet default puffy letter
+   * style, your introduction gets displayed as a simple say(), and the list
+   * rendered using io()->listing().  Finally, it asks the user if they want
+   * to continue.  Continuing is a simple matter of pressing "enter"; if they
+   * do, then the function will return TRUE (in case you need it).  If they
+   * type ctl-C, then they will escape the entire program.
+   *
+   * @param string $banner
+   *   Say it in lights.
+   * @param string $intro
+   *   Say it in normal words.
+   * @param null $list
+   *   What are you going to do?
+   *
+   * @return bool
+   */
+  function intro(string $banner = 'Hi!', string $intro = '', $list = NULL) {
+    // Can't pass NULL to io->listing().
+    $list = $list ? $list : ["(Sorry, not actually sure what I *can* do!)"];
+
+    // Display in glorious fashion
+    $this->catlet($banner);
+    $this->say($intro . "  Here's what I can do:");
+    $this->io()->listing($list);
+
+    // Simple confirmation: anything to continue; ctl-C to escape.
+    $this->say("Do you want me to do this?");
+    $this->ask("Press [ENTER] to continue, ctrl-C to cancel.");
+
+    // Not sure if anyone will need TRUE, but here it is just in case.
+    return TRUE;
   }
 }

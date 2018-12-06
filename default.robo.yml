@@ -58,6 +58,7 @@ command:
       - spectacle
       - spotify
       - vagrant
+      - skype
       - virtualbox
       - virtualbox-extension-pack
       - homebrew/cask-fonts/font-source-code-pro
