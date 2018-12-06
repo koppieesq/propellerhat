@@ -246,8 +246,8 @@ class RoboFile extends \Robo\Tasks {
     $brews = Robo::config()->get("command.new_environment.brews");
     $casks = Robo::config()->get("command.new_environment.casks");
     //    $pwd = exec('cd ~; pwd');
-    $home = exec('echo $HOME');
     $pwd = exec('pwd');
+    $home = exec('echo $HOME');
 
     if ($opts['mac']) {
       if ($opts['y']) {
@@ -273,7 +273,6 @@ class RoboFile extends \Robo\Tasks {
           $collection->exec($command . " " . $desire);
         }
       }
-//      $collection->run();
     }
     else {
       $this->io()
@@ -281,7 +280,6 @@ class RoboFile extends \Robo\Tasks {
     }
 
     // Run `composer install`.
-//    $this->taskComposerInstall()->run();
     $collection->taskComposerInstall();
 
     // Install .bash_profile and other items consistent with all Linux & Unix environments
@@ -290,11 +288,9 @@ class RoboFile extends \Robo\Tasks {
       '.bash_logout' => 'cute farewell greeting when you log out',
       '.vimrc' => 'better VI settings',
     ];
-//    $file_collection = $this->collectionBuilder();
     foreach ($files as $file => $description) {
       $collection->copy("$pwd/$file", "$home/$file");
     }
-//    $file_collection->run();
     $collection->run();
 
     // Outro
@@ -423,6 +419,8 @@ class RoboFile extends \Robo\Tasks {
    *
    * @param string $say
    *   String to be rendered
+   *
+   * @return result success no matter what.
    */
   function catlet(string $say = 'Hello World') {
     $this->taskExec("figlet " . $say . " | lolcat")
