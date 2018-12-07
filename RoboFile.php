@@ -11,12 +11,6 @@ use Robo\Robo;
  */
 class RoboFile extends \Robo\Tasks {
 
-  protected $steps = 10;
-
-  public function progressIndicatorSteps() {
-    return $this->steps;
-  }
-
   /**
    * Alias function for new_ticket()
    *
