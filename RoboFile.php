@@ -173,7 +173,7 @@ class RoboFile extends \Robo\Tasks {
     $this->io()->listing($tasks);
     $this->stopwatch($start_time);
     $this->catlet("Go forth and be awesome.");
-    return Result::success;
+    return;
   }
 
   /**
@@ -189,7 +189,7 @@ class RoboFile extends \Robo\Tasks {
     $elapsed_seconds = $elapsed_time - $elapsed_minutes * 60;
     $this->say("This took $elapsed_minutes minutes and $elapsed_seconds seconds.");
 
-    return Result::success;
+    return;
   }
 
   /**
@@ -428,7 +428,7 @@ class RoboFile extends \Robo\Tasks {
       ->printOutput(TRUE)
       ->run();
 
-    return Result::success;
+    return;
   }
 
   /**
