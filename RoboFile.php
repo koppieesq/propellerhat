@@ -1,7 +1,6 @@
 <?php
 
 use Robo\Robo;
-use Robo\Robo\Result;
 
 /**
  * This is project's console commands configuration for Robo task runner.
@@ -264,9 +263,11 @@ class RoboFile extends \Robo\Tasks {
       $collection = $this->collectionBuilder();
       foreach ($repos as $command => $desires) {
         foreach ($desires as $desire) {
-          $collection->exec($command . " " . $desire);
+          $collection->taskExecStack()
+            ->exec($command . " " . $desire);
         }
       }
+      $collection->run();
     }
     else {
       $this->io()
@@ -274,7 +275,7 @@ class RoboFile extends \Robo\Tasks {
     }
 
     // Run `composer install`.
-    $collection->taskComposerInstall();
+    $this->taskComposerInstall()->run();
 
     // Install .bash_profile and other items consistent with all Linux & Unix environments
     $files = [
@@ -418,7 +419,7 @@ class RoboFile extends \Robo\Tasks {
    * @param string $say
    *   String to be rendered
    *
-   * @return result success no matter what.
+   * @return void
    */
   function catlet(string $say = 'Hello World') {
     $this->taskExec("figlet " . $say . " | lolcat")
