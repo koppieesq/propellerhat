@@ -70,12 +70,9 @@ The following new features are contemplated for the future:
 - Add additional items to new_environment():
   - start with `composer install`
   - Alias for Robo commands
-  - Additional utilities: bat, glances, diff-so-fancy (and replace git diff), middleclick, signal, multimonitor wallpaper, vlc, monit, synergy, filezilla
+  - Additional utilities: diff-so-fancy (and replace git diff)
   - Add optional toys: steam, bitlord, wesnoth, minecraft
-  - Add executable: edex-ui
-  - Remove Homebrew version of git
-    @see https://github.com/Homebrew/homebrew-core/issues/31980#issuecomment-425894125
-  
+  - Add executables: edex-ui, multimonitor wallpaper  
   
 # Credits
 

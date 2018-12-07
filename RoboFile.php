@@ -260,7 +260,7 @@ class RoboFile extends \Robo\Tasks {
           ->run();
         $this->check_success($result, 'Installing Homebrew');
       } else {
-        $this->io()->note("If you add -y, I'll install Homebrew.");
+        $this->io()->note("If you add --y, I'll install Homebrew.");
       }
 
       // install apps using Homebrew

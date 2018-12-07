@@ -34,7 +34,6 @@ command:
       - docker
       - figlet
       - fortune
-      - git
       - glib
       - hub
       - lolcat
@@ -44,6 +43,10 @@ command:
       - ssh-copy-id
       - wget
       - bar
+      - bat
+      - htop
+      - glances
+      - monit
     casks:
       - 1clipboard
       - beardedspice
@@ -58,7 +61,12 @@ command:
       - spectacle
       - spotify
       - vagrant
+      - middleclick
+      - signal
       - skype
+      - vlc
+      - synergy
+      - filezilla
       - virtualbox
       - virtualbox-extension-pack
       - homebrew/cask-fonts/font-source-code-pro
