@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1a099c3b-f3b4-4635-8b4e-dd664aca8a7c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/composerJson.xml" afterDir="false" />
+    <list default="true" id="1a099c3b-f3b4-4635-8b4e-dd664aca8a7c" name="Default Changelist" comment="Added reusable intro() function.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RoboFile.php" beforeDir="false" afterPath="$PROJECT_DIR$/RoboFile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/default.robo.yml" beforeDir="false" afterPath="$PROJECT_DIR$/default.robo.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robo.yml" beforeDir="false" />
     </list>
     <ignored path=".idea/webServers.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,7 +23,7 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/default.robo.yml">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="455">
+                <state relative-caret-position="390">
                   <caret line="60" column="13" selection-start-line="60" selection-start-column="13" selection-end-line="60" selection-end-column="13" />
                 </state>
               </provider>
@@ -110,8 +107,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/RoboFile.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="172">
-                  <caret line="460" column="32" selection-start-line="460" selection-start-column="32" selection-end-line="460" selection-end-column="32" />
+                <state relative-caret-position="279">
+                  <caret line="303" column="43" lean-forward="true" selection-start-line="303" selection-start-column="43" selection-end-line="303" selection-end-column="43" />
                 </state>
               </provider>
             </entry>
@@ -129,8 +126,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>project</find>
-      <find>repo_path</find>
       <find>=</find>
       <find>bwd</find>
       <find>$this-&gt;io()</find>
@@ -155,10 +150,12 @@
       <find>mul</find>
       <find>virtualbo</find>
       <find>steam</find>
-      <find>collection</find>
       <find>$host_path</find>
       <find>$os</find>
       <find>list</find>
+      <find>todo</find>
+      <find>success</find>
+      <find>collection</find>
     </findStrings>
     <replaceStrings>
       <replace>=</replace>
@@ -192,8 +189,8 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/.bash_logout" />
         <option value="$PROJECT_DIR$/robo.yml" />
-        <option value="$PROJECT_DIR$/RoboFile.php" />
         <option value="$PROJECT_DIR$/default.robo.yml" />
+        <option value="$PROJECT_DIR$/RoboFile.php" />
       </list>
     </option>
   </component>
@@ -245,6 +242,7 @@
     <panes />
   </component>
   <component name="PropertiesComponent">
+    <property name="TODO_SCOPE" value="All Places" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
@@ -255,7 +253,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="MTConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -345,14 +343,7 @@
       <workItem from="1543968584982" duration="280000" />
       <workItem from="1544036896338" duration="3873000" />
       <workItem from="1544059787644" duration="362000" />
-      <workItem from="1544060397048" duration="134000" />
-    </task>
-    <task id="LOCAL-00026" summary="Add .bash_logout">
-      <created>1536694185527</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1536694185527</updated>
+      <workItem from="1544060397048" duration="900000" />
     </task>
     <task id="LOCAL-00027" summary="Remove old config file; use robo.yml instead.">
       <created>1536694474395</created>
@@ -690,11 +681,18 @@
       <option name="project" value="LOCAL" />
       <updated>1543887193130</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="Added reusable intro() function.">
+      <created>1544060633069</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1544060633071</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="167703000" />
+    <option name="totallyTimeSpent" value="168469000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -707,6 +705,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="68" y="23" width="1612" height="1027" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49913344" weight="0.09936306" />
       <window_info id="Structure" order="1" sideWeight="0.50086653" side_tool="true" weight="0.09936306" />
@@ -719,11 +718,11 @@
       <window_info anchor="bottom" id="Debug" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="8" weight="0.32903227" />
+      <window_info anchor="bottom" id="TODO" order="8" weight="0.32861805" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="11" weight="0.20641711" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="12" visible="true" weight="0.38193688" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="11" visible="true" weight="0.45810664" />
+      <window_info anchor="bottom" id="Terminal" order="12" weight="0.38193688" />
       <window_info anchor="bottom" id="Event Log" order="13" side_tool="true" weight="0.3299539" />
       <window_info anchor="right" id="Remote Host" order="0" weight="0.18954249" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
@@ -834,7 +833,6 @@
       <path value="$PROJECT_DIR$/vendor/symfony/process" />
       <path value="$PROJECT_DIR$/vendor/symfony/yaml" />
     </ignored-roots>
-    <MESSAGE value="'no-provision' flag still runs 'vagrant up.'" />
     <MESSAGE value="Removed &quot;hello world&quot; function." />
     <MESSAGE value="Adds --no-install flag to new_ticket()." />
     <MESSAGE value="Update documentation for new_ticket() and nt(), with better help text for optional flags." />
@@ -859,7 +857,8 @@
     <MESSAGE value="Add installation instructions for new_environment()." />
     <MESSAGE value="Updates to readme." />
     <MESSAGE value="Logout message is now left justified.  Maybe Spike always was." />
-    <option name="LAST_COMMIT_MESSAGE" value="Logout message is now left justified.  Maybe Spike always was." />
+    <MESSAGE value="Added reusable intro() function." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added reusable intro() function." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/completed" />
@@ -904,7 +903,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/default.robo.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="455">
+        <state relative-caret-position="390">
           <caret line="60" column="13" selection-start-line="60" selection-start-column="13" selection-end-line="60" selection-end-column="13" />
         </state>
       </provider>
@@ -959,8 +958,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/RoboFile.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="460" column="32" selection-start-line="460" selection-start-column="32" selection-end-line="460" selection-end-column="32" />
+        <state relative-caret-position="279">
+          <caret line="303" column="43" lean-forward="true" selection-start-line="303" selection-start-column="43" selection-end-line="303" selection-end-column="43" />
         </state>
       </provider>
     </entry>

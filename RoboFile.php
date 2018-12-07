@@ -301,8 +301,10 @@ class RoboFile extends \Robo\Tasks {
     ];
     $file_collection = $this->collectionBuilder();
     foreach ($files as $file => $description) {
-      $file_collection->taskFilesystemStack()
-        ->copy("$pwd/$file", "$home/$file");
+      $stack = $this->taskFilesystemStack()
+        ->copy("$pwd/$file", "$home/$file")
+        ->run();
+      $file_collection->$stack;
     }
     $file_collection->run();
 
