@@ -72,6 +72,12 @@ class RoboFile extends \Robo\Tasks {
     }
     $new_branch = exec("cd $host_path; git symbolic-ref --short HEAD");
 
+    // Preparation commands to be run before everything else.
+    $this->say("Shaping the environment . . .");
+    foreach ($setup_commands as $each) {
+      exec($each);
+    }
+
     // Description of tasks to be performed, repeats at both the beginning and end of the script.
     // Assemble the tasks array.  Check for command line arguments before adding git reset or vagrant provision.
     $tasks = [];
@@ -112,9 +118,9 @@ class RoboFile extends \Robo\Tasks {
 
     // Add requirements to the end of the to-do list.
     $tasks[] = "In order for this to work, please make sure:\n" .
-      $indent . $key . "You have forked the 'upstream' repository and created your own" . "\n" .
-      $indent . $key . "You've already created a feature branch for the new ticket" . "\n" .
-      $indent . $key . "You've updated the enclosed config file with the correct repositories and branches" . "\n";
+      $indent . "You have forked the 'upstream' repository and created your own" . "\n" .
+      $indent . "You've already created a feature branch for the new ticket" . "\n" .
+      $indent . "You've updated the enclosed config file with the correct repositories and branches" . "\n";
 
     $this->intro("NEW TICKET",
       "I'm going to help you refresh your local dev environment to start a new ticket.",
@@ -136,7 +142,7 @@ class RoboFile extends \Robo\Tasks {
 
     // Turn on the VM and reprovision it if necessary.
     if (!$opts['no-provision']) {
-      $this->catlet('Let\'s turn this thing on.');
+      $this->catlet("Let's turn this thing on.");
       $result = $this->taskExecStack()
         ->stopOnFail()
         ->dir($host_path)
@@ -160,6 +166,12 @@ class RoboFile extends \Robo\Tasks {
     if (!$result->wasSuccessful()) {
       $this->io()->error("Sorry, I was not able to finish setup.");
       return 1;
+    }
+
+    // Cleanup commands to be run after everything else.
+    $this->say("Performing final cleanup steps . . .");
+    foreach ($teardown_commands as $each) {
+      exec($each);
     }
 
     // Outro
@@ -250,7 +262,8 @@ class RoboFile extends \Robo\Tasks {
           ->exec('/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"')
           ->run();
         $this->check_success($result, 'Installing Homebrew');
-      } else {
+      }
+      else {
         $this->io()->note("If you add --y, I'll install Homebrew.");
       }
 
