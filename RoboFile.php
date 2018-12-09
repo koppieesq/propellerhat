@@ -406,6 +406,21 @@ class RoboFile extends \Robo\Tasks {
   }
 
   /**
+   * Check Application
+   *
+   * Accepts a string
+   * @param string $check
+   *
+   * @return string
+   */
+  function check_app(string $check) {
+    $found = exec("which $check");
+    $result = $found ? $found : 'echo';
+
+    return $result;
+  }
+
+  /**
    * Say something using figlet and lolcat.
    *
    * Figlet outputs a string using bubble letters, and lolcat outputs the
@@ -422,7 +437,13 @@ class RoboFile extends \Robo\Tasks {
    * @return void
    */
   function catlet(string $say = 'Hello World') {
-    $this->taskExec("figlet " . $say . " | lolcat")
+    $checks = ['lolcat', 'figlet', 'cowsay', 'fortune'];
+    $lolcat = exec('which lolcat');
+    foreach ($checks as $check) {
+      $found = exec("which $check");
+      $$check = $found ? $found : 'echo';
+    }
+    $this->taskExec("$figlet $say $lolcat")
       ->silent(TRUE)
       ->printOutput(TRUE)
       ->run();
