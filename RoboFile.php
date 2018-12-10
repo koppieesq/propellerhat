@@ -1,6 +1,7 @@
 <?php
 
 use Robo\Robo;
+use Robo\Robo\Result;
 
 /**
  * This is project's console commands configuration for Robo task runner.
@@ -10,12 +11,6 @@ use Robo\Robo;
  * @warning This tool is still in beta!  See @todos.
  */
 class RoboFile extends \Robo\Tasks {
-
-  protected $steps = 10;
-
-  public function progressIndicatorSteps() {
-    return $this->steps;
-  }
 
   /**
    * Alias function for new_ticket()
@@ -69,10 +64,6 @@ class RoboFile extends \Robo\Tasks {
     'no-provision' => FALSE,
     'no-install' => FALSE,
   ]) {
-    $this->catlet("NEW TICKET");
-    $this->io()
-      ->text("I'm going to help you refresh your local dev environment to start a new ticket.\n");
-
     // Load config & set environment variables
     $start_time = time();
     $allopts = Robo::config()->get("command.new_ticket.options");
@@ -119,22 +110,15 @@ class RoboFile extends \Robo\Tasks {
 
     $tasks[] = $command_tasks;
 
-    $requirements = [
-      "You have forked the 'upstream' repository and created your own",
-      "You've already created a feature branch for the new ticket",
-      "You've updated the enclosed config file with the correct repositories and branches",
-    ];
+    // Add requirements to the end of the to-do list.
+    $tasks[] = "In order for this to work, please make sure:\n" .
+      $indent . $key . "You have forked the 'upstream' repository and created your own" . "\n" .
+      $indent . $key . "You've already created a feature branch for the new ticket" . "\n" .
+      $indent . $key . "You've updated the enclosed config file with the correct repositories and branches" . "\n";
 
-    $this->say("Here's what I can do:");
-    $this->io()->listing($tasks);
-    $this->say("In order for this to work, please make sure:");
-    $this->io()->listing($requirements);
-    $continue = $this->confirm("CONTINUE?");
-
-    if (!$continue) {
-      $this->say("Operation has been canceled.");
-      return;
-    }
+    $this->intro("NEW TICKET",
+      "I'm going to help you refresh your local dev environment to start a new ticket.",
+      $tasks);
 
     // Don't reset the feature branch if I pass a tag on the command line.
     if (!$opts['no-reset']) {
@@ -183,6 +167,7 @@ class RoboFile extends \Robo\Tasks {
     $this->io()->listing($tasks);
     $this->stopwatch($start_time);
     $this->catlet("Go forth and be awesome.");
+    return;
   }
 
   /**
@@ -255,8 +240,8 @@ class RoboFile extends \Robo\Tasks {
     $brews = Robo::config()->get("command.new_environment.brews");
     $casks = Robo::config()->get("command.new_environment.casks");
     //    $pwd = exec('cd ~; pwd');
-    $home = exec('echo $HOME');
     $pwd = exec('pwd');
+    $home = exec('echo $HOME');
 
     if ($opts['mac']) {
       if ($opts['y']) {
@@ -279,11 +264,9 @@ class RoboFile extends \Robo\Tasks {
       $collection = $this->collectionBuilder();
       foreach ($repos as $command => $desires) {
         foreach ($desires as $desire) {
-          $collection->taskExecStack()
-            ->exec($command . " " . $desire);
+          $collection->exec($command . " " . $desire);
         }
       }
-      $collection->run();
     }
     else {
       $this->io()
@@ -291,7 +274,7 @@ class RoboFile extends \Robo\Tasks {
     }
 
     // Run `composer install`.
-    $this->taskComposerInstall()->run();
+    $collection->taskComposerInstall();
 
     // Install .bash_profile and other items consistent with all Linux & Unix environments
     $files = [
@@ -299,12 +282,10 @@ class RoboFile extends \Robo\Tasks {
       '.bash_logout' => 'cute farewell greeting when you log out',
       '.vimrc' => 'better VI settings',
     ];
-    $file_collection = $this->collectionBuilder();
     foreach ($files as $file => $description) {
-      $file_collection->taskFilesystemStack()
-        ->copy("$pwd/$file", "$home/$file");
+      $collection->copy("$pwd/$file", "$home/$file");
     }
-    $file_collection->run();
+    $collection->run();
 
     // Outro
     $this->stopwatch($start_time);
@@ -432,6 +413,8 @@ class RoboFile extends \Robo\Tasks {
    *
    * @param string $say
    *   String to be rendered
+   *
+   * @return result success no matter what.
    */
   function catlet(string $say = 'Hello World') {
     $this->taskExec("figlet " . $say . " | lolcat")
@@ -475,7 +458,6 @@ class RoboFile extends \Robo\Tasks {
     $this->say("Do you want me to do this?");
     $this->ask("Press [ENTER] to continue, ctrl-C to cancel.");
 
-    // Not sure if anyone will need TRUE, but here it is just in case.
-    return TRUE;
+    return;
   }
 }
