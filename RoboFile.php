@@ -72,6 +72,12 @@ class RoboFile extends \Robo\Tasks {
     }
     $new_branch = exec("cd $host_path; git symbolic-ref --short HEAD");
 
+    // Preparation commands to be run before everything else.
+    $this->say("Shaping the environment . . .");
+    foreach ($setup_commands as $each) {
+      exec($each);
+    }
+
     // Description of tasks to be performed, repeats at both the beginning and end of the script.
     // Assemble the tasks array.  Check for command line arguments before adding git reset or vagrant provision.
     $tasks = [];
@@ -136,7 +142,7 @@ class RoboFile extends \Robo\Tasks {
 
     // Turn on the VM and reprovision it if necessary.
     if (!$opts['no-provision']) {
-      $this->catlet('Let\'s turn this thing on.');
+      $this->catlet("Let's turn this thing on.");
       $result = $this->taskExecStack()
         ->stopOnFail()
         ->dir($host_path)
@@ -160,6 +166,12 @@ class RoboFile extends \Robo\Tasks {
     if (!$result->wasSuccessful()) {
       $this->io()->error("Sorry, I was not able to finish setup.");
       return 1;
+    }
+
+    // Cleanup commands to be run after everything else.
+    $this->say("Performing final cleanup steps . . .");
+    foreach ($teardown_commands as $each) {
+      exec($each);
     }
 
     // Outro
@@ -250,8 +262,9 @@ class RoboFile extends \Robo\Tasks {
           ->exec('/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"')
           ->run();
         $this->check_success($result, 'Installing Homebrew');
-      } else {
-        $this->io()->note("If you add -y, I'll install Homebrew.");
+      }
+      else {
+        $this->io()->note("If you add --y, I'll install Homebrew.");
       }
 
       // install apps using Homebrew
