@@ -115,12 +115,15 @@ class RoboFile extends \Robo\Tasks {
     }
 
     $tasks[] = $command_tasks;
+    $warning = exec('tput setaf 1; echo "CISCO AMP HAS BEEN TURNED OFF"');
+    exec('tput setaf 9');
 
     // Add requirements to the end of the to-do list.
     $tasks[] = "In order for this to work, please make sure:\n" .
-      $indent . $key . "You have forked the 'upstream' repository and created your own" . "\n" .
-      $indent . $key . "You've already created a feature branch for the new ticket" . "\n" .
-      $indent . $key . "You've updated the enclosed config file with the correct repositories and branches" . "\n";
+      $indent . "You have forked the 'upstream' repository and created your own" . "\n" .
+      $indent . "You've already created a feature branch for the new ticket" . "\n" .
+      $indent . "You've updated the enclosed config file with the correct repositories and branches" . "\n" .
+      $indent . $warning . "\n";
 
     $this->intro("NEW TICKET",
       "I'm going to help you refresh your local dev environment to start a new ticket.",
@@ -170,7 +173,7 @@ class RoboFile extends \Robo\Tasks {
 
     // Cleanup commands to be run after everything else.
     $this->say("Performing final cleanup steps . . .");
-    foreach ($teardown_commands as $each) {
+    foreach ($down_commands as $each) {
       exec($each);
     }
 

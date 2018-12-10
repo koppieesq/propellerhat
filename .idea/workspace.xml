@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1a099c3b-f3b4-4635-8b4e-dd664aca8a7c" name="Default Changelist" comment="Refactored new_ticket() to use intro(), and">
+    <list default="true" id="1a099c3b-f3b4-4635-8b4e-dd664aca8a7c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RoboFile.php" beforeDir="false" afterPath="$PROJECT_DIR$/RoboFile.php" afterDir="false" />
     </list>
@@ -19,10 +19,22 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="690">
+                <caret line="71" column="27" selection-start-line="71" selection-start-column="27" selection-end-line="71" selection-end-column="27" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/default.robo.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1024">
-              <caret line="64" selection-start-line="27" selection-end-line="64" />
+            <state relative-caret-position="352">
+              <caret line="22" column="12" lean-forward="true" selection-start-line="20" selection-start-column="26" selection-end-line="22" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -30,8 +42,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/robo.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
+            <state relative-caret-position="384">
+              <caret line="24" column="26" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -39,23 +51,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/RoboFile.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="202">
-              <caret line="161" column="12" selection-start-line="161" selection-start-column="6" selection-end-line="161" selection-end-column="12" />
+            <state relative-caret-position="402">
+              <caret line="118" column="25" selection-start-line="118" selection-start-column="25" selection-end-line="118" selection-end-column="25" />
               <folding>
                 <element signature="e#7#21#0#PHP" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="FIRST">
-              <first_editor relative-caret-position="1136">
-                <caret line="71" column="27" selection-start-line="71" selection-start-column="27" selection-end-line="71" selection-end-column="27" />
-              </first_editor>
-              <second_editor />
             </state>
           </provider>
         </entry>
@@ -112,7 +112,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>$this-&gt;io()</find>
       <find>seeyou</find>
       <find>${pur}</find>
       <find>cow</find>
@@ -142,6 +141,7 @@
       <find>collectionBuilder</find>
       <find>return;</find>
       <find>return</find>
+      <find>tear</find>
     </findStrings>
     <replaceStrings>
       <replace>=</replace>
@@ -371,13 +371,6 @@
       <workItem from="1544060397048" duration="134000" />
       <workItem from="1544231535732" duration="13000" />
       <workItem from="1544462326541" duration="599000" />
-    </task>
-    <task id="LOCAL-00026" summary="Add .bash_logout">
-      <created>1536694185527</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1536694185527</updated>
     </task>
     <task id="LOCAL-00027" summary="Remove old config file; use robo.yml instead.">
       <created>1536694474395</created>
@@ -715,11 +708,18 @@
       <option name="project" value="LOCAL" />
       <updated>1543887193130</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="Merged in changes to new_environment &amp; new_ticket.">
+      <created>1544464105200</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1544464105200</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="173272000" />
+    <option name="totallyTimeSpent" value="174717000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -731,10 +731,11 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1959" y="149" width="960" height="877" extended-state="0" />
+    <frame x="1920" y="23" width="960" height="1177" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49426752" visible="true" weight="0.2342048" />
-      <window_info id="Structure" order="1" sideWeight="0.5057325" side_tool="true" visible="true" weight="0.2342048" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49491096" visible="true" weight="0.2342048" />
+      <window_info id="Structure" order="1" sideWeight="0.50508904" side_tool="true" visible="true" weight="0.2342048" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="0" weight="0.29032257" />
       <window_info anchor="bottom" id="Inspection Results" order="1" weight="0.32862905" />
@@ -834,7 +835,6 @@
       <path value="$PROJECT_DIR$/vendor/symfony/process" />
       <path value="$PROJECT_DIR$/vendor/symfony/yaml" />
     </ignored-roots>
-    <MESSAGE value="Removed &quot;hello world&quot; function." />
     <MESSAGE value="Adds --no-install flag to new_ticket()." />
     <MESSAGE value="Update documentation for new_ticket() and nt(), with better help text for optional flags." />
     <MESSAGE value="Fixed logic for --no-install flag." />
@@ -859,7 +859,8 @@
     <MESSAGE value="Updates to readme." />
     <MESSAGE value="Logout message is now left justified.  Maybe Spike always was." />
     <MESSAGE value="Refactored new_ticket() to use intro()." />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactored new_ticket() to use intro()." />
+    <MESSAGE value="Merged in changes to new_environment &amp; new_ticket." />
+    <option name="LAST_COMMIT_MESSAGE" value="Merged in changes to new_environment &amp; new_ticket." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/completed" />
@@ -902,30 +903,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/default.robo.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1024">
-          <caret line="64" selection-start-line="27" selection-end-line="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/robo.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="1136">
-            <caret line="71" column="27" selection-start-line="71" selection-start-column="27" selection-end-line="71" selection-end-column="27" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.bash_logout">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="32">
@@ -957,10 +934,34 @@
     <entry file="file://$PROJECT_DIR$/vendor/btford/allthethings/allthethings.sh">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="690">
+            <caret line="71" column="27" selection-start-line="71" selection-start-column="27" selection-end-line="71" selection-end-column="27" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/default.robo.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="22" column="12" lean-forward="true" selection-start-line="20" selection-start-column="26" selection-end-line="22" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/robo.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="24" column="26" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/RoboFile.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="161" column="12" selection-start-line="161" selection-start-column="6" selection-end-line="161" selection-end-column="12" />
+        <state relative-caret-position="402">
+          <caret line="118" column="25" selection-start-line="118" selection-start-column="25" selection-end-line="118" selection-end-column="25" />
           <folding>
             <element signature="e#7#21#0#PHP" expanded="true" />
           </folding>
