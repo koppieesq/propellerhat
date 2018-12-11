@@ -83,12 +83,16 @@ class RoboFile extends \Robo\Tasks {
     $tasks += ["Start in $host_path",];
 
     if (!$opts['no-reset']) {
-      $tasks += [
-        "Pull a fresh copy of $upstream_repo/$base_branch",
-        "Push to $fork_repo/$base_branch",
-        "Reset $new_branch to match the latest $upstream_repo/$base_branch",
-        "Push to $fork_repo/$new_branch and set upstream",
-      ];
+      $tasks[] = "Pull a fresh copy of " . exec("tput setaf 6; echo '$upstream_repo/$base_branch'") . exec("tput sgr0");
+      $tasks[] = "Push to " . exec("tput setaf 6; echo '$fork_repo/$base_branch'") . exec("tput sgr0");
+      $tasks[] = "Reset " . exec("tput setaf 6; echo '$new_branch'") . exec("tput sgr0") . " to match the latest " . exec("tput setaf 6; echo '$upstream_repo/$base_branch'") . exec("tput sgr0");
+      $tasks[] = "Push to " . exec("tput setaf 6; echo '$fork_repo/$new_branch'") . exec("tput sgr0") . " and set upstream " . exec("tput sgr0");
+//      $tasks += [
+//        "Pull a fresh copy of $upstream_repo/$base_branch",
+//        "Push to $fork_repo/$base_branch",
+//        "Reset $new_branch to match the latest $upstream_repo/$base_branch",
+//        "Push to $fork_repo/$new_branch and set upstream",
+//      ];
     }
 
     $tasks[] = "Task runner: $runner";
@@ -455,7 +459,7 @@ class RoboFile extends \Robo\Tasks {
       $found = exec("which $check");
       $$check = $found ? $found : 'echo';
     }
-    $this->taskExec("$figlet $say $lolcat")
+    $this->taskExec("$figlet $say | $lolcat")
       ->silent(TRUE)
       ->printOutput(TRUE)
       ->run();
