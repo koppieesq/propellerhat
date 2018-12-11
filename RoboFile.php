@@ -502,4 +502,35 @@ class RoboFile extends \Robo\Tasks {
 
     return;
   }
+
+  /**
+   * Tail wags the Watchdog.
+   *
+   * `drush ws --tail` has been deprecated in drush 9.  This command
+   * replicates that functionality inside your local vm.  No arguments
+   * needed; this function uses the same config as new_ticket, stored in robo
+   * .yml.
+   */
+  function wag() {
+    // Get config from robo.yml.
+    $allopts = Robo::config()->get("command.new_ticket.options");
+    foreach ($allopts as $key => $value) {
+      $$key = $value;
+    }
+
+    // Run tasks inside the VM
+    $this->say("I'm going to tail the Drupal watchdog log.  Type ctrl-c to stop.");
+    sleep(2);
+    $this->taskSshExec($vm_domain, $vm_user)
+      ->stopOnFail()
+      ->silent(TRUE)
+      ->printOutput(TRUE)
+      ->forcePseudoTty()
+      ->dir($host_path)
+      ->port($vm_port)
+      ->identityFile($vm_key)
+      ->remoteDir($guest_path)
+      ->exec('watch -n 1 drush ws')
+      ->run();
+  }
 }
