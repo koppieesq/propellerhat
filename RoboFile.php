@@ -176,8 +176,10 @@ class RoboFile extends \Robo\Tasks {
 
     // Cleanup commands to be run after everything else.
     $this->say("Performing final cleanup steps . . .");
-    foreach ($teardown_commands as $each) {
-      exec($each);
+    if (!empty($teardown_commands)) {
+      foreach ($teardown_commands as $each) {
+        exec($each);
+      }
     }
 
     // Outro
