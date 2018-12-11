@@ -6,6 +6,8 @@ command:
       base_branch: master
       host_path: /var/www
       guest_path: /var/www
+      setup_commands:
+        - ""
       runner: composer install
       vm_start: vagrant up --provision
       vm_domain: localhost
@@ -13,18 +15,20 @@ command:
       vm_port: 2222
       vm_key: id_rsa
       vm_commands:
-        - "drush cim -y"
-        - "drush updb -y"
-        - "drush cr"
-        - "drush uli"
+        Import config: "drush cim -y"
+        Update database: "drush updb -y"
+        Clear caches: "drush cr"
+        Login: "drush uli"
+      teardown_commands:
+        - ""
   updateme:
     options:
       sites:
         - all
       commands:
         update all contrib modules: drush up
-        run database updates: drush updb -y
-        clear caches: drush cc all
+        Update database: drush updb -y
+        Clear caches: drush cc all
   new_environment:
     brews:
       - ansible

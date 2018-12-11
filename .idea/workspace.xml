@@ -19,10 +19,22 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="690">
+                <caret line="71" column="27" selection-start-line="71" selection-start-column="27" selection-end-line="71" selection-end-column="27" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/default.robo.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="688">
-              <caret line="43" column="12" selection-start-line="43" selection-start-column="8" selection-end-line="43" selection-end-column="12" />
+            <state relative-caret-position="352">
+              <caret line="22" column="12" lean-forward="true" selection-start-line="20" selection-start-column="26" selection-end-line="22" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -30,8 +42,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/robo.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1104">
-              <caret line="69" selection-start-line="69" selection-end-line="69" />
+            <state relative-caret-position="384">
+              <caret line="24" column="26" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/RoboFile.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="402">
+              <caret line="118" column="25" selection-start-line="118" selection-start-column="25" selection-end-line="118" selection-end-column="25" />
+              <folding>
+                <element signature="e#7#21#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -50,15 +74,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="32">
               <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/RoboFile.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="410" column="21" selection-start-line="410" selection-start-column="21" selection-end-line="410" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -97,9 +112,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>=</find>
-      <find>bwd</find>
-      <find>$this-&gt;io()</find>
       <find>seeyou</find>
       <find>${pur}</find>
       <find>cow</find>
@@ -121,12 +133,15 @@
       <find>mul</find>
       <find>virtualbo</find>
       <find>steam</find>
+      <find>collection</find>
       <find>$host_path</find>
       <find>$os</find>
       <find>list</find>
-      <find>todo</find>
-      <find>success</find>
-      <find>collection</find>
+      <find>collec</find>
+      <find>collectionBuilder</find>
+      <find>return;</find>
+      <find>return</find>
+      <find>tear</find>
     </findStrings>
     <replaceStrings>
       <replace>=</replace>
@@ -135,12 +150,13 @@
       <replace>$path</replace>
       <replace>$ssh_server</replace>
       <replace>no-reset</replace>
+      <replace>return Result::success;</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="RESET_MODE" value="HARD" />
+    <option name="RESET_MODE" value="SOFT" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -159,8 +175,8 @@
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/.bash_logout" />
-        <option value="$PROJECT_DIR$/robo.yml" />
         <option value="$PROJECT_DIR$/default.robo.yml" />
+        <option value="$PROJECT_DIR$/robo.yml" />
         <option value="$PROJECT_DIR$/RoboFile.php" />
       </list>
     </option>
@@ -197,10 +213,10 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="604" />
+    <option name="x" value="1920" />
     <option name="y" value="23" />
-    <option name="width" value="1076" />
-    <option name="height" value="1027" />
+    <option name="width" value="960" />
+    <option name="height" value="1177" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="false" id="Update" />
@@ -210,10 +226,48 @@
       <autoscrollFromSource ProjectPane="true" />
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="propellerhat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="propellerhat" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="propellerhat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="propellerhat" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="propellerhat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="propellerhat" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="consolidation" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="propellerhat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="propellerhat" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="consolidation" type="462c0819:PsiDirectoryNode" />
+              <item name="robo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="propellerhat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="propellerhat" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="consolidation" type="462c0819:PsiDirectoryNode" />
+              <item name="robo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="TODO_SCOPE" value="All Places" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
@@ -224,7 +278,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Console Colors" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -314,9 +368,30 @@
       <workItem from="1543968584982" duration="280000" />
       <workItem from="1544036896338" duration="3873000" />
       <workItem from="1544059787644" duration="362000" />
-      <workItem from="1544060397048" duration="900000" />
-      <workItem from="1544204298072" duration="1409000" />
-      <workItem from="1544395825691" duration="741000" />
+      <workItem from="1544060397048" duration="134000" />
+      <workItem from="1544231535732" duration="13000" />
+      <workItem from="1544462326541" duration="599000" />
+    </task>
+    <task id="LOCAL-00027" summary="Remove old config file; use robo.yml instead.">
+      <created>1536694474395</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1536694474395</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Added @TODO's in code and a roadmap to README.md">
+      <created>1536711527946</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1536711527946</updated>
+    </task>
+    <task id="LOCAL-00029" summary="new_ticket: better handling for commands inside the VM.">
+      <created>1536801522407</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1536801522407</updated>
     </task>
     <task id="LOCAL-00030" summary="Updated readme.">
       <created>1536801873303</created>
@@ -633,12 +708,12 @@
       <option name="project" value="LOCAL" />
       <updated>1543887193130</updated>
     </task>
-    <task id="LOCAL-00075" summary="Added reusable intro() function.">
-      <created>1544060633069</created>
+    <task id="LOCAL-00075" summary="Merged in changes to new_environment &amp; new_ticket.">
+      <created>1544464105200</created>
       <option name="number" value="00075" />
       <option name="presentableId" value="LOCAL-00075" />
       <option name="project" value="LOCAL" />
-      <updated>1544060633071</updated>
+      <updated>1544464105200</updated>
     </task>
     <task id="LOCAL-00076" summary="Refactor new_ticket() to use intro(), plus misc. changes.">
       <created>1544156856052</created>
@@ -665,7 +740,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="171346000" />
+    <option name="totallyTimeSpent" value="174717000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -677,13 +752,13 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="604" y="23" width="1076" height="1027" extended-state="0" />
+    <frame x="1920" y="23" width="960" height="1177" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49913344" weight="0.09936306" />
-      <window_info active="true" id="Structure" order="1" sideWeight="0.50086653" side_tool="true" visible="true" weight="0.19052224" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49491096" visible="true" weight="0.2342048" />
+      <window_info id="Structure" order="1" sideWeight="0.50508904" side_tool="true" visible="true" weight="0.2342048" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="0" weight="0.32861805" />
+      <window_info anchor="bottom" id="Messages" order="0" weight="0.29032257" />
       <window_info anchor="bottom" id="Inspection Results" order="1" weight="0.32862905" />
       <window_info anchor="bottom" id="Message" order="2" />
       <window_info anchor="bottom" id="Find" order="3" weight="0.3281106" />
@@ -691,11 +766,11 @@
       <window_info anchor="bottom" id="Debug" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="8" weight="0.32861805" />
+      <window_info anchor="bottom" id="TODO" order="8" weight="0.32903227" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="11" weight="0.45810664" />
-      <window_info anchor="bottom" id="Terminal" order="12" visible="true" weight="0.38193688" />
+      <window_info anchor="bottom" id="Version Control" order="11" weight="0.35852534" />
+      <window_info anchor="bottom" id="Terminal" order="12" weight="0.38156682" />
       <window_info anchor="bottom" id="Event Log" order="13" side_tool="true" weight="0.3299539" />
       <window_info anchor="right" id="Remote Host" order="0" weight="0.18954249" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
@@ -781,6 +856,7 @@
       <path value="$PROJECT_DIR$/vendor/symfony/process" />
       <path value="$PROJECT_DIR$/vendor/symfony/yaml" />
     </ignored-roots>
+    <MESSAGE value="Adds --no-install flag to new_ticket()." />
     <MESSAGE value="Update documentation for new_ticket() and nt(), with better help text for optional flags." />
     <MESSAGE value="Fixed logic for --no-install flag." />
     <MESSAGE value="ticket_refresh(): don't stop if one step in the stack fails." />
@@ -803,10 +879,9 @@
     <MESSAGE value="Add installation instructions for new_environment()." />
     <MESSAGE value="Updates to readme." />
     <MESSAGE value="Logout message is now left justified.  Maybe Spike always was." />
-    <MESSAGE value="Added reusable intro() function." />
-    <MESSAGE value="Refactor new_ticket() to use intro(), plus misc. changes." />
-    <MESSAGE value="Revert new_environment() to *not* use collections any more." />
-    <option name="LAST_COMMIT_MESSAGE" value="Revert new_environment() to *not* use collections any more." />
+    <MESSAGE value="Refactored new_ticket() to use intro()." />
+    <MESSAGE value="Merged in changes to new_environment &amp; new_ticket." />
+    <option name="LAST_COMMIT_MESSAGE" value="Merged in changes to new_environment &amp; new_ticket." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/completed" />
@@ -849,13 +924,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/robo.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1104">
-          <caret line="69" selection-start-line="69" selection-end-line="69" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.bash_logout">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="32">
@@ -890,8 +958,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="1679">
-            <caret line="73" column="33" selection-start-line="73" selection-start-column="33" selection-end-line="73" selection-end-column="33" />
+          <first_editor relative-caret-position="690">
+            <caret line="71" column="27" selection-start-line="71" selection-start-column="27" selection-end-line="71" selection-end-column="27" />
           </first_editor>
           <second_editor />
         </state>
@@ -899,15 +967,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/default.robo.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="688">
-          <caret line="43" column="12" selection-start-line="43" selection-start-column="8" selection-end-line="43" selection-end-column="12" />
+        <state relative-caret-position="352">
+          <caret line="22" column="12" lean-forward="true" selection-start-line="20" selection-start-column="26" selection-end-line="22" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/robo.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="24" column="26" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/RoboFile.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="410" column="21" selection-start-line="410" selection-start-column="21" selection-end-line="410" selection-end-column="21" />
+        <state relative-caret-position="402">
+          <caret line="118" column="25" selection-start-line="118" selection-start-column="25" selection-end-line="118" selection-end-column="25" />
+          <folding>
+            <element signature="e#7#21#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
