@@ -2,24 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a099c3b-f3b4-4635-8b4e-dd664aca8a7c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RoboFile.php" beforeDir="false" afterPath="$PROJECT_DIR$/RoboFile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ph/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/ph/CHANGELOG.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ph/CONTRIBUTING.md" beforeDir="false" afterPath="$PROJECT_DIR$/ph/CONTRIBUTING.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ph/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/ph/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ph/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/ph/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ph/VERSION" beforeDir="false" afterPath="$PROJECT_DIR$/ph/VERSION" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ph/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/ph/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ph/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/ph/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ph/example" beforeDir="false" afterPath="$PROJECT_DIR$/ph/example" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ph/phpunit.xml.dist" beforeDir="false" afterPath="$PROJECT_DIR$/ph/phpunit.xml.dist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ph/src/Cli/ExampleCommands.php" beforeDir="false" afterPath="$PROJECT_DIR$/ph/src/Cli/ExampleCommands.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ph/src/Example.php" beforeDir="false" afterPath="$PROJECT_DIR$/ph/src/Example.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ph/tests/ExampleCommandsTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/ph/tests/ExampleCommandsTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ph/tests/ExampleTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/ph/tests/ExampleTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ph/tests/src/CommandTesterInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/ph/tests/src/CommandTesterInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ph/tests/src/CommandTesterTrait.php" beforeDir="false" afterPath="$PROJECT_DIR$/ph/tests/src/CommandTesterTrait.php" afterDir="false" />
     </list>
     <ignored path=".idea/webServers.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -73,8 +57,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/RoboFile.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="528" column="25" selection-start-line="528" selection-start-column="25" selection-end-line="528" selection-end-column="25" />
+            <state relative-caret-position="484">
+              <caret line="531" column="11" selection-start-line="531" selection-start-column="11" selection-end-line="531" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -372,20 +356,6 @@
       <workItem from="1544060397048" duration="134000" />
       <workItem from="1544231535732" duration="13000" />
       <workItem from="1544462326541" duration="599000" />
-    </task>
-    <task id="LOCAL-00033" summary="Adding checks to make sure new_ticket() actually completes successfully.">
-      <created>1537816830858</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1537816830858</updated>
-    </task>
-    <task id="LOCAL-00034" summary="Adding checks to make sure new_ticket() actually completes successfully.">
-      <created>1537818026372</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1537818026372</updated>
     </task>
     <task id="LOCAL-00035" summary="Begain writing new_environment function.">
       <created>1537984387099</created>
@@ -716,11 +686,25 @@
       <option name="project" value="LOCAL" />
       <updated>1544568268208</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="I think I've gone down the wrong hole.">
+      <created>1544597561371</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1544597561372</updated>
+    </task>
+    <task id="LOCAL-00083" summary="Heading down a different wrong hole.">
+      <created>1544598059923</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1544598059923</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="182958000" />
+    <option name="totallyTimeSpent" value="185137000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -749,7 +733,7 @@
       <window_info anchor="bottom" id="TODO" order="8" weight="0.32903227" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="11" weight="0.35852534" />
+      <window_info anchor="bottom" id="Version Control" order="11" weight="0.3578838" />
       <window_info active="true" anchor="bottom" id="Terminal" order="12" visible="true" weight="0.35165974" />
       <window_info anchor="bottom" id="Event Log" order="13" side_tool="true" weight="0.3299539" />
       <window_info anchor="right" id="Remote Host" order="0" weight="0.18954249" />
@@ -836,8 +820,6 @@
       <path value="$PROJECT_DIR$/vendor/symfony/process" />
       <path value="$PROJECT_DIR$/vendor/symfony/yaml" />
     </ignored-roots>
-    <MESSAGE value="ticket_refresh(): don't stop if one step in the stack fails." />
-    <MESSAGE value="Add .idea folder for local IDE support." />
     <MESSAGE value="Update composer.json and add allthethings!" />
     <MESSAGE value="Change updateme() introduction to use allthethings!" />
     <MESSAGE value="Adds catlet function (figlet + lolcat)." />
@@ -861,7 +843,9 @@
     <MESSAGE value="Colorized the intro text using tput." />
     <MESSAGE value="Wag the Drupal watchdog with wag()." />
     <MESSAGE value="Avoid execution problems if there are no teardown commands." />
-    <option name="LAST_COMMIT_MESSAGE" value="Avoid execution problems if there are no teardown commands." />
+    <MESSAGE value="I think I've gone down the wrong hole." />
+    <MESSAGE value="Heading down a different wrong hole." />
+    <option name="LAST_COMMIT_MESSAGE" value="Heading down a different wrong hole." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/completed" />
@@ -961,8 +945,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/RoboFile.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="528" column="25" selection-start-line="528" selection-start-column="25" selection-end-line="528" selection-end-column="25" />
+        <state relative-caret-position="484">
+          <caret line="531" column="11" selection-start-line="531" selection-start-column="11" selection-end-line="531" selection-end-column="11" />
         </state>
       </provider>
     </entry>

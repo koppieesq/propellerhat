@@ -495,7 +495,7 @@ class RoboFile extends \Robo\Tasks {
     return;
   }
 
-  function tput(string $text, array $options = ["color" => "red"]) {
+  function tput(string $text, array $extra = ["color" => "red"]) {
     // Set up variables.
     $colors = [
       'black',
@@ -507,25 +507,29 @@ class RoboFile extends \Robo\Tasks {
       'cyan',
       'white',
     ];
-    $command = 'echo " "; ';
+    $command = 'tput sgr0; ';
     //    $command = 'tput setaf 1; ';
 
     // If there are options, load them up.
-    if (gettype($options) == "array") {
-      if ($options[0] == 'color') {
-        $command = "tput setf " . array_search($value, $colors) . "; ";
-      }
-      elseif ($options[1] == 'background') {
-        $command = "tput setb " . array_search($value, $colors) . "; ";
+    if (gettype($extra) == 'array') {
+      foreach ($extra as $key => $value) {
+        switch ($key) {
+          case 'color':
+            $command .= "tput setaf " . array_search($value, $colors) . "; ";
+            break;
+          case 'background':
+            $command .= "tput setab " . array_search($value, $colors) . "; ";
+            break;
+        }
       }
     } else {
-      $command = "tput $options; ";
+      $command .= $extra . "; ";
     }
-    $this->say($text);
-    $this->say($command);
+//    $this->say($text);
+//    $this->say($command);
     //    exec("tput setaf 6; echo '$text'");
     //    exec("tput sgr0");
-    $this->io()->text(exec($command) . $text . exec("tput sgr0"));
+    return exec($command) . $text . exec("tput sgr0");
   }
 
   /**
