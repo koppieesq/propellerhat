@@ -51,8 +51,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/RoboFile.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="511" column="10" selection-start-line="511" selection-start-column="10" selection-end-line="511" selection-end-column="10" />
+            <state relative-caret-position="202">
+              <caret line="179" column="22" selection-start-line="179" selection-start-column="22" selection-end-line="179" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -368,20 +368,6 @@
       <workItem from="1544060397048" duration="134000" />
       <workItem from="1544231535732" duration="13000" />
       <workItem from="1544462326541" duration="599000" />
-    </task>
-    <task id="LOCAL-00031" summary="Use VM internal commands from yaml file.">
-      <created>1536959589201</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1536959589201</updated>
-    </task>
-    <task id="LOCAL-00032" summary="Adding checks to make sure new_ticket() actually completes successfully.">
-      <created>1537816419359</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1537816419359</updated>
     </task>
     <task id="LOCAL-00033" summary="Adding checks to make sure new_ticket() actually completes successfully.">
       <created>1537816830858</created>
@@ -712,11 +698,25 @@
       <option name="project" value="LOCAL" />
       <updated>1544565258222</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="Wag the Drupal watchdog with wag().">
+      <created>1544567576120</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1544567576120</updated>
+    </task>
+    <task id="LOCAL-00081" summary="Avoid execution problems if there are no teardown commands.">
+      <created>1544568268208</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1544568268208</updated>
+    </task>
+    <option name="localTasksCounter" value="82" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="177777000" />
+    <option name="totallyTimeSpent" value="179021000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -728,11 +728,11 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1920" y="23" width="1288" height="1177" extended-state="1" />
+    <frame x="1920" y="23" width="1288" height="1177" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49491096" weight="0.2342048" />
-      <window_info id="Structure" order="1" sideWeight="0.50508904" side_tool="true" visible="true" weight="0.12760834" />
+      <window_info active="true" id="Structure" order="1" sideWeight="0.50508904" side_tool="true" visible="true" weight="0.12760834" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="0" weight="0.29032257" />
       <window_info anchor="bottom" id="Inspection Results" order="1" weight="0.32862905" />
@@ -746,7 +746,7 @@
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.35852534" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="12" visible="true" weight="0.35547242" />
+      <window_info anchor="bottom" id="Terminal" order="12" visible="true" weight="0.35547242" />
       <window_info anchor="bottom" id="Event Log" order="13" side_tool="true" weight="0.3299539" />
       <window_info anchor="right" id="Remote Host" order="0" weight="0.18954249" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
@@ -832,8 +832,6 @@
       <path value="$PROJECT_DIR$/vendor/symfony/process" />
       <path value="$PROJECT_DIR$/vendor/symfony/yaml" />
     </ignored-roots>
-    <MESSAGE value="Update documentation for new_ticket() and nt(), with better help text for optional flags." />
-    <MESSAGE value="Fixed logic for --no-install flag." />
     <MESSAGE value="ticket_refresh(): don't stop if one step in the stack fails." />
     <MESSAGE value="Add .idea folder for local IDE support." />
     <MESSAGE value="Update composer.json and add allthethings!" />
@@ -857,7 +855,9 @@
     <MESSAGE value="Refactored new_ticket() to use intro()." />
     <MESSAGE value="Merged in changes to new_environment &amp; new_ticket." />
     <MESSAGE value="Colorized the intro text using tput." />
-    <option name="LAST_COMMIT_MESSAGE" value="Colorized the intro text using tput." />
+    <MESSAGE value="Wag the Drupal watchdog with wag()." />
+    <MESSAGE value="Avoid execution problems if there are no teardown commands." />
+    <option name="LAST_COMMIT_MESSAGE" value="Avoid execution problems if there are no teardown commands." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/completed" />
@@ -957,8 +957,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/RoboFile.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="511" column="10" selection-start-line="511" selection-start-column="10" selection-end-line="511" selection-end-column="10" />
+        <state relative-caret-position="202">
+          <caret line="179" column="22" selection-start-line="179" selection-start-column="22" selection-end-line="179" selection-end-column="22" />
         </state>
       </provider>
     </entry>
