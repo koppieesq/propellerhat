@@ -83,16 +83,11 @@ class RoboFile extends \Robo\Tasks {
     $tasks += ["Start in $host_path",];
 
     if (!$opts['no-reset']) {
-      $tasks[] = "Pull a fresh copy of " . exec("tput setaf 6; echo '$upstream_repo/$base_branch'") . exec("tput sgr0");
-      $tasks[] = "Push to " . exec("tput setaf 6; echo '$fork_repo/$base_branch'") . exec("tput sgr0");
-      $tasks[] = "Reset " . exec("tput setaf 6; echo '$new_branch'") . exec("tput sgr0") . " to match the latest " . exec("tput setaf 6; echo '$upstream_repo/$base_branch'") . exec("tput sgr0");
-      $tasks[] = "Push to " . exec("tput setaf 6; echo '$fork_repo/$new_branch'") . exec("tput sgr0") . " and set upstream " . exec("tput sgr0");
-      //      $tasks += [
-      //        "Pull a fresh copy of $upstream_repo/$base_branch",
-      //        "Push to $fork_repo/$base_branch",
-      //        "Reset $new_branch to match the latest $upstream_repo/$base_branch",
-      //        "Push to $fork_repo/$new_branch and set upstream",
-      //      ];
+      $color = ["color" => "cyan"];
+      $tasks[] = "Pull a fresh copy of " . $this->tput("$upstream_repo/$base_branch", $color);
+      $tasks[] = "Push to " . $this->tput("$fork_repo/$base_branch", $color);
+      $tasks[] = "Reset " . $this->tput("$fork_repo/$base_branch", $color) . " to match the latest " . $this->tput("$upstream_repo/$base_branch", $color);
+      $tasks[] = "Push to " . $this->tput("$fork_repo/$new_branch", $color) . " and set upstream ";
     }
 
     $tasks[] = "Task runner: $runner";
@@ -495,7 +490,17 @@ class RoboFile extends \Robo\Tasks {
     return;
   }
 
-  function tput(string $text, array $extra = ["color" => "red"]) {
+  /**
+   * PHP implementation of tput
+   *
+   * Accepts human color names, eg.: ["color" => "red"]
+   *
+   * @param string $text
+   * @param array $extra
+   *
+   * @return string
+   */
+  function tput(string $text, $extra = '') {
     // Set up variables.
     $colors = [
       'black',
@@ -508,7 +513,6 @@ class RoboFile extends \Robo\Tasks {
       'white',
     ];
     $command = 'tput sgr0; ';
-    //    $command = 'tput setaf 1; ';
 
     // If there are options, load them up.
     if (gettype($extra) == 'array') {
@@ -522,13 +526,10 @@ class RoboFile extends \Robo\Tasks {
             break;
         }
       }
-    } else {
-      $command .= $extra . "; ";
+    } elseif (!empty($extra)) {
+      $command .= "tput " . $extra . "; ";
     }
-//    $this->say($text);
-//    $this->say($command);
-    //    exec("tput setaf 6; echo '$text'");
-    //    exec("tput sgr0");
+
     return exec($command) . $text . exec("tput sgr0");
   }
 
