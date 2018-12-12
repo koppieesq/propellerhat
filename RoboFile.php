@@ -495,17 +495,7 @@ class RoboFile extends \Robo\Tasks {
     return;
   }
 
-  /**
-   * PHP implementation of tput.
-   *
-   * Includes human language color handling!
-   *
-   * @param string $text
-   *   The text to be output
-   * @param array $special
-   *   Any special arguments.
-   */
-  function tput(string $text, array $special = ['color' => 'red']) {
+  function tput(string $text, array $options = ["color" => "red"]) {
     // Set up variables.
     $colors = [
       'black',
@@ -517,34 +507,20 @@ class RoboFile extends \Robo\Tasks {
       'cyan',
       'white',
     ];
-    $command = 'echo ""; ';
+    $command = 'echo " "; ';
     //    $command = 'tput setaf 1; ';
 
     // If there are options, load them up.
-    if (!empty($special)) {
-      $this->say('special is not empty');
-      $this->say(print_r($special));
-      //        $this->say($key);
-      //        $this->say($value);
-      switch ($special[0]) {
-        case 'color':
-          $this->say("it's a color!");
-          $command = "tput setf " . array_search($value, $colors) . "; ";
-          break;
-        case 'background':
-          $command = "tput setb " . array_search($value, $colors) . "; ";
-          break;
-        default:
-          $a = !empty($key) ? strval($key) : '';
-          $b = !empty($value) ? strval($value) : '';
-          //            $command = strval($key) . ' ' . strval($value) . "; ";
-          //            $command = 'echo ' . $a . ' ' . $b;
-          $command = "echo '$a $b';";
-          break;
+    if (gettype($options) == "array") {
+      if ($options[0] == 'color') {
+        $command = "tput setf " . array_search($value, $colors) . "; ";
       }
+      elseif ($options[1] == 'background') {
+        $command = "tput setb " . array_search($value, $colors) . "; ";
+      }
+    } else {
+      $command = "tput $options; ";
     }
-    //    $this->say($options);
-    //    $this->io()->listing($options);
     $this->say($text);
     $this->say($command);
     //    exec("tput setaf 6; echo '$text'");
