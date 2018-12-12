@@ -87,12 +87,12 @@ class RoboFile extends \Robo\Tasks {
       $tasks[] = "Push to " . exec("tput setaf 6; echo '$fork_repo/$base_branch'") . exec("tput sgr0");
       $tasks[] = "Reset " . exec("tput setaf 6; echo '$new_branch'") . exec("tput sgr0") . " to match the latest " . exec("tput setaf 6; echo '$upstream_repo/$base_branch'") . exec("tput sgr0");
       $tasks[] = "Push to " . exec("tput setaf 6; echo '$fork_repo/$new_branch'") . exec("tput sgr0") . " and set upstream " . exec("tput sgr0");
-//      $tasks += [
-//        "Pull a fresh copy of $upstream_repo/$base_branch",
-//        "Push to $fork_repo/$base_branch",
-//        "Reset $new_branch to match the latest $upstream_repo/$base_branch",
-//        "Push to $fork_repo/$new_branch and set upstream",
-//      ];
+      //      $tasks += [
+      //        "Pull a fresh copy of $upstream_repo/$base_branch",
+      //        "Push to $fork_repo/$base_branch",
+      //        "Reset $new_branch to match the latest $upstream_repo/$base_branch",
+      //        "Push to $fork_repo/$new_branch and set upstream",
+      //      ];
     }
 
     $tasks[] = "Task runner: $runner";
@@ -122,15 +122,9 @@ class RoboFile extends \Robo\Tasks {
     exec('tput setaf 9');
 
     // Add requirements to the end of the to-do list.
-    $tasks[] = "In order for this to work, please make sure:\n" .
-      $indent . "You have forked the 'upstream' repository and created your own" . "\n" .
-      $indent . "You've already created a feature branch for the new ticket" . "\n" .
-      $indent . "You've updated the enclosed config file with the correct repositories and branches" . "\n" .
-      $indent . $warning . "\n";
+    $tasks[] = "In order for this to work, please make sure:\n" . $indent . "You have forked the 'upstream' repository and created your own" . "\n" . $indent . "You've already created a feature branch for the new ticket" . "\n" . $indent . "You've updated the enclosed config file with the correct repositories and branches" . "\n" . $indent . $warning . "\n";
 
-    $this->intro("NEW TICKET",
-      "I'm going to help you refresh your local dev environment to start a new ticket.",
-      $tasks);
+    $this->intro("NEW TICKET", "I'm going to help you refresh your local dev environment to start a new ticket.", $tasks);
 
     // Don't reset the feature branch if I pass a tag on the command line.
     if (!$opts['no-reset']) {
@@ -140,10 +134,7 @@ class RoboFile extends \Robo\Tasks {
 
     // See if there's anything new to install from Composer.
     $this->say("I'm going to see if there's anything to install.");
-    $result = $this->taskComposerInstall()
-      ->dir($host_path)
-      ->dev()
-      ->run();
+    $result = $this->taskComposerInstall()->dir($host_path)->dev()->run();
     $this->taskExec($this->check_success($result, "Composer install"));
 
     // Turn on the VM and reprovision it if necessary.
@@ -221,8 +212,7 @@ class RoboFile extends \Robo\Tasks {
    *
    * @return void
    */
-  function reset_branch($host_path, $base_branch, $upstream_repo, $fork_repo,
-                        $new_branch) {
+  function reset_branch($host_path, $base_branch, $upstream_repo, $fork_repo, $new_branch) {
     $this->taskGitStack()
       ->stopOnFail()
       ->dir($host_path)
@@ -285,8 +275,7 @@ class RoboFile extends \Robo\Tasks {
       $collection = $this->collectionBuilder();
       foreach ($repos as $command => $desires) {
         foreach ($desires as $desire) {
-          $collection->taskExecStack()
-            ->exec($command . " " . $desire);
+          $collection->taskExecStack()->exec($command . " " . $desire);
         }
       }
       $collection->run();
@@ -427,6 +416,7 @@ class RoboFile extends \Robo\Tasks {
    * Check Application
    *
    * Accepts a string
+   *
    * @param string $check
    *
    * @return string
@@ -503,6 +493,63 @@ class RoboFile extends \Robo\Tasks {
     $this->ask("Press [ENTER] to continue, ctrl-C to cancel.");
 
     return;
+  }
+
+  /**
+   * PHP implementation of tput.
+   *
+   * Includes human language color handling!
+   *
+   * @param string $text
+   *   The text to be output
+   * @param array $special
+   *   Any special arguments.
+   */
+  function tput(string $text, array $special = ['color' => 'red']) {
+    // Set up variables.
+    $colors = [
+      'black',
+      'red',
+      'green',
+      'yellow',
+      'blue',
+      'magenta',
+      'cyan',
+      'white',
+    ];
+    $command = 'echo ""; ';
+    //    $command = 'tput setaf 1; ';
+
+    // If there are options, load them up.
+    if (!empty($special)) {
+      $this->say('special is not empty');
+      $this->say(print_r($special));
+      //        $this->say($key);
+      //        $this->say($value);
+      switch ($special[0]) {
+        case 'color':
+          $this->say("it's a color!");
+          $command = "tput setf " . array_search($value, $colors) . "; ";
+          break;
+        case 'background':
+          $command = "tput setb " . array_search($value, $colors) . "; ";
+          break;
+        default:
+          $a = !empty($key) ? strval($key) : '';
+          $b = !empty($value) ? strval($value) : '';
+          //            $command = strval($key) . ' ' . strval($value) . "; ";
+          //            $command = 'echo ' . $a . ' ' . $b;
+          $command = "echo '$a $b';";
+          break;
+      }
+    }
+    //    $this->say($options);
+    //    $this->io()->listing($options);
+    $this->say($text);
+    $this->say($command);
+    //    exec("tput setaf 6; echo '$text'");
+    //    exec("tput sgr0");
+    $this->io()->text(exec($command) . $text . exec("tput sgr0"));
   }
 
   /**
