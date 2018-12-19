@@ -57,7 +57,7 @@ The following variables can be easily changed in the config file:
   
 # Roadmap
 The following new features are contemplated for the future:
-- More flexible workflow:
+- More flexible workflow in new_ticket():
   - Fork the repo
   - Create the feature branch
 - Wizard to create new config file
