@@ -113,8 +113,7 @@ class RoboFile extends \Robo\Tasks {
     }
 
     $tasks[] = $command_tasks;
-    $warning = exec('tput setaf 1; echo "CISCO AMP HAS BEEN TURNED OFF"');
-    exec('tput setaf 9');
+    $warning = $this->tput("CISCO AMP HAS BEEN TURNED OFF", ['color' => 'red']);
 
     // Add requirements to the end of the to-do list.
     $tasks[] = "In order for this to work, please make sure:\n" . $indent . "You have forked the 'upstream' repository and created your own" . "\n" . $indent . "You've already created a feature branch for the new ticket" . "\n" . $indent . "You've updated the enclosed config file with the correct repositories and branches" . "\n" . $indent . $warning . "\n";
@@ -526,7 +525,8 @@ class RoboFile extends \Robo\Tasks {
             break;
         }
       }
-    } elseif (!empty($extra)) {
+    }
+    elseif (!empty($extra)) {
       $command .= "tput " . $extra . "; ";
     }
 
@@ -563,4 +563,52 @@ class RoboFile extends \Robo\Tasks {
       ->exec('watch -n 1 drush ws')
       ->run();
   }
+
+  /**
+   * Robo implementation of Git Rebase
+   *
+   * This function performs a git rebase for you.  It starts in your base
+   * directory in your feature branch, pulls down a fresh copy of master, and
+   * then rebases your feature branch over master.  That's it!
+   *
+   * @param $host_path
+   *
+   * @return int
+   */
+  function rebase($host_path = NULL) {
+    $allopts = Robo::config()->get("command.new_ticket.options");
+    foreach ($allopts as $key => $value) {
+      $$key = $value;
+    }
+
+    if (!$host_path) {
+      $this->io()->warning("Sorry, you need to add your base path (pwd) when you run this command.  You can also set it in robo.yml.");
+      return 1;
+    }
+
+    // Load config & set environment variables
+    $start_time = time();
+    $new_branch = exec("cd $host_path; git symbolic-ref --short HEAD");
+    $banner = 'All Your Rebase Are Belong To Us';
+    $intro = 'You have no chance to survive make your time.';
+    $color = ['color' => 'cyan'];
+    $tasks = ["Rebase " . $this->tput($new_branch, $color) .
+      " over a fresh copy of " . $this->tput('master', $color)];
+    $this->intro($banner, $intro, $tasks);
+
+    $this->taskGitStack()
+      ->stopOnFail()
+      ->dir($host_path)
+      ->checkout('master')
+      ->pull()
+      ->checkout($new_branch)
+      ->exec("git rebase master")
+      ->run();
+
+    $this->stopwatch($start_time);
+    $this->catlet("For great justice");
+
+    return 0;
+  }
 }
+
