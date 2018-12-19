@@ -63,16 +63,15 @@ The following new features are contemplated for the future:
 - Wizard to create new config file
   - Store config file in project or global (user directory)
   - Create multidimensional array for config values, including key, default, & description
-  - Remove robo.yml from git; keep default.robo.yml
+  - @see https://symfony.com/doc/current/components/config/definition.html
+  - @see https://github.com/lando/lando/blob/master/plugins/lando-init/tasks/init.js
 - Support installation via Composer
 - Integrate with PhpStorm
-- Use collectionBuilder
 - Add additional items to new_environment():
-  - start with `composer install`
+  - add `composer install`
   - Alias for Robo commands
   - Additional utilities: diff-so-fancy (and replace git diff)
   - Add optional toys: steam, bitlord, wesnoth, minecraft
-  - Add executables: edex-ui, multimonitor wallpaper  
   
 # Credits
 
