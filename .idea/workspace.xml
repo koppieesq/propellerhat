@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1a099c3b-f3b4-4635-8b4e-dd664aca8a7c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/default.robo.yml" beforeDir="false" afterPath="$PROJECT_DIR$/default.robo.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RoboFile.php" beforeDir="false" afterPath="$PROJECT_DIR$/RoboFile.php" afterDir="false" />
     </list>
     <ignored path=".idea/webServers.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,12 +30,12 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="268">
-                <caret line="66" column="9" lean-forward="true" selection-start-line="66" selection-start-column="9" selection-end-line="66" selection-end-column="9" />
+              <first_editor relative-caret-position="444">
+                <caret line="77" column="139" selection-start-line="77" selection-start-column="139" selection-end-line="77" selection-end-column="139" />
               </first_editor>
               <second_editor />
             </state>
@@ -70,11 +69,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/RoboFile.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4928">
-              <caret line="308" column="11" selection-start-line="308" selection-start-column="11" selection-end-line="308" selection-end-column="11" />
+            <state relative-caret-position="295">
+              <caret line="292" column="47" lean-forward="true" selection-start-line="292" selection-start-column="47" selection-end-line="292" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -113,7 +112,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>/home/$user_name</find>
       <find>/home/$user_name/.ssh</find>
       <find>ssh_server</find>
       <find>credential</find>
@@ -143,6 +141,7 @@
       <find>sshexec</find>
       <find>option</find>
       <find>git</find>
+      <find>stack</find>
     </findStrings>
     <replaceStrings>
       <replace>=</replace>
@@ -176,9 +175,9 @@
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/.bash_logout" />
         <option value="$PROJECT_DIR$/robo.yml" />
-        <option value="$PROJECT_DIR$/RoboFile.php" />
         <option value="$PROJECT_DIR$/default.robo.yml" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/RoboFile.php" />
       </list>
     </option>
   </component>
@@ -229,7 +228,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -267,6 +265,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -373,28 +372,8 @@
       <workItem from="1544060397048" duration="134000" />
       <workItem from="1544231535732" duration="13000" />
       <workItem from="1544462326541" duration="599000" />
-      <workItem from="1545247329894" duration="302000" />
-    </task>
-    <task id="LOCAL-00037" summary="Corrects working directory for Composer, and adds better error handling.">
-      <created>1538776180029</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1538776180029</updated>
-    </task>
-    <task id="LOCAL-00038" summary="Adds --dev option to composer install.">
-      <created>1538780115880</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1538780115880</updated>
-    </task>
-    <task id="LOCAL-00039" summary="&quot;New Ticket&quot; script does a better job of resetting the master branch based on the latest from origin, and then recreates the feature branch based on the latest origin/master.">
-      <created>1539108197301</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1539108197301</updated>
+      <workItem from="1545247329894" duration="585000" />
+      <workItem from="1545443204239" duration="840000" />
     </task>
     <task id="LOCAL-00040" summary="Fixed code to properly recreate the feature branch based on the latest origin/master, not the forked repo.">
       <created>1539109349521</created>
@@ -718,11 +697,32 @@
       <option name="project" value="LOCAL" />
       <updated>1545189206036</updated>
     </task>
-    <option name="localTasksCounter" value="86" />
+    <task id="LOCAL-00086" summary="Adds edex-ui">
+      <created>1545248833266</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1545248833266</updated>
+    </task>
+    <task id="LOCAL-00087" summary="Updates Roadmap in readme.">
+      <created>1545248847718</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1545248847718</updated>
+    </task>
+    <task id="LOCAL-00088" summary="Updates Roadmap in readme.">
+      <created>1545249028436</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1545249028436</updated>
+    </task>
+    <option name="localTasksCounter" value="89" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="191207000" />
+    <option name="totallyTimeSpent" value="192330000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -735,10 +735,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="602" y="23" width="1078" height="1027" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4924623" visible="true" weight="0.21621622" />
-      <window_info id="Structure" order="1" sideWeight="0.50753766" side_tool="true" visible="true" weight="0.21621622" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49149337" visible="true" weight="0.22007722" />
+      <window_info id="Structure" order="1" sideWeight="0.5085066" side_tool="true" visible="true" weight="0.22007722" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="0" weight="0.29032257" />
       <window_info anchor="bottom" id="Inspection Results" order="1" weight="0.32862905" />
@@ -751,8 +750,8 @@
       <window_info anchor="bottom" id="TODO" order="8" weight="0.32903227" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="11" weight="0.3578838" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="12" visible="true" weight="0.35038084" />
+      <window_info anchor="bottom" id="Version Control" order="11" weight="0.3569097" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="12" visible="true" weight="0.4243743" />
       <window_info anchor="bottom" id="Event Log" order="13" side_tool="true" weight="0.3299539" />
       <window_info anchor="right" id="Remote Host" order="0" weight="0.18954249" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
@@ -838,8 +837,6 @@
       <path value="$PROJECT_DIR$/vendor/symfony/process" />
       <path value="$PROJECT_DIR$/vendor/symfony/yaml" />
     </ignored-roots>
-    <MESSAGE value="Change updateme() introduction to use allthethings!" />
-    <MESSAGE value="Adds catlet function (figlet + lolcat)." />
     <MESSAGE value="Improves custom output in several functions." />
     <MESSAGE value="Fix typo in updateme()." />
     <MESSAGE value="More improvements to custom output in several functions." />
@@ -863,7 +860,9 @@
     <MESSAGE value="I think I've gone down the wrong hole." />
     <MESSAGE value="Heading down a different wrong hole." />
     <MESSAGE value="Refactor firewall warning to use tput." />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor firewall warning to use tput." />
+    <MESSAGE value="Adds edex-ui" />
+    <MESSAGE value="Updates Roadmap in readme." />
+    <option name="LAST_COMMIT_MESSAGE" value="Updates Roadmap in readme." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/completed" />
@@ -942,13 +941,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RoboFile.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4928">
-          <caret line="308" column="11" selection-start-line="308" selection-start-column="11" selection-end-line="308" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/symfony/console/Output/OutputInterface.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -969,10 +961,17 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="268">
-            <caret line="66" column="9" lean-forward="true" selection-start-line="66" selection-start-column="9" selection-end-line="66" selection-end-column="9" />
+          <first_editor relative-caret-position="444">
+            <caret line="77" column="139" selection-start-line="77" selection-start-column="139" selection-end-line="77" selection-end-column="139" />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RoboFile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="295">
+          <caret line="292" column="47" lean-forward="true" selection-start-line="292" selection-start-column="47" selection-end-line="292" selection-end-column="47" />
         </state>
       </provider>
     </entry>

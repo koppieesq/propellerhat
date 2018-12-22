@@ -280,18 +280,22 @@ class RoboFile extends \Robo\Tasks {
     }
 
     // Run `composer install`.
+    $this->say("Composer install");
     $this->taskComposerInstall()->run();
 
     // Install .bash_profile and other items consistent with all Linux & Unix environments
+    $this->say("Copying environment files:");
     $files = [
       '.bash_profile' => 'bash profile: better command line prompt & command aliases',
       '.bash_logout' => 'cute farewell greeting when you log out',
       '.vimrc' => 'better VI settings',
     ];
     foreach ($files as $file => $description) {
-      $collection->copy("$pwd/$file", "$home/$file");
+      $this->say("Installing " . $description);
+      $this->taskFilesystemStack()
+        ->copy("$pwd/$file", "$home/$file")
+        ->run();
     }
-    $collection->run();
 
     // Outro
     $this->stopwatch($start_time);
