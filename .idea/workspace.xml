@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a099c3b-f3b4-4635-8b4e-dd664aca8a7c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RoboFile.php" beforeDir="false" afterPath="$PROJECT_DIR$/RoboFile.php" afterDir="false" />
     </list>
     <ignored path=".idea/webServers.xml" />
@@ -34,8 +34,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="444">
-                <caret line="77" column="139" selection-start-line="77" selection-start-column="139" selection-end-line="77" selection-end-column="139" />
+              <first_editor relative-caret-position="274">
+                <caret line="72" column="57" lean-forward="true" selection-start-line="72" selection-start-column="57" selection-end-line="72" selection-end-column="57" />
               </first_editor>
               <second_editor />
             </state>
@@ -72,8 +72,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/RoboFile.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="295">
-              <caret line="292" column="47" lean-forward="true" selection-start-line="292" selection-start-column="47" selection-end-line="292" selection-end-column="47" />
+            <state relative-caret-position="515">
+              <caret line="276" column="24" selection-start-line="276" selection-start-column="24" selection-end-line="276" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -112,9 +112,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>/home/$user_name/.ssh</find>
-      <find>ssh_server</find>
-      <find>credential</find>
       <find>pwd</find>
       <find>check_success</find>
       <find>hirak/prestissimo</find>
@@ -124,7 +121,6 @@
       <find>'pv</find>
       <find>ExecStack</find>
       <find>OutputInterface</find>
-      <find>lolcat</find>
       <find>$ssh_commands</find>
       <find>mul</find>
       <find>virtualbo</find>
@@ -142,6 +138,10 @@
       <find>option</find>
       <find>git</find>
       <find>stack</find>
+      <find>grey</find>
+      <find>yellow</find>
+      <find>cat</find>
+      <find>lolcat</find>
     </findStrings>
     <replaceStrings>
       <replace>=</replace>
@@ -373,14 +373,7 @@
       <workItem from="1544231535732" duration="13000" />
       <workItem from="1544462326541" duration="599000" />
       <workItem from="1545247329894" duration="585000" />
-      <workItem from="1545443204239" duration="840000" />
-    </task>
-    <task id="LOCAL-00040" summary="Fixed code to properly recreate the feature branch based on the latest origin/master, not the forked repo.">
-      <created>1539109349521</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1539109349521</updated>
+      <workItem from="1545443204239" duration="1736000" />
     </task>
     <task id="LOCAL-00041" summary="Adds Bar utility.">
       <created>1539727718504</created>
@@ -718,11 +711,18 @@
       <option name="project" value="LOCAL" />
       <updated>1545249028436</updated>
     </task>
-    <option name="localTasksCounter" value="89" />
+    <task id="LOCAL-00089" summary="The last traces of the collections have been swept away.  Fixes file copy for new_environment.">
+      <created>1545444147018</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1545444147019</updated>
+    </task>
+    <option name="localTasksCounter" value="90" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="192330000" />
+    <option name="totallyTimeSpent" value="193226000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -735,7 +735,33 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="602" y="23" width="1078" height="1027" extended-state="0" />
+    <editor active="true" />
     <layout>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49149337" weight="0.22007722" />
+      <window_info id="Structure" order="1" sideWeight="0.5085066" side_tool="true" weight="0.22007722" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="0" weight="0.29032257" />
+      <window_info anchor="bottom" id="Inspection Results" order="1" weight="0.32862905" />
+      <window_info anchor="bottom" id="Message" order="2" />
+      <window_info anchor="bottom" id="Find" order="3" weight="0.3281106" />
+      <window_info anchor="bottom" id="Run" order="4" />
+      <window_info anchor="bottom" id="Debug" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="8" weight="0.32903227" />
+      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="11" weight="0.3569097" />
+      <window_info anchor="bottom" id="Terminal" order="12" weight="0.4144527" />
+      <window_info anchor="bottom" id="Event Log" order="13" side_tool="true" weight="0.3299539" />
+      <window_info anchor="right" id="Remote Host" order="0" weight="0.18954249" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
+      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" id="Key Promoter X" order="5" />
+    </layout>
+    <layout-to-restore>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49149337" visible="true" weight="0.22007722" />
       <window_info id="Structure" order="1" sideWeight="0.5085066" side_tool="true" visible="true" weight="0.22007722" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -751,7 +777,7 @@
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.3569097" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="12" visible="true" weight="0.4243743" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="12" visible="true" weight="0.4144527" />
       <window_info anchor="bottom" id="Event Log" order="13" side_tool="true" weight="0.3299539" />
       <window_info anchor="right" id="Remote Host" order="0" weight="0.18954249" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
@@ -759,7 +785,7 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
       <window_info anchor="right" id="Database" order="4" />
       <window_info anchor="right" id="Key Promoter X" order="5" />
-    </layout>
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -837,7 +863,6 @@
       <path value="$PROJECT_DIR$/vendor/symfony/process" />
       <path value="$PROJECT_DIR$/vendor/symfony/yaml" />
     </ignored-roots>
-    <MESSAGE value="Improves custom output in several functions." />
     <MESSAGE value="Fix typo in updateme()." />
     <MESSAGE value="More improvements to custom output in several functions." />
     <MESSAGE value="Remove Acquia-specific commands from robo.yml." />
@@ -862,7 +887,8 @@
     <MESSAGE value="Refactor firewall warning to use tput." />
     <MESSAGE value="Adds edex-ui" />
     <MESSAGE value="Updates Roadmap in readme." />
-    <option name="LAST_COMMIT_MESSAGE" value="Updates Roadmap in readme." />
+    <MESSAGE value="The last traces of the collections have been swept away.  Fixes file copy for new_environment." />
+    <option name="LAST_COMMIT_MESSAGE" value="The last traces of the collections have been swept away.  Fixes file copy for new_environment." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/completed" />
@@ -961,8 +987,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="444">
-            <caret line="77" column="139" selection-start-line="77" selection-start-column="139" selection-end-line="77" selection-end-column="139" />
+          <first_editor relative-caret-position="274">
+            <caret line="72" column="57" lean-forward="true" selection-start-line="72" selection-start-column="57" selection-end-line="72" selection-end-column="57" />
           </first_editor>
           <second_editor />
         </state>
@@ -970,8 +996,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/RoboFile.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="292" column="47" lean-forward="true" selection-start-line="292" selection-start-column="47" selection-end-line="292" selection-end-column="47" />
+        <state relative-caret-position="515">
+          <caret line="276" column="24" selection-start-line="276" selection-start-column="24" selection-end-line="276" selection-end-column="24" />
         </state>
       </provider>
     </entry>

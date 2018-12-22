@@ -273,6 +273,18 @@ class RoboFile extends \Robo\Tasks {
         }
       }
       $collection->run();
+
+      // Diff-so-fancy installed separately because there's an extra command.
+      // @see https://github.com/so-fancy/diff-so-fancy
+      $string = "Turning your ";
+      $string .= $this->tput("git diff", ["color" => "cyan"]);
+      $string .= " into ";
+      $string .= $this->tput("diff-so-fancy", ["color" => "magenta"]);
+      $this->say($string);
+      $this->taskExecStack()
+        ->exec("brew install diff-so-fancy")
+        ->exec('git config --global core.pager "diff-so-fancy | less --tabs=4 -RFX"')
+        ->run();
     }
     else {
       $this->io()
