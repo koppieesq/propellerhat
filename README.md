@@ -65,7 +65,7 @@ The following new features are contemplated for the future:
   - Create multidimensional array for config values, including key, default, & description
   - @see https://symfony.com/doc/current/components/config/definition.html
   - @see https://github.com/lando/lando/blob/master/plugins/lando-init/tasks/init.js
-- Add to Packagist
+- Update installation instructions to include Composer/Packagist
 - Integrate with PhpStorm
 - Add additional items to new_environment():
   - Alias for Robo commands
