@@ -1,8 +1,8 @@
 # propellerhat
-[![platform](https://img.shields.io/badge/osx-lightgrey.svg?logo=apple)](platform)
-[![platform](https://img.shields.io/badge/linux-616.svg?logo=linux)](platform)
-[![platform](https://img.shields.io/badge/packagist-orange.svg?logo=linux)](https://packagist.org/packages/koppieesq/propellerhat)
-[![platform](https://img.shields.io/badge/github-0a0.svg?logo=github)](https://github.com/koppieesq/propellerhat)
+[![platform](https://img.shields.io/badge/osx-lightgrey.svg?logo=apple&logoColor=white)](https://apple.com)
+[![platform](https://img.shields.io/badge/linux-616.svg?logo=linux&logoColor=white)](https://ubuntu.com)
+[![packagist](https://img.shields.io/badge/packagist-orange.svg?logo=linux&logoColor=white)](https://packagist.org/packages/koppieesq/propellerhat)
+[![github](https://img.shields.io/badge/github-0a0.svg?logo=github)](https://github.com/koppieesq/propellerhat)
 [![License](https://img.shields.io/badge/license-GPL3-teal.svg?logo=gnu)](LICENSE)
 
 For your inner child - the nerdy one who has a little cap with a propeller on the top.
