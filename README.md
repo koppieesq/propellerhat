@@ -1,6 +1,4 @@
 # propellerhat
-[![platform](https://img.shields.io/badge/osx-lightgrey.svg?logo=apple&logoColor=white)](https://apple.com)
-[![platform](https://img.shields.io/badge/linux-616.svg?logo=linux&logoColor=white)](https://ubuntu.com)
 [![packagist](https://img.shields.io/badge/packagist-orange.svg?logo=php&logoColor=white)](https://packagist.org/packages/koppieesq/propellerhat)
 [![github](https://img.shields.io/badge/github-0a0.svg?logo=github)](https://github.com/koppieesq/propellerhat)
 [![License](https://img.shields.io/badge/license-GPL3-teal.svg?logo=gnu)](LICENSE)
