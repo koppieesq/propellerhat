@@ -1,7 +1,13 @@
 # propellerhat
+[![platform](https://img.shields.io/badge/osx-lightgrey.svg?logo=apple)](platform)
+[![platform](https://img.shields.io/badge/linux-616.svg?logo=linux)](platform)
+[![platform](https://img.shields.io/badge/packagist-orange.svg?logo=linux)](https://packagist.org/packages/koppieesq/propellerhat)
+[![platform](https://img.shields.io/badge/github-0a0.svg?logo=github)](https://github.com/koppieesq/propellerhat)
+[![License](https://img.shields.io/badge/license-GPL3-teal.svg?logo=gnu)](LICENSE)
+
 For your inner child - the nerdy one who has a little cap with a propeller on the top.
 
-Some of these are bash scripts, but most use [Robo](https://robo.il).
+Some of these are bash scripts, but most use [Robo](https://robo.li).
 
 ## Contents:
 - **.bash_profile:** Custom settings for your command line interface
