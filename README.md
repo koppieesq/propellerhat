@@ -1,6 +1,6 @@
 # propellerhat
-[![packagist](https://img.shields.io/badge/packagist-orange.svg?logo=php&logoColor=white)](https://packagist.org/packages/koppieesq/propellerhat)
 [![github](https://img.shields.io/badge/github-0a0.svg?logo=github)](https://github.com/koppieesq/propellerhat)
+[![packagist](https://img.shields.io/badge/packagist-orange.svg?logo=php&logoColor=white)](https://packagist.org/packages/koppieesq/propellerhat)
 [![License](https://img.shields.io/badge/license-GPL3-teal.svg?logo=gnu)](LICENSE)
 
 For your inner child - the nerdy one who has a little cap with a propeller on the top.

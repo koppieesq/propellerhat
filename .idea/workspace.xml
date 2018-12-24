@@ -34,8 +34,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="48">
-                <caret line="3" column="72" selection-start-line="3" selection-start-column="72" selection-end-line="3" selection-end-column="72" />
+              <first_editor relative-caret-position="32">
+                <caret line="2" column="32" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
               </first_editor>
               <second_editor />
             </state>
@@ -81,8 +81,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vendor/symfony/console/Output/OutputInterface.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="24" column="27" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="27" />
+            <state relative-caret-position="176">
+              <caret line="18" column="48" lean-forward="true" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -168,10 +168,10 @@
         <option value="$PROJECT_DIR$/new-ticket" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/ph" />
-        <option value="$USER_HOME$/.bash_profile" />
+        <option value="$PROJECT_DIR$/../.bash_profile" />
         <option value="$PROJECT_DIR$/upload-key" />
         <option value="$PROJECT_DIR$/auth.json" />
-        <option value="$USER_HOME$/.bash_logout" />
+        <option value="$PROJECT_DIR$/../.bash_logout" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/.bash_logout" />
         <option value="$PROJECT_DIR$/robo.yml" />
@@ -374,21 +374,7 @@
       <workItem from="1544462326541" duration="599000" />
       <workItem from="1545247329894" duration="585000" />
       <workItem from="1545443204239" duration="3006000" />
-      <workItem from="1545547751842" duration="3144000" />
-    </task>
-    <task id="LOCAL-00045" summary="Fixing git tasks subroutine.  Need to fix error catching at some point.">
-      <created>1540838635381</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1540838635381</updated>
-    </task>
-    <task id="LOCAL-00046" summary="Adds first draft of the refresh_ticket() function.">
-      <created>1540854458430</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1540854458430</updated>
+      <workItem from="1545547751842" duration="3455000" />
     </task>
     <task id="LOCAL-00047" summary="Minor code improvements + documentation.">
       <created>1541450711306</created>
@@ -719,11 +705,25 @@
       <option name="project" value="LOCAL" />
       <updated>1545619372647</updated>
     </task>
-    <option name="localTasksCounter" value="94" />
+    <task id="LOCAL-00094" summary="Updated shields.io.">
+      <created>1545619555492</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1545619555492</updated>
+    </task>
+    <task id="LOCAL-00095" summary="Cleaned up shields.io.">
+      <created>1545619763387</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1545619763387</updated>
+    </task>
+    <option name="localTasksCounter" value="96" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="197640000" />
+    <option name="totallyTimeSpent" value="197951000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -865,7 +865,6 @@
       <path value="$PROJECT_DIR$/vendor/symfony/yaml" />
       <path value="$PROJECT_DIR$/ph" />
     </ignored-roots>
-    <MESSAGE value="Improve human introduction to refresh_ticket()." />
     <MESSAGE value="new_ticket() now calls refresh_ticket()." />
     <MESSAGE value="Minor output improvements." />
     <MESSAGE value="Improved refresh_ticket() to work better with new_ticket()." />
@@ -890,7 +889,8 @@
     <MESSAGE value="We're on Packagist now!" />
     <MESSAGE value="Added shields.io." />
     <MESSAGE value="Updated shields.io." />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated shields.io." />
+    <MESSAGE value="Cleaned up shields.io." />
+    <option name="LAST_COMMIT_MESSAGE" value="Cleaned up shields.io." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/completed" />
@@ -907,9 +907,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/.bash_profile" />
-    <entry file="file://$USER_HOME$/PhpstormProjects/bwd/auth.json" />
-    <entry file="file://$USER_HOME$/.bash_logout" />
+    <entry file="file://$PROJECT_DIR$/../.bash_profile" />
+    <entry file="file://$PROJECT_DIR$/../PhpstormProjects/bwd/auth.json" />
+    <entry file="file://$PROJECT_DIR$/../.bash_logout" />
     <entry file="file://$PROJECT_DIR$/dbdown">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -976,13 +976,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/symfony/console/Output/OutputInterface.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="24" column="27" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
@@ -993,11 +986,18 @@
     <entry file="file://$PROJECT_DIR$/vendor/btford/allthethings/allthethings.sh">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/symfony/console/Output/OutputInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="18" column="48" lean-forward="true" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="48">
-            <caret line="3" column="72" selection-start-line="3" selection-start-column="72" selection-end-line="3" selection-end-column="72" />
+          <first_editor relative-caret-position="32">
+            <caret line="2" column="32" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
           </first_editor>
           <second_editor />
         </state>
