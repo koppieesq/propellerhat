@@ -72,7 +72,6 @@ command:
       - skype
       - vlc
       - synergy
-      - filezilla
       - virtualbox
       - homebrew/cask-fonts/font-source-code-pro
       - edex-ui
