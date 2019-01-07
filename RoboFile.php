@@ -540,28 +540,48 @@ class RoboFile extends \Robo\Tasks {
    * replicates that functionality inside your local vm.  No arguments
    * needed; this function uses the same config as new_ticket, stored in robo
    * .yml.
+   *
+   * @param string|null $site
+   *   Optional: specify site to target.
+   *
+   * @throws \Robo\Exception\TaskException
    */
-  function wag() {
+  function wag(string $site = NULL) {
     // Get config from robo.yml.
     $allopts = Robo::config()->get("command.new_ticket.options");
     foreach ($allopts as $key => $value) {
       $$key = $value;
     }
+    $wait = 2;
 
     // Run tasks inside the VM
     $this->say("I'm going to tail the Drupal watchdog log.  Type ctrl-c to stop.");
-    sleep(2);
-    $this->taskSshExec($vm_domain, $vm_user)
-      ->stopOnFail()
-      ->silent(TRUE)
-      ->printOutput(TRUE)
-      ->forcePseudoTty()
-      ->dir($host_path)
-      ->port($vm_port)
-      ->identityFile($vm_key)
-      ->remoteDir($guest_path)
-      ->exec('watch -n 1 drush ws')
-      ->run();
+    sleep($wait);
+
+    if ($site) {
+      // If you're targeting a specific site, then run the command against it.
+      while (1+1 == 2) {
+        $this->taskExecStack()
+          ->silent(TRUE)
+          ->printOutput(TRUE)
+          ->dir($host_path)
+          ->exec("drush $site ws")
+          ->run();
+      }
+    } else {
+      // Otherwise, just grab default ssh info from robo.yml and use that.
+      $this->taskSshExec($vm_domain, $vm_user)
+        ->stopOnFail()
+        ->silent(TRUE)
+        ->printOutput(TRUE)
+        ->forcePseudoTty()
+        ->dir($host_path)
+        ->port($vm_port)
+        ->identityFile($vm_key)
+        ->remoteDir($guest_path)
+        ->exec('watch -n 1 drush ws')
+        ->run();
+    }
   }
 
   /**
