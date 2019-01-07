@@ -51,6 +51,8 @@ command:
       - htop
       - glances
       - monit
+      - z
+      - exa
     casks:
       - 1clipboard
       - beardedspice
@@ -72,5 +74,5 @@ command:
       - synergy
       - filezilla
       - virtualbox
-      - virtualbox-extension-pack
       - homebrew/cask-fonts/font-source-code-pro
+      - edex-ui

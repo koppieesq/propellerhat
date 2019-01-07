@@ -1,7 +1,11 @@
 # propellerhat
+[![github](https://img.shields.io/badge/github-0a0.svg?logo=github)](https://github.com/koppieesq/propellerhat)
+[![packagist](https://img.shields.io/badge/packagist-orange.svg?logo=php&logoColor=white)](https://packagist.org/packages/koppieesq/propellerhat)
+[![License](https://img.shields.io/badge/license-GPL3-teal.svg?logo=gnu)](LICENSE)
+
 For your inner child - the nerdy one who has a little cap with a propeller on the top.
 
-Some of these are bash scripts, but most use [Robo](https://robo.il).
+Some of these are bash scripts, but most use [Robo](https://robo.li).
 
 ## Contents:
 - **.bash_profile:** Custom settings for your command line interface
@@ -57,22 +61,19 @@ The following variables can be easily changed in the config file:
   
 # Roadmap
 The following new features are contemplated for the future:
-- More flexible workflow:
+- More flexible workflow in new_ticket():
   - Fork the repo
   - Create the feature branch
 - Wizard to create new config file
   - Store config file in project or global (user directory)
   - Create multidimensional array for config values, including key, default, & description
-  - Remove robo.yml from git; keep default.robo.yml
-- Support installation via Composer
+  - @see https://symfony.com/doc/current/components/config/definition.html
+  - @see https://github.com/lando/lando/blob/master/plugins/lando-init/tasks/init.js
+- Update installation instructions to include Composer/Packagist
 - Integrate with PhpStorm
-- Use collectionBuilder
 - Add additional items to new_environment():
-  - start with `composer install`
   - Alias for Robo commands
-  - Additional utilities: diff-so-fancy (and replace git diff)
   - Add optional toys: steam, bitlord, wesnoth, minecraft
-  - Add executables: edex-ui, multimonitor wallpaper  
   
 # Credits
 

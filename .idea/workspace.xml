@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a099c3b-f3b4-4635-8b4e-dd664aca8a7c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.bash_profile" beforeDir="false" afterPath="$PROJECT_DIR$/.bash_profile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RoboFile.php" beforeDir="false" afterPath="$PROJECT_DIR$/RoboFile.php" afterDir="false" />
     </list>
     <ignored path=".idea/webServers.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,106 +16,92 @@
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <executablePath>composer</executablePath>
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="propellerhat" />
+  </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="vertical" split-proportion="0.39663237">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/README.md">
-              <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-                <state split_layout="FIRST">
-                  <first_editor relative-caret-position="1633">
-                    <caret line="71" column="27" selection-start-line="71" selection-start-column="27" selection-end-line="71" selection-end-column="27" />
-                  </first_editor>
-                  <second_editor />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/default.robo.yml">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="506">
-                  <caret line="22" column="12" selection-start-line="20" selection-start-column="26" selection-end-line="22" selection-end-column="12" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/robo.yml">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="229">
-                  <caret line="10" column="82" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="82" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/RoboFile.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="27">
-                  <caret line="208" column="11" selection-start-line="208" selection-start-column="11" selection-end-line="208" selection-end-column="11" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/.bash_logout">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="46">
-                  <caret line="2" selection-start-line="2" selection-end-line="2" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/.gitignore">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="46">
-                  <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/vendor/symfony/console/Output/OutputInterface.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="391">
-                  <caret line="24" column="27" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="27" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/composer.json">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="437">
-                  <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/vendor/btford/allthethings/allthethings.sh">
-              <provider selected="true" editor-type-id="text-editor" />
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/RoboFile.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="341">
-                  <caret line="610" column="12" selection-start-line="610" selection-start-column="12" selection-end-line="610" selection-end-column="12" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/default.robo.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="118">
+              <caret line="54" column="11" lean-forward="true" selection-start-line="48" selection-start-column="11" selection-end-line="54" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="314">
+                <caret line="54" column="76" selection-start-line="54" selection-start-column="76" selection-end-line="54" selection-end-column="76" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.bash_profile">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="250">
+              <caret line="80" selection-start-line="80" selection-end-line="80" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/robo.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="834">
+              <caret line="57" column="11" selection-start-line="52" selection-start-column="11" selection-end-line="57" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="32">
+              <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RoboFile.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="239">
+              <caret line="275" lean-forward="true" selection-start-line="275" selection-end-line="275" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vendor/symfony/console/Output/OutputInterface.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="176">
+              <caret line="18" column="48" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/composer.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="176">
+              <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vendor/btford/allthethings/allthethings.sh">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -126,20 +112,12 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>/home/$user_name</find>
-      <find>/home/$user_name/.ssh</find>
-      <find>ssh_server</find>
-      <find>credential</find>
-      <find>pwd</find>
-      <find>check_success</find>
-      <find>hirak/prestissimo</find>
       <find>chrome</find>
       <find>reset_</find>
       <find>noreset</find>
       <find>'pv</find>
       <find>ExecStack</find>
       <find>OutputInterface</find>
-      <find>lolcat</find>
       <find>$ssh_commands</find>
       <find>mul</find>
       <find>virtualbo</find>
@@ -156,6 +134,14 @@
       <find>sshexec</find>
       <find>option</find>
       <find>git</find>
+      <find>stack</find>
+      <find>grey</find>
+      <find>yellow</find>
+      <find>cat</find>
+      <find>lolcat</find>
+      <find>auto</find>
+      <find>ll</find>
+      <find>compl</find>
     </findStrings>
     <replaceStrings>
       <replace>=</replace>
@@ -182,16 +168,17 @@
         <option value="$PROJECT_DIR$/new-ticket" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/ph" />
-        <option value="$PROJECT_DIR$/../.bash_profile" />
+        <option value="$USER_HOME$/.bash_profile" />
         <option value="$PROJECT_DIR$/upload-key" />
         <option value="$PROJECT_DIR$/auth.json" />
-        <option value="$PROJECT_DIR$/../.bash_logout" />
+        <option value="$USER_HOME$/.bash_logout" />
         <option value="$PROJECT_DIR$/composer.json" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/.bash_logout" />
+        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/default.robo.yml" />
         <option value="$PROJECT_DIR$/robo.yml" />
         <option value="$PROJECT_DIR$/RoboFile.php" />
+        <option value="$PROJECT_DIR$/.bash_profile" />
       </list>
     </option>
   </component>
@@ -227,21 +214,21 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1920" />
+    <option name="x" value="162" />
     <option name="y" value="23" />
-    <option name="width" value="960" />
-    <option name="height" value="1177" />
+    <option name="width" value="1076" />
+    <option name="height" value="1027" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="false" id="Update" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
+      <autoscrollToSource ProjectPane="true" />
       <autoscrollFromSource ProjectPane="true" />
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -279,6 +266,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -292,7 +280,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -385,104 +373,10 @@
       <workItem from="1544060397048" duration="134000" />
       <workItem from="1544231535732" duration="13000" />
       <workItem from="1544462326541" duration="599000" />
-    </task>
-    <task id="LOCAL-00036" summary="Fleshing out new_environment function.">
-      <created>1538006870018</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1538006870018</updated>
-    </task>
-    <task id="LOCAL-00037" summary="Corrects working directory for Composer, and adds better error handling.">
-      <created>1538776180029</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1538776180029</updated>
-    </task>
-    <task id="LOCAL-00038" summary="Adds --dev option to composer install.">
-      <created>1538780115880</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1538780115880</updated>
-    </task>
-    <task id="LOCAL-00039" summary="&quot;New Ticket&quot; script does a better job of resetting the master branch based on the latest from origin, and then recreates the feature branch based on the latest origin/master.">
-      <created>1539108197301</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1539108197301</updated>
-    </task>
-    <task id="LOCAL-00040" summary="Fixed code to properly recreate the feature branch based on the latest origin/master, not the forked repo.">
-      <created>1539109349521</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1539109349521</updated>
-    </task>
-    <task id="LOCAL-00041" summary="Adds Bar utility.">
-      <created>1539727718504</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1539727718504</updated>
-    </task>
-    <task id="LOCAL-00042" summary="Adds optional command line argument to skip git reset.">
-      <created>1540232534033</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1540232534033</updated>
-    </task>
-    <task id="LOCAL-00043" summary="Can now skip git reset &amp; vagrant provision using command line arguments.">
-      <created>1540234904344</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1540234904344</updated>
-    </task>
-    <task id="LOCAL-00044" summary="Minor code cleanup.">
-      <created>1540836764272</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1540836764272</updated>
-    </task>
-    <task id="LOCAL-00045" summary="Fixing git tasks subroutine.  Need to fix error catching at some point.">
-      <created>1540838635381</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1540838635381</updated>
-    </task>
-    <task id="LOCAL-00046" summary="Adds first draft of the refresh_ticket() function.">
-      <created>1540854458430</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1540854458430</updated>
-    </task>
-    <task id="LOCAL-00047" summary="Minor code improvements + documentation.">
-      <created>1541450711306</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1541450711306</updated>
-    </task>
-    <task id="LOCAL-00048" summary="'no-provision' flag still runs 'vagrant up.'">
-      <created>1541451280475</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1541451280475</updated>
-    </task>
-    <task id="LOCAL-00049" summary="Removed &quot;hello world&quot; function.">
-      <created>1541457071711</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1541457071711</updated>
+      <workItem from="1545247329894" duration="585000" />
+      <workItem from="1545443204239" duration="3006000" />
+      <workItem from="1545547751842" duration="4182000" />
+      <workItem from="1546818538805" duration="4515000" />
     </task>
     <task id="LOCAL-00050" summary="Adds --no-install flag to new_ticket().">
       <created>1541458398503</created>
@@ -729,11 +623,109 @@
       <option name="project" value="LOCAL" />
       <updated>1544646012382</updated>
     </task>
-    <option name="localTasksCounter" value="85" />
+    <task id="LOCAL-00085" summary="Refactor firewall warning to use tput.">
+      <created>1545189206035</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1545189206036</updated>
+    </task>
+    <task id="LOCAL-00086" summary="Adds edex-ui">
+      <created>1545248833266</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1545248833266</updated>
+    </task>
+    <task id="LOCAL-00087" summary="Updates Roadmap in readme.">
+      <created>1545248847718</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1545248847718</updated>
+    </task>
+    <task id="LOCAL-00088" summary="Updates Roadmap in readme.">
+      <created>1545249028436</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1545249028436</updated>
+    </task>
+    <task id="LOCAL-00089" summary="The last traces of the collections have been swept away.  Fixes file copy for new_environment.">
+      <created>1545444147018</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1545444147019</updated>
+    </task>
+    <task id="LOCAL-00090" summary="Add diff-so-fancy.">
+      <created>1545445343128</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1545445343128</updated>
+    </task>
+    <task id="LOCAL-00091" summary="We're on Packagist now!">
+      <created>1545542161688</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1545542161688</updated>
+    </task>
+    <task id="LOCAL-00092" summary="Added shields.io.">
+      <created>1545619179228</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1545619179228</updated>
+    </task>
+    <task id="LOCAL-00093" summary="Updated shields.io.">
+      <created>1545619372647</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1545619372647</updated>
+    </task>
+    <task id="LOCAL-00094" summary="Updated shields.io.">
+      <created>1545619555492</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1545619555492</updated>
+    </task>
+    <task id="LOCAL-00095" summary="Cleaned up shields.io.">
+      <created>1545619763387</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1545619763387</updated>
+    </task>
+    <task id="LOCAL-00096" summary="Cleaned up shields.io.">
+      <created>1545619790702</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1545619790702</updated>
+    </task>
+    <task id="LOCAL-00097" summary="Adds z &amp; exa.">
+      <created>1546823155728</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1546823155728</updated>
+    </task>
+    <task id="LOCAL-00098" summary="Install all brews &amp; casks in two commands.">
+      <created>1546824496659</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1546824496660</updated>
+    </task>
+    <option name="localTasksCounter" value="99" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="188399000" />
+    <option name="totallyTimeSpent" value="203193000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -745,11 +737,36 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1920" y="23" width="960" height="1177" extended-state="0" />
+    <frame x="162" y="23" width="1076" height="1027" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49491096" weight="0.2342048" />
-      <window_info active="true" id="Structure" order="1" sideWeight="0.50508904" side_tool="true" visible="true" weight="0.20588236" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.48794064" visible="true" weight="0.19825919" />
+      <window_info id="Structure" order="1" sideWeight="0.5120594" side_tool="true" weight="0.22393823" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="0" weight="0.28944504" />
+      <window_info anchor="bottom" id="Inspection Results" order="1" weight="0.32862905" />
+      <window_info anchor="bottom" id="Message" order="2" />
+      <window_info anchor="bottom" id="Find" order="3" weight="0.3281106" />
+      <window_info anchor="bottom" id="Run" order="4" />
+      <window_info anchor="bottom" id="Debug" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="8" weight="0.32903227" />
+      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="11" weight="0.3569097" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="12" visible="true" weight="0.35799783" />
+      <window_info anchor="bottom" id="Event Log" order="13" side_tool="true" weight="0.3299539" />
+      <window_info anchor="right" id="Remote Host" order="0" weight="0.18954249" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
+      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" id="Key Promoter X" order="5" />
+    </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.48794064" visible="true" weight="0.22393823" />
+      <window_info id="Structure" order="1" sideWeight="0.5120594" side_tool="true" weight="0.22393823" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="0" weight="0.29032257" />
       <window_info anchor="bottom" id="Inspection Results" order="1" weight="0.32862905" />
@@ -762,8 +779,8 @@
       <window_info anchor="bottom" id="TODO" order="8" weight="0.32903227" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="11" weight="0.3578838" />
-      <window_info anchor="bottom" id="Terminal" order="12" weight="0.35079515" />
+      <window_info anchor="bottom" id="Version Control" order="11" weight="0.3569097" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="12" visible="true" weight="0.41349292" />
       <window_info anchor="bottom" id="Event Log" order="13" side_tool="true" weight="0.3299539" />
       <window_info anchor="right" id="Remote Host" order="0" weight="0.18954249" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
@@ -771,7 +788,7 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
       <window_info anchor="right" id="Database" order="4" />
       <window_info anchor="right" id="Key Promoter X" order="5" />
-    </layout>
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -848,17 +865,8 @@
       <path value="$PROJECT_DIR$/vendor/symfony/finder" />
       <path value="$PROJECT_DIR$/vendor/symfony/process" />
       <path value="$PROJECT_DIR$/vendor/symfony/yaml" />
+      <path value="$PROJECT_DIR$/ph" />
     </ignored-roots>
-    <MESSAGE value="Change updateme() introduction to use allthethings!" />
-    <MESSAGE value="Adds catlet function (figlet + lolcat)." />
-    <MESSAGE value="Improves custom output in several functions." />
-    <MESSAGE value="Fix typo in updateme()." />
-    <MESSAGE value="More improvements to custom output in several functions." />
-    <MESSAGE value="Remove Acquia-specific commands from robo.yml." />
-    <MESSAGE value="Add catlet() to refresh_ticket()." />
-    <MESSAGE value="Improve human introduction to refresh_ticket()." />
-    <MESSAGE value="new_ticket() now calls refresh_ticket()." />
-    <MESSAGE value="Minor output improvements." />
     <MESSAGE value="Improved refresh_ticket() to work better with new_ticket()." />
     <MESSAGE value="Update roadmap." />
     <MESSAGE value="Add composer install command to new_environment()." />
@@ -874,7 +882,17 @@
     <MESSAGE value="I think I've gone down the wrong hole." />
     <MESSAGE value="Heading down a different wrong hole." />
     <MESSAGE value="Refactor firewall warning to use tput." />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor firewall warning to use tput." />
+    <MESSAGE value="Adds edex-ui" />
+    <MESSAGE value="Updates Roadmap in readme." />
+    <MESSAGE value="The last traces of the collections have been swept away.  Fixes file copy for new_environment." />
+    <MESSAGE value="Add diff-so-fancy." />
+    <MESSAGE value="We're on Packagist now!" />
+    <MESSAGE value="Added shields.io." />
+    <MESSAGE value="Updated shields.io." />
+    <MESSAGE value="Cleaned up shields.io." />
+    <MESSAGE value="Adds z &amp; exa." />
+    <MESSAGE value="Install all brews &amp; casks in two commands." />
+    <option name="LAST_COMMIT_MESSAGE" value="Install all brews &amp; casks in two commands." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/completed" />
@@ -891,9 +909,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../.bash_profile" />
-    <entry file="file://$PROJECT_DIR$/../PhpstormProjects/bwd/auth.json" />
-    <entry file="file://$PROJECT_DIR$/../.bash_logout" />
+    <entry file="file://$USER_HOME$/.bash_profile" />
+    <entry file="file://$USER_HOME$/PhpstormProjects/bwd/auth.json" />
+    <entry file="file://$USER_HOME$/.bash_logout" />
     <entry file="file://$PROJECT_DIR$/dbdown">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -910,13 +928,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.bash_profile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.bash_logout">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="46">
@@ -924,24 +935,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ph/README.md" />
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
+        <state relative-caret-position="32">
           <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/symfony/console/Output/OutputInterface.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="24" column="27" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="27" />
+        <state relative-caret-position="176">
+          <caret line="18" column="48" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+        <state relative-caret-position="176">
+          <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -951,31 +963,38 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="1633">
-            <caret line="71" column="27" selection-start-line="71" selection-start-column="27" selection-end-line="71" selection-end-column="27" />
+          <first_editor relative-caret-position="314">
+            <caret line="54" column="76" selection-start-line="54" selection-start-column="76" selection-end-line="54" selection-end-column="76" />
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/robo.yml">
+    <entry file="file://$PROJECT_DIR$/default.robo.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="10" column="82" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="82" />
+        <state relative-caret-position="118">
+          <caret line="54" column="11" lean-forward="true" selection-start-line="48" selection-start-column="11" selection-end-line="54" selection-end-column="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/default.robo.yml">
+    <entry file="file://$PROJECT_DIR$/robo.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="22" column="12" selection-start-line="20" selection-start-column="26" selection-end-line="22" selection-end-column="12" />
+        <state relative-caret-position="834">
+          <caret line="57" column="11" selection-start-line="52" selection-start-column="11" selection-end-line="57" selection-end-column="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/RoboFile.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="610" column="12" selection-start-line="610" selection-start-column="12" selection-end-line="610" selection-end-column="12" />
+        <state relative-caret-position="239">
+          <caret line="275" lean-forward="true" selection-start-line="275" selection-end-line="275" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.bash_profile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="80" selection-start-line="80" selection-end-line="80" />
         </state>
       </provider>
     </entry>
