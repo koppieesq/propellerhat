@@ -266,13 +266,13 @@ class RoboFile extends \Robo\Tasks {
       ];
 
       // Loop through both arrays.  Create a collection.
-      $collection = $this->collectionBuilder();
       foreach ($repos as $command => $desires) {
+        $temp_string = '';
         foreach ($desires as $desire) {
-          $collection->taskExecStack()->exec($command . " " . $desire);
+          $temp_string .= ' ' . $desire;
         }
+        $this->_exec($command . $temp_string);
       }
-      $collection->run();
 
       // Diff-so-fancy installed separately because there's an extra command.
       // @see https://github.com/so-fancy/diff-so-fancy

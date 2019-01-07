@@ -74,6 +74,5 @@ command:
       - synergy
       - filezilla
       - virtualbox
-      - virtualbox-extension-pack
       - homebrew/cask-fonts/font-source-code-pro
       - edex-ui
