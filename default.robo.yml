@@ -51,6 +51,8 @@ command:
       - htop
       - glances
       - monit
+      - z
+      - exa
     casks:
       - 1clipboard
       - beardedspice
