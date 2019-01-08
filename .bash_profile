@@ -88,3 +88,6 @@ alias dcr='drush cr'
 alias ld='lando drush'
 alias ldcr='lando drush cr -d'
 alias ldca='lando drush cc all -d'
+
+# Alias for Propeller Hat itself.  Assumes you installed in ~/propellerhat.
+alias ph='/Users/$USER/propellerhat/vendor/bin/robo --load-from /Users/$USER/propellerhat/RoboFile.php'
