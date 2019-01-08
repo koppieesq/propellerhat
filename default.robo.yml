@@ -34,7 +34,6 @@ command:
       - ansible
       - composer
       - cowsay
-      - curl
       - docker
       - figlet
       - fortune
@@ -45,12 +44,10 @@ command:
       - nvm
       - php@7.1
       - ssh-copy-id
-      - wget
       - bar
       - bat
       - htop
       - glances
-      - monit
       - z
       - exa
     casks:
@@ -72,7 +69,6 @@ command:
       - skype
       - vlc
       - synergy
-      - filezilla
       - virtualbox
       - homebrew/cask-fonts/font-source-code-pro
       - edex-ui

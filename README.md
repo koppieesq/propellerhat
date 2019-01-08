@@ -25,7 +25,7 @@ Some of these are bash scripts, but most use [Robo](https://robo.li).
       - *You should probably use `ssh-copy-id` instead.*
       
 ## New Environment
-### *Installation Instructions*
+### Installation Instructions
 The new_environment() function installs all your favorite tools when you have a new local environment (for example, when you get a new workstation).  However, it presents the classic 'chicken & egg' problem: how are you supposed to install anything without your dev tools?
 
 Fortunately it's easy:
@@ -39,6 +39,55 @@ xcode-select --install
 ```bash
 robo new_environment mac
 ```
+
+## Communication Tools
+**Google Chrome:** Web browser from Google.
+**Firefox:** Web browser from Mozilla Foundation.
+**Slack:** Instant messenger program popular with tech companies.
+**Skype:** Instant messenger program from Microsoft.
+
+### Command Line Tools
+**Hub:** Command line tool for GitHub.  Lets you submit pull requests.
+**ssh-copy-id:** Copy your public ssh key to a new server.
+**bar:** Add a progress bar to long tasks, like database import.
+**bat:** `cat` command on steroids.
+**htop:** `top` command on steroids.
+**Glances:** `top` command on steroids.
+**exa:** `ls` command on steroids.
+**z:** Improves behavior of ls with autocomplete.
+
+### Mac OS X Tools
+**1 Clipboard:** Clipboard memory tool
+**Bearded Spice:** Use your Mac function keys to control any music player.
+**Spectacle:** Control window layout with hotkeys.
+**Synergy:** Control multiple computers with a single keyboard & mouse.  
+Cross-platform.
+
+### Development Tools
+**Ansible:** Used to manage virtual servers.
+**Composer:** Package manager for PHP.
+**Docker:** Platform for virtual servers.
+**Chromedriver:** Control Google Chrome with Selenium Webdriver.
+**Lando:** Tool for managing local development environments.
+**Livereload:** Daemon watches a local folder for changes, then reloads your 
+web browser.
+**PHPStorm:** Integrated Development Environment.  Non-free product.
+**Virtualbox:** Platform for virtual servers.
+**Source Code Pro:** Beautiful fixed-width font, perfect for your IDE.
+
+### Fun Tools
+**Cowsay:** Wraps your command line output in a word bubble, spoken by a cow.
+**Figlet:** Renders command line output as big, puffy letters.
+**Fortune:** Tells you your fortune.
+**Lolcat:** Output command line text in rainbow colors.
+**Spotify:** Play any song legally, for free.
+**VLC:** 3rd party video player supports any video format.
+**Edex-UI:** Make your computer look like a movie hacker.  Includes fully 
+functional CLI.
+
+### Support Libraries
+The following are libraries, installed as prerequisites for other tools on 
+the list: glib, node, nvm, php@7.1, java
 
 ## Configuration
 You can control how certain scripts behave.  Copy `default.robo.yml` and save it as `robo.yml` in the same directory.  You can also store `robo.yml` in your home directory (`~`).
