@@ -48,7 +48,6 @@ command:
       - bat
       - htop
       - glances
-      - monit
       - z
       - exa
     casks:
