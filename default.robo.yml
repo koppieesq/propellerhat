@@ -34,7 +34,6 @@ command:
       - ansible
       - composer
       - cowsay
-      - curl
       - docker
       - figlet
       - fortune
@@ -45,7 +44,6 @@ command:
       - nvm
       - php@7.1
       - ssh-copy-id
-      - wget
       - bar
       - bat
       - htop
