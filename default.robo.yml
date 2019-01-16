@@ -72,3 +72,19 @@ command:
       - virtualbox
       - homebrew/cask-fonts/font-source-code-pro
       - edex-ui
+    debian:
+      - firefox
+      - slack
+      - bar
+      - htop
+      - glances
+      - synergy
+      - ansible
+      - composer
+      - docker
+      - chromium-chromedriver
+      - virtualbox
+      - cowsay
+      - figlet
+      - lolcat
+      - vlc
