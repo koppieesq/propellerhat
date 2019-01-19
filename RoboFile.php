@@ -233,24 +233,20 @@ class RoboFile extends \Robo\Tasks {
    *
    * @TODO automatically detect environment
    *
-   * @option $mac Install Mac-related packages
    * @option $y Install Homebrew
    *
    * @throws \Robo\Exception\TaskException
    */
-  function new_environment($opts = ['y' => FALSE, 'mac' => TRUE]) {
+  function new_environment($opts = ['y' => FALSE]) {
     // Load config & set environment variables
     $start_time = time();
     $brews = Robo::config()->get("command.new_environment.brews");
     $casks = Robo::config()->get("command.new_environment.casks");
-    //    $pwd = exec('cd ~; pwd');
     $pwd = exec('pwd');
     $home = exec('echo $HOME');
-
     $environment = exec('uname');
-    $this->ask($environment);
 
-    if ($opts['mac']) {
+    if ($environment == 'Darwin') {
       if ($opts['y']) {
         // Install Homebrew.
         $result = $this->taskExecStack()
@@ -268,7 +264,7 @@ class RoboFile extends \Robo\Tasks {
         'brew cask install' => $casks,
       ];
 
-      // Loop through both arrays.  Create a collection.
+      // Loop through arrays.
       foreach ($repos as $command => $desires) {
         $temp_string = '';
         foreach ($desires as $desire) {
@@ -289,9 +285,21 @@ class RoboFile extends \Robo\Tasks {
         ->exec('git config --global core.pager "diff-so-fancy | less --tabs=4 -RFX"')
         ->run();
     }
+    elseif ($environment == 'Linux') {
+      // Install debian packages here
+      // Loop through arrays.
+      foreach ($repos as $command => $desires) {
+        $temp_string = '';
+        foreach ($desires as $desire) {
+          $temp_string .= ' ' . $desire;
+        }
+        $this->_exec($command . $temp_string);
+      }
+
+    }
     else {
       $this->io()
-        ->note("If you specify an operating system, I can install a lot more stuff.");
+        ->warning("Sorry, I don't recognize your operating system.");
     }
 
     // Run `composer install`.

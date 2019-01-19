@@ -74,8 +74,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/RoboFile.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="430">
-                  <caret line="249" column="19" selection-start-line="249" selection-start-column="19" selection-end-line="249" selection-end-column="19" />
+                <state relative-caret-position="334">
+                  <caret line="297" lean-forward="true" selection-start-line="297" selection-end-line="297" />
                 </state>
               </provider>
             </entry>
@@ -110,7 +110,7 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/default.robo.yml">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="651">
+                <state relative-caret-position="322">
                   <caret line="83" column="14" selection-start-line="83" selection-start-column="14" selection-end-line="83" selection-end-column="14" />
                 </state>
               </provider>
@@ -357,14 +357,7 @@
       <workItem from="1546818538805" duration="4515000" />
       <workItem from="1547601549340" duration="85000" />
       <workItem from="1547930122004" duration="15000" />
-      <workItem from="1547930150419" duration="919000" />
-    </task>
-    <task id="LOCAL-00052" summary="Fixed logic for --no-install flag.">
-      <created>1541459872053</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1541459872053</updated>
+      <workItem from="1547930150419" duration="1188000" />
     </task>
     <task id="LOCAL-00053" summary="ticket_refresh(): don't stop if one step in the stack fails.">
       <created>1541554651538</created>
@@ -702,11 +695,18 @@
       <option name="project" value="LOCAL" />
       <updated>1547621757646</updated>
     </task>
-    <option name="localTasksCounter" value="101" />
+    <task id="LOCAL-00101" summary="First pass at adding auto-detect to new_environment.">
+      <created>1547931602119</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1547931602120</updated>
+    </task>
+    <option name="localTasksCounter" value="102" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="205629000" />
+    <option name="totallyTimeSpent" value="205898000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -722,7 +722,7 @@
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.48794064" weight="0.31585845" />
-      <window_info active="true" id="Structure" order="1" sideWeight="0.5120594" side_tool="true" visible="true" weight="0.20982143" />
+      <window_info id="Structure" order="1" sideWeight="0.5120594" side_tool="true" visible="true" weight="0.20982143" />
       <window_info id="Favorites" order="2" side_tool="true" weight="0.3297194" />
       <window_info anchor="bottom" id="Messages" order="0" weight="0.28944504" />
       <window_info anchor="bottom" id="Inspection Results" order="1" weight="0.32862905" />
@@ -736,7 +736,7 @@
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.3569097" />
-      <window_info anchor="bottom" id="Terminal" order="12" weight="0.35799783" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="12" visible="true" weight="0.35799783" />
       <window_info anchor="bottom" id="Event Log" order="13" side_tool="true" weight="0.3299539" />
       <window_info anchor="right" id="Remote Host" order="0" weight="0.18954249" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
@@ -848,7 +848,6 @@
       <path value="$PROJECT_DIR$/vendor/symfony/yaml" />
       <path value="$PROJECT_DIR$/ph" />
     </ignored-roots>
-    <MESSAGE value="Add composer install command to new_environment()." />
     <MESSAGE value="Add progress bar to new_environment()." />
     <MESSAGE value="Add installation instructions for new_environment()." />
     <MESSAGE value="Updates to readme." />
@@ -873,7 +872,8 @@
     <MESSAGE value="Install all brews &amp; casks in two commands." />
     <MESSAGE value="Removes filezilla from homebrew cask list." />
     <MESSAGE value="Adds debian package list." />
-    <option name="LAST_COMMIT_MESSAGE" value="Adds debian package list." />
+    <MESSAGE value="First pass at adding auto-detect to new_environment." />
+    <option name="LAST_COMMIT_MESSAGE" value="First pass at adding auto-detect to new_environment." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/completed" />
@@ -974,8 +974,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/RoboFile.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
-          <caret line="249" column="19" selection-start-line="249" selection-start-column="19" selection-end-line="249" selection-end-column="19" />
+        <state relative-caret-position="334">
+          <caret line="297" lean-forward="true" selection-start-line="297" selection-end-line="297" />
         </state>
       </provider>
     </entry>
