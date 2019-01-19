@@ -242,6 +242,7 @@ class RoboFile extends \Robo\Tasks {
     $start_time = time();
     $brews = Robo::config()->get("command.new_environment.brews");
     $casks = Robo::config()->get("command.new_environment.casks");
+    $debian = Robo::config()->get("command.new_environment.debian");
     $pwd = exec('pwd');
     $home = exec('echo $HOME');
     $environment = exec('uname');
@@ -287,15 +288,12 @@ class RoboFile extends \Robo\Tasks {
     }
     elseif ($environment == 'Linux') {
       // Install debian packages here
+      $temp_string = '';
       // Loop through arrays.
-      foreach ($repos as $command => $desires) {
-        $temp_string = '';
-        foreach ($desires as $desire) {
-          $temp_string .= ' ' . $desire;
-        }
-        $this->_exec($command . $temp_string);
+      foreach ($debian as $desire) {
+        $temp_string .= ' ' . $desire;
       }
-
+      $this->_exec('sudo apt-get install ' . $temp_string);
     }
     else {
       $this->io()
