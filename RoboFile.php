@@ -247,6 +247,9 @@ class RoboFile extends \Robo\Tasks {
     $pwd = exec('pwd');
     $home = exec('echo $HOME');
 
+    $environment = exec('uname');
+    $this->ask($environment);
+
     if ($opts['mac']) {
       if ($opts['y']) {
         // Install Homebrew.
