@@ -530,6 +530,22 @@ class RoboFile extends \Robo\Tasks {
   }
 
   /**
+   * Calculate & report elapsed time for this task.
+   *
+   * @param $start_time
+   *   The time you began.
+   */
+  function stopwatch($start_time) {
+    $stop_time = time();
+    $elapsed_time = $stop_time - $start_time;
+    $elapsed_minutes = floor($elapsed_time / 60);
+    $elapsed_seconds = $elapsed_time - $elapsed_minutes * 60;
+    $this->say("This took $elapsed_minutes minutes and $elapsed_seconds seconds.");
+
+    return;
+  }
+
+  /**
    * Say something using figlet and lolcat.
    *
    * Figlet outputs a string using bubble letters, and lolcat outputs the
@@ -638,21 +654,5 @@ class RoboFile extends \Robo\Tasks {
     }
 
     return exec($command) . $text . exec("tput sgr0");
-  }
-
-  /**
-   * Calculate & report elapsed time for this task.
-   *
-   * @param $start_time
-   *   The time you began.
-   */
-  function stopwatch($start_time) {
-    $stop_time = time();
-    $elapsed_time = $stop_time - $start_time;
-    $elapsed_minutes = floor($elapsed_time / 60);
-    $elapsed_seconds = $elapsed_time - $elapsed_minutes * 60;
-    $this->say("This took $elapsed_minutes minutes and $elapsed_seconds seconds.");
-
-    return;
   }
 }
