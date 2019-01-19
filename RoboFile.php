@@ -176,22 +176,6 @@ class RoboFile extends \Robo\Tasks {
   }
 
   /**
-   * Calculate & report elapsed time for this task.
-   *
-   * @param $start_time
-   *   The time you began.
-   */
-  function stopwatch($start_time) {
-    $stop_time = time();
-    $elapsed_time = $stop_time - $start_time;
-    $elapsed_minutes = floor($elapsed_time / 60);
-    $elapsed_seconds = $elapsed_time - $elapsed_minutes * 60;
-    $this->say("This took $elapsed_minutes minutes and $elapsed_seconds seconds.");
-
-    return;
-  }
-
-  /**
    * Reset the local git branch to a fresh copy of master, upload to your fork
    * repository, and set upstream.
    *
@@ -296,8 +280,7 @@ class RoboFile extends \Robo\Tasks {
       $this->_exec('sudo apt-get install ' . $temp_string);
     }
     else {
-      $this->io()
-        ->warning("Sorry, I don't recognize your operating system.");
+      $this->io()->warning("Sorry, I don't recognize your operating system.");
     }
 
     // Run `composer install`.
@@ -313,9 +296,7 @@ class RoboFile extends \Robo\Tasks {
     ];
     foreach ($files as $file => $description) {
       $this->say("Installing " . $description);
-      $this->taskFilesystemStack()
-        ->copy("$pwd/$file", "$home/$file")
-        ->run();
+      $this->taskFilesystemStack()->copy("$pwd/$file", "$home/$file")->run();
     }
 
     // Outro
@@ -362,29 +343,52 @@ class RoboFile extends \Robo\Tasks {
   }
 
   /**
-   * Reusable function to report whether the previous step succeeded.
+   * Robo implementation of Git Rebase
    *
-   * @param object $result
-   *   Pass the result object to this function.
-   * @param string $task
-   *   Plain text description of the currently running task.
+   * This function performs a git rebase for you.  It starts in your base
+   * directory in your feature branch, pulls down a fresh copy of master, and
+   * then rebases your feature branch over master.  That's it!
+   *
+   * @param $host_path
    *
    * @return int
-   *   Should correctly report whether task was successful or not.
    */
-  function check_success($result = NULL, $task = "Current task") {
-    if (!$result) {
-      $message = $this->io()->error("Sorry, something went wrong with $task");
-      exit($message);
+  function rebase($host_path = NULL) {
+    $allopts = Robo::config()->get("command.new_ticket.options");
+    foreach ($allopts as $key => $value) {
+      $$key = $value;
     }
-    elseif ($result->wasSuccessful()) {
-      $this->io()->success("$task was successful!");
-      return 0;
+
+    if (!$host_path) {
+      $this->io()
+        ->warning("Sorry, you need to add your base path (pwd) when you run this command.  You can also set it in robo.yml.");
+      return 1;
     }
-    else {
-      $message = $this->io()->error("Sorry, something went wrong with $task");
-      exit($message);
-    }
+
+    // Load config & set environment variables
+    $start_time = time();
+    $new_branch = exec("cd $host_path; git symbolic-ref --short HEAD");
+    $banner = 'All Your Rebase Are Belong To Us';
+    $intro = 'You have no chance to survive make your time.';
+    $color = ['color' => 'cyan'];
+    $tasks = [
+      "Rebase " . $this->tput($new_branch, $color) . " over a fresh copy of " . $this->tput('master', $color)
+    ];
+    $this->intro($banner, $intro, $tasks);
+
+    $this->taskGitStack()
+      ->stopOnFail()
+      ->dir($host_path)
+      ->checkout('master')
+      ->pull()
+      ->checkout($new_branch)
+      ->exec("git rebase master")
+      ->run();
+
+    $this->stopwatch($start_time);
+    $this->catlet("For great justice");
+
+    return 0;
   }
 
   /**
@@ -429,6 +433,84 @@ class RoboFile extends \Robo\Tasks {
     $this->catlet("All done!");
 
     return $result;
+  }
+
+  /**
+   * Tail wags the Watchdog.
+   *
+   * `drush ws --tail` has been deprecated in drush 9.  This command
+   * replicates that functionality inside your local vm.  No arguments
+   * needed; this function uses the same config as new_ticket, stored in robo
+   * .yml.
+   *
+   * @param string|null $site
+   *   Optional: specify site to target.
+   *
+   * @throws \Robo\Exception\TaskException
+   */
+  function wag(string $site = NULL) {
+    // Get config from robo.yml.
+    $allopts = Robo::config()->get("command.new_ticket.options");
+    foreach ($allopts as $key => $value) {
+      $$key = $value;
+    }
+    $wait = 2;
+
+    // Run tasks inside the VM
+    $this->say("I'm going to tail the Drupal watchdog log.  Type ctrl-c to stop.");
+    sleep($wait);
+
+    if ($site) {
+      // If you're targeting a specific site, then run the command against it.
+      while (1 + 1 == 2) {
+        $this->taskExecStack()
+          ->silent(TRUE)
+          ->printOutput(TRUE)
+          ->dir($host_path)
+          ->exec("drush $site ws")
+          ->run();
+      }
+    }
+    else {
+      // Otherwise, just grab default ssh info from robo.yml and use that.
+      $this->taskSshExec($vm_domain, $vm_user)
+        ->stopOnFail()
+        ->silent(TRUE)
+        ->printOutput(TRUE)
+        ->forcePseudoTty()
+        ->dir($host_path)
+        ->port($vm_port)
+        ->identityFile($vm_key)
+        ->remoteDir($guest_path)
+        ->exec('watch -n 1 drush ws')
+        ->run();
+    }
+  }
+
+  /**
+   * Reusable function to report whether the previous step succeeded.
+   *
+   * @param object $result
+   *   Pass the result object to this function.
+   * @param string $task
+   *   Plain text description of the currently running task.
+   *
+   * @return int
+   *   Should correctly report whether task was successful or not.
+   */
+  function check_success($result = NULL, $task = "Current task") {
+    if (!$result) {
+      $message = $this->io()->error("Sorry, something went wrong with $task");
+      exit($message);
+    }
+    elseif ($result->wasSuccessful()) {
+      $this->io()->success("$task was successful!");
+      return 0;
+    }
+    else {
+      $message = $this->io()->error("Sorry, something went wrong with $task");
+      exit($message);
+    }
   }
 
   /**
@@ -559,101 +641,18 @@ class RoboFile extends \Robo\Tasks {
   }
 
   /**
-   * Tail wags the Watchdog.
+   * Calculate & report elapsed time for this task.
    *
-   * `drush ws --tail` has been deprecated in drush 9.  This command
-   * replicates that functionality inside your local vm.  No arguments
-   * needed; this function uses the same config as new_ticket, stored in robo
-   * .yml.
-   *
-   * @param string|null $site
-   *   Optional: specify site to target.
-   *
-   * @throws \Robo\Exception\TaskException
+   * @param $start_time
+   *   The time you began.
    */
-  function wag(string $site = NULL) {
-    // Get config from robo.yml.
-    $allopts = Robo::config()->get("command.new_ticket.options");
-    foreach ($allopts as $key => $value) {
-      $$key = $value;
-    }
-    $wait = 2;
+  function stopwatch($start_time) {
+    $stop_time = time();
+    $elapsed_time = $stop_time - $start_time;
+    $elapsed_minutes = floor($elapsed_time / 60);
+    $elapsed_seconds = $elapsed_time - $elapsed_minutes * 60;
+    $this->say("This took $elapsed_minutes minutes and $elapsed_seconds seconds.");
 
-    // Run tasks inside the VM
-    $this->say("I'm going to tail the Drupal watchdog log.  Type ctrl-c to stop.");
-    sleep($wait);
-
-    if ($site) {
-      // If you're targeting a specific site, then run the command against it.
-      while (1+1 == 2) {
-        $this->taskExecStack()
-          ->silent(TRUE)
-          ->printOutput(TRUE)
-          ->dir($host_path)
-          ->exec("drush $site ws")
-          ->run();
-      }
-    } else {
-      // Otherwise, just grab default ssh info from robo.yml and use that.
-      $this->taskSshExec($vm_domain, $vm_user)
-        ->stopOnFail()
-        ->silent(TRUE)
-        ->printOutput(TRUE)
-        ->forcePseudoTty()
-        ->dir($host_path)
-        ->port($vm_port)
-        ->identityFile($vm_key)
-        ->remoteDir($guest_path)
-        ->exec('watch -n 1 drush ws')
-        ->run();
-    }
-  }
-
-  /**
-   * Robo implementation of Git Rebase
-   *
-   * This function performs a git rebase for you.  It starts in your base
-   * directory in your feature branch, pulls down a fresh copy of master, and
-   * then rebases your feature branch over master.  That's it!
-   *
-   * @param $host_path
-   *
-   * @return int
-   */
-  function rebase($host_path = NULL) {
-    $allopts = Robo::config()->get("command.new_ticket.options");
-    foreach ($allopts as $key => $value) {
-      $$key = $value;
-    }
-
-    if (!$host_path) {
-      $this->io()->warning("Sorry, you need to add your base path (pwd) when you run this command.  You can also set it in robo.yml.");
-      return 1;
-    }
-
-    // Load config & set environment variables
-    $start_time = time();
-    $new_branch = exec("cd $host_path; git symbolic-ref --short HEAD");
-    $banner = 'All Your Rebase Are Belong To Us';
-    $intro = 'You have no chance to survive make your time.';
-    $color = ['color' => 'cyan'];
-    $tasks = ["Rebase " . $this->tput($new_branch, $color) .
-      " over a fresh copy of " . $this->tput('master', $color)];
-    $this->intro($banner, $intro, $tasks);
-
-    $this->taskGitStack()
-      ->stopOnFail()
-      ->dir($host_path)
-      ->checkout('master')
-      ->pull()
-      ->checkout($new_branch)
-      ->exec("git rebase master")
-      ->run();
-
-    $this->stopwatch($start_time);
-    $this->catlet("For great justice");
-
-    return 0;
+    return;
   }
 }
-
