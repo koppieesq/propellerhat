@@ -122,8 +122,8 @@ class RoboFile extends \Robo\Tasks {
 
     // Don't reset the feature branch if I pass a tag on the command line.
     if (!$opts['no-reset']) {
-      $this->taskExec($this->reset_branch($host_path, $base_branch, $upstream_repo, $fork_repo, $new_branch));
-      //      $this->taskExec($this->check_success($result, "Set up git"));
+      $result = $this->taskExec($this->reset_branch($host_path, $base_branch, $upstream_repo, $fork_repo, $new_branch));
+      $this->taskExec($this->check_success($result, "Set up git"));
     }
 
     // See if there's anything new to install from Composer.
@@ -372,7 +372,7 @@ class RoboFile extends \Robo\Tasks {
     $intro = 'You have no chance to survive make your time.';
     $color = ['color' => 'cyan'];
     $tasks = [
-      "Rebase " . $this->tput($new_branch, $color) . " over a fresh copy of " . $this->tput('master', $color)
+      "Rebase " . $this->tput($new_branch, $color) . " over a fresh copy of " . $this->tput('master', $color),
     ];
     $this->intro($banner, $intro, $tasks);
 
@@ -485,6 +485,33 @@ class RoboFile extends \Robo\Tasks {
         ->exec('watch -n 1 drush ws')
         ->run();
     }
+  }
+
+  /**
+   * Log in as Drupal superuser on local VM.
+   *
+   * @param string $name
+   *   Optional: user name
+   */
+  function uli(string $name = "") {
+    // Get config from robo.yml.
+    $allopts = Robo::config()->get("command.new_ticket.options");
+    foreach ($allopts as $key => $value) {
+      $$key = $value;
+    }
+
+    $add_name = $name ? "--name=$name" : "";
+
+    $this->taskSshExec($vm_domain, $vm_user)
+      ->stopOnFail()
+      ->printOutput(TRUE)
+      ->forcePseudoTty()
+      ->dir($host_path)
+      ->port($vm_port)
+      ->identityFile($vm_key)
+      ->remoteDir($guest_path)
+      ->exec("drush uli --uri=https://local.bwd.com $add_name")
+      ->run();
   }
 
   /**

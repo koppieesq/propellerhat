@@ -15,10 +15,12 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/g1a/composer-test-scenarios" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/grasmash/expander" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/grasmash/yaml-expander" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/koppie/mc" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/league/container" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/container" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/log" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/console" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/contracts" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/event-dispatcher" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/filesystem" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/finder" />
