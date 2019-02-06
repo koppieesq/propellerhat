@@ -421,7 +421,7 @@ class RoboFile extends \Robo\Tasks {
     // Run tasks inside the VM
     $this->say("I'm going to run some commands inside the VM now.");
     $result = $this->taskSshExec($vm_domain, $vm_user)
-      ->stopOnFail()
+      ->stopOnFail(FALSE)
       ->port($vm_port)
       ->identityFile($vm_key)
       ->remoteDir($guest_path)
