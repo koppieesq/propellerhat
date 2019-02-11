@@ -14,10 +14,14 @@ command:
       vm_user: vagrant
       vm_port: 2222
       vm_key: id_rsa
+      vm_pre:
+        Install drupal: "blt setup -n"
       vm_commands:
         Import config: "drush cim -y"
         Update database: "drush updb -y"
+        Enable covfefe: "drush en coffee"
         Clear caches: "drush cr"
+      vm_post:
         Login: "drush uli"
       teardown_commands:
         - ""

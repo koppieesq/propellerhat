@@ -101,18 +101,38 @@ class RoboFile extends \Robo\Tasks {
     // Add descriptions of tasks to be performed *inside* the VM
     // Also set up commands to be run
     // Also checks for --no-reset flag, and skips BLT setup.
-    $ssh_commands = $this->taskExecStack();
-    $command_tasks = "Run commands inside the VM:\n";
-    $indent = "   - ";
+    $indent = "\n   - ";
 
+    $command_tasks_pre = "Prep commands inside the VM:";
+    $ssh_commands_pre = $this->taskExecStack();
+    foreach ($vm_pre as $key => $value) {
+      if ($key != 'BLT setup' or !$opts['no-install']) {
+        $command_tasks_pre .= $indent . $key;
+        $ssh_commands_pre->exec($value);
+      }
+    }
+    $tasks[] = $command_tasks_pre;
+
+    $command_tasks = "Run commands inside the VM:";
+    $ssh_commands = $this->taskExecStack();
     foreach ($vm_commands as $key => $value) {
       if ($key != 'BLT setup' or !$opts['no-install']) {
-        $command_tasks .= $indent . $key . "\n";
+        $command_tasks .= $indent . $key;
         $ssh_commands->exec($value);
       }
     }
-
     $tasks[] = $command_tasks;
+
+    $command_tasks_post = "Post commands inside the VM:";
+    $ssh_commands_post = $this->taskExecStack();
+    foreach ($vm_post as $key => $value) {
+      if ($key != 'BLT setup' or !$opts['no-install']) {
+        $command_tasks_post .= $indent . $key;
+        $ssh_commands_post->exec($value);
+      }
+    }
+    $tasks[] = $command_tasks_post;
+
     $warning = $this->tput("CISCO AMP HAS BEEN TURNED OFF", ['color' => 'red']);
 
     // Add requirements to the end of the to-do list.
@@ -152,12 +172,9 @@ class RoboFile extends \Robo\Tasks {
     }
 
     // Run tasks inside the VM
-    $result = $this->refresh_ticket($ssh_commands);
-
-    if (!$result->wasSuccessful()) {
-      $this->io()->error("Sorry, I was not able to finish setup.");
-      return 1;
-    }
+    $this->refresh_ticket($ssh_commands_pre);
+    $this->refresh_ticket($ssh_commands);
+    $this->refresh_ticket($ssh_commands_post);
 
     // Cleanup commands to be run after everything else.
     $this->say("Performing final cleanup steps . . .");
