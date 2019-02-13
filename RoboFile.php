@@ -136,7 +136,11 @@ class RoboFile extends \Robo\Tasks {
     $warning = $this->tput("CISCO AMP HAS BEEN TURNED OFF", ['color' => 'red']);
 
     // Add requirements to the end of the to-do list.
-    $tasks[] = "In order for this to work, please make sure:\n" . $indent . "You have forked the 'upstream' repository and created your own" . "\n" . $indent . "You've already created a feature branch for the new ticket" . "\n" . $indent . "You've updated the enclosed config file with the correct repositories and branches" . "\n" . $indent . $warning . "\n";
+    $tasks[] = "In order for this to work, please make sure:" .
+      $indent . "You have forked the 'upstream' repository and created your own" .
+      $indent . "You've already created a feature branch for the new ticket" .
+      $indent . "You've updated the enclosed config file with the correct repositories and branches" .
+      $indent . $warning;
 
     $this->intro("NEW TICKET", "I'm going to help you refresh your local dev environment to start a new ticket.", $tasks);
 
