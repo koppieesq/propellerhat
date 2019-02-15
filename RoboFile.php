@@ -1,6 +1,7 @@
 <?php
 
 use Robo\Robo;
+use MC\MC;
 
 /**
  * This is project's console commands configuration for Robo task runner.
@@ -10,6 +11,8 @@ use Robo\Robo;
  * @warning This tool is still in beta!  See @todos.
  */
 class RoboFile extends \Robo\Tasks {
+  // Another load statement - this is the secret sauce.
+  use MC;
 
   /**
    * Alias function for new_ticket()
@@ -84,10 +87,10 @@ class RoboFile extends \Robo\Tasks {
 
     if (!$opts['no-reset']) {
       $color = ["color" => "cyan"];
-      $tasks[] = "Pull a fresh copy of " . $this->tput("$upstream_repo/$base_branch", $color);
-      $tasks[] = "Push to " . $this->tput("$fork_repo/$base_branch", $color);
-      $tasks[] = "Reset " . $this->tput("$fork_repo/$base_branch", $color) . " to match the latest " . $this->tput("$upstream_repo/$base_branch", $color);
-      $tasks[] = "Push to " . $this->tput("$fork_repo/$new_branch", $color) . " and set upstream ";
+      $tasks[] = "Pull a fresh copy of " . $this->mc()->tput("$upstream_repo/$base_branch", $color);
+      $tasks[] = "Push to " . $this->mc()->tput("$fork_repo/$base_branch", $color);
+      $tasks[] = "Reset " . $this->mc()->tput("$fork_repo/$base_branch", $color) . " to match the latest " . $this->mc()->tput("$upstream_repo/$base_branch", $color);
+      $tasks[] = "Push to " . $this->mc()->tput("$fork_repo/$new_branch", $color) . " and set upstream ";
     }
 
     $tasks[] = "Task runner: $runner";
@@ -133,7 +136,7 @@ class RoboFile extends \Robo\Tasks {
     }
     $tasks[] = $command_tasks_post;
 
-    $warning = $this->tput("CISCO AMP HAS BEEN TURNED OFF", ['color' => 'red']);
+    $warning = $this->mc()->tput("CISCO AMP HAS BEEN TURNED OFF", ['color' => 'red']);
 
     // Add requirements to the end of the to-do list.
     $tasks[] = "In order for this to work, please make sure:" .
@@ -547,18 +550,7 @@ class RoboFile extends \Robo\Tasks {
    *   Should correctly report whether task was successful or not.
    */
   function check_success($result = NULL, $task = "Current task") {
-    if (!$result) {
-      $message = $this->io()->error("Sorry, something went wrong with $task");
-      exit($message);
-    }
-    elseif ($result->wasSuccessful()) {
-      $this->io()->success("$task was successful!");
-      return 0;
-    }
-    else {
-      $message = $this->io()->error("Sorry, something went wrong with $task");
-      exit($message);
-    }
+    $this->mc()->check_success($result, $task);
   }
 
   /**
@@ -660,47 +652,4 @@ class RoboFile extends \Robo\Tasks {
     return;
   }
 
-  /**
-   * PHP implementation of tput
-   *
-   * Accepts human color names, eg.: ["color" => "red"]
-   *
-   * @param string $text
-   * @param array $extra
-   *
-   * @return string
-   */
-  function tput(string $text, $extra = '') {
-    // Set up variables.
-    $colors = [
-      'black',
-      'red',
-      'green',
-      'yellow',
-      'blue',
-      'magenta',
-      'cyan',
-      'white',
-    ];
-    $command = 'tput sgr0; ';
-
-    // If there are options, load them up.
-    if (gettype($extra) == 'array') {
-      foreach ($extra as $key => $value) {
-        switch ($key) {
-          case 'color':
-            $command .= "tput setaf " . array_search($value, $colors) . "; ";
-            break;
-          case 'background':
-            $command .= "tput setab " . array_search($value, $colors) . "; ";
-            break;
-        }
-      }
-    }
-    elseif (!empty($extra)) {
-      $command .= "tput " . $extra . "; ";
-    }
-
-    return exec($command) . $text . exec("tput sgr0");
-  }
 }
