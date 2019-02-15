@@ -586,37 +586,6 @@ class RoboFile extends \Robo\Tasks {
   }
 
   /**
-   * Say something using figlet and lolcat.
-   *
-   * Figlet outputs a string using bubble letters, and lolcat outputs the
-   * string with rainbow letters.  Example:
-   *   _   _      _ _        __        __         _     _
-   *  | | | | ___| | | ___   \ \      / /__  _ __| | __| |
-   *  | |_| |/ _ \ | |/ _ \   \ \ /\ / / _ \| '__| |/ _` |
-   *  |  _  |  __/ | | (_) |   \ V  V / (_) | |  | | (_| |
-   *  |_| |_|\___|_|_|\___/     \_/\_/ \___/|_|  |_|\__,_|
-   *
-   * @param string $say
-   *   String to be rendered
-   *
-   * @return void
-   */
-  function catlet(string $say = 'Hello World') {
-    $checks = ['lolcat', 'figlet', 'cowsay', 'fortune'];
-    $lolcat = exec('which lolcat');
-    foreach ($checks as $check) {
-      $found = exec("which $check");
-      $$check = $found ? $found : 'echo';
-    }
-    $this->taskExec("$figlet $say | $lolcat")
-      ->silent(TRUE)
-      ->printOutput(TRUE)
-      ->run();
-
-    return;
-  }
-
-  /**
    * Reusable introduction.
    *
    * This function takes 3 arguments: your header, your intro, and a list of
@@ -641,7 +610,7 @@ class RoboFile extends \Robo\Tasks {
     $list = $list ? $list : ["(Sorry, not actually sure what I *can* do!)"];
 
     // Display in glorious fashion
-    $this->catlet($banner);
+    $this->mc()->catlet($banner);
     $this->say($intro . "  Here's what I can do:");
     $this->io()->listing($list);
 
