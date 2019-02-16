@@ -661,12 +661,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/koppieesq/mc.git",
-                "reference": "6b8354a113f07debb7e7f644a7c871ae91809221"
+                "reference": "3dffac0371756397a413fcf5dc662bd2d81d3e28"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/koppieesq/mc/zipball/6b8354a113f07debb7e7f644a7c871ae91809221",
-                "reference": "6b8354a113f07debb7e7f644a7c871ae91809221",
+                "url": "https://api.github.com/repos/koppieesq/mc/zipball/3dffac0371756397a413fcf5dc662bd2d81d3e28",
+                "reference": "3dffac0371756397a413fcf5dc662bd2d81d3e28",
                 "shasum": ""
             },
             "require": {
@@ -689,7 +689,7 @@
                 }
             ],
             "description": "Master of Ceremonies",
-            "time": "2019-02-15T21:05:28+00:00"
+            "time": "2019-02-15T22:47:42+00:00"
         },
         {
             "name": "league/container",

@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1a099c3b-f3b4-4635-8b4e-dd664aca8a7c" name="Default Changelist" comment="">
+    <list default="true" id="1a099c3b-f3b4-4635-8b4e-dd664aca8a7c" name="Default Changelist" comment="PH can load MC without worrying about circular dependencies for robo task stacks.">
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/propellerhat.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/propellerhat.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RoboFile.php" beforeDir="false" afterPath="$PROJECT_DIR$/RoboFile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/koppie/mc/src/mc.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/koppie/mc/src/mc.php" afterDir="false" />
     </list>
     <ignored path=".idea/webServers.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -56,11 +53,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/RoboFile.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
-              <caret line="540" selection-start-line="540" selection-end-line="540" />
+            <state relative-caret-position="151">
+              <caret line="183" column="49" selection-start-line="183" selection-start-column="49" selection-end-line="183" selection-end-column="49" />
               <folding>
                 <element signature="e#7#21#0#PHP" expanded="true" />
               </folding>
@@ -68,11 +65,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vendor/koppie/mc/src/mc.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="104">
-              <caret line="18" column="41" lean-forward="true" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
+            <state relative-caret-position="300">
+              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+              <folding>
+                <element signature="e#109#135#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -80,22 +80,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vendor/koppie/mc/src/MasterOfCeremonies.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="37" column="24" selection-start-line="37" selection-start-column="24" selection-end-line="37" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_psr4.php">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/symfony/console/Output/OutputInterface.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="18" column="48" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
+            <state relative-caret-position="613">
+              <caret line="156" column="36" selection-end-line="206" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -103,15 +89,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/composer.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="353">
-              <caret line="26" column="28" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
+            <state relative-caret-position="153">
+              <caret line="30" column="1" lean-forward="true" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/btford/allthethings/allthethings.sh">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -125,8 +106,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>noreset</find>
-      <find>'pv</find>
       <find>ExecStack</find>
       <find>OutputInterface</find>
       <find>$ssh_commands</find>
@@ -155,6 +134,8 @@
       <find>git</find>
       <find>wget</find>
       <find>teard</find>
+      <find>$this-&gt;stopwatch</find>
+      <find>$this-&gt;tput</find>
     </findStrings>
     <replaceStrings>
       <replace>=</replace>
@@ -164,6 +145,8 @@
       <replace>$ssh_server</replace>
       <replace>no-reset</replace>
       <replace>return Result::success;</replace>
+      <replace>$this-&gt;mc()-&gt;stopwatch</replace>
+      <replace>$this-&gt;mc()-&gt;tput</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -191,9 +174,9 @@
         <option value="$PROJECT_DIR$/default.robo.yml" />
         <option value="$PROJECT_DIR$/robo.yml" />
         <option value="$PROJECT_DIR$/composer.json" />
+        <option value="$PROJECT_DIR$/vendor/koppie/mc/src/mc.php" />
         <option value="$PROJECT_DIR$/vendor/koppie/mc/src/MasterOfCeremonies.php" />
         <option value="$PROJECT_DIR$/RoboFile.php" />
-        <option value="$PROJECT_DIR$/vendor/koppie/mc/src/mc.php" />
       </list>
     </option>
   </component>
@@ -403,21 +386,7 @@
       <workItem from="1549903416191" duration="3719000" />
       <workItem from="1550019351917" duration="1058000" />
       <workItem from="1550185060712" duration="250000" />
-      <workItem from="1550185469901" duration="5156000" />
-    </task>
-    <task id="LOCAL-00058" summary="Improves custom output in several functions.">
-      <created>1543002407779</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1543002407780</updated>
-    </task>
-    <task id="LOCAL-00059" summary="Fix typo in updateme().">
-      <created>1543002565666</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1543002565666</updated>
+      <workItem from="1550185469901" duration="11070000" />
     </task>
     <task id="LOCAL-00060" summary="More improvements to custom output in several functions.">
       <created>1543003114183</created>
@@ -748,11 +717,25 @@
       <option name="project" value="LOCAL" />
       <updated>1550019492427</updated>
     </task>
-    <option name="localTasksCounter" value="107" />
+    <task id="LOCAL-00107" summary="PH can load MC without worrying about circular dependencies for Symfony io().">
+      <created>1550267854970</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1550267854970</updated>
+    </task>
+    <task id="LOCAL-00108" summary="PH can load MC without worrying about circular dependencies for robo task stacks.">
+      <created>1550268596565</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1550268596565</updated>
+    </task>
+    <option name="localTasksCounter" value="109" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="224817000" />
+    <option name="totallyTimeSpent" value="230731000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -768,13 +751,13 @@
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.36407766" weight="0.31541583" />
-      <window_info id="Structure" order="1" sideWeight="0.6359223" side_tool="true" weight="0.31541583" />
+      <window_info active="true" id="Structure" order="1" sideWeight="0.6359223" side_tool="true" visible="true" weight="0.23123732" />
       <window_info id="Favorites" order="2" side_tool="true" weight="0.3297194" />
       <window_info anchor="bottom" id="Messages" order="0" weight="0.28944504" />
       <window_info anchor="bottom" id="Inspection Results" order="1" weight="0.32862905" />
       <window_info anchor="bottom" id="Message" order="2" />
       <window_info anchor="bottom" id="Find" order="3" weight="0.3281106" />
-      <window_info anchor="bottom" id="Run" order="4" />
+      <window_info anchor="bottom" id="Run" order="4" weight="0.32862905" />
       <window_info anchor="bottom" id="Debug" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
@@ -782,8 +765,8 @@
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.3569097" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="12" visible="true" weight="0.47515923" />
-      <window_info anchor="bottom" id="Event Log" order="13" side_tool="true" weight="0.3299539" />
+      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.4989858" visible="true" weight="0.44076434" />
+      <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.5010142" side_tool="true" weight="0.44076434" />
       <window_info anchor="right" id="Remote Host" order="0" weight="0.18954249" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
@@ -791,31 +774,6 @@
       <window_info anchor="right" id="Database" order="4" />
       <window_info anchor="right" id="Key Promoter X" order="5" />
     </layout>
-    <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.36407766" visible="true" weight="0.31541583" />
-      <window_info id="Structure" order="1" sideWeight="0.6359223" side_tool="true" visible="true" weight="0.31541583" />
-      <window_info id="Favorites" order="2" side_tool="true" weight="0.3297194" />
-      <window_info anchor="bottom" id="Messages" order="0" weight="0.28944504" />
-      <window_info anchor="bottom" id="Inspection Results" order="1" weight="0.32862905" />
-      <window_info anchor="bottom" id="Message" order="2" />
-      <window_info anchor="bottom" id="Find" order="3" weight="0.3281106" />
-      <window_info anchor="bottom" id="Run" order="4" />
-      <window_info anchor="bottom" id="Debug" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="8" weight="0.32903227" />
-      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="11" weight="0.3569097" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="12" visible="true" weight="0.47515923" />
-      <window_info anchor="bottom" id="Event Log" order="13" side_tool="true" weight="0.3299539" />
-      <window_info anchor="right" id="Remote Host" order="0" weight="0.18954249" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
-      <window_info anchor="right" id="Database" order="4" />
-      <window_info anchor="right" id="Key Promoter X" order="5" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -894,8 +852,6 @@
       <path value="$PROJECT_DIR$/vendor/symfony/yaml" />
       <path value="$PROJECT_DIR$/ph" />
     </ignored-roots>
-    <MESSAGE value="Merged in changes to new_environment &amp; new_ticket." />
-    <MESSAGE value="Colorized the intro text using tput." />
     <MESSAGE value="Wag the Drupal watchdog with wag()." />
     <MESSAGE value="Avoid execution problems if there are no teardown commands." />
     <MESSAGE value="I think I've gone down the wrong hole." />
@@ -919,7 +875,9 @@
     <MESSAGE value="Improved readability of readme.md." />
     <MESSAGE value="Adds pre &amp; post commands inside the VM." />
     <MESSAGE value="Improve 'assumptions' list in intro text." />
-    <option name="LAST_COMMIT_MESSAGE" value="Improve 'assumptions' list in intro text." />
+    <MESSAGE value="PH can load MC without worrying about circular dependencies for Symfony io()." />
+    <MESSAGE value="PH can load MC without worrying about circular dependencies for robo task stacks." />
+    <option name="LAST_COMMIT_MESSAGE" value="PH can load MC without worrying about circular dependencies for robo task stacks." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/completed" />
@@ -994,16 +952,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/symfony/console/Output/OutputInterface.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="18" column="48" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/btford/allthethings/allthethings.sh">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/robo.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -1014,34 +962,49 @@
     <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_psr4.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
+    <entry file="file://$PROJECT_DIR$/vendor/symfony/console/Output/OutputInterface.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="26" column="28" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
+        <state relative-caret-position="165">
+          <caret line="18" column="48" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RoboFile.php">
+    <entry file="file://$PROJECT_DIR$/vendor/btford/allthethings/allthethings.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="540" selection-start-line="540" selection-end-line="540" />
+        <state relative-caret-position="-535" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="30" column="1" lean-forward="true" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/koppie/mc/src/mc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
           <folding>
-            <element signature="e#7#21#0#PHP" expanded="true" />
+            <element signature="e#109#135#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/koppie/mc/src/MasterOfCeremonies.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="37" column="24" selection-start-line="37" selection-start-column="24" selection-end-line="37" selection-end-column="24" />
+        <state relative-caret-position="613">
+          <caret line="156" column="36" selection-end-line="206" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/koppie/mc/src/mc.php">
+    <entry file="file://$PROJECT_DIR$/RoboFile.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="18" column="41" lean-forward="true" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
+        <state relative-caret-position="151">
+          <caret line="183" column="49" selection-start-line="183" selection-start-column="49" selection-end-line="183" selection-end-column="49" />
+          <folding>
+            <element signature="e#7#21#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

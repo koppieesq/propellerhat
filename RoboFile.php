@@ -87,10 +87,10 @@ class RoboFile extends \Robo\Tasks {
 
     if (!$opts['no-reset']) {
       $color = ["color" => "cyan"];
-      $tasks[] = "Pull a fresh copy of " . $this->mc()->tput("$upstream_repo/$base_branch", $color);
-      $tasks[] = "Push to " . $this->mc()->tput("$fork_repo/$base_branch", $color);
-      $tasks[] = "Reset " . $this->mc()->tput("$fork_repo/$base_branch", $color) . " to match the latest " . $this->mc()->tput("$upstream_repo/$base_branch", $color);
-      $tasks[] = "Push to " . $this->mc()->tput("$fork_repo/$new_branch", $color) . " and set upstream ";
+      $tasks[] = "Pull a fresh copy of <info>$upstream_repo/$base_branch</info>";
+      $tasks[] = "Push to <info>$fork_repo/$base_branch</info>";
+      $tasks[] = "Reset <info>$fork_repo/$base_branch</info> to match the latest <info>$upstream_repo/$base_branch</info>";
+      $tasks[] = "Push to <info>$fork_repo/$new_branch</info> and set upstream ";
     }
 
     $tasks[] = "Task runner: $runner";
@@ -136,7 +136,7 @@ class RoboFile extends \Robo\Tasks {
     }
     $tasks[] = $command_tasks_post;
 
-    $warning = $this->mc()->tput("CISCO AMP HAS BEEN TURNED OFF", ['color' => 'red']);
+    $warning = "CISCO AMP HAS BEEN TURNED OFF";
 
     // Add requirements to the end of the to-do list.
     $tasks[] = "In order for this to work, please make sure:" .
@@ -145,28 +145,28 @@ class RoboFile extends \Robo\Tasks {
       $indent . "You've updated the enclosed config file with the correct repositories and branches" .
       $indent . $warning;
 
-    $this->intro("NEW TICKET", "I'm going to help you refresh your local dev environment to start a new ticket.", $tasks);
+    $this->mc()->intro("NEW TICKET", "I'm going to help you refresh your local dev environment to start a new ticket.", $tasks);
 
     // Don't reset the feature branch if I pass a tag on the command line.
     if (!$opts['no-reset']) {
       $result = $this->taskExec($this->reset_branch($host_path, $base_branch, $upstream_repo, $fork_repo, $new_branch));
-      $this->taskExec($this->check_success($result, "Set up git"));
+      $this->taskExec($this->mc()->check_success($result, "Set up git"));
     }
 
     // See if there's anything new to install from Composer.
     $this->say("I'm going to see if there's anything to install.");
     $result = $this->taskComposerInstall()->dir($host_path)->dev()->run();
-    $this->taskExec($this->check_success($result, "Composer install"));
+    $this->taskExec($this->mc()->check_success($result, "Composer install"));
 
     // Turn on the VM and reprovision it if necessary.
     if (!$opts['no-provision']) {
-      $this->catlet("Let's turn this thing on.");
+      $this->mc()->catlet("Let's turn this thing on.");
       $result = $this->taskExecStack()
         ->stopOnFail()
         ->dir($host_path)
         ->exec($vm_start)
         ->run();
-      $this->taskExec($this->check_success($result, $vm_start));
+      $this->taskExec($this->mc()->check_success($result, $vm_start));
     }
     elseif ($vm_start = 'vagrant up --provision') {
       $this->say("I will turn on the existing VM but won't reprovision.");
@@ -175,13 +175,13 @@ class RoboFile extends \Robo\Tasks {
         ->dir($host_path)
         ->exec('vagrant up')
         ->run();
-      $this->taskExec($this->check_success($result, 'vagrant up'));
+      $this->taskExec($this->mc()->check_success($result, 'vagrant up'));
     }
 
     // Run tasks inside the VM
-    $this->refresh_ticket($ssh_commands_pre);
-    $this->refresh_ticket($ssh_commands);
-    $this->refresh_ticket($ssh_commands_post);
+    $this->refresh_ticket($ssh_commands_pre, 'Get ready');
+    $this->refresh_ticket($ssh_commands, 'Get set');
+    $this->refresh_ticket($ssh_commands_post, 'Go!');
 
     // Cleanup commands to be run after everything else.
     $this->say("Performing final cleanup steps . . .");
@@ -194,8 +194,8 @@ class RoboFile extends \Robo\Tasks {
     // Outro
     $this->say("Congratulations, we're done!  Here's what we did:");
     $this->io()->listing($tasks);
-    $this->stopwatch($start_time);
-    $this->catlet("Go forth and be awesome.");
+    $this->mc()->stopwatch($start_time);
+    $this->mc()->catlet("Go forth and be awesome.");
     return;
   }
 
@@ -261,7 +261,7 @@ class RoboFile extends \Robo\Tasks {
         $result = $this->taskExecStack()
           ->exec('/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"')
           ->run();
-        $this->check_success($result, 'Installing Homebrew');
+        $this->mc()->check_success($result, 'Installing Homebrew');
       }
       else {
         $this->io()->note("If you add --y, I'll install Homebrew.");
@@ -285,9 +285,9 @@ class RoboFile extends \Robo\Tasks {
       // Diff-so-fancy installed separately because there's an extra command.
       // @see https://github.com/so-fancy/diff-so-fancy
       $string = "Turning your ";
-      $string .= $this->tput("git diff", ["color" => "cyan"]);
+      $string .= $this->mc()->tput("git diff", ["color" => "cyan"]);
       $string .= " into ";
-      $string .= $this->tput("diff-so-fancy", ["color" => "magenta"]);
+      $string .= $this->mc()->tput("diff-so-fancy", ["color" => "magenta"]);
       $this->say($string);
       $this->taskExecStack()
         ->exec("brew install diff-so-fancy")
@@ -324,8 +324,8 @@ class RoboFile extends \Robo\Tasks {
     }
 
     // Outro
-    $this->stopwatch($start_time);
-    $this->catlet("All Done!");
+    $this->mc()->stopwatch($start_time);
+    $this->mc()->catlet("All Done!");
   }
 
   /**
@@ -362,7 +362,7 @@ class RoboFile extends \Robo\Tasks {
       }
     }
 
-    $this->catlet("All done!");
+    $this->mc()->catlet("All done!");
     $this->io()->success("Pat yourself on the back for a job well done.");
   }
 
@@ -396,9 +396,9 @@ class RoboFile extends \Robo\Tasks {
     $intro = 'You have no chance to survive make your time.';
     $color = ['color' => 'cyan'];
     $tasks = [
-      "Rebase " . $this->tput($new_branch, $color) . " over a fresh copy of " . $this->tput('master', $color),
+      "Rebase " . $this->mc()->tput($new_branch, $color) . " over a fresh copy of " . $this->mc()->tput('master', $color),
     ];
-    $this->intro($banner, $intro, $tasks);
+    $this->mc()->intro($banner, $intro, $tasks);
 
     $this->taskGitStack()
       ->stopOnFail()
@@ -409,8 +409,8 @@ class RoboFile extends \Robo\Tasks {
       ->exec("git rebase master")
       ->run();
 
-    $this->stopwatch($start_time);
-    $this->catlet("For great justice");
+    $this->mc()->stopwatch($start_time);
+    $this->mc()->catlet("For great justice");
 
     return 0;
   }
@@ -421,9 +421,9 @@ class RoboFile extends \Robo\Tasks {
    * This is a lighter lift than new_ticket().  Here, we don't rebuild the
    * environment; we simply reload stored config for Drupal _inside_ the VM.
    */
-  function refresh_ticket($ssh_commands = NULL) {
+  function refresh_ticket($ssh_commands = NULL, string $banner = "Refresh Drupal Config!") {
     // Introduction.
-    $this->catlet("Refresh Drupal Config!");
+    $this->mc()->catlet($banner);
 
     // Initial setup: retrieve stored preferences.
     $allopts = Robo::config()->get("command.new_ticket.options");
@@ -452,9 +452,9 @@ class RoboFile extends \Robo\Tasks {
       ->dir($host_path)
       ->exec($ssh_commands)
       ->run();
-    $this->taskExec($this->check_success($result, "Commands inside the VM"));
+    $this->taskExec($this->mc()->check_success($result, "Commands inside the VM"));
 
-    $this->catlet("All done!");
+    $this->mc()->catlet("All done!");
 
     return $result;
   }
@@ -536,89 +536,6 @@ class RoboFile extends \Robo\Tasks {
       ->remoteDir($guest_path)
       ->exec("drush uli --uri=https://local.bwd.com $add_name")
       ->run();
-  }
-
-  /**
-   * Reusable function to report whether the previous step succeeded.
-   *
-   * @param object $result
-   *   Pass the result object to this function.
-   * @param string $task
-   *   Plain text description of the currently running task.
-   *
-   * @return int
-   *   Should correctly report whether task was successful or not.
-   */
-  function check_success($result = NULL, $task = "Current task") {
-    $this->mc()->check_success($result, $task);
-  }
-
-  /**
-   * Check Application
-   *
-   * Accepts a string
-   *
-   * @param string $check
-   *
-   * @return string
-   */
-  function check_app(string $check) {
-    $found = exec("which $check");
-    $result = $found ? $found : 'echo';
-
-    return $result;
-  }
-
-  /**
-   * Calculate & report elapsed time for this task.
-   *
-   * @param $start_time
-   *   The time you began.
-   */
-  function stopwatch($start_time) {
-    $stop_time = time();
-    $elapsed_time = $stop_time - $start_time;
-    $elapsed_minutes = floor($elapsed_time / 60);
-    $elapsed_seconds = $elapsed_time - $elapsed_minutes * 60;
-    $this->say("This took $elapsed_minutes minutes and $elapsed_seconds seconds.");
-
-    return;
-  }
-
-  /**
-   * Reusable introduction.
-   *
-   * This function takes 3 arguments: your header, your intro, and a list of
-   * things.  The headline gets displayed in figlet default puffy letter
-   * style, your introduction gets displayed as a simple say(), and the list
-   * rendered using io()->listing().  Finally, it asks the user if they want
-   * to continue.  Continuing is a simple matter of pressing "enter"; if they
-   * do, then the function will return TRUE (in case you need it).  If they
-   * type ctl-C, then they will escape the entire program.
-   *
-   * @param string $banner
-   *   Say it in lights.
-   * @param string $intro
-   *   Say it in normal words.
-   * @param null $list
-   *   What are you going to do?
-   *
-   * @return bool
-   */
-  function intro(string $banner = 'Hi!', string $intro = '', $list = NULL) {
-    // Can't pass NULL to io->listing().
-    $list = $list ? $list : ["(Sorry, not actually sure what I *can* do!)"];
-
-    // Display in glorious fashion
-    $this->mc()->catlet($banner);
-    $this->say($intro . "  Here's what I can do:");
-    $this->io()->listing($list);
-
-    // Simple confirmation: anything to continue; ctl-C to escape.
-    $this->say("Do you want me to do this?");
-    $this->ask("Press [ENTER] to continue, ctrl-C to cancel.");
-
-    return;
   }
 
 }
