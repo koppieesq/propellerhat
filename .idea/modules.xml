@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$USER_HOME$/PhpstormProjects/mc/.idea/mc.iml" filepath="$USER_HOME$/PhpstormProjects/mc/.idea/mc.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/propellerhat.iml" filepath="$PROJECT_DIR$/.idea/propellerhat.iml" />
     </modules>
   </component>

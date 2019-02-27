@@ -107,16 +107,6 @@ The following variables can be easily changed in the config file:
   
 # Roadmap
 The following new features are contemplated for the future:
-- More flexible workflow in new_ticket():
-  - Fork the repo
-  - Create the feature branch
-- Wizard to create new config file
-  - Store config file in project or global (user directory)
-  - Create multidimensional array for config values, including key, default, & description
-  - @see https://symfony.com/doc/current/components/config/definition.html
-  - @see https://github.com/lando/lando/blob/master/plugins/lando-init/tasks/init.js
-- Update installation instructions to include Composer/Packagist
-- Integrate with PhpStorm
 - Add additional items to new_environment():
   - Alias for Robo commands
   - Add optional toys: steam, bitlord, wesnoth, minecraft
