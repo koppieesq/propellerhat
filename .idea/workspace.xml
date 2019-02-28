@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a099c3b-f3b4-4635-8b4e-dd664aca8a7c" name="Default Changelist" comment="Fix output for stopwatch().">
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/propellerhat.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/propellerhat.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RoboFile.php" beforeDir="false" afterPath="$PROJECT_DIR$/RoboFile.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
     </list>
@@ -26,12 +22,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="236">
-                <caret line="109" selection-start-line="109" selection-end-line="109" />
+              <first_editor relative-caret-position="462">
+                <caret line="99" column="29" selection-start-line="99" selection-start-column="29" selection-end-line="99" selection-end-column="29" />
               </first_editor>
               <second_editor />
             </state>
@@ -50,7 +46,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/PhpstormProjects/mc/src/MasterOfCeremonies.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="529">
+            <state relative-caret-position="1380">
               <caret line="97" column="28" selection-start-line="97" selection-start-column="28" selection-end-line="97" selection-end-column="28" />
             </state>
           </provider>
@@ -65,11 +61,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/RoboFile.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+            <state relative-caret-position="510">
+              <caret line="306" column="18" selection-start-line="306" selection-start-column="18" selection-end-line="306" selection-end-column="18" />
               <folding>
                 <element signature="e#7#21#0#PHP" expanded="true" />
               </folding>
@@ -188,8 +184,8 @@
         <option value="$PROJECT_DIR$/vendor/koppie/mc/src/mc.php" />
         <option value="$PROJECT_DIR$/vendor/koppie/mc/src/MasterOfCeremonies.php" />
         <option value="$USER_HOME$/PhpstormProjects/mc/src/MasterOfCeremonies.php" />
-        <option value="$PROJECT_DIR$/RoboFile.php" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/RoboFile.php" />
       </list>
     </option>
   </component>
@@ -229,7 +225,7 @@
     <option name="x" value="1920" />
     <option name="y" value="23" />
     <option name="width" value="960" />
-    <option name="height" value="588" />
+    <option name="height" value="964" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="false" id="Update" />
@@ -241,6 +237,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -287,7 +284,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -412,14 +408,8 @@
       <workItem from="1550595417455" duration="31000" />
       <workItem from="1550699002010" duration="3133000" />
       <workItem from="1550872689306" duration="1275000" />
-      <workItem from="1551231859766" duration="719000" />
-    </task>
-    <task id="LOCAL-00062" summary="Remove Acquia-specific commands from robo.yml.">
-      <created>1543452209386</created>
-      <option name="number" value="00062" />
-      <option name="presentableId" value="LOCAL-00062" />
-      <option name="project" value="LOCAL" />
-      <updated>1543452209386</updated>
+      <workItem from="1551231859766" duration="847000" />
+      <workItem from="1551383261061" duration="191000" />
     </task>
     <task id="LOCAL-00063" summary="Add catlet() to refresh_ticket().">
       <created>1543452236183</created>
@@ -757,11 +747,18 @@
       <option name="project" value="LOCAL" />
       <updated>1550874836218</updated>
     </task>
-    <option name="localTasksCounter" value="111" />
+    <task id="LOCAL-00111" summary="Removes duplicate new_ticket().">
+      <created>1551232684677</created>
+      <option name="number" value="00111" />
+      <option name="presentableId" value="LOCAL-00111" />
+      <option name="project" value="LOCAL" />
+      <updated>1551232684677</updated>
+    </task>
+    <option name="localTasksCounter" value="112" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="236646000" />
+    <option name="totallyTimeSpent" value="236965000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -773,11 +770,11 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1920" y="23" width="960" height="588" extended-state="0" />
+    <frame x="1920" y="23" width="960" height="964" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.35685483" visible="true" weight="0.33078602" />
-      <window_info active="true" id="Structure" order="1" sideWeight="0.64314514" side_tool="true" visible="true" weight="0.33078602" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.35550457" visible="true" weight="0.26419213" />
+      <window_info active="true" id="Structure" order="1" sideWeight="0.6444954" side_tool="true" visible="true" weight="0.26419213" />
       <window_info id="Favorites" order="2" side_tool="true" weight="0.3297194" />
       <window_info anchor="bottom" id="Messages" order="0" weight="0.28944504" />
       <window_info anchor="bottom" id="Inspection Results" order="1" weight="0.32862905" />
@@ -878,7 +875,6 @@
       <path value="$PROJECT_DIR$/vendor/symfony/yaml" />
       <path value="$PROJECT_DIR$/ph" />
     </ignored-roots>
-    <MESSAGE value="I think I've gone down the wrong hole." />
     <MESSAGE value="Heading down a different wrong hole." />
     <MESSAGE value="Refactor firewall warning to use tput." />
     <MESSAGE value="Adds edex-ui" />
@@ -903,7 +899,8 @@
     <MESSAGE value="PH can load MC without worrying about circular dependencies for robo task stacks." />
     <MESSAGE value="Rewrote output to be less reliant on tput, and added optional second argument to refresh_ticket() (for use in new_ticket())." />
     <MESSAGE value="Fix output for stopwatch()." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix output for stopwatch()." />
+    <MESSAGE value="Removes duplicate new_ticket()." />
+    <option name="LAST_COMMIT_MESSAGE" value="Removes duplicate new_ticket()." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/completed" />
@@ -976,10 +973,27 @@
         <state relative-caret-position="-535" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="462">
+            <caret line="99" column="29" selection-start-line="99" selection-start-column="29" selection-end-line="99" selection-end-column="29" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/robo.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
           <caret line="34" column="23" selection-start-line="34" selection-start-column="23" selection-end-line="34" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/PhpstormProjects/mc/src/MasterOfCeremonies.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1380">
+          <caret line="97" column="28" selection-start-line="97" selection-start-column="28" selection-end-line="97" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -1014,30 +1028,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/PhpstormProjects/mc/src/MasterOfCeremonies.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="97" column="28" selection-start-line="97" selection-start-column="28" selection-end-line="97" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/RoboFile.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        <state relative-caret-position="510">
+          <caret line="306" column="18" selection-start-line="306" selection-start-column="18" selection-end-line="306" selection-end-column="18" />
           <folding>
             <element signature="e#7#21#0#PHP" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="236">
-            <caret line="109" selection-start-line="109" selection-end-line="109" />
-          </first_editor>
-          <second_editor />
         </state>
       </provider>
     </entry>

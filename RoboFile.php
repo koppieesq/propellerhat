@@ -319,7 +319,7 @@ class RoboFile extends \Robo\Tasks {
       ->port($vm_port)
       ->identityFile($vm_key)
       ->remoteDir($guest_path)
-      ->exec("drush uli --uri=https://local.bwd.com $add_name")
+      ->exec("drush uli --uri local.bwd.com $add_name")
       ->run();
   }
 
