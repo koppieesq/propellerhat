@@ -158,21 +158,14 @@ class RoboFile extends \Robo\Tasks {
    * directory in your feature branch, pulls down a fresh copy of master, and
    * then rebases your feature branch over master.  That's it!
    *
-   * @param $host_path
-   *
    * @return int
    */
-  function rebase($host_path = NULL) {
+  function rebase() {
     $allopts = Robo::config()->get("command.new_ticket.options");
     foreach ($allopts as $key => $value) {
       $$key = $value;
     }
-
-    if (!$host_path) {
-      $this->io()
-        ->warning("Sorry, you need to add your base path (pwd) when you run this command.  You can also set it in robo.yml.");
-      return 1;
-    }
+    $host_path = $_SERVER['HOME'] . '/' . $host_path;
 
     // Load config & set environment variables
     $start_time = time();

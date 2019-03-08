@@ -26,7 +26,7 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="462">
+              <first_editor relative-caret-position="1485">
                 <caret line="99" column="29" selection-start-line="99" selection-start-column="29" selection-end-line="99" selection-end-column="29" />
               </first_editor>
               <second_editor />
@@ -46,8 +46,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/PhpstormProjects/mc/src/MasterOfCeremonies.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1380">
-              <caret line="97" column="28" selection-start-line="97" selection-start-column="28" selection-end-line="97" selection-end-column="28" />
+            <state relative-caret-position="1005">
+              <caret line="72" column="34" selection-start-line="72" selection-end-line="73" />
             </state>
           </provider>
         </entry>
@@ -64,8 +64,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/RoboFile.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="306" column="18" selection-start-line="306" selection-start-column="18" selection-end-line="306" selection-end-column="18" />
+            <state relative-caret-position="22">
+              <caret line="159" column="4" selection-start-line="159" selection-start-column="4" selection-end-line="159" selection-end-column="4" />
               <folding>
                 <element signature="e#7#21#0#PHP" expanded="true" />
               </folding>
@@ -76,7 +76,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vendor/koppie/mc/src/mc.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
+            <state relative-caret-position="300">
               <caret line="25" selection-start-line="25" selection-end-line="25" />
               <folding>
                 <element signature="e#109#135#0#PHP" expanded="true" />
@@ -222,10 +222,10 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1920" />
-    <option name="y" value="23" />
+    <option name="x" value="1921" />
+    <option name="y" value="323" />
     <option name="width" value="960" />
-    <option name="height" value="964" />
+    <option name="height" value="877" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="false" id="Update" />
@@ -409,14 +409,9 @@
       <workItem from="1550699002010" duration="3133000" />
       <workItem from="1550872689306" duration="1275000" />
       <workItem from="1551231859766" duration="847000" />
-      <workItem from="1551383261061" duration="191000" />
-    </task>
-    <task id="LOCAL-00063" summary="Add catlet() to refresh_ticket().">
-      <created>1543452236183</created>
-      <option name="number" value="00063" />
-      <option name="presentableId" value="LOCAL-00063" />
-      <option name="project" value="LOCAL" />
-      <updated>1543452236183</updated>
+      <workItem from="1551383261061" duration="585000" />
+      <workItem from="1552072468906" duration="1678000" />
+      <workItem from="1552081994910" duration="123000" />
     </task>
     <task id="LOCAL-00064" summary="Improve human introduction to refresh_ticket().">
       <created>1543453548942</created>
@@ -754,11 +749,18 @@
       <option name="project" value="LOCAL" />
       <updated>1551232684677</updated>
     </task>
-    <option name="localTasksCounter" value="112" />
+    <task id="LOCAL-00112" summary="Removes https from drush uli command.">
+      <created>1551383501351</created>
+      <option name="number" value="00112" />
+      <option name="presentableId" value="LOCAL-00112" />
+      <option name="project" value="LOCAL" />
+      <updated>1551383501351</updated>
+    </task>
+    <option name="localTasksCounter" value="113" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="236965000" />
+    <option name="totallyTimeSpent" value="239160000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -770,11 +772,11 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1920" y="23" width="960" height="964" extended-state="0" />
+    <frame x="1921" y="323" width="960" height="877" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.35550457" visible="true" weight="0.26419213" />
-      <window_info active="true" id="Structure" order="1" sideWeight="0.6444954" side_tool="true" visible="true" weight="0.26419213" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.35140187" visible="true" weight="0.27729258" />
+      <window_info id="Structure" order="1" sideWeight="0.64859813" side_tool="true" visible="true" weight="0.27729258" />
       <window_info id="Favorites" order="2" side_tool="true" weight="0.3297194" />
       <window_info anchor="bottom" id="Messages" order="0" weight="0.28944504" />
       <window_info anchor="bottom" id="Inspection Results" order="1" weight="0.32862905" />
@@ -787,8 +789,8 @@
       <window_info anchor="bottom" id="TODO" order="8" weight="0.32903227" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="11" weight="0.3569097" />
-      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.4989858" weight="0.318894" />
+      <window_info anchor="bottom" id="Version Control" order="11" weight="0.3566879" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="12" sideWeight="0.4989858" visible="true" weight="0.31847134" />
       <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.5010142" side_tool="true" weight="0.44076434" />
       <window_info anchor="right" id="Remote Host" order="0" weight="0.18954249" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
@@ -875,7 +877,6 @@
       <path value="$PROJECT_DIR$/vendor/symfony/yaml" />
       <path value="$PROJECT_DIR$/ph" />
     </ignored-roots>
-    <MESSAGE value="Heading down a different wrong hole." />
     <MESSAGE value="Refactor firewall warning to use tput." />
     <MESSAGE value="Adds edex-ui" />
     <MESSAGE value="Updates Roadmap in readme." />
@@ -900,7 +901,8 @@
     <MESSAGE value="Rewrote output to be less reliant on tput, and added optional second argument to refresh_ticket() (for use in new_ticket())." />
     <MESSAGE value="Fix output for stopwatch()." />
     <MESSAGE value="Removes duplicate new_ticket()." />
-    <option name="LAST_COMMIT_MESSAGE" value="Removes duplicate new_ticket()." />
+    <MESSAGE value="Removes https from drush uli command." />
+    <option name="LAST_COMMIT_MESSAGE" value="Removes https from drush uli command." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/completed" />
@@ -976,7 +978,7 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="462">
+          <first_editor relative-caret-position="1485">
             <caret line="99" column="29" selection-start-line="99" selection-start-column="29" selection-end-line="99" selection-end-column="29" />
           </first_editor>
           <second_editor />
@@ -992,8 +994,8 @@
     </entry>
     <entry file="file://$USER_HOME$/PhpstormProjects/mc/src/MasterOfCeremonies.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1380">
-          <caret line="97" column="28" selection-start-line="97" selection-start-column="28" selection-end-line="97" selection-end-column="28" />
+        <state relative-caret-position="1005">
+          <caret line="72" column="34" selection-start-line="72" selection-end-line="73" />
         </state>
       </provider>
     </entry>
@@ -1006,7 +1008,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/koppie/mc/src/mc.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
+        <state relative-caret-position="300">
           <caret line="25" selection-start-line="25" selection-end-line="25" />
           <folding>
             <element signature="e#109#135#0#PHP" expanded="true" />
@@ -1030,8 +1032,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/RoboFile.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="306" column="18" selection-start-line="306" selection-start-column="18" selection-end-line="306" selection-end-column="18" />
+        <state relative-caret-position="22">
+          <caret line="159" column="4" selection-start-line="159" selection-start-column="4" selection-end-line="159" selection-end-column="4" />
           <folding>
             <element signature="e#7#21#0#PHP" expanded="true" />
           </folding>
