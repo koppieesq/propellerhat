@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1a099c3b-f3b4-4635-8b4e-dd664aca8a7c" name="Default Changelist" comment="Fix output for stopwatch().">
+    <list default="true" id="1a099c3b-f3b4-4635-8b4e-dd664aca8a7c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RoboFile.php" beforeDir="false" afterPath="$PROJECT_DIR$/RoboFile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
     </list>
     <ignored path=".idea/webServers.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -64,8 +63,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/RoboFile.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
-              <caret line="159" column="4" selection-start-line="159" selection-start-column="4" selection-end-line="159" selection-end-column="4" />
+            <state relative-caret-position="473">
+              <caret line="303" lean-forward="true" selection-start-line="303" selection-end-line="303" />
               <folding>
                 <element signature="e#7#21#0#PHP" expanded="true" />
               </folding>
@@ -76,7 +75,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vendor/koppie/mc/src/mc.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
+            <state relative-caret-position="285">
               <caret line="25" selection-start-line="25" selection-end-line="25" />
               <folding>
                 <element signature="e#109#135#0#PHP" expanded="true" />
@@ -222,10 +221,10 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1921" />
-    <option name="y" value="323" />
+    <option name="x" value="1920" />
+    <option name="y" value="23" />
     <option name="width" value="960" />
-    <option name="height" value="877" />
+    <option name="height" value="1177" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="false" id="Update" />
@@ -237,7 +236,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -284,6 +282,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -411,14 +410,8 @@
       <workItem from="1551231859766" duration="847000" />
       <workItem from="1551383261061" duration="585000" />
       <workItem from="1552072468906" duration="1678000" />
-      <workItem from="1552081994910" duration="123000" />
-    </task>
-    <task id="LOCAL-00064" summary="Improve human introduction to refresh_ticket().">
-      <created>1543453548942</created>
-      <option name="number" value="00064" />
-      <option name="presentableId" value="LOCAL-00064" />
-      <option name="project" value="LOCAL" />
-      <updated>1543453548942</updated>
+      <workItem from="1552081994910" duration="197000" />
+      <workItem from="1552322967286" duration="97000" />
     </task>
     <task id="LOCAL-00065" summary="new_ticket() now calls refresh_ticket().">
       <created>1543521342325</created>
@@ -756,11 +749,18 @@
       <option name="project" value="LOCAL" />
       <updated>1551383501351</updated>
     </task>
-    <option name="localTasksCounter" value="113" />
+    <task id="LOCAL-00113" summary="Host path is now relative to home directory.">
+      <created>1552082183515</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
+      <option name="project" value="LOCAL" />
+      <updated>1552082183515</updated>
+    </task>
+    <option name="localTasksCounter" value="114" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="239160000" />
+    <option name="totallyTimeSpent" value="239331000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -772,11 +772,11 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1921" y="323" width="960" height="877" extended-state="0" />
+    <frame x="1920" y="23" width="960" height="1177" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.35140187" visible="true" weight="0.27729258" />
-      <window_info id="Structure" order="1" sideWeight="0.64859813" side_tool="true" visible="true" weight="0.27729258" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.3508982" visible="true" weight="0.2838428" />
+      <window_info active="true" id="Structure" order="1" sideWeight="0.6491018" side_tool="true" visible="true" weight="0.2838428" />
       <window_info id="Favorites" order="2" side_tool="true" weight="0.3297194" />
       <window_info anchor="bottom" id="Messages" order="0" weight="0.28944504" />
       <window_info anchor="bottom" id="Inspection Results" order="1" weight="0.32862905" />
@@ -790,7 +790,7 @@
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.3566879" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="12" sideWeight="0.4989858" visible="true" weight="0.31847134" />
+      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.4989858" visible="true" weight="0.23041475" />
       <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.5010142" side_tool="true" weight="0.44076434" />
       <window_info anchor="right" id="Remote Host" order="0" weight="0.18954249" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
@@ -877,7 +877,6 @@
       <path value="$PROJECT_DIR$/vendor/symfony/yaml" />
       <path value="$PROJECT_DIR$/ph" />
     </ignored-roots>
-    <MESSAGE value="Refactor firewall warning to use tput." />
     <MESSAGE value="Adds edex-ui" />
     <MESSAGE value="Updates Roadmap in readme." />
     <MESSAGE value="The last traces of the collections have been swept away.  Fixes file copy for new_environment." />
@@ -902,7 +901,8 @@
     <MESSAGE value="Fix output for stopwatch()." />
     <MESSAGE value="Removes duplicate new_ticket()." />
     <MESSAGE value="Removes https from drush uli command." />
-    <option name="LAST_COMMIT_MESSAGE" value="Removes https from drush uli command." />
+    <MESSAGE value="Host path is now relative to home directory." />
+    <option name="LAST_COMMIT_MESSAGE" value="Host path is now relative to home directory." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/completed" />
@@ -1008,7 +1008,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/koppie/mc/src/mc.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
+        <state relative-caret-position="285">
           <caret line="25" selection-start-line="25" selection-end-line="25" />
           <folding>
             <element signature="e#109#135#0#PHP" expanded="true" />
@@ -1032,8 +1032,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/RoboFile.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="159" column="4" selection-start-line="159" selection-start-column="4" selection-end-line="159" selection-end-column="4" />
+        <state relative-caret-position="473">
+          <caret line="303" lean-forward="true" selection-start-line="303" selection-end-line="303" />
           <folding>
             <element signature="e#7#21#0#PHP" expanded="true" />
           </folding>

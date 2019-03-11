@@ -308,9 +308,9 @@ class RoboFile extends \Robo\Tasks {
       ->stopOnFail()
       ->printOutput(TRUE)
       ->forcePseudoTty()
-      ->dir($host_path)
+      ->dir($_SERVER['HOME'] . '/' . $host_path)
       ->port($vm_port)
-      ->identityFile($vm_key)
+      ->identityFile($_SERVER['HOME'] . '/' . $vm_key)
       ->remoteDir($guest_path)
       ->exec("drush uli --uri local.bwd.com $add_name")
       ->run();
