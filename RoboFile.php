@@ -256,6 +256,8 @@ class RoboFile extends \Robo\Tasks {
     foreach ($allopts as $key => $value) {
       $$key = $value;
     }
+    $host_path = $_SERVER['HOME'] . '/' . $host_path;
+    $vm_key = $_SERVER['HOME'] . '/' . $vm_key;
     $wait = 2;
 
     // Run tasks inside the VM
