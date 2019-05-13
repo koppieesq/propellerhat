@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="1a099c3b-f3b4-4635-8b4e-dd664aca8a7c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RoboFile.php" beforeDir="false" afterPath="$PROJECT_DIR$/RoboFile.php" afterDir="false" />
     </list>
     <ignored path=".idea/webServers.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -63,8 +62,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/RoboFile.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
-              <caret line="259" column="11" selection-start-line="259" selection-start-column="11" selection-end-line="259" selection-end-column="11" />
+            <state relative-caret-position="436">
+              <caret line="272" column="19" selection-start-line="272" selection-start-column="19" selection-end-line="272" selection-end-column="19" />
               <folding>
                 <element signature="e#7#21#0#PHP" expanded="true" />
               </folding>
@@ -75,7 +74,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vendor/koppie/mc/src/mc.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
+            <state relative-caret-position="300">
               <caret line="25" selection-start-line="25" selection-end-line="25" />
               <folding>
                 <element signature="e#109#135#0#PHP" expanded="true" />
@@ -221,10 +220,10 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1920" />
+    <option name="x" value="1987" />
     <option name="y" value="23" />
     <option name="width" value="960" />
-    <option name="height" value="1177" />
+    <option name="height" value="877" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="false" id="Update" />
@@ -412,14 +411,8 @@
       <workItem from="1552072468906" duration="1678000" />
       <workItem from="1552081994910" duration="197000" />
       <workItem from="1552322967286" duration="142000" />
-      <workItem from="1553026820750" duration="115000" />
-    </task>
-    <task id="LOCAL-00066" summary="Minor output improvements.">
-      <created>1543521677272</created>
-      <option name="number" value="00066" />
-      <option name="presentableId" value="LOCAL-00066" />
-      <option name="project" value="LOCAL" />
-      <updated>1543521677273</updated>
+      <workItem from="1553026820750" duration="754000" />
+      <workItem from="1553538298206" duration="1000" />
     </task>
     <task id="LOCAL-00067" summary="Improved refresh_ticket() to work better with new_ticket().">
       <created>1543523126850</created>
@@ -757,11 +750,18 @@
       <option name="project" value="LOCAL" />
       <updated>1552323092498</updated>
     </task>
-    <option name="localTasksCounter" value="115" />
+    <task id="LOCAL-00115" summary="Fix host path in wag().">
+      <created>1553026972770</created>
+      <option name="number" value="00115" />
+      <option name="presentableId" value="LOCAL-00115" />
+      <option name="project" value="LOCAL" />
+      <updated>1553026972771</updated>
+    </task>
+    <option name="localTasksCounter" value="116" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="239491000" />
+    <option name="totallyTimeSpent" value="240131000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -773,11 +773,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1920" y="23" width="960" height="1177" extended-state="0" />
-    <editor active="true" />
+    <frame x="1987" y="23" width="960" height="877" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.3497006" visible="true" weight="0.29039302" />
-      <window_info active="true" id="Structure" order="1" sideWeight="0.65029943" side_tool="true" visible="true" weight="0.29039302" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.34766355" visible="true" weight="0.29694322" />
+      <window_info id="Structure" order="1" sideWeight="0.6523365" side_tool="true" visible="true" weight="0.29694322" />
       <window_info id="Favorites" order="2" side_tool="true" weight="0.3297194" />
       <window_info anchor="bottom" id="Messages" order="0" weight="0.28944504" />
       <window_info anchor="bottom" id="Inspection Results" order="1" weight="0.32862905" />
@@ -791,7 +790,7 @@
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.3566879" />
-      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.4989858" visible="true" weight="0.23041475" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="12" sideWeight="0.4989858" visible="true" weight="0.31847134" />
       <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.5010142" side_tool="true" weight="0.44076434" />
       <window_info anchor="right" id="Remote Host" order="0" weight="0.18954249" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
@@ -878,7 +877,6 @@
       <path value="$PROJECT_DIR$/vendor/symfony/yaml" />
       <path value="$PROJECT_DIR$/ph" />
     </ignored-roots>
-    <MESSAGE value="Updates Roadmap in readme." />
     <MESSAGE value="The last traces of the collections have been swept away.  Fixes file copy for new_environment." />
     <MESSAGE value="Add diff-so-fancy." />
     <MESSAGE value="We're on Packagist now!" />
@@ -903,7 +901,8 @@
     <MESSAGE value="Removes https from drush uli command." />
     <MESSAGE value="Host path is now relative to home directory." />
     <MESSAGE value="Fix host path in uli()." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix host path in uli()." />
+    <MESSAGE value="Fix host path in wag()." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix host path in wag()." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/completed" />
@@ -1009,7 +1008,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/koppie/mc/src/mc.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
+        <state relative-caret-position="300">
           <caret line="25" selection-start-line="25" selection-end-line="25" />
           <folding>
             <element signature="e#109#135#0#PHP" expanded="true" />
@@ -1033,8 +1032,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/RoboFile.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="259" column="11" selection-start-line="259" selection-start-column="11" selection-end-line="259" selection-end-column="11" />
+        <state relative-caret-position="436">
+          <caret line="272" column="19" selection-start-line="272" selection-start-column="19" selection-end-line="272" selection-end-column="19" />
           <folding>
             <element signature="e#7#21#0#PHP" expanded="true" />
           </folding>
