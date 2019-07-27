@@ -2,6 +2,7 @@
 
 use Robo\Robo;
 use MC\MC;
+require __DIR__ . '/vendor/autoload.php';
 
 /**
  * This is project's console commands configuration for Robo task runner.
